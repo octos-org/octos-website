@@ -1,0 +1,39 @@
+---
+import Seo from 'components/Seo.astro';
+import Header from 'components/layout/Header.astro';
+import Footer from 'components/layout/Footer.astro';
+import 'styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Prevent flash of wrong theme -->
+    <script is:inline>
+      (function() {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+      })();
+    </script>
+    <Seo title={title} description={description} ogImage={ogImage} />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- No scroll-reveal JS needed — content visible by default -->
+  </body>
+</html>

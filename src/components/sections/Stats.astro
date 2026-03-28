@@ -1,0 +1,19 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+import StatItem from './StatItem.astro';
+import stats from 'data/stats.json';
+---
+
+<Section background="secondary" padY="md">
+  <Container>
+    <div
+      class="grid grid-cols-2 gap-8 md:grid-cols-5 md:gap-6"
+      data-animate-stagger
+    >
+      {stats.map((stat) => (
+        <StatItem value={stat.value} label={stat.label} />
+      ))}
+    </div>
+  </Container>
+</Section>

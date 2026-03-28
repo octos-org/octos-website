@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="brush">
+      <feTurbulence type="turbulence" baseFrequency="0.012 0.003" numOctaves="3" seed="2" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <!-- Deep ocean background -->
+  <rect width="1920" height="1080" fill="#0a1e3d"/>
+  <linearGradient id="ocean-g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0e2d55"/>
+    <stop offset="40%" stop-color="#0a1e3d"/>
+    <stop offset="100%" stop-color="#061533"/>
+  </linearGradient>
+  <rect width="1920" height="1080" fill="url(#ocean-g)" opacity="0.7"/>
+
+  <!-- Water current lines -->
+  <g opacity="0.15" stroke="#2a6aad" fill="none" stroke-width="1.5">
+    <path d="M-50 180 Q200 160 400 190 T800 170 T1200 200 T1600 180 T2000 190"/>
+    <path d="M-50 350 Q250 330 500 360 T900 340 T1300 370 T1700 350 T2000 360"/>
+    <path d="M-50 520 Q200 500 450 530 T850 510 T1250 540 T1650 520 T2000 530"/>
+    <path d="M-50 700 Q250 680 500 710 T900 690 T1300 720 T1700 700 T2000 710"/>
+    <path d="M-50 880 Q200 860 400 890 T800 870 T1200 900 T1600 880 T2000 890"/>
+  </g>
+
+  <!-- ====== CORAL REEF (bottom) — Finding Nemo style ====== -->
+  <!-- Left coral cluster -->
+  <g filter="url(#brush)">
+    <!-- Branching coral (pink/magenta) -->
+    <path d="M60 1080 Q70 950 50 870 Q35 810 60 750 Q80 700 55 640 Q40 590 65 540" stroke="#e8507a" fill="none" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+    <path d="M65 640 Q90 620 110 640" stroke="#e8507a" fill="none" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+    <path d="M55 750 Q30 730 20 750" stroke="#e8507a" fill="none" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="65" cy="540" r="10" fill="#f06090" opacity="0.6"/>
+    <circle cx="110" cy="640" r="7" fill="#f06090" opacity="0.5"/>
+    <circle cx="20" cy="750" r="6" fill="#e8507a" opacity="0.5"/>
+
+    <!-- Brain coral (green/teal) -->
+    <ellipse cx="180" cy="1000" rx="70" ry="45" fill="#40b89a" opacity="0.4"/>
+    <ellipse cx="180" cy="1000" rx="60" ry="38" fill="#50c8aa" opacity="0.3"/>
+    <path d="M130 990 Q155 980 180 990 Q205 1000 230 990" fill="none" stroke="#30a080" stroke-width="2" opacity="0.4"/>
+    <path d="M135 1005 Q160 995 185 1005 Q210 1015 235 1005" fill="none" stroke="#30a080" stroke-width="2" opacity="0.4"/>
+
+    <!-- Tube coral (orange) -->
+    <path d="M130 1080 Q140 980 120 920 Q108 870 130 820 Q145 780 125 740" stroke="#f0883a" fill="none" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <path d="M160 1080 Q150 1000 170 940 Q185 890 165 840" stroke="#e87830" fill="none" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="125" cy="740" r="8" fill="#f8a050" opacity="0.5"/>
+    <circle cx="165" cy="840" r="7" fill="#f09040" opacity="0.5"/>
+  </g>
+
+  <!-- Right coral cluster -->
+  <g filter="url(#brush)">
+    <!-- Sea fan (purple) -->
+    <path d="M1800 1080 Q1810 960 1790 880 Q1775 820 1800 760 Q1820 710 1795 650 Q1780 600 1805 550" stroke="#a855c8" fill="none" stroke-width="7" stroke-linecap="round" opacity="0.65"/>
+    <path d="M1795 760 Q1760 740 1750 765" stroke="#a855c8" fill="none" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+    <path d="M1795 650 Q1825 630 1840 655" stroke="#a855c8" fill="none" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+    <circle cx="1805" cy="550" r="9" fill="#b868d8" opacity="0.5"/>
+    <circle cx="1750" cy="765" r="6" fill="#b060c8" opacity="0.45"/>
+    <circle cx="1840" cy="655" r="6" fill="#b060c8" opacity="0.45"/>
+
+    <!-- Staghorn coral (orange-yellow) -->
+    <path d="M1860 1080 Q1850 990 1870 920 Q1885 860 1860 800 Q1845 750 1870 700" stroke="#f0a030" fill="none" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <path d="M1900 1080 Q1890 1000 1910 930 Q1920 880 1900 830" stroke="#e89028" fill="none" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="1870" cy="700" r="8" fill="#f8b848" opacity="0.5"/>
+    <circle cx="1900" cy="830" r="6" fill="#f0a838" opacity="0.45"/>
+
+    <!-- Green sea plant -->
+    <path d="M1750 1080 Q1760 1000 1740 940 Q1725 890 1750 840" stroke="#48b888" fill="none" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  </g>
+
+  <!-- Center-bottom coral (anemone) -->
+  <g filter="url(#brush)" opacity="0.45">
+    <ellipse cx="960" cy="1050" rx="80" ry="30" fill="#e85878"/>
+    <!-- Anemone tentacles -->
+    <path d="M900 1040 Q895 1010 905 990" stroke="#f07090" fill="none" stroke-width="3" stroke-linecap="round"/>
+    <path d="M920 1035 Q918 1000 925 980" stroke="#f07090" fill="none" stroke-width="3" stroke-linecap="round"/>
+    <path d="M940 1032 Q940 995 948 975" stroke="#f07090" fill="none" stroke-width="3" stroke-linecap="round"/>
+    <path d="M960 1030 Q962 993 960 970" stroke="#f07090" fill="none" stroke-width="3" stroke-linecap="round"/>
+    <path d="M980 1032 Q982 995 978 975" stroke="#f07090" fill="none" stroke-width="3" stroke-linecap="round"/>
+    <path d="M1000 1035 Q1005 1000 998 980" stroke="#f07090" fill="none" stroke-width="3" stroke-linecap="round"/>
+    <path d="M1020 1040 Q1028 1010 1018 990" stroke="#f07090" fill="none" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- ====== CUTE OCTOPUS (center-left) ====== -->
+  <g transform="translate(250, 200)" filter="url(#brush)">
+    <!-- 8 tentacles with golden tips -->
+    <path d="M120 320 Q50 390 20 470 Q0 530 30 570 Q50 595 40 620 Q25 650 50 660" fill="#8dd4e0" stroke="#7bc4d0" stroke-width="2.5"/>
+    <path d="M40 620 Q25 650 50 660 Q70 665 60 640" fill="#e2cc7a"/>
+
+    <path d="M155 340 Q100 440 90 530 Q85 600 110 650 Q125 680 110 710 Q95 735 120 745" fill="#8dd4e0" stroke="#7bc4d0" stroke-width="2.5"/>
+    <path d="M110 710 Q95 735 120 745 Q140 748 130 725" fill="#e2cc7a"/>
+
+    <path d="M195 350 Q185 460 200 550 Q210 620 190 680 Q175 720 200 740" fill="#8dd4e0" stroke="#7bc4d0" stroke-width="2.5"/>
+    <path d="M190 680 Q175 720 200 740 Q218 748 212 720" fill="#e2cc7a"/>
+
+    <path d="M265 350 Q280 460 270 550 Q262 620 285 680 Q300 720 278 745" fill="#8dd4e0" stroke="#7bc4d0" stroke-width="2.5"/>
+    <path d="M285 680 Q300 720 278 745 Q258 750 268 722" fill="#e2cc7a"/>
+
+    <path d="M310 340 Q370 440 375 530 Q378 600 355 650 Q340 680 360 710 Q375 735 350 745" fill="#8dd4e0" stroke="#7bc4d0" stroke-width="2.5"/>
+    <path d="M360 710 Q375 735 350 745 Q330 748 340 725" fill="#e2cc7a"/>
+
+    <path d="M340 320 Q410 390 440 470 Q460 530 435 570 Q415 595 425 620 Q440 650 415 660" fill="#8dd4e0" stroke="#7bc4d0" stroke-width="2.5"/>
+    <path d="M425 620 Q440 650 415 660 Q395 665 405 640" fill="#e2cc7a"/>
+
+    <path d="M100 295 Q30 310 -20 370 Q-50 410 -30 455 Q-15 480 -35 500 Q-55 520 -30 530" fill="#8dd4e0" stroke="#7bc4d0" stroke-width="2.5"/>
+    <path d="M-35 500 Q-55 520 -30 530 Q-10 535 -20 510" fill="#e2cc7a"/>
+
+    <path d="M365 295 Q435 310 480 370 Q510 410 490 455 Q475 480 495 500 Q515 520 490 530" fill="#8dd4e0" stroke="#7bc4d0" stroke-width="2.5"/>
+    <path d="M495 500 Q515 520 490 530 Q470 535 480 510" fill="#e2cc7a"/>
+
+    <!-- Head -->
+    <ellipse cx="230" cy="190" rx="165" ry="180" fill="#9edae6"/>
+    <ellipse cx="230" cy="190" rx="155" ry="170" fill="#a8e0ea"/>
+    <ellipse cx="215" cy="145" rx="85" ry="80" fill="#bae8f0" opacity="0.5"/>
+
+    <!-- Eyes -->
+    <ellipse cx="185" cy="230" rx="30" ry="32" fill="#fff"/>
+    <ellipse cx="275" cy="230" rx="30" ry="32" fill="#fff"/>
+    <circle cx="190" cy="236" r="15" fill="#2a3a5c"/>
+    <circle cx="280" cy="236" r="15" fill="#2a3a5c"/>
+    <circle cx="184" cy="228" r="5.5" fill="#fff" opacity="0.9"/>
+    <circle cx="274" cy="228" r="5.5" fill="#fff" opacity="0.9"/>
+
+    <!-- Smile -->
+    <path d="M205 275 Q230 298 255 275" fill="none" stroke="#4a8a9a" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ====== CLOWNFISH (Nemo) — right side ====== -->
+  <g transform="translate(1350, 350)" filter="url(#brush)">
+    <ellipse cx="0" cy="0" rx="55" ry="30" fill="#FF6B35" transform="rotate(-8)"/>
+    <ellipse cx="-3" cy="-3" rx="45" ry="22" fill="#FF8C56" transform="rotate(-8)" opacity="0.7"/>
+    <!-- White stripes -->
+    <path d="M-18 -25 Q-15 0 -18 25" fill="none" stroke="#fff" stroke-width="6" opacity="0.85"/>
+    <path d="M8 -22 Q12 0 8 22" fill="none" stroke="#fff" stroke-width="5" opacity="0.8"/>
+    <path d="M30 -18 Q33 0 30 18" fill="none" stroke="#fff" stroke-width="4" opacity="0.75"/>
+    <!-- Black edges on stripes -->
+    <path d="M-21 -24 Q-18 0 -21 24" fill="none" stroke="#1a1a2e" stroke-width="1.5" opacity="0.3"/>
+    <path d="M-15 -25 Q-12 0 -15 25" fill="none" stroke="#1a1a2e" stroke-width="1.5" opacity="0.3"/>
+    <!-- Tail -->
+    <path d="M48 -3 Q68 -22 78 -30 Q72 -3 78 30 Q68 22 48 3Z" fill="#FF6B35"/>
+    <!-- Dorsal fin -->
+    <path d="M-10 -28 Q5 -48 22 -35 Q15 -22 10 -22Z" fill="#FF6B35" opacity="0.8"/>
+    <!-- Eye -->
+    <circle cx="-30" cy="-4" r="9" fill="#fff"/>
+    <circle cx="-30" cy="-4" r="4.5" fill="#1a1a2e"/>
+    <circle cx="-32" cy="-7" r="2" fill="#fff" opacity="0.8"/>
+  </g>
+
+  <!-- ====== BLUE TANG (Dory) ====== -->
+  <g transform="translate(1550, 200)" filter="url(#brush)">
+    <ellipse cx="0" cy="0" rx="48" ry="28" fill="#2878c8"/>
+    <ellipse cx="-3" cy="-2" rx="38" ry="20" fill="#3090e0" opacity="0.6"/>
+    <!-- Yellow tail -->
+    <path d="M42 0 Q60 -18 68 -25 Q63 0 68 25 Q60 18 42 0Z" fill="#f8d040"/>
+    <!-- Black marking -->
+    <path d="M-5 -22 Q15 -10 25 0 Q15 10 -5 22" fill="none" stroke="#1a2a4a" stroke-width="6" opacity="0.5"/>
+    <!-- Dorsal fin -->
+    <path d="M-8 -25 Q2 -42 18 -32 Q12 -20 8 -22Z" fill="#2878c8" opacity="0.8"/>
+    <!-- Eye -->
+    <circle cx="-25" cy="-3" r="8" fill="#fff"/>
+    <circle cx="-25" cy="-3" r="4" fill="#1a1a2e"/>
+    <circle cx="-27" cy="-5" r="1.8" fill="#fff" opacity="0.8"/>
+  </g>
+
+  <!-- ====== SMALL YELLOW FISH ====== -->
+  <g transform="translate(1200, 550) scale(0.8)" filter="url(#brush)">
+    <ellipse cx="0" cy="0" rx="35" ry="20" fill="#f8d040"/>
+    <path d="M30 0 Q45 -14 52 -20 Q48 0 52 20 Q45 14 30 0Z" fill="#e8c030"/>
+    <circle cx="-18" cy="-3" r="6" fill="#fff"/>
+    <circle cx="-18" cy="-3" r="3" fill="#1a1a2e"/>
+    <path d="M-3 -16 Q3 0 -3 16" fill="none" stroke="#d8a820" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <!-- ====== SMALL PURPLE FISH ====== -->
+  <g transform="translate(700, 180) scale(0.7)" filter="url(#brush)">
+    <ellipse cx="0" cy="0" rx="32" ry="18" fill="#9868c8"/>
+    <path d="M28 0 Q40 -12 46 -18 Q43 0 46 18 Q40 12 28 0Z" fill="#8858b8"/>
+    <circle cx="-16" cy="-3" r="5.5" fill="#fff"/>
+    <circle cx="-16" cy="-3" r="2.8" fill="#1a1a2e"/>
+  </g>
+
+  <!-- ====== TINY FISH SCHOOL ====== -->
+  <g opacity="0.5" fill="#70b8d0" filter="url(#brush)">
+    <ellipse cx="1100" cy="150" rx="8" ry="4" transform="rotate(-5)"/>
+    <ellipse cx="1130" cy="140" rx="7" ry="3.5" transform="rotate(-8)"/>
+    <ellipse cx="1120" cy="165" rx="7" ry="3.5" transform="rotate(3)"/>
+    <ellipse cx="1150" cy="155" rx="8" ry="4" transform="rotate(-3)"/>
+    <ellipse cx="1080" cy="158" rx="6" ry="3" transform="rotate(2)"/>
+    <ellipse cx="1160" cy="145" rx="6" ry="3" transform="rotate(-6)"/>
+    <ellipse cx="1140" cy="175" rx="6" ry="3" transform="rotate(5)"/>
+  </g>
+
+  <!-- ====== SEA TURTLE ====== -->
+  <g transform="translate(900, 700) scale(0.9)" filter="url(#brush)" opacity="0.5">
+    <!-- Shell -->
+    <ellipse cx="0" cy="0" rx="45" ry="30" fill="#5aaa78"/>
+    <ellipse cx="0" cy="0" rx="38" ry="24" fill="#68b888" opacity="0.6"/>
+    <!-- Shell pattern -->
+    <path d="M-15 -18 Q0 -10 15 -18" fill="none" stroke="#4a9068" stroke-width="2" opacity="0.5"/>
+    <path d="M-20 0 Q0 8 20 0" fill="none" stroke="#4a9068" stroke-width="2" opacity="0.5"/>
+    <path d="M-15 15 Q0 22 15 15" fill="none" stroke="#4a9068" stroke-width="2" opacity="0.5"/>
+    <!-- Head -->
+    <ellipse cx="-50" cy="-5" rx="15" ry="10" fill="#60aa80"/>
+    <circle cx="-58" cy="-8" r="3" fill="#1a1a2e"/>
+    <!-- Flippers -->
+    <path d="M-20 -25 Q-40 -40 -55 -30" stroke="#5aaa78" fill="#5aaa78" stroke-width="3" opacity="0.7"/>
+    <path d="M-20 25 Q-40 40 -55 30" stroke="#5aaa78" fill="#5aaa78" stroke-width="3" opacity="0.7"/>
+    <path d="M25 -20 Q45 -35 55 -22" stroke="#5aaa78" fill="#5aaa78" stroke-width="3" opacity="0.7"/>
+    <path d="M25 20 Q45 35 55 22" stroke="#5aaa78" fill="#5aaa78" stroke-width="3" opacity="0.7"/>
+  </g>
+
+  <!-- ====== BUBBLES ====== -->
+  <g opacity="0.3">
+    <circle cx="500" cy="500" r="7" fill="none" stroke="#88ccee" stroke-width="1.5"/>
+    <circle cx="520" cy="460" r="4" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="485" cy="540" r="3" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="1400" cy="600" r="6" fill="none" stroke="#88ccee" stroke-width="1.5"/>
+    <circle cx="1420" cy="560" r="4" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="750" cy="400" r="5" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="770" cy="360" r="3" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="1650" cy="480" r="5" fill="none" stroke="#88ccee" stroke-width="1.5"/>
+    <circle cx="300" cy="750" r="6" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="1100" cy="850" r="4" fill="none" stroke="#88ccee" stroke-width="1"/>
+  </g>
+
+  <!-- Light rays from surface -->
+  <g opacity="0.06">
+    <polygon points="400,0 500,0 650,1080 450,1080" fill="#4499cc"/>
+    <polygon points="800,0 880,0 1000,1080 850,1080" fill="#4499cc"/>
+    <polygon points="1200,0 1300,0 1400,1080 1200,1080" fill="#4499cc"/>
+  </g>
+
+  <!-- Vignette -->
+  <radialGradient id="vig-hero" cx="50%" cy="45%" r="65%">
+    <stop offset="0%" stop-color="transparent"/>
+    <stop offset="100%" stop-color="#040e20" stop-opacity="0.45"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#vig-hero)"/>
+</svg>

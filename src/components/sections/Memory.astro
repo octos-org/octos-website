@@ -1,0 +1,44 @@
+---
+import SvgSection from 'components/ui/SvgSection.astro';
+---
+
+<SvgSection bgSrc="/images/bg-floor-panel.png">
+  <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8">
+    <div class="glass-panel">
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Memory</p>
+      <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
+        3-layer memory system
+      </h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-neutral-2">
+        Your agents remember. Long-term knowledge, episodic task outcomes,
+        and session history — each layer serves a different recall pattern.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <div class="glass-panel border-l-2 !border-l-accent">
+        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">Long-term</p>
+        <h3 class="mt-2 text-[18px] tracking-[-0.01em]">Entity Bank</h3>
+        <p class="mt-1 text-[14px] leading-relaxed text-neutral-2">
+          MEMORY.md + daily notes + auto-extracted entities. HNSW vector search for semantic retrieval.
+        </p>
+      </div>
+
+      <div class="glass-panel border-l-2 !border-l-heading">
+        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-heading">Episodic</p>
+        <h3 class="mt-2 text-[18px] tracking-[-0.01em]">Task Outcomes</h3>
+        <p class="mt-1 text-[14px] leading-relaxed text-neutral-2">
+          Stored in redb — files modified, decisions made, outcomes achieved. BM25 inverted index.
+        </p>
+      </div>
+
+      <div class="glass-panel border-l-2 !border-l-title">
+        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-title">Session</p>
+        <h3 class="mt-2 text-[18px] tracking-[-0.01em]">Conversation History</h3>
+        <p class="mt-1 text-[14px] leading-relaxed text-neutral-2">
+          JSONL storage with LLM compaction at 40+ messages. Session switching via /new, /s, /back.
+        </p>
+      </div>
+    </div>
+  </div>
+</SvgSection>

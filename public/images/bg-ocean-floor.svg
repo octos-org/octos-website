@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1000" preserveAspectRatio="xMidYMid slice">
+  <rect width="1920" height="1000" fill="#0a1e3d"/>
+  <linearGradient id="floor-bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0d2847"/>
+    <stop offset="100%" stop-color="#061030"/>
+  </linearGradient>
+  <rect width="1920" height="1000" fill="url(#floor-bg)" opacity="0.5"/>
+  <!-- Cute octopus silhouette left -->
+  <g opacity="0.15" transform="translate(80, 280)">
+    <ellipse cx="120" cy="100" rx="90" ry="100" fill="#8dd4e0"/>
+    <!-- Tentacles -->
+    <path d="M45 190 Q15 275 -5 355 Q-15 395 15 405" stroke="#8dd4e0" fill="none" stroke-width="14" stroke-linecap="round"/>
+    <path d="M75 210 Q55 300 50 380 Q48 415 72 420" stroke="#8dd4e0" fill="none" stroke-width="13" stroke-linecap="round"/>
+    <path d="M120 220 Q125 310 135 390 Q138 425 118 430" stroke="#8dd4e0" fill="none" stroke-width="13" stroke-linecap="round"/>
+    <path d="M165 210 Q185 300 190 380 Q192 415 168 420" stroke="#8dd4e0" fill="none" stroke-width="13" stroke-linecap="round"/>
+    <path d="M195 190 Q225 275 245 355 Q255 395 225 405" stroke="#8dd4e0" fill="none" stroke-width="14" stroke-linecap="round"/>
+    <!-- Eyes -->
+    <circle cx="90" cy="110" r="10" fill="#0a1e3d"/>
+    <circle cx="150" cy="110" r="10" fill="#0a1e3d"/>
+    <!-- Smile -->
+    <path d="M100 140 Q120 155 140 140" fill="none" stroke="#0a1e3d" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <!-- Clownfish silhouette right -->
+  <g opacity="0.15" transform="translate(1580, 380)">
+    <ellipse cx="0" cy="0" rx="50" ry="28" fill="#FF6B35"/>
+    <path d="M-15 -22 Q-12 0 -15 22" fill="none" stroke="#fff" stroke-width="5" opacity="0.5"/>
+    <path d="M8 -18 Q10 0 8 18" fill="none" stroke="#fff" stroke-width="4" opacity="0.4"/>
+    <path d="M42 0 Q58 -18 65 -25 Q60 0 65 25 Q58 18 42 0Z" fill="#FF6B35"/>
+    <circle cx="-28" cy="-4" r="6" fill="#0a1e3d"/>
+  </g>
+  <!-- Coral bottom -->
+  <g opacity="0.3">
+    <path d="M400 1000 Q410 920 390 860 Q378 810 400 760" stroke="#e8507a" fill="none" stroke-width="5" stroke-linecap="round"/>
+    <path d="M440 1000 Q430 930 450 870 Q460 820 440 770" stroke="#f0883a" fill="none" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="400" cy="760" r="7" fill="#f06090" opacity="0.5"/>
+    <circle cx="440" cy="770" r="6" fill="#f8a050" opacity="0.45"/>
+    <path d="M1500 1000 Q1510 930 1490 870 Q1478 820 1500 770" stroke="#a855c8" fill="none" stroke-width="5" stroke-linecap="round"/>
+    <path d="M1540 1000 Q1530 940 1550 880" stroke="#48b888" fill="none" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="1500" cy="770" r="7" fill="#b868d8" opacity="0.5"/>
+  </g>
+  <!-- Water lines -->
+  <g opacity="0.12" stroke="#3a7aaa" fill="none" stroke-width="1.5">
+    <path d="M-50 150 Q300 120 600 160 T1200 130 T1800 170 T2000 150"/>
+    <path d="M-50 400 Q350 370 700 410 T1300 380 T1900 420 T2100 400"/>
+    <path d="M-50 650 Q300 620 600 660 T1200 630 T1800 670 T2000 650"/>
+    <path d="M-50 880 Q350 850 700 890 T1300 860 T1900 900 T2100 880"/>
+  </g>
+  <!-- Bubbles -->
+  <g opacity="0.25">
+    <circle cx="450" cy="250" r="5" fill="none" stroke="#88ccee" stroke-width="1.5"/>
+    <circle cx="470" cy="210" r="3" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="1450" cy="300" r="6" fill="none" stroke="#88ccee" stroke-width="1.5"/>
+    <circle cx="960" cy="500" r="4" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="750" cy="700" r="5" fill="none" stroke="#88ccee" stroke-width="1"/>
+  </g>
+  <!-- Light rays -->
+  <g opacity="0.04">
+    <polygon points="500,0 570,0 680,1000 550,1000" fill="#4499cc"/>
+    <polygon points="1100,0 1170,0 1280,1000 1150,1000" fill="#4499cc"/>
+  </g>
+</svg>

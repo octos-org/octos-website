@@ -1,0 +1,21 @@
+---
+interface Props {
+  items: { name: string }[];
+  columns?: number;
+}
+
+const { items, columns = 7 } = Astro.props;
+const gridClass = columns === 7
+  ? 'grid-cols-4 md:grid-cols-7'
+  : `grid-cols-3 md:grid-cols-${columns}`;
+---
+
+<div class:list={['grid gap-4', gridClass]}>
+  {items.map((item) => (
+    <div class="group flex flex-col items-center gap-2 rounded-sm border border-surface-3 bg-surface-1 px-3 py-4 transition-colors duration-300 hover:border-neutral-1">
+      <span class="font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2 transition-colors duration-300 group-hover:text-accent">
+        {item.name}
+      </span>
+    </div>
+  ))}
+</div>

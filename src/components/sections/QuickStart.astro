@@ -1,0 +1,42 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+import CodeBlock from 'components/ui/CodeBlock.astro';
+
+const code = `<span class="text-neutral-2"># Install</span>
+cargo install --path crates/octos-cli
+
+<span class="text-neutral-2"># Initialize configuration</span>
+octos init
+
+<span class="text-neutral-2"># Set your API key</span>
+<span class="text-neutral-1">export</span> ANTHROPIC_API_KEY=your-key
+
+<span class="text-neutral-2"># Start chatting in the terminal</span>
+octos chat
+
+<span class="text-neutral-2"># Or launch the full gateway</span>
+octos gateway
+
+<span class="text-neutral-2"># Or start the REST API server</span>
+octos serve`;
+---
+
+<Section id="quickstart" background="secondary" padY="lg">
+  <Container narrow>
+    <div class="mb-12 lg:mb-16" data-animate>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Get Started</p>
+      <h2 class="mt-3 text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px] lg:text-[48px]">
+        Deploy in minutes
+      </h2>
+      <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-neutral-2">
+        A single binary. No Python, no Docker, no runtime dependencies.
+        Install, configure, and run.
+      </p>
+    </div>
+
+    <div data-animate>
+      <CodeBlock code={code} />
+    </div>
+  </Container>
+</Section>

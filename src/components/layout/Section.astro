@@ -1,0 +1,17 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  background?: 'primary' | 'secondary';
+  padY?: 'sm' | 'md' | 'lg';
+}
+
+const { id, class: className, background = 'primary', padY = 'lg' } = Astro.props;
+
+const bgClass = background === 'secondary' ? 'bg-bg-secondary' : 'bg-bg';
+const pyClass = { sm: 'py-12 lg:py-16', md: 'py-16 lg:py-24', lg: 'py-20 lg:py-32' }[padY];
+---
+
+<section id={id} class:list={['px-4 lg:px-9', bgClass, pyClass, className]}>
+  <slot />
+</section>

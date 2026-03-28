@@ -1,0 +1,56 @@
+---
+import Button from 'components/ui/Button.astro';
+import Badge from 'components/ui/Badge.astro';
+---
+
+<section class="hero-scene relative flex min-h-screen items-end overflow-hidden pb-12 pt-20 lg:pb-16">
+  <!-- Background illustration -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/ocean-hero.png"
+      alt=""
+      class="h-full w-full object-cover"
+      loading="eager"
+    />
+    <!-- Gradient overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+  </div>
+
+  <!-- Text directly on background -->
+  <div class="relative z-10 w-full px-4 lg:px-9">
+    <div class="mx-auto max-w-7xl">
+      <Badge text="Open Source" variant="accent" />
+
+      <h1 class="mt-4 text-[32px] leading-[1.05] tracking-[-0.04em] text-white md:text-[48px] 2xl:text-[60px]">
+        Open Cognitive Tasks<br />Orchestration System
+      </h1>
+
+      <p class="mt-5 max-w-xl text-[15px] leading-relaxed text-white/70 lg:text-[16px]">
+        Like an octopus — 9 brains, every arm thinks independently, but they share one brain.
+        Turn any LLM into a multi-channel, multi-user intelligent assistant
+        deployed as a single Rust binary with zero dependencies.
+      </p>
+
+      <!-- Stats bar -->
+      <div class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-[0.08em] text-white/50 md:gap-x-4">
+        <span>31MB binary</span>
+        <span class="text-white/20">|</span>
+        <span>91 endpoints</span>
+        <span class="text-white/20">|</span>
+        <span>14 providers</span>
+        <span class="text-white/20">|</span>
+        <span>14 channels</span>
+        <span class="text-white/20">|</span>
+        <span>zero deps</span>
+      </div>
+
+      <!-- CTAs -->
+      <div class="mt-6 flex flex-wrap gap-3">
+        <Button href="#quickstart">Get Started</Button>
+        <Button href="https://github.com/nicholasgasior/octos" variant="outline" external>
+          GitHub
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>

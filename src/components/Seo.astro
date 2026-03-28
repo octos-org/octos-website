@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+const { title, description, ogImage, canonicalUrl } = Astro.props;
+const siteUrl = Astro.site?.toString() ?? 'https://octos.dev';
+const canonical = canonicalUrl ?? Astro.url.href;
+const og = ogImage ?? `${siteUrl}og.png`;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={og} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={og} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preload" href="/fonts/GeistVF.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/GeistMonoVF.woff2" as="font" type="font/woff2" crossorigin />

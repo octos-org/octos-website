@@ -1,0 +1,23 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+import FAQItem from './FAQItem.astro';
+import faq from 'data/faq.json';
+---
+
+<Section id="faq" padY="lg">
+  <Container narrow>
+    <div class="mb-12 lg:mb-16" data-animate>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Questions</p>
+      <h2 class="mt-3 text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px] lg:text-[48px]">
+        FAQ
+      </h2>
+    </div>
+
+    <div data-animate>
+      {faq.map((item) => (
+        <FAQItem question={item.question} answer={item.answer} />
+      ))}
+    </div>
+  </Container>
+</Section>

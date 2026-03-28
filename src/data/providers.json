@@ -1,0 +1,16 @@
+[
+  { "name": "Anthropic" },
+  { "name": "OpenAI" },
+  { "name": "Gemini" },
+  { "name": "DeepSeek" },
+  { "name": "OpenRouter" },
+  { "name": "MiniMax" },
+  { "name": "Zhipu AI" },
+  { "name": "Qwen" },
+  { "name": "Mistral" },
+  { "name": "Groq" },
+  { "name": "Together" },
+  { "name": "Fireworks" },
+  { "name": "NVIDIA" },
+  { "name": "Ollama" }
+]

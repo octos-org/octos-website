@@ -1,0 +1,7 @@
+[
+  { "value": "31MB", "label": "binary size" },
+  { "value": "91", "label": "REST endpoints" },
+  { "value": "14", "label": "LLM providers" },
+  { "value": "14", "label": "channels" },
+  { "value": "0", "label": "dependencies" }
+]

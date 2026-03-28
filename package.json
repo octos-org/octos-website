@@ -1,0 +1,20 @@
+{
+  "name": "octos-website",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.2.1",
+    "@tailwindcss/vite": "^4.0.0",
+    "@xyflow/react": "^12.10.2",
+    "astro": "^5.12.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.0.0"
+  }
+}

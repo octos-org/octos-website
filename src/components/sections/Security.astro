@@ -1,0 +1,55 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+
+const layers = [
+  {
+    title: 'Process Isolation',
+    description: 'Each profile runs as a separate OS process with its own memory space, sessions, and data directory. No cross-tenant data leakage.',
+  },
+  {
+    title: 'Sandbox Execution',
+    description: 'bwrap (Linux), sandbox-exec (macOS), and Docker support. SafePolicy blocks destructive commands — rm -rf, dd, mkfs, fork bombs.',
+  },
+  {
+    title: 'Prompt Injection Defense',
+    description: '67 injection tests covering prompt_guard and sanitize. Constant-time token comparison prevents timing attacks.',
+  },
+  {
+    title: 'Zero Unsafe Code',
+    description: 'deny(unsafe_code) enforced workspace-wide. Pure Rust with rustls for TLS — no OpenSSL, no C dependencies.',
+  },
+  {
+    title: 'Credential Security',
+    description: 'macOS Keychain integration for API key storage. No plaintext secrets in config files.',
+  },
+  {
+    title: 'Workspace Isolation',
+    description: 'Each agent operates in a scoped workspace. File access is restricted to the profile\'s data directory.',
+  },
+];
+---
+
+<Section id="security" padY="lg">
+  <Container>
+    <div class="mb-12 lg:mb-16" data-animate>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Security</p>
+      <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
+        Defense in depth
+      </h2>
+      <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-neutral-2">
+        Security isn't a feature — it's the architecture. Every layer enforces isolation,
+        from process boundaries to prompt sanitization.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-px overflow-hidden border border-surface-3 md:grid-cols-2 lg:grid-cols-3" data-animate-stagger>
+      {layers.map((layer) => (
+        <div class="bg-surface-1 p-6 lg:p-8">
+          <h3 class="text-[18px] tracking-[-0.01em]">{layer.title}</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-neutral-2">{layer.description}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Section>

@@ -1,0 +1,53 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+
+const benchmarks = [
+  { metric: 'Startup time', octos: '<100ms', others: '500ms–2s', note: 'Cold start to ready' },
+  { metric: 'Memory per gateway', octos: '20MB', others: '200–300MB', note: 'Baseline resident' },
+  { metric: 'Memory per session', octos: 'Few KB', others: '10–50MB', note: 'Tokio green threads' },
+  { metric: 'Binary size', octos: '31MB', others: '200MB+', note: 'Static vs node_modules' },
+  { metric: 'Tenant density', octos: '200+', others: '~20', note: 'On 16GB Mac Mini' },
+  { metric: 'GC pauses', octos: 'None', others: 'V8 unpredictable', note: 'Deterministic latency' },
+  { metric: 'Parallelism', octos: 'True (tokio)', others: 'Event loop', note: 'Multi-core utilization' },
+  { metric: 'Search workers', octos: '8 concurrent', others: 'Sequential', note: 'Deep research tasks' },
+];
+---
+
+<Section id="performance" padY="lg">
+  <Container>
+    <div class="mb-12 lg:mb-16" data-animate>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Performance</p>
+      <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
+        10x tenant density
+      </h2>
+      <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-neutral-2">
+        Rust gives Octos deterministic performance with zero garbage collection.
+        True parallelism via tokio, not a single-threaded event loop.
+      </p>
+    </div>
+
+    <div class="overflow-x-auto" data-animate>
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b border-surface-3">
+            <th class="px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">Metric</th>
+            <th class="px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-accent">Octos</th>
+            <th class="px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">Others</th>
+            <th class="hidden px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-1 md:table-cell">Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          {benchmarks.map((row) => (
+            <tr class="border-b border-surface-3 transition-colors duration-200 hover:bg-surface-1">
+              <td class="px-4 py-3 text-[14px] text-text">{row.metric}</td>
+              <td class="px-4 py-3 font-mono text-[14px] text-text-bright">{row.octos}</td>
+              <td class="px-4 py-3 font-mono text-[14px] text-neutral-2">{row.others}</td>
+              <td class="hidden px-4 py-3 text-[13px] text-neutral-1 md:table-cell">{row.note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </Container>
+</Section>

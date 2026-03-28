@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1920" height="900" fill="#081e3f"/>
+  <!-- Water currents -->
+  <g opacity="0.15" stroke="#2a6aad" fill="none" stroke-width="1.5">
+    <path d="M-50 120 Q200 90 400 130 T800 100 T1200 140 T1600 110 T2000 130"/>
+    <path d="M-50 350 Q250 320 500 360 T900 330 T1300 370 T1700 340 T2000 360"/>
+    <path d="M-50 600 Q200 570 450 610 T850 580 T1250 620 T1650 590 T2000 610"/>
+    <path d="M-50 800 Q250 770 500 810 T900 780 T1300 820 T1700 790 T2000 810"/>
+  </g>
+  <!-- Left corals (pink + orange) -->
+  <g opacity="0.4">
+    <path d="M50 900 Q60 790 40 710 Q25 650 50 590 Q70 540 48 480" stroke="#e8507a" fill="none" stroke-width="7" stroke-linecap="round"/>
+    <path d="M100 900 Q90 810 110 740 Q125 680 105 620 Q90 570 115 520" stroke="#f0883a" fill="none" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="48" cy="480" r="10" fill="#f06090" opacity="0.6"/>
+    <circle cx="115" cy="520" r="8" fill="#f8a050" opacity="0.5"/>
+    <!-- Anemone base -->
+    <ellipse cx="160" cy="870" rx="50" ry="20" fill="#e85878" opacity="0.35"/>
+    <path d="M125 860 Q122 835 130 820" stroke="#f07090" fill="none" stroke-width="2.5" opacity="0.4"/>
+    <path d="M145 855 Q145 828 150 812" stroke="#f07090" fill="none" stroke-width="2.5" opacity="0.4"/>
+    <path d="M165 855 Q168 825 163 810" stroke="#f07090" fill="none" stroke-width="2.5" opacity="0.4"/>
+    <path d="M185 860 Q190 835 183 820" stroke="#f07090" fill="none" stroke-width="2.5" opacity="0.4"/>
+  </g>
+  <!-- Right corals (purple + green) -->
+  <g opacity="0.4">
+    <path d="M1830 900 Q1840 800 1820 720 Q1805 660 1830 600 Q1848 550 1825 490" stroke="#a855c8" fill="none" stroke-width="7" stroke-linecap="round"/>
+    <path d="M1870 900 Q1860 820 1880 750 Q1892 690 1870 630" stroke="#48b888" fill="none" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="1825" cy="490" r="9" fill="#b868d8" opacity="0.55"/>
+    <circle cx="1870" cy="630" r="7" fill="#58c898" opacity="0.5"/>
+  </g>
+  <!-- Clownfish accent (small) -->
+  <g transform="translate(1650, 350) scale(0.6)" opacity="0.5">
+    <ellipse cx="0" cy="0" rx="40" ry="22" fill="#FF6B35"/>
+    <path d="M-12 -18 Q-10 0 -12 18" fill="none" stroke="#fff" stroke-width="4.5" opacity="0.8"/>
+    <path d="M8 -15 Q10 0 8 15" fill="none" stroke="#fff" stroke-width="4" opacity="0.75"/>
+    <path d="M35 0 Q48 -14 55 -20 Q50 0 55 20 Q48 14 35 0Z" fill="#FF6B35"/>
+    <circle cx="-22" cy="-3" r="5" fill="#fff"/>
+    <circle cx="-22" cy="-3" r="2.5" fill="#1a1a2e"/>
+  </g>
+  <!-- Bubbles -->
+  <g opacity="0.3">
+    <circle cx="350" cy="300" r="5" fill="none" stroke="#88ccee" stroke-width="1.5"/>
+    <circle cx="370" cy="260" r="3" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="1500" cy="450" r="6" fill="none" stroke="#88ccee" stroke-width="1.5"/>
+    <circle cx="1520" cy="410" r="4" fill="none" stroke="#88ccee" stroke-width="1"/>
+    <circle cx="960" cy="200" r="4" fill="none" stroke="#88ccee" stroke-width="1"/>
+  </g>
+  <!-- Light rays -->
+  <g opacity="0.04">
+    <polygon points="300,0 380,0 500,900 350,900" fill="#4499cc"/>
+    <polygon points="900,0 960,0 1050,900 930,900" fill="#4499cc"/>
+    <polygon points="1400,0 1480,0 1580,900 1420,900" fill="#4499cc"/>
+  </g>
+</svg>

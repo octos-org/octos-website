@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 800" preserveAspectRatio="xMidYMid slice">
+  <rect width="1920" height="800" fill="#061533"/>
+  <linearGradient id="deep-bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0a2040"/>
+    <stop offset="100%" stop-color="#040e22"/>
+  </linearGradient>
+  <rect width="1920" height="800" fill="url(#deep-bg)" opacity="0.5"/>
+  <!-- Bioluminescent particles (animated) -->
+  <circle cx="200" cy="150" r="4" fill="#66ddff" opacity="0.5"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="500" cy="350" r="3" fill="#88eeff" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" repeatCount="indefinite"/></circle>
+  <circle cx="800" cy="200" r="3.5" fill="#66ddff" opacity="0.5"><animate attributeName="opacity" values="0.1;0.6;0.1" dur="5s" repeatCount="indefinite"/></circle>
+  <circle cx="1100" cy="500" r="4" fill="#44ccee" opacity="0.6"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="4.5s" repeatCount="indefinite"/></circle>
+  <circle cx="1400" cy="180" r="3" fill="#88eeff" opacity="0.5"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/></circle>
+  <circle cx="1700" cy="400" r="3.5" fill="#66ddff" opacity="0.6"><animate attributeName="opacity" values="0.1;0.7;0.1" dur="6s" repeatCount="indefinite"/></circle>
+  <circle cx="350" cy="550" r="3" fill="#44ccee" opacity="0.5"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="960" cy="620" r="4" fill="#88eeff" opacity="0.4"><animate attributeName="opacity" values="0.1;0.5;0.1" dur="5.5s" repeatCount="indefinite"/></circle>
+  <!-- Deep kelp -->
+  <g opacity="0.25" stroke="#2a6688" fill="none" stroke-width="4" stroke-linecap="round">
+    <path d="M80 800 Q90 700 70 620 Q55 560 80 500 Q95 450 75 390"/>
+    <path d="M115 800 Q105 720 125 650 Q140 590 120 530"/>
+    <path d="M1820 800 Q1830 710 1810 640 Q1795 580 1820 520 Q1835 470 1815 410"/>
+    <path d="M1855 800 Q1845 730 1865 660 Q1875 600 1855 540"/>
+  </g>
+  <!-- Small jellyfish -->
+  <g opacity="0.25" transform="translate(1500, 250)">
+    <ellipse cx="0" cy="0" rx="22" ry="16" fill="#6ab8d8"/>
+    <ellipse cx="0" cy="-3" rx="15" ry="10" fill="#82cce8" opacity="0.5"/>
+    <path d="M-16 12 Q-20 42 -12 60" stroke="#6ab8d8" fill="none" stroke-width="2"/>
+    <path d="M-5 15 Q-8 48 -3 65" stroke="#6ab8d8" fill="none" stroke-width="1.5"/>
+    <path d="M5 15 Q8 48 3 65" stroke="#6ab8d8" fill="none" stroke-width="1.5"/>
+    <path d="M16 12 Q20 42 12 60" stroke="#6ab8d8" fill="none" stroke-width="2"/>
+  </g>
+  <!-- Blue tang accent -->
+  <g transform="translate(300, 400) scale(0.5)" opacity="0.35">
+    <ellipse cx="0" cy="0" rx="40" ry="22" fill="#2878c8"/>
+    <path d="M35 0 Q50 -15 58 -20 Q53 0 58 20 Q50 15 35 0Z" fill="#f8d040"/>
+    <circle cx="-20" cy="-3" r="5" fill="#fff"/>
+    <circle cx="-20" cy="-3" r="2.5" fill="#1a1a2e"/>
+  </g>
+  <!-- Currents -->
+  <g opacity="0.1" stroke="#3a7aaa" fill="none" stroke-width="1.5">
+    <path d="M-50 150 Q300 120 600 160 T1200 130 T1800 170 T2000 150"/>
+    <path d="M-50 400 Q300 370 600 410 T1200 380 T1800 420 T2000 400"/>
+    <path d="M-50 650 Q300 620 600 660 T1200 630 T1800 670 T2000 650"/>
+  </g>
+</svg>

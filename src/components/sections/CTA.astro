@@ -1,0 +1,26 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+import Button from 'components/ui/Button.astro';
+---
+
+<Section background="secondary" padY="lg">
+  <Container narrow class="text-center">
+    <div data-animate>
+      <h2 class="text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px] lg:text-[48px]">
+        Deploy your first agent<br class="hidden md:block" /> in 5 minutes
+      </h2>
+      <p class="mx-auto mt-4 max-w-md text-[16px] leading-relaxed text-neutral-2">
+        A single binary. 14 providers. 14 channels. Zero dependencies.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <Button href="https://octos-org.github.io/octos/" external>
+          Read the Docs
+        </Button>
+        <Button href="https://github.com/nicholasgasior/octos" variant="outline" external>
+          GitHub
+        </Button>
+      </div>
+    </div>
+  </Container>
+</Section>

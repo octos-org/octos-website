@@ -1,0 +1,17 @@
+---
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+---
+
+<div class:list={['flex flex-col items-center gap-2', className]}>
+  <div class="flex size-12 items-center justify-center rounded-sm border border-surface-3 bg-surface-1 p-2 transition-colors duration-300 hover:border-neutral-1">
+    <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-neutral-2 transition-colors duration-300 hover:text-text">
+      {name.slice(0, 3)}
+    </span>
+  </div>
+  <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-neutral-1">{name}</span>
+</div>

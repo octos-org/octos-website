@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  stat?: string | null;
+  statLabel?: string | null;
+}
+
+const { title, description, stat, statLabel } = Astro.props;
+---
+
+<div class="group border border-surface-3 bg-surface-1 p-6 transition-colors duration-300 hover:border-neutral-1 lg:p-8">
+  {stat && (
+    <div class="mb-4">
+      <span class="font-mono text-[28px] leading-none tracking-[-0.02em] text-text-bright lg:text-[32px]">
+        {stat}
+      </span>
+      {statLabel && (
+        <span class="ml-2 font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">
+          {statLabel}
+        </span>
+      )}
+    </div>
+  )}
+  <h3 class="text-[18px] tracking-[-0.01em] text-text lg:text-[20px]">{title}</h3>
+  <p class="mt-2 text-[14px] leading-relaxed text-neutral-2">{description}</p>
+</div>
