@@ -14,7 +14,7 @@
     ],
     "externalLinks": [
       { "text": "文档", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
     "langAlt": { "text": "EN", "href": "/" }
   },
@@ -34,7 +34,7 @@
     "resourcesHeading": "资源",
     "external": [
       { "text": "文档", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
     "license": "MIT 开源协议。",
     "langEn": { "text": "EN", "href": "/" },
@@ -53,7 +53,7 @@
     ],
     "buttons": [
       { "label": "开始使用", "href": "#quickstart" },
-      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
     ]
   },
   "stats": [
@@ -358,7 +358,7 @@
     "description": "下载。设置 API key。在任何渠道与你的 AI 对话。就这样。",
     "buttons": [
       { "label": "阅读文档", "href": "https://octos-org.github.io/octos/" },
-      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
     ]
   }
 }

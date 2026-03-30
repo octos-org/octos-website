@@ -14,7 +14,7 @@
     ],
     "externalLinks": [
       { "text": "Docs", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
     "langAlt": { "text": "中文", "href": "/zh-cn/" }
   },
@@ -34,7 +34,7 @@
     "resourcesHeading": "Resources",
     "external": [
       { "text": "Documentation", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
     "license": "Open source under MIT license.",
     "langEn": { "text": "EN", "href": "/" },
@@ -53,7 +53,7 @@
     ],
     "buttons": [
       { "label": "Get Started", "href": "#quickstart" },
-      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
     ]
   },
   "stats": [
@@ -358,7 +358,7 @@
     "description": "Download. Set your API key. Talk to your AI on any channel. That's it.",
     "buttons": [
       { "label": "Read the Docs", "href": "https://octos-org.github.io/octos/" },
-      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
     ]
   }
 }
