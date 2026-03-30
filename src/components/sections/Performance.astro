@@ -34,7 +34,7 @@ const { t } = Astro.props;
             <th class="px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">{t.tableHeaders.metric}</th>
             <th class="px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-accent">{t.tableHeaders.octos}</th>
             <th class="px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-accent">{t.tableHeaders.others}</th>
-            <th class="hidden px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-yellow-400 md:table-cell">{t.tableHeaders.note}</th>
+            <th class="hidden px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-highlight md:table-cell">{t.tableHeaders.note}</th>
           </tr>
         </thead>
         <tbody>
@@ -43,7 +43,7 @@ const { t } = Astro.props;
               <td class="px-4 py-3 text-[14px] text-text">{row.metric}</td>
               <td class="px-4 py-3 font-mono text-[14px] text-text-bright">{row.octos}</td>
               <td class="px-4 py-3 font-mono text-[14px] text-accent">{row.others}</td>
-              <td class="hidden px-4 py-3 text-[13px] text-yellow-400 md:table-cell">{row.note}</td>
+              <td class="hidden px-4 py-3 text-[13px] text-highlight md:table-cell">{row.note}</td>
             </tr>
           ))}
         </tbody>

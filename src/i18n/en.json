@@ -137,7 +137,7 @@
   },
   "deepResearch": {
     "label": "Deep Research",
-    "heading": "Think deeper,<br />search wider",
+    "heading": "Think deeper, search wider",
     "description": "One agent designs the research plan, others fan out to search in parallel. Cheap models plan, powerful ones synthesize. Every step is a different model.",
     "features": [
       { "label": "8 workers at once", "description": "Search workers fan out in parallel, then converge on a single answer." },
