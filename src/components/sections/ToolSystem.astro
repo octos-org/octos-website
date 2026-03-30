@@ -17,43 +17,41 @@ const { t } = Astro.props;
 
 <Section background="secondary" padY="lg">
   <Container>
-    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-      <div data-animate>
-        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
-        <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
-          {t.heading}
-        </h2>
-        <p class="mt-4 text-[16px] leading-relaxed text-neutral-2">
-          {t.description}
-        </p>
+    <!-- Top row: heading + description + stats -->
+    <div data-animate class="mb-12">
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
+      <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
+        {t.heading}
+      </h2>
+      <p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-neutral-2">
+        {t.description}
+      </p>
 
-        <div class="mt-8 space-y-4">
-          {t.tiers.map((tier) => (
-            <div class="flex items-center gap-4">
-              <span class="w-20 shrink-0 text-right font-mono text-[24px] text-text-bright">{tier.stat}</span>
-              <div>
-                <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{tier.label}</p>
-                <p class="text-[14px] text-neutral-2">{tier.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div data-animate>
-        <div class="space-y-6">
-          {t.toolGroups.map((group) => (
+      <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
+        {t.tiers.map((tier) => (
+          <div class="flex items-center gap-4">
+            <span class:list={["shrink-0 font-mono text-text-bright", tier.stat === '∞' ? 'text-[52px]' : 'text-[36px]']}>{tier.stat}</span>
             <div>
-              <p class="mb-3 font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{group.label}</p>
-              <div class="flex flex-wrap gap-2">
-                {group.tools.map((tool) => (
-                  <span class="rounded-sm border border-surface-3 bg-surface-1 px-2 py-1 font-mono text-[11px] text-neutral-2">{tool}</span>
-                ))}
-              </div>
+              <p class="font-mono text-[16px] uppercase tracking-[0.08em] text-accent">{tier.label}</p>
+              <p class="text-[14px] text-neutral-2">{tier.description}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+    </div>
+
+    <!-- Bottom row: three boxes -->
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-animate>
+      {t.toolGroups.map((group) => (
+        <div class="glass-panel">
+          <p class="mb-3 font-mono text-[16px] uppercase tracking-[0.08em] text-text-bright">{group.label}</p>
+          <div class="flex flex-wrap gap-2">
+            {group.tools.map((tool) => (
+              <span class="rounded-sm border border-surface-3 bg-surface-1 px-2 py-1 font-mono text-[13px] text-yellow-400">{tool}</span>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   </Container>
 </Section>

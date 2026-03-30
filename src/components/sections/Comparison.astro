@@ -20,7 +20,7 @@ const { t } = Astro.props;
     <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
       {t.heading}
     </h2>
-    <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-neutral-2">
+    <p class="mt-4 text-[20px] leading-relaxed text-text-bright">
       {t.description}
     </p>
   </div>
@@ -29,19 +29,17 @@ const { t } = Astro.props;
     <table class="w-full border-collapse text-[13px]">
       <thead>
         <tr class="border-b border-white/10">
-          <th class="px-3 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-1">{t.tableHeaders.dim}</th>
+          <th class="px-3 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-[#0c7fd]">{t.tableHeaders.dim}</th>
           <th class="px-3 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-accent">{t.tableHeaders.octos}</th>
-          <th class="px-3 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">{t.tableHeaders.langchain}</th>
-          <th class="px-3 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">{t.tableHeaders.openclaw}</th>
+          <th class="px-3 py-3 text-left font-mono text-[11px] uppercase tracking-[0.08em] text-accent">{t.tableHeaders.openclaw}</th>
         </tr>
       </thead>
       <tbody>
         {t.rows.map((row) => (
           <tr class="border-b border-white/5 transition-colors duration-200 hover:bg-white/5">
-            <td class="px-3 py-2.5 font-mono text-[12px] text-neutral-2">{row.dim}</td>
+            <td class="px-3 py-2.5 font-mono text-[12px] text-[#0c7fd]">{row.dim}</td>
             <td class="px-3 py-2.5 text-text-bright">{row.octos}</td>
-            <td class="px-3 py-2.5 text-neutral-2">{row.langchain}</td>
-            <td class="px-3 py-2.5 text-neutral-2">{row.openclaw}</td>
+            <td class="px-3 py-2.5 text-accent">{row.openclaw}</td>
           </tr>
         ))}
       </tbody>

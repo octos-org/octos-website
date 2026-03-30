@@ -200,7 +200,7 @@
     ],
     "art": {
       "label": "AI Art Pipeline",
-      "heading": "17 visual styles",
+      "heading": "Many visual styles",
       "description": "Cards, comics, infographics, posters, diagrams, timelines, and more. Each style is a composable template with AI-driven content placement.",
       "styles": ["mofa-cards", "mofa-comic", "mofa-infographic", "mofa-slides", "mofa-poster", "mofa-diagram", "mofa-timeline", "mofa-mindmap", "mofa-chart", "mofa-report", "mofa-resume", "mofa-letter", "mofa-invoice", "mofa-certificate", "mofa-badge", "mofa-banner", "mofa-cover"]
     }
@@ -220,7 +220,7 @@
   },
   "performance": {
     "label": "Performance",
-    "heading": "Runs on a Mac Mini",
+    "heading": "Run on Your Spared Computer",
     "description": "200+ AI agents serving thousands of users — on hardware you already own. No Kubernetes, no auto-scaling, no 3am pages. 20MB per agent, cold start under 100ms.",
     "tableHeaders": {
       "metric": "Metric",
@@ -246,7 +246,7 @@
   },
   "providers": {
     "label": "LLM Layer",
-    "heading": "15 AI providers",
+    "heading": "Use Your Favorite Tokens",
     "description": "Pick the right model for each task. Chain providers in a single pipeline — if one goes down, the next one takes over automatically."
   },
   "comparison": {

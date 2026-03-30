@@ -5,12 +5,8 @@
   { "name": "WhatsApp" },
   { "name": "WeChat" },
   { "name": "WeCom" },
-  { "name": "WeCom Bot" },
   { "name": "Feishu" },
-  { "name": "Email" },
   { "name": "Matrix" },
-  { "name": "QQ Bot" },
-  { "name": "Twilio" },
-  { "name": "REST API" },
-  { "name": "CLI" }
+  { "name": "QQ" },
+  { "name": "Twilio" }
 ]

@@ -200,7 +200,7 @@
     ],
     "art": {
       "label": "AI 艺术流水线",
-      "heading": "17 种视觉风格",
+      "heading": "丰富的视觉风格",
       "description": "卡片、漫画、信息图、海报、图表、时间线等。每种风格都是可组合的模板，由 AI 驱动内容排版。",
       "styles": ["mofa-cards", "mofa-comic", "mofa-infographic", "mofa-slides", "mofa-poster", "mofa-diagram", "mofa-timeline", "mofa-mindmap", "mofa-chart", "mofa-report", "mofa-resume", "mofa-letter", "mofa-invoice", "mofa-certificate", "mofa-badge", "mofa-banner", "mofa-cover"]
     }
@@ -220,7 +220,7 @@
   },
   "performance": {
     "label": "性能",
-    "heading": "Mac Mini 就能跑",
+    "heading": "用闲置电脑就能跑",
     "description": "200+ 个 AI 智能体服务上千用户 — 用你已有的硬件就行。不需要 Kubernetes、不需要弹性伸缩、不用半夜被叫醒。每个智能体 20MB，冷启动不到 100ms。",
     "tableHeaders": {
       "metric": "指标",
@@ -246,7 +246,7 @@
   },
   "providers": {
     "label": "LLM 层",
-    "heading": "15 个 AI 供应商",
+    "heading": "用你喜欢的 Token",
     "description": "为每个任务选择最合适的模型。在一条流水线中串联多个供应商 — 一个挂了，下一个自动接管。"
   },
   "comparison": {
