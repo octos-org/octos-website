@@ -35,7 +35,8 @@
   --color-link: var(--color-text);
   --color-code: var(--color-accent);
   --color-highlight: #FACC15;
-  --color-info: #0C7FDB;
+  --color-info: #22C55E;
+  --color-purple: #EF6F2E;
 
   --font-sans: 'Geist', 'Open Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', monospace;
@@ -81,7 +82,8 @@ html[data-theme="dark"] {
   --color-link: #FFFFFF;
   --color-code: #FF8C56;
   --color-highlight: #FACC15;
-  --color-info: #0C7FDB;
+  --color-info: #22C55E;
+  --color-purple: #FF5F1F;
 }
 
 /* === Octos Light Mode — Light Ocean === */
@@ -103,7 +105,8 @@ html[data-theme="light"] {
   --color-link: #0078A8;
   --color-code: #E85B26;
   --color-highlight: #A37800;
-  --color-info: #0960A8;
+  --color-info: #166534;
+  --color-purple: #6B21A8;
 }
 
 /* === Base styles === */
