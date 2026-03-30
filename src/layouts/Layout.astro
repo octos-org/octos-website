@@ -8,13 +8,30 @@ interface Props {
   title: string;
   description: string;
   ogImage?: string;
+  lang?: string;
+  navLinks?: { text: string; href: string }[];
+  externalLinks?: { text: string; href: string }[];
+  langAlt?: { text: string; href: string };
+  footerLinks?: { text: string; href: string }[];
+  footerExternal?: { text: string; href: string }[];
+  footerBrand?: string;
 }
 
-const { title, description, ogImage } = Astro.props;
+const {
+  title,
+  description,
+  ogImage,
+  lang = 'en',
+  navLinks,
+  externalLinks,
+  langAlt,
+  footerLinks,
+  footerExternal,
+  footerBrand,
+} = Astro.props;
 ---
-
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <!-- Prevent flash of wrong theme -->
     <script is:inline>
@@ -28,11 +45,11 @@ const { title, description, ogImage } = Astro.props;
     <Seo title={title} description={description} ogImage={ogImage} />
   </head>
   <body class="flex min-h-screen flex-col">
-    <Header />
+    <Header navLinks={navLinks} externalLinks={externalLinks} langAlt={langAlt} />
     <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer links={footerLinks} external={footerExternal} brand={footerBrand} langAlt={langAlt} />
 
     <!-- No scroll-reveal JS needed — content visible by default -->
   </body>

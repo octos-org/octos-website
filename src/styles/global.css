@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
 @import "tailwindcss";
 
 /* === Font loading === */
@@ -34,7 +35,7 @@
   --color-link: var(--color-text);
   --color-code: var(--color-accent);
 
-  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Geist', 'Open Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', monospace;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -66,16 +67,16 @@ html[data-theme="dark"] {
   --color-surface-1: #0D3B7C;
   --color-surface-2: #0A2D5E;
   --color-surface-3: #1A4A8A;
-  --color-neutral-1: #4A7AB5;
-  --color-neutral-2: #7BA3CC;
-  --color-text: #E8F0F8;
+  --color-neutral-1: #C0D0E0;
+  --color-neutral-2: #E0E8F0;
+  --color-text: #FFFFFF;
   --color-text-bright: #FFFFFF;
-  --color-text-dim: #7BA3CC;
+  --color-text-dim: #D0D8E4;
   --color-accent: #FF5F1F;
   --color-accent-dark: #E85B26;
-  --color-heading: #00B4EF;
-  --color-title: #F9D53F;
-  --color-link: #00B4EF;
+  --color-heading: #FFFFFF;
+  --color-title: #FFFFFF;
+  --color-link: #FFFFFF;
   --color-code: #FF8C56;
 }
 
@@ -199,56 +200,64 @@ html[data-theme="light"] {
     pointer-events: none;
   }
 
-  /* === Glass Panel — Perplexity/gosim-vision frosted glass === */
+  /* === Glass Panel — visible frosted glass === */
   .glass-panel {
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0.08) 100%
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 100%
     );
     padding: 1.5rem 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   /* Glass panel — ocean dark mode */
   html[data-theme="dark"] .glass-panel {
     background: linear-gradient(
       135deg,
-      rgba(13, 59, 124, 0.5) 0%,
-      rgba(13, 59, 124, 0.3) 100%
+      rgba(100, 160, 220, 0.12) 0%,
+      rgba(60, 120, 180, 0.06) 100%
     );
-    border: 1px solid rgba(0, 180, 239, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   /* Glass panel — light mode */
   html[data-theme="light"] .glass-panel {
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.8) 0%,
-      rgba(255, 255, 255, 0.6) 100%
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.4) 100%
     );
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
 
-  /* === Glass Box — Hero variant (stronger effect) === */
+  /* === Glass Box — Hero variant === */
   .glass-box {
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.18) 0%,
-      rgba(255, 255, 255, 0.08) 100%
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.05) 100%
     );
     padding: 1.5rem 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    box-shadow:
+      0 8px 40px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -257,20 +266,25 @@ html[data-theme="light"] {
   html[data-theme="dark"] .glass-box {
     background: linear-gradient(
       135deg,
-      rgba(13, 59, 124, 0.55) 0%,
-      rgba(13, 59, 124, 0.35) 100%
+      rgba(100, 160, 220, 0.15) 0%,
+      rgba(60, 120, 180, 0.08) 100%
     );
-    border: 1px solid rgba(0, 180, 239, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+      0 8px 40px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   html[data-theme="light"] .glass-box {
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.8) 0%,
-      rgba(255, 255, 255, 0.6) 100%
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.4) 100%
     );
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow:
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
 
   @media (max-width: 768px) {

@@ -2,7 +2,12 @@
 import Section from 'components/layout/Section.astro';
 import Container from 'components/layout/Container.astro';
 import StatItem from './StatItem.astro';
-import stats from 'data/stats.json';
+
+interface Props {
+  t: { value: string; label: string }[];
+}
+
+const { t: stats } = Astro.props;
 ---
 
 <Section background="secondary" padY="md">

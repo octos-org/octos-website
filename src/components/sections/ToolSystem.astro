@@ -2,89 +2,56 @@
 import Section from 'components/layout/Section.astro';
 import Container from 'components/layout/Container.astro';
 
-const builtIn = [
-  'web_search', 'code_exec', 'file_read', 'file_write', 'shell_exec',
-  'http_request', 'json_parse', 'image_gen', 'pdf_extract', 'calendar',
-  'email_send', 'translate', 'summarize',
-];
+interface Props {
+  t: {
+    label: string;
+    heading: string;
+    description: string;
+    tiers: { stat: string; label: string; description: string }[];
+    toolGroups: { label: string; tools: string[] }[];
+  };
+}
 
-const agentLevel = [
-  'deep_research', 'document_gen', 'data_analysis', 'web_scrape',
-  'code_review', 'test_runner', 'deploy', 'monitor',
-  'knowledge_base', 'workflow_exec', 'notification', 'scheduler',
-];
-
-const appSkills = [
-  'news_briefing', 'weather', 'voice_synth', 'wechat_bridge',
-  'stock_tracker', 'travel_planner', 'recipe_finder', 'fitness_log',
-];
+const { t } = Astro.props;
 ---
 
 <Section background="secondary" padY="lg">
   <Container>
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
       <div data-animate>
-        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Tools</p>
+        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
         <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
-          LRU tool deferral
+          {t.heading}
         </h2>
         <p class="mt-4 text-[16px] leading-relaxed text-neutral-2">
-          Most agent frameworks load every tool into context upfront — bloating token counts
-          and confusing the LLM. Octos keeps 15 active tools for fast reasoning.
-          The rest live in an unlimited catalog, activated on demand, evicted when idle.
+          {t.description}
         </p>
 
         <div class="mt-8 space-y-4">
-          <div class="flex items-center gap-4">
-            <span class="w-20 shrink-0 text-right font-mono text-[24px] text-text-bright">15</span>
-            <div>
-              <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">Active tools</p>
-              <p class="text-[14px] text-neutral-2">Always in context, fast LLM reasoning</p>
+          {t.tiers.map((tier) => (
+            <div class="flex items-center gap-4">
+              <span class="w-20 shrink-0 text-right font-mono text-[24px] text-text-bright">{tier.stat}</span>
+              <div>
+                <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{tier.label}</p>
+                <p class="text-[14px] text-neutral-2">{tier.description}</p>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center gap-4">
-            <span class="w-20 shrink-0 text-right font-mono text-[24px] text-text-bright">34+</span>
-            <div>
-              <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-heading">Deferred tools</p>
-              <p class="text-[14px] text-neutral-2">On-demand activation, auto-eviction when idle</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-4">
-            <span class="w-20 shrink-0 text-right font-mono text-[24px] text-neutral-2">∞</span>
-            <div>
-              <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Catalog size</p>
-              <p class="text-[14px] text-neutral-2">No limit on available tools</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
       <div data-animate>
         <div class="space-y-6">
-          <div>
-            <p class="mb-3 font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">13 built-in tools</p>
-            <div class="flex flex-wrap gap-2">
-              {builtIn.map((t) => (
-                <span class="rounded-sm border border-surface-3 bg-surface-1 px-2 py-1 font-mono text-[11px] text-neutral-2">{t}</span>
-              ))}
+          {t.toolGroups.map((group) => (
+            <div>
+              <p class="mb-3 font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{group.label}</p>
+              <div class="flex flex-wrap gap-2">
+                {group.tools.map((tool) => (
+                  <span class="rounded-sm border border-surface-3 bg-surface-1 px-2 py-1 font-mono text-[11px] text-neutral-2">{tool}</span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div>
-            <p class="mb-3 font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">12 agent-level tools</p>
-            <div class="flex flex-wrap gap-2">
-              {agentLevel.map((t) => (
-                <span class="rounded-sm border border-surface-3 bg-surface-1 px-2 py-1 font-mono text-[11px] text-heading">{t}</span>
-              ))}
-            </div>
-          </div>
-          <div>
-            <p class="mb-3 font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">8 app skills</p>
-            <div class="flex flex-wrap gap-2">
-              {appSkills.map((t) => (
-                <span class="rounded-sm border border-surface-3 bg-surface-1 px-2 py-1 font-mono text-[11px] text-accent">{t}</span>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

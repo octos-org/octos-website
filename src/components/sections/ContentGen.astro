@@ -2,35 +2,39 @@
 import Section from 'components/layout/Section.astro';
 import Container from 'components/layout/Container.astro';
 
-const formats = [
-  { name: 'PPTX', description: 'Slide decks with layouts, images, charts — zip + XML, no LibreOffice' },
-  { name: 'DOCX', description: 'Documents with headings, tables, images — pure Rust generation' },
-  { name: 'XLSX', description: 'Spreadsheets with formulas, styling, charts — zero external deps' },
-];
+interface Props {
+  t: {
+    label: string;
+    heading: string;
+    description: string;
+    formats: { name: string; description: string }[];
+    art: {
+      label: string;
+      heading: string;
+      description: string;
+      styles: string[];
+    };
+  };
+}
 
-const styles = [
-  'mofa-cards', 'mofa-comic', 'mofa-infographic', 'mofa-slides',
-  'mofa-poster', 'mofa-diagram', 'mofa-timeline', 'mofa-mindmap',
-  'mofa-chart', 'mofa-report', 'mofa-resume', 'mofa-letter',
-  'mofa-invoice', 'mofa-certificate', 'mofa-badge', 'mofa-banner', 'mofa-cover',
-];
+const { t } = Astro.props;
 ---
 
 <Section padY="lg">
   <Container>
-    <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-6">
-      <div class="lg:col-span-5" data-animate>
-        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Content</p>
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <!-- 文档、幻灯片、表格 -->
+      <div class="glass-panel flex flex-col">
+        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
         <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
-          Native Office suite
+          {t.heading}
         </h2>
         <p class="mt-4 text-[16px] leading-relaxed text-neutral-2">
-          Generate presentation decks, documents, and spreadsheets from pure Rust.
-          No LibreOffice, no external processes, no network calls. Just zip + XML.
+          {t.description}
         </p>
 
         <div class="mt-8 flex flex-col gap-4">
-          {formats.map((f) => (
+          {t.formats.map((f) => (
             <div class="flex items-start gap-4 border border-surface-3 bg-surface-1 p-4 transition-colors duration-300 hover:border-neutral-1">
               <span class="shrink-0 font-mono text-[14px] text-accent">{f.name}</span>
               <p class="text-[14px] text-neutral-2">{f.description}</p>
@@ -39,16 +43,16 @@ const styles = [
         </div>
       </div>
 
-      <div class="lg:col-span-7" data-animate>
-        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">AI Art Pipeline</p>
-        <h3 class="mt-3 text-[20px] tracking-[-0.01em]">17 generation styles</h3>
+      <!-- AI 艺术流水线 -->
+      <div class="glass-panel flex flex-col">
+        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.art.label}</p>
+        <h3 class="mt-3 text-[20px] tracking-[-0.01em]">{t.art.heading}</h3>
         <p class="mt-2 text-[14px] leading-relaxed text-neutral-2">
-          Cards, comics, infographics, slides, posters, diagrams, and more.
-          Each style is a composable template with AI-driven content placement.
+          {t.art.description}
         </p>
 
         <div class="mt-6 flex flex-wrap gap-2">
-          {styles.map((s) => (
+          {t.art.styles.map((s) => (
             <span class="rounded-sm border border-surface-3 bg-surface-1 px-3 py-1.5 font-mono text-[11px] text-neutral-2 transition-colors duration-300 hover:border-neutral-1 hover:text-accent">
               {s}
             </span>

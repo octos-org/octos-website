@@ -2,20 +2,29 @@
 import Section from 'components/layout/Section.astro';
 import Container from 'components/layout/Container.astro';
 import FeatureCard from './FeatureCard.astro';
-import features from 'data/features.json';
+
+interface Props {
+  t: {
+    label: string;
+    heading: string;
+    items: { title: string; description: string; stat: string | null; statLabel: string | null }[];
+  };
+}
+
+const { t } = Astro.props;
 ---
 
 <Section id="features" padY="lg">
   <Container>
     <div class="mb-12 lg:mb-16" data-animate>
-      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Capabilities</p>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
       <h2 class="mt-3 text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px] lg:text-[48px]">
-        Why Octos
+        {t.heading}
       </h2>
     </div>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" data-animate-stagger>
-      {features.map((feature) => (
+      {t.items.map((feature) => (
         <FeatureCard
           title={feature.title}
           description={feature.description}

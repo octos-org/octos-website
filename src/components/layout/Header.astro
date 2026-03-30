@@ -1,18 +1,26 @@
 ---
 import ThemeToggle from 'components/ui/ThemeToggle.astro';
 
-const navLinks = [
-  { text: 'Features', href: '#features' },
-  { text: 'Architecture', href: '#architecture' },
-  { text: 'Performance', href: '#performance' },
-  { text: 'Comparison', href: '#comparison' },
-  { text: 'Quick Start', href: '#quickstart' },
-];
+interface Props {
+  navLinks?: { text: string; href: string }[];
+  externalLinks?: { text: string; href: string }[];
+  langAlt?: { text: string; href: string };
+}
 
-const externalLinks = [
-  { text: 'Docs', href: 'https://octos-org.github.io/octos/' },
-  { text: 'GitHub', href: 'https://github.com/nicholasgasior/octos' },
-];
+const {
+  navLinks = [
+    { text: 'Features', href: '#features' },
+    { text: 'Architecture', href: '#architecture' },
+    { text: 'Performance', href: '#performance' },
+    { text: 'Comparison', href: '#comparison' },
+    { text: 'Quick Start', href: '#quickstart' },
+  ],
+  externalLinks = [
+    { text: 'Docs', href: 'https://octos-org.github.io/octos/' },
+    { text: 'GitHub', href: 'https://github.com/nicholasgasior/octos' },
+  ],
+  langAlt = { text: '中文', href: '/zh-cn/' },
+} = Astro.props;
 ---
 
 <header class="fixed top-0 z-50 w-full max-w-[1920px] border-b border-surface-3 bg-bg/90 backdrop-blur-sm">
@@ -25,6 +33,7 @@ const externalLinks = [
       </svg>
       Octos
     </a>
+    <a href={langAlt.href} class="font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2 hover:text-accent transition-colors duration-200">{langAlt.text}</a>
 
     <!-- Desktop Nav -->
     <nav class="nav-group hidden items-center gap-8 lg:flex">
@@ -90,6 +99,8 @@ const externalLinks = [
           {link.text}
         </a>
       ))}
+      <span class="h-px w-full bg-surface-3" />
+      <a href={langAlt.href} class="link-animated font-mono text-[14px] uppercase tracking-[0.08em] text-text">{langAlt.text}</a>
     </nav>
   </div>
 </header>

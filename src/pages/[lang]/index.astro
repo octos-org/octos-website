@@ -17,9 +17,15 @@ import UseCases from 'components/sections/UseCases.astro';
 import QuickStart from 'components/sections/QuickStart.astro';
 import FAQ from 'components/sections/FAQ.astro';
 import CTA from 'components/sections/CTA.astro';
-import { getTranslations, getLangAlt } from 'i18n/index';
+import { getTranslations, getLangAlt, type Lang } from 'i18n/index';
 
-const lang = 'en';
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'zh-cn' } },
+  ];
+}
+
+const lang = Astro.params.lang as Lang;
 const t = getTranslations(lang);
 const langAlt = getLangAlt(lang);
 ---
@@ -27,7 +33,7 @@ const langAlt = getLangAlt(lang);
 <Layout
   title={t.site.title}
   description={t.site.description}
-  lang="en"
+  lang="zh-CN"
   navLinks={t.header.navLinks}
   externalLinks={t.header.externalLinks}
   langAlt={langAlt}

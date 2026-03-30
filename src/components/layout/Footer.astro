@@ -1,18 +1,28 @@
 ---
-const links = [
-  { text: 'Features', href: '#features' },
-  { text: 'Architecture', href: '#architecture' },
-  { text: 'Performance', href: '#performance' },
-  { text: 'Comparison', href: '#comparison' },
-  { text: 'Use Cases', href: '#usecases' },
-  { text: 'Quick Start', href: '#quickstart' },
-  { text: 'FAQ', href: '#faq' },
-];
+interface Props {
+  links?: { text: string; href: string }[];
+  external?: { text: string; href: string }[];
+  brand?: string;
+  langAlt?: { text: string; href: string };
+}
 
-const external = [
-  { text: 'Documentation', href: 'https://octos-org.github.io/octos/' },
-  { text: 'GitHub', href: 'https://github.com/nicholasgasior/octos' },
-];
+const {
+  links = [
+    { text: 'Features', href: '#features' },
+    { text: 'Architecture', href: '#architecture' },
+    { text: 'Performance', href: '#performance' },
+    { text: 'Comparison', href: '#comparison' },
+    { text: 'Use Cases', href: '#usecases' },
+    { text: 'Quick Start', href: '#quickstart' },
+    { text: 'FAQ', href: '#faq' },
+  ],
+  external = [
+    { text: 'Documentation', href: 'https://octos-org.github.io/octos/' },
+    { text: 'GitHub', href: 'https://github.com/nicholasgasior/octos' },
+  ],
+  brand = 'Open Cognitive Tasks Orchestration System — a Rust-native, API-first Agentic OS for AI agents.',
+  langAlt = { text: '中文', href: '/zh-cn/' },
+} = Astro.props;
 ---
 
 <footer class="border-t border-surface-3 px-4 py-12 lg:px-9 lg:py-16">
@@ -21,7 +31,7 @@ const external = [
     <div class="lg:col-span-5">
       <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-text-bright">Octos</p>
       <p class="mt-3 max-w-sm text-[14px] leading-relaxed text-neutral-2">
-        Open Cognitive Tasks Orchestration System — a Rust-native, API-first Agentic OS for AI agents.
+        {brand}
       </p>
     </div>
 
@@ -59,9 +69,13 @@ const external = [
   </div>
 
   <!-- Bottom -->
-  <div class="mt-12 border-t border-surface-3 pt-8">
+  <div class="mt-12 border-t border-surface-3 pt-8 flex items-center justify-between">
     <p class="font-mono text-[12px] tracking-[0.08em] text-neutral-1">
       Open source under MIT license.
     </p>
+    <div class="flex gap-4">
+      <a href="/" class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2 hover:text-accent transition-colors duration-200">EN</a>
+      <a href="/zh-cn/" class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2 hover:text-accent transition-colors duration-200">中文</a>
+    </div>
   </div>
 </footer>

@@ -1,0 +1,364 @@
+{
+  "site": {
+    "title": "Octos — The Backend OS for AI Agents",
+    "description": "One brain, many arms. Your AI on every channel — Telegram, Discord, Slack, WeChat, and more. One 31MB binary, 15 LLM providers, zero dependencies."
+  },
+  "header": {
+    "logo": "Octos",
+    "navLinks": [
+      { "text": "Features", "href": "#features" },
+      { "text": "Architecture", "href": "#architecture" },
+      { "text": "Performance", "href": "#performance" },
+      { "text": "Comparison", "href": "#comparison" },
+      { "text": "Quick Start", "href": "#quickstart" }
+    ],
+    "externalLinks": [
+      { "text": "Docs", "href": "https://octos-org.github.io/octos/" },
+      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+    ],
+    "langAlt": { "text": "中文", "href": "/zh-cn/" }
+  },
+  "footer": {
+    "brand": "Octos",
+    "brandDescription": "Open Cognitive Tasks Orchestration System — a Rust-native, API-first Agentic OS for AI agents.",
+    "navHeading": "Navigation",
+    "links": [
+      { "text": "Features", "href": "#features" },
+      { "text": "Architecture", "href": "#architecture" },
+      { "text": "Performance", "href": "#performance" },
+      { "text": "Comparison", "href": "#comparison" },
+      { "text": "Use Cases", "href": "#usecases" },
+      { "text": "Quick Start", "href": "#quickstart" },
+      { "text": "FAQ", "href": "#faq" }
+    ],
+    "resourcesHeading": "Resources",
+    "external": [
+      { "text": "Documentation", "href": "https://octos-org.github.io/octos/" },
+      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+    ],
+    "license": "Open source under MIT license.",
+    "langEn": { "text": "EN", "href": "/" },
+    "langZh": { "text": "中文", "href": "/zh-cn/" }
+  },
+  "hero": {
+    "badge": "Open Source",
+    "heading": "One brain, many arms",
+    "description": "Like an octopus — 9 brains, every arm thinks on its own, yet they move as one. Your AI shouldn't live in one chat window. Give it Telegram, Discord, Slack, WeChat — every channel your people use. One binary, zero dependencies.",
+    "statsBar": [
+      "200+ agents",
+      "12 channels",
+      "15 providers",
+      "31MB binary",
+      "open source"
+    ],
+    "buttons": [
+      { "label": "Get Started", "href": "#quickstart" },
+      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+    ]
+  },
+  "stats": [
+    { "value": "31MB", "label": "binary size" },
+    { "value": "92", "label": "REST endpoints" },
+    { "value": "15", "label": "LLM providers" },
+    { "value": "12", "label": "channels" },
+    { "value": "0", "label": "dependencies" }
+  ],
+  "features": {
+    "label": "Capabilities",
+    "heading": "Why Octos",
+    "items": [
+      {
+        "title": "Your agents, your way",
+        "description": "92 API endpoints to build any interface on top — web dashboards, mobile apps, CLI tools, or embed AI into your existing product.",
+        "stat": "92",
+        "statLabel": "API endpoints"
+      },
+      {
+        "title": "Room for everyone",
+        "description": "One 31MB binary serves 200+ users on a single machine. Each person gets their own agent with private memory, sessions, and data.",
+        "stat": "200+",
+        "statLabel": "profiles per machine"
+      },
+      {
+        "title": "Best model for each task",
+        "description": "Cheap models for planning, powerful ones for synthesis. Chain multiple LLMs in a single workflow with automatic failover when one goes down.",
+        "stat": "15",
+        "statLabel": "LLM providers"
+      },
+      {
+        "title": "Always online",
+        "description": "Three layers of failover keep your agents running even when a provider goes down. Hedge racing, circuit breakers, automatic switching.",
+        "stat": "3",
+        "statLabel": "failover layers"
+      },
+      {
+        "title": "Smart tool management",
+        "description": "30+ tools available, but only 15 loaded at once. Octos activates what your agent needs and quietly puts away the rest — fast responses, no bloat.",
+        "stat": "30+",
+        "statLabel": "tools available"
+      },
+      {
+        "title": "Conversations that flow",
+        "description": "Five queue modes control how your agent handles busy moments — queue messages, collect them, steer mid-conversation, or let users interrupt.",
+        "stat": "5",
+        "statLabel": "queue modes"
+      },
+      {
+        "title": "It remembers",
+        "description": "Your agent knows what you talked about yesterday, your preferences, your projects. Three memory layers keep the right context in reach.",
+        "stat": "3",
+        "statLabel": "memory layers"
+      },
+      {
+        "title": "Documents, slides, spreadsheets",
+        "description": "Generate PPTX, DOCX, and XLSX natively — no LibreOffice, no external tools, no network calls. Pure Rust, zero dependencies.",
+        "stat": null,
+        "statLabel": null
+      },
+      {
+        "title": "Built safe",
+        "description": "Agents run in isolated sandboxes. No unsafe code anywhere in the project. 67 prompt injection tests and counting.",
+        "stat": "67",
+        "statLabel": "injection tests"
+      }
+    ]
+  },
+  "architecture": {
+    "label": "Architecture",
+    "heading": "Simple inside,<br />powerful outside",
+    "description": "Eight focused modules, one 31MB binary. No runtime, no Docker, no pip install. Download and run.",
+    "modules": [
+      { "color": "bg-title", "name": "octos-bus", "description": "connects 12 messaging platforms" },
+      { "color": "bg-heading", "name": "octos-agent", "description": "thinks, uses tools, stays safe" },
+      { "color": "bg-heading", "name": "octos-pipeline", "description": "runs multi-step workflows" },
+      { "color": "bg-accent", "name": "octos-llm", "description": "talks to 15 AI providers" },
+      { "color": "bg-accent", "name": "octos-memory", "description": "never forgets what matters" }
+    ]
+  },
+  "deepResearch": {
+    "label": "Deep Research",
+    "heading": "Think deeper,<br />search wider",
+    "description": "One agent designs the research plan, others fan out to search in parallel. Cheap models plan, powerful ones synthesize. Every step is a different model.",
+    "features": [
+      { "label": "8 workers at once", "description": "Search workers fan out in parallel, then converge on a single answer." },
+      { "label": "5 search providers", "description": "Tavily, DuckDuckGo, Brave, You.com, Perplexity — if one is slow, the others finish first." },
+      { "label": "Self-healing routes", "description": "When a provider slows down, Octos notices and routes around it automatically." }
+    ],
+    "stats": [
+      { "value": "3+", "label": "LLMs in parallel" },
+      { "value": "8", "label": "Concurrent workers" }
+    ]
+  },
+  "toolSystem": {
+    "label": "Tools",
+    "heading": "A well-organized toolbox",
+    "description": "30+ tools available, but your agent only loads what it needs right now. Idle tools quietly step aside — keeping responses fast and context windows lean.",
+    "tiers": [
+      { "stat": "15", "label": "Active tools", "description": "Always ready, instant response" },
+      { "stat": "26+", "label": "On standby", "description": "Activated when needed, put away when done" },
+      { "stat": "∞", "label": "Catalog", "description": "No limit on what your agent can learn to do" }
+    ],
+    "toolGroups": [
+      { "label": "11 core tools", "tools": ["shell", "read_file", "write_file", "edit_file", "diff_edit", "glob", "grep", "list_dir", "web_search", "web_fetch", "browser"] },
+      { "label": "12 agent tools", "tools": ["deep_search", "deep_crawl", "synthesize", "recall_memory", "save_memory", "spawn", "send_file", "message", "configure_tool", "activate_tools", "model_check", "cron"] },
+      { "label": "7 app skills", "tools": ["news_briefing", "send_email", "deep_search", "deep_crawl", "account_manager", "weather", "time"] }
+    ]
+  },
+  "memory": {
+    "label": "Memory",
+    "heading": "It remembers",
+    "description": "Your agent knows what you talked about yesterday. It remembers your preferences, your projects, your decisions — and forgets nothing you want kept. Three layers, one seamless experience.",
+    "layers": [
+      {
+        "colorLabel": "Long-term",
+        "color": "accent",
+        "title": "What it always knows about you",
+        "description": "Preferences, projects, recurring topics — auto-extracted and ready for instant recall."
+      },
+      {
+        "colorLabel": "Episodic",
+        "color": "heading",
+        "title": "What it learned from each task",
+        "description": "Files modified, decisions made, outcomes achieved — searchable by keyword or meaning."
+      },
+      {
+        "colorLabel": "Session",
+        "color": "title",
+        "title": "The current conversation",
+        "description": "Always in context, auto-compacted when it gets long. Switch threads with /new, /s, /back."
+      }
+    ]
+  },
+  "contentGen": {
+    "label": "Content",
+    "heading": "Documents, slides, spreadsheets",
+    "description": "Ask your agent to make a slide deck, write a report, or build a spreadsheet. It generates real Office files — no LibreOffice, no network calls, zero dependencies.",
+    "formats": [
+      { "name": "PPTX", "description": "Slide decks with layouts, images, and charts" },
+      { "name": "DOCX", "description": "Documents with headings, tables, and images" },
+      { "name": "XLSX", "description": "Spreadsheets with formulas, styling, and charts" }
+    ],
+    "art": {
+      "label": "AI Art Pipeline",
+      "heading": "17 visual styles",
+      "description": "Cards, comics, infographics, posters, diagrams, timelines, and more. Each style is a composable template with AI-driven content placement.",
+      "styles": ["mofa-cards", "mofa-comic", "mofa-infographic", "mofa-slides", "mofa-poster", "mofa-diagram", "mofa-timeline", "mofa-mindmap", "mofa-chart", "mofa-report", "mofa-resume", "mofa-letter", "mofa-invoice", "mofa-certificate", "mofa-badge", "mofa-banner", "mofa-cover"]
+    }
+  },
+  "security": {
+    "label": "Security",
+    "heading": "Built to be trusted",
+    "description": "Your data stays on your machine. Every agent runs in a sandbox. No unsafe code in the entire project. Security isn't an afterthought — it's the foundation.",
+    "layers": [
+      { "title": "Agents can't break out", "description": "Each agent runs in its own isolated sandbox that blocks dangerous operations — on Linux, macOS, and Docker." },
+      { "title": "No unsafe code", "description": "The entire codebase enforces deny(unsafe_code). Pure Rust with rustls for TLS — no OpenSSL, no C dependencies." },
+      { "title": "Prompt injection defense", "description": "67 injection tests covering input sanitization and output filtering. Constant-time comparison prevents timing attacks." },
+      { "title": "Your data stays yours", "description": "Each agent operates in a scoped workspace. File access is restricted to its own directory. No cross-tenant data leakage." },
+      { "title": "Safe credentials", "description": "macOS Keychain integration for API key storage. No plaintext secrets in config files." },
+      { "title": "Process isolation", "description": "Each user gets a separate OS process with its own memory space, sessions, and data — true multi-tenancy." }
+    ]
+  },
+  "performance": {
+    "label": "Performance",
+    "heading": "Runs on a Mac Mini",
+    "description": "200+ AI agents serving thousands of users — on hardware you already own. No Kubernetes, no auto-scaling, no 3am pages. 20MB per agent, cold start under 100ms.",
+    "tableHeaders": {
+      "metric": "Metric",
+      "octos": "Octos",
+      "others": "Others",
+      "note": "Note"
+    },
+    "benchmarks": [
+      { "metric": "Startup time", "octos": "<100ms", "others": "500ms–2s", "note": "Cold start to ready" },
+      { "metric": "Memory per agent", "octos": "20MB", "others": "200–300MB", "note": "Baseline resident" },
+      { "metric": "Memory per session", "octos": "Few KB", "others": "10–50MB", "note": "Green threads" },
+      { "metric": "Binary size", "octos": "31MB", "others": "200MB+", "note": "Static vs node_modules" },
+      { "metric": "Agents per machine", "octos": "200+", "others": "~20", "note": "On a 16GB Mac Mini" },
+      { "metric": "GC pauses", "octos": "None", "others": "Unpredictable", "note": "Deterministic latency" },
+      { "metric": "Parallelism", "octos": "True", "others": "Event loop", "note": "Multi-core utilization" },
+      { "metric": "Search workers", "octos": "8 concurrent", "others": "Sequential", "note": "Deep research tasks" }
+    ]
+  },
+  "channels": {
+    "label": "Gateway",
+    "heading": "Meet your users where they are",
+    "description": "Your AI lives on Telegram, Discord, Slack, WhatsApp, WeChat, and 7 more platforms. One agent, every channel — with full conversation history wherever your users talk."
+  },
+  "providers": {
+    "label": "LLM Layer",
+    "heading": "15 AI providers",
+    "description": "Pick the right model for each task. Chain providers in a single pipeline — if one goes down, the next one takes over automatically."
+  },
+  "comparison": {
+    "label": "Comparison",
+    "heading": "Different animals, different oceans",
+    "description": "Not better or worse — just different. Octos is infrastructure, not a library. If you need a chatbot SDK, LangChain is great. If you need an AI operating system, keep reading.",
+    "tableHeaders": {
+      "dim": "Dimension",
+      "octos": "Octos",
+      "langchain": "LangChain",
+      "openclaw": "OpenClaw"
+    },
+    "rows": [
+      { "dim": "What it is", "octos": "AI operating system", "langchain": "Python framework", "openclaw": "Chatbot app" },
+      { "dim": "Install size", "octos": "31MB", "langchain": "pip + deps", "openclaw": "200MB+" },
+      { "dim": "Startup", "octos": "<100ms", "langchain": "1-3s", "openclaw": "500ms-2s" },
+      { "dim": "Memory per agent", "octos": "20MB", "langchain": "200MB+", "openclaw": "200-300MB" },
+      { "dim": "Agents per machine", "octos": "200+", "langchain": "~10", "openclaw": "~20" },
+      { "dim": "LLM providers", "octos": "15 built-in", "langchain": "50+ (plugins)", "openclaw": "10+" },
+      { "dim": "Channels", "octos": "12", "langchain": "0", "openclaw": "22+" },
+      { "dim": "Failover", "octos": "3-layer auto", "langchain": "Manual", "openclaw": "Basic retry" },
+      { "dim": "Tool loading", "octos": "Smart (LRU)", "langchain": "All upfront", "openclaw": "All upfront" },
+      { "dim": "Document generation", "octos": "PPTX/DOCX/XLSX", "langchain": "None", "openclaw": "None" },
+      { "dim": "Voice", "octos": "ASR + TTS", "langchain": "None", "openclaw": "Wake word + TTS" },
+      { "dim": "Memory", "octos": "3-layer hybrid", "langchain": "Vector only", "openclaw": "SQLite + vector" },
+      { "dim": "Security", "octos": "deny(unsafe_code)", "langchain": "Python sandbox", "openclaw": "Docker sandbox" }
+    ]
+  },
+  "useCases": {
+    "label": "Use Cases",
+    "heading": "Built for real workloads",
+    "items": [
+      {
+        "label": "01",
+        "title": "AI in your product",
+        "description": "Give every customer their own AI assistant — isolated, personalized, always available. One binary handles them all through a clean REST API.",
+        "highlights": ["92 API endpoints", "Per-user isolation", "Admin dashboard"]
+      },
+      {
+        "label": "02",
+        "title": "Customer support everywhere",
+        "description": "One agent on Telegram, Discord, Slack, WhatsApp, Email — everywhere your users are. They switch channels without losing context.",
+        "highlights": ["12 channels", "Session switching", "5 queue modes"]
+      },
+      {
+        "label": "03",
+        "title": "Deep research pipelines",
+        "description": "Let cheap models plan the search, powerful ones synthesize the answer. 8 workers search in parallel across 5 providers.",
+        "highlights": ["Multi-LLM workflows", "8 search workers", "5-provider failover"]
+      },
+      {
+        "label": "04",
+        "title": "Content at scale",
+        "description": "Generate slides, documents, and spreadsheets natively. AI art pipeline with 17 styles for cards, comics, infographics, and posters.",
+        "highlights": ["PPTX / DOCX / XLSX", "17 art styles", "Zero deps"]
+      },
+      {
+        "label": "05",
+        "title": "AI for the whole team",
+        "description": "200+ specialized agents on a single machine. Sub-accounts for family plans, isolated workspaces for each team member.",
+        "highlights": ["200+ agents", "Sub-accounts", "20MB each"]
+      },
+      {
+        "label": "06",
+        "title": "Runs anywhere",
+        "description": "31MB binary, cold start under 100ms, zero garbage collection pauses. Deploy on a Mac Mini, a cloud VM, or a Raspberry Pi.",
+        "highlights": ["31MB binary", "<100ms startup", "No GC pauses"]
+      }
+    ]
+  },
+  "quickStart": {
+    "label": "Get Started",
+    "heading": "Deploy in minutes",
+    "description": "No Python, no Docker, no runtime dependencies. Install the binary, set your API key, and start talking to your AI. That's the whole process.",
+    "code": "<span class=\"text-neutral-2\"># Install</span>\ncargo install --path crates/octos-cli\n\n<span class=\"text-neutral-2\"># Initialize configuration</span>\noctos init\n\n<span class=\"text-neutral-2\"># Set your API key</span>\n<span class=\"text-neutral-1\">export</span> ANTHROPIC_API_KEY=your-key\n\n<span class=\"text-neutral-2\"># Start chatting in the terminal</span>\noctos chat\n\n<span class=\"text-neutral-2\"># Or launch the full gateway</span>\noctos gateway\n\n<span class=\"text-neutral-2\"># Or start the REST API server</span>\noctos serve"
+  },
+  "faq": {
+    "label": "Questions",
+    "heading": "FAQ",
+    "items": [
+      {
+        "question": "How is Octos different from LangChain or CrewAI?",
+        "answer": "Octos is an operating system, not a framework. It runs as a single binary — no Python, no Docker, no glue code. Built-in multi-tenancy, 12 messaging channels, and automatic provider failover. You configure agents through a REST API or a JSON file."
+      },
+      {
+        "question": "What LLMs does Octos support?",
+        "answer": "15 providers out of the box: Anthropic, OpenAI, Gemini, DeepSeek, OpenRouter, and more. You can chain multiple providers in a single pipeline — cheap models for planning, powerful ones for synthesis — with automatic failover if one goes down."
+      },
+      {
+        "question": "Can I run Octos on a small server?",
+        "answer": "Yes. The binary is 31MB, cold starts in under 100ms, and needs zero external dependencies. A single Mac Mini can run 200+ agents. No Python runtime, no Docker, no Kubernetes."
+      },
+      {
+        "question": "Is Octos open source?",
+        "answer": "Yes. Octos is fully open source under the MIT license and available on GitHub."
+      },
+      {
+        "question": "How do I connect a messaging channel?",
+        "answer": "Just add the channel config to your profile. Telegram, Discord, Slack, WhatsApp, WeChat, Email, and 6 more are built in — no plugins needed. Your agent shows up on all of them simultaneously."
+      },
+      {
+        "question": "Can multiple users share one Octos instance?",
+        "answer": "Absolutely. Each user gets their own isolated agent with separate memory, sessions, and data. A family plan mode even supports sub-accounts — parent manages the billing, each person gets their own AI."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Deploy your first agent<br class=\"hidden md:block\" /> in 5 minutes",
+    "description": "Download. Set your API key. Talk to your AI on any channel. That's it.",
+    "buttons": [
+      { "label": "Read the Docs", "href": "https://octos-org.github.io/octos/" },
+      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+    ]
+  }
+}

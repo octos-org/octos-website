@@ -1,50 +1,53 @@
 ---
 import SvgSection from 'components/ui/SvgSection.astro';
 import PipelineFlow from 'components/PipelineFlow.jsx';
+
+interface Props {
+  t: {
+    label: string;
+    heading: string;
+    description: string;
+    features: { label: string; description: string }[];
+    stats: { value: string; label: string }[];
+  };
+}
+
+const { t } = Astro.props;
 ---
 
-<SvgSection bgSrc="/images/bg-deep-panel.png">
-  <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8">
-    <div class="glass-panel">
-      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Deep Research</p>
-      <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
-        Multi-LLM pipelines
-      </h2>
-      <p class="mt-4 text-[16px] leading-relaxed text-neutral-2">
-        Define workflows as DOT graphs with per-node model selection. Architect agents design the plan, worker agents execute in parallel.
-      </p>
+<SvgSection bg-src="/images/bg-deep-panel.png">
+  <!-- Heading + description -->
+  <div class="glass-panel">
+    <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
+    <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]" set:html={t.heading} />
+    <p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-neutral-2">
+      {t.description}
+    </p>
+  </div>
 
-      <div class="mt-6 flex flex-col gap-4">
-        <div>
-          <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">Parallel execution</p>
-          <p class="mt-1 text-[14px] text-neutral-2">8 concurrent search workers with dynamic fan-out.</p>
-        </div>
-        <div>
-          <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">6-provider failover</p>
-          <p class="mt-1 text-[14px] text-neutral-2">Tavily, DuckDuckGo, Exa, Brave, You.com, Perplexity.</p>
-        </div>
-        <div>
-          <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">Adaptive routing</p>
-          <p class="mt-1 text-[14px] text-neutral-2">Hedge racing, lane scoring, auto-escalation on slow responses.</p>
-        </div>
+  <!-- Feature sub-boxes row -->
+  <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+    {t.features.map((f) => (
+      <div class="glass-panel">
+        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{f.label}</p>
+        <p class="mt-2 text-[14px] leading-relaxed text-neutral-2">{f.description}</p>
       </div>
+    ))}
+  </div>
+
+  <!-- Flow chart — full width -->
+  <div class="mt-6">
+    <div class="glass-panel min-h-[660px]">
+      <PipelineFlow client:only="react" />
     </div>
 
-    <div>
-      <div class="glass-panel">
-        <PipelineFlow client:only="react" />
-      </div>
-
-      <div class="mt-4 grid grid-cols-2 gap-4">
+    <div class="mt-4 grid grid-cols-2 gap-4">
+      {t.stats.map((stat) => (
         <div class="glass-panel text-center">
-          <span class="font-mono text-[28px] leading-none text-text-bright">3+</span>
-          <p class="mt-1 font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">LLMs in parallel</p>
+          <span class="font-mono text-[28px] leading-none text-text-bright">{stat.value}</span>
+          <p class="mt-1 font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">{stat.label}</p>
         </div>
-        <div class="glass-panel text-center">
-          <span class="font-mono text-[28px] leading-none text-text-bright">8</span>
-          <p class="mt-1 font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">Concurrent workers</p>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </SvgSection>

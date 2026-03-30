@@ -1,0 +1,364 @@
+{
+  "site": {
+    "title": "Octos — AI 智能体操作系统",
+    "description": "一个大脑，多条手臂。你的 AI 在每个渠道 — Telegram、Discord、Slack、微信等。一个 31MB 二进制文件,15 个 AI 供应商,零依赖。"
+  },
+  "header": {
+    "logo": "Octos",
+    "navLinks": [
+      { "text": "核心能力", "href": "#features" },
+      { "text": "架构", "href": "#architecture" },
+      { "text": "性能", "href": "#performance" },
+      { "text": "对比", "href": "#comparison" },
+      { "text": "快速开始", "href": "#quickstart" }
+    ],
+    "externalLinks": [
+      { "text": "文档", "href": "https://octos-org.github.io/octos/" },
+      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+    ],
+    "langAlt": { "text": "EN", "href": "/" }
+  },
+  "footer": {
+    "brand": "Octos",
+    "brandDescription": "开放式认知任务操作系统 — 一个 Rust 原生、API 优先的 AI 智能体操作系统。",
+    "navHeading": "导航",
+    "links": [
+      { "text": "核心能力", "href": "#features" },
+      { "text": "架构", "href": "#architecture" },
+      { "text": "性能", "href": "#performance" },
+      { "text": "对比", "href": "#comparison" },
+      { "text": "用例", "href": "#usecases" },
+      { "text": "快速开始", "href": "#quickstart" },
+      { "text": "常见问题", "href": "#faq" }
+    ],
+    "resourcesHeading": "资源",
+    "external": [
+      { "text": "文档", "href": "https://octos-org.github.io/octos/" },
+      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+    ],
+    "license": "MIT 开源协议。",
+    "langEn": { "text": "EN", "href": "/" },
+    "langZh": { "text": "中文", "href": "/zh-cn/" }
+  },
+  "hero": {
+    "badge": "开源",
+    "heading": "一个大脑，多条手臂",
+    "description": "像章鱼一样 — 9 个大脑，每条腕足独立思考，却步调一致。你的 AI 不应该只活在一个聊天窗口里。让它出现在 Telegram、Discord、Slack、微信 —— 你的用户在哪里，它就在哪里。一个二进制文件，零依赖。",
+    "statsBar": [
+      "200+ 智能体",
+      "12 个渠道",
+      "15 个供应商",
+      "31MB 二进制",
+      "开源"
+    ],
+    "buttons": [
+      { "label": "开始使用", "href": "#quickstart" },
+      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+    ]
+  },
+  "stats": [
+    { "value": "31MB", "label": "二进制大小" },
+    { "value": "92", "label": "API 端点" },
+    { "value": "15", "label": "AI 供应商" },
+    { "value": "12", "label": "消息渠道" },
+    { "value": "0", "label": "依赖" }
+  ],
+  "features": {
+    "label": "核心能力",
+    "heading": "为什么选择 Octos",
+    "items": [
+      {
+        "title": "你的智能体，你说了算",
+        "description": "92 个 API 端点，覆盖聊天、会话、管理、技能、指标和 Webhook。用它搭建任何前端界面。",
+        "stat": "92",
+        "statLabel": "API 端点"
+      },
+      {
+        "title": "装得下所有人",
+        "description": "一个 31MB 的二进制文件就能在一台机器上服务 200+ 用户。每个人拥有自己的智能体、独立的记忆、会话和数据。",
+        "stat": "200+",
+        "statLabel": "用户/机器"
+      },
+      {
+        "title": "每个任务用最合适的模型",
+        "description": "便宜的模型做规划，强大的模型做总结。在一条流水线中串联多个大模型，一个挂了自动切换到下一个。",
+        "stat": "15",
+        "statLabel": "AI 供应商"
+      },
+      {
+        "title": "永远在线",
+        "description": "三层故障转移保证智能体持续运行，哪怕某个供应商宕机。对冲赛跑、熔断器、自动切换。",
+        "stat": "3",
+        "statLabel": "故障转移层"
+      },
+      {
+        "title": "智能工具管理",
+        "description": "30+ 工具可用，但一次只加载 15 个。Octos 激活需要的工具，闲置的自动收起 — 像一个整理有序的工具箱。",
+        "stat": "30+",
+        "statLabel": "可用工具"
+      },
+      {
+        "title": "对话自然流转",
+        "description": "五种队列模式控制智能体处理繁忙时刻 — 排队、收集、转向、打断、让用户插话。",
+        "stat": "5",
+        "statLabel": "队列模式"
+      },
+      {
+        "title": "它记得住",
+        "description": "你的智能体记得昨天聊过的内容、你的偏好、项目、决策。三层记忆让合适的上下文随时可达。",
+        "stat": "3",
+        "statLabel": "记忆层"
+      },
+      {
+        "title": "文档、幻灯片、表格",
+        "description": "原生生成 PPTX、DOCX 和 XLSX — 不需要 LibreOffice、外部工具或网络请求。纯 Rust，零依赖。",
+        "stat": null,
+        "statLabel": null
+      },
+      {
+        "title": "天生安全",
+        "description": "智能体运行在隔离的沙箱中。整个代码库无 unsafe 代码。67 个注入测试持续增加中。",
+        "stat": "67",
+        "statLabel": "注入测试"
+      }
+    ]
+  },
+  "architecture": {
+    "label": "架构",
+    "heading": "内简外强",
+    "description": "八个专注模块，一个 31MB 二进制文件。无需运行时、无需 Docker、无需 pip install。下载即用。",
+    "modules": [
+      { "color": "bg-title", "name": "octos-bus", "description": "连接 12 个消息平台" },
+      { "color": "bg-heading", "name": "octos-agent", "description": "思考、使用工具、保持安全" },
+      { "color": "bg-heading", "name": "octos-pipeline", "description": "运行多步骤工作流" },
+      { "color": "bg-accent", "name": "octos-llm", "description": "与 15 个 AI 供应商对话" },
+      { "color": "bg-accent", "name": "octos-memory", "description": "永远不忘重要的事" }
+    ]
+  },
+  "deepResearch": {
+    "label": "深度研究",
+    "heading": "想得更深，搜得更广",
+    "description": "一个智能体设计研究方案，其他智能体并行搜索。便宜的模型做规划，强大的模型做总结。每一步都是不同的模型。",
+    "features": [
+      { "label": "8 个工人同时跑", "description": "搜索工人并行展开，然后汇聚成一份答案。" },
+      { "label": "5 个搜索供应商", "description": "Tavily、DuckDuckGo、Brave、You.com、Perplexity — 一个慢了，其他先完成。" },
+      { "label": "自愈路由", "description": "当某个供应商变慢，Octos 会自动发现并绕过它。" }
+    ],
+    "stats": [
+      { "value": "3+", "label": "并行 LLM" },
+      { "value": "8", "label": "并发工人" }
+    ]
+  },
+  "toolSystem": {
+    "label": "工具",
+    "heading": "整理有序的工具箱",
+    "description": "30+ 工具可用，但你的智能体只加载当前需要的。闲置的工具自动收起 — 保持响应快速、上下文窗口精简。",
+    "tiers": [
+      { "stat": "15", "label": "活跃工具", "description": "随时待命，即时响应" },
+      { "stat": "26+", "label": "待命工具", "description": "需要时激活，用完即收起" },
+      { "stat": "∞", "label": "工具目录", "description": "你的智能体能学会的事没有上限" }
+    ],
+    "toolGroups": [
+      { "label": "11 个核心工具", "tools": ["shell", "read_file", "write_file", "edit_file", "diff_edit", "glob", "grep", "list_dir", "web_search", "web_fetch", "browser"] },
+      { "label": "12 个智能体工具", "tools": ["deep_search", "deep_crawl", "synthesize", "recall_memory", "save_memory", "spawn", "send_file", "message", "configure_tool", "activate_tools", "model_check", "cron"] },
+      { "label": "7 个应用技能", "tools": ["news_briefing", "send_email", "deep_search", "deep_crawl", "account_manager", "weather", "time"] }
+    ]
+  },
+  "memory": {
+    "label": "记忆",
+    "heading": "它记得住",
+    "description": "你的智能体记得昨天聊过的内容。它记得你的偏好、你的项目、你的决策 — 你想留住的东西它都不会忘。三层记忆，一种无缝体验。",
+    "layers": [
+      {
+        "colorLabel": "长期",
+        "color": "accent",
+        "title": "关于你的那些事它一直记得",
+        "description": "偏好、项目、常聊话题 — 自动提取，随时召回。"
+      },
+      {
+        "colorLabel": "情景",
+        "color": "heading",
+        "title": "每个任务中学到的东西",
+        "description": "修改的文件、做出的决策、取得的成果 — 可按关键词或语义搜索。"
+      },
+      {
+        "colorLabel": "会话",
+        "color": "title",
+        "title": "当前的对话",
+        "description": "始终在上下文中，过长时自动压缩。用 /new、/s、/back 切换线程。"
+      }
+    ]
+  },
+  "contentGen": {
+    "label": "内容",
+    "heading": "文档、幻灯片、表格",
+    "description": "让你的智能体制作幻灯片、撰写报告或建立电子表格。它生成真正的 Office 文件 — 无需 LibreOffice、无需网络请求、零依赖。",
+    "formats": [
+      { "name": "PPTX", "description": "带布局、图片和图表的幻灯片" },
+      { "name": "DOCX", "description": "带标题、表格和图片的文档" },
+      { "name": "XLSX", "description": "带公式、样式和图表的表格" }
+    ],
+    "art": {
+      "label": "AI 艺术流水线",
+      "heading": "17 种视觉风格",
+      "description": "卡片、漫画、信息图、海报、图表、时间线等。每种风格都是可组合的模板，由 AI 驱动内容排版。",
+      "styles": ["mofa-cards", "mofa-comic", "mofa-infographic", "mofa-slides", "mofa-poster", "mofa-diagram", "mofa-timeline", "mofa-mindmap", "mofa-chart", "mofa-report", "mofa-resume", "mofa-letter", "mofa-invoice", "mofa-certificate", "mofa-badge", "mofa-banner", "mofa-cover"]
+    }
+  },
+  "security": {
+    "label": "安全",
+    "heading": "值得信赖",
+    "description": "你的数据留在你的机器上。每个智能体运行在沙箱中。整个项目无 unsafe 代码。安全不是补丁 — 它是基石。",
+    "layers": [
+      { "title": "智能体无法逃逸", "description": "每个智能体运行在独立的隔离沙箱中，阻止危险操作 — 支持 Linux、macOS 和 Docker。" },
+      { "title": "无 unsafe 代码", "description": "整个代码库强制 deny(unsafe_code)。纯 Rust 加 rustls 处理 TLS — 无 OpenSSL、无 C 依赖。" },
+      { "title": "提示注入防御", "description": "67 个注入测试覆盖输入清洗和输出过滤。恒定时间比较防止时序攻击。" },
+      { "title": "你的数据始终是你的", "description": "每个智能体在限定的工作区中运行。文件访问仅限于自己的目录。无跨租户数据泄露。" },
+      { "title": "安全的凭证", "description": "macOS Keychain 集成存储 API 密钥。配置文件中无明文密钥。" },
+      { "title": "进程隔离", "description": "每个用户获得独立的操作系统进程，拥有自己的内存空间、会话和数据 — 真正的多租户。" }
+    ]
+  },
+  "performance": {
+    "label": "性能",
+    "heading": "Mac Mini 就能跑",
+    "description": "200+ 个 AI 智能体服务上千用户 — 用你已有的硬件就行。不需要 Kubernetes、不需要弹性伸缩、不用半夜被叫醒。每个智能体 20MB，冷启动不到 100ms。",
+    "tableHeaders": {
+      "metric": "指标",
+      "octos": "Octos",
+      "others": "其他",
+      "note": "备注"
+    },
+    "benchmarks": [
+      { "metric": "启动时间", "octos": "<100ms", "others": "500ms–2s", "note": "冷启动" },
+      { "metric": "内存/智能体", "octos": "20MB", "others": "200–300MB", "note": "基准驻留" },
+      { "metric": "内存/会话", "octos": "几 KB", "others": "10–50MB", "note": "绿色线程" },
+      { "metric": "二进制大小", "octos": "31MB", "others": "200MB+", "note": "静态编译 vs node_modules" },
+      { "metric": "每台机器智能体", "octos": "200+", "others": "~20", "note": "16GB Mac Mini" },
+      { "metric": "GC 暂停", "octos": "无", "others": "不可预测", "note": "确定性延迟" },
+      { "metric": "并行度", "octos": "真并行", "others": "事件循环", "note": "多核利用" },
+      { "metric": "搜索线程", "octos": "8 并发", "others": "顺序执行", "note": "深度研究任务" }
+    ]
+  },
+  "channels": {
+    "label": "网关",
+    "heading": "在你的用户所在的地方与他们相遇",
+    "description": "你的 AI 存在于 Telegram、Discord、Slack、WhatsApp、微信等 12 个平台。一个智能体，全渠道覆盖 — 完整的对话历史，无论你的用户在哪里说话。"
+  },
+  "providers": {
+    "label": "LLM 层",
+    "heading": "15 个 AI 供应商",
+    "description": "为每个任务选择最合适的模型。在一条流水线中串联多个供应商 — 一个挂了，下一个自动接管。"
+  },
+  "comparison": {
+    "label": "对比",
+    "heading": "不同的物种，不同的海域",
+    "description": "不是谁好谁差 — 只是定位不同。Octos 是基础设施，不是库。如果你需要一个聊天机器人 SDK，LangChain 很棒。如果你需要一个 AI 操作系统，继续往下看。",
+    "tableHeaders": {
+      "dim": "维度",
+      "octos": "Octos",
+      "langchain": "LangChain",
+      "openclaw": "OpenClaw"
+    },
+    "rows": [
+      { "dim": "定位", "octos": "AI 操作系统", "langchain": "Python 框架", "openclaw": "聊天机器人应用" },
+      { "dim": "安装大小", "octos": "31MB", "langchain": "pip + 依赖", "openclaw": "200MB+" },
+      { "dim": "启动时间", "octos": "<100ms", "langchain": "1-3s", "openclaw": "500ms-2s" },
+      { "dim": "内存/智能体", "octos": "20MB", "langchain": "200MB+", "openclaw": "200-300MB" },
+      { "dim": "每台机器智能体", "octos": "200+", "langchain": "~10", "openclaw": "~20" },
+      { "dim": "LLM 供应商", "octos": "15 个内置", "langchain": "50+ (插件)", "openclaw": "10+" },
+      { "dim": "消息渠道", "octos": "12", "langchain": "0", "openclaw": "22+" },
+      { "dim": "故障转移", "octos": "三层自动", "langchain": "手动", "openclaw": "基本重试" },
+      { "dim": "工具加载", "octos": "智能 (LRU)", "langchain": "全部预加载", "openclaw": "全部预加载" },
+      { "dim": "文档生成", "octos": "PPTX/DOCX/XLSX", "langchain": "无", "openclaw": "无" },
+      { "dim": "语音", "octos": "ASR + TTS", "langchain": "无", "openclaw": "唤醒词 + TTS" },
+      { "dim": "记忆", "octos": "三层混合", "langchain": "仅向量", "openclaw": "SQLite + 向量" },
+      { "dim": "安全", "octos": "deny(unsafe_code)", "langchain": "Python 沙箱", "openclaw": "Docker 沙箱" }
+    ]
+  },
+  "useCases": {
+    "label": "用例",
+    "heading": "为真实工作负载而生",
+    "items": [
+      {
+        "label": "01",
+        "title": "产品中嵌入 AI",
+        "description": "给每个客户专属的 AI 助手 — 隔离、个性化、始终在线。一个二进制文件通过简洁的 REST API 处理所有请求。",
+        "highlights": ["92 个 API 端点", "按用户隔离", "管理后台"]
+      },
+      {
+        "label": "02",
+        "title": "全渠道客户支持",
+        "description": "一个智能体同时出现在 Telegram、Discord、Slack、WhatsApp、邮件 — 你的用户在哪里都行。切换渠道不丢失上下文。",
+        "highlights": ["12 个渠道", "会话切换", "5 种队列模式"]
+      },
+      {
+        "label": "03",
+        "title": "深度研究流水线",
+        "description": "让便宜的模型做搜索规划，强大的模型做答案综合。8 个工人并行搜索 5 个供应商。",
+        "highlights": ["多 LLM 工作流", "8 个搜索工人", "5 供应商故障转移"]
+      },
+      {
+        "label": "04",
+        "title": "规模化的内容生产",
+        "description": "原生生成幻灯片、文档和表格。AI 艺术流水线提供 17 种风格 — 卡片、漫画、信息图、海报。",
+        "highlights": ["PPTX / DOCX / XLSX", "17 种艺术风格", "零依赖"]
+      },
+      {
+        "label": "05",
+        "title": "全团队的 AI",
+        "description": "一台机器上运行 200+ 个专业智能体。家庭套餐支持子账号，每个团队成员拥有独立的工作区。",
+        "highlights": ["200+ 智能体", "子账号", "每个 20MB"]
+      },
+      {
+        "label": "06",
+        "title": "随处部署",
+        "description": "31MB 二进制文件，冷启动不到 100ms，零垃圾回收暂停。部署在 Mac Mini、云服务器或树莓派上。",
+        "highlights": ["31MB 二进制", "<100ms 启动", "无 GC 暂停"]
+      }
+    ]
+  },
+  "quickStart": {
+    "label": "快速开始",
+    "heading": "几分钟部署",
+    "description": "不需要 Python、Docker 或任何运行时依赖。安装二进制文件，设置 API key，开始对话。就这样。",
+    "code": "<span class=\"text-neutral-2\"># 安装</span>\ncargo install --path crates/octos-cli\n\n<span class=\"text-neutral-2\"># 初始化配置</span>\noctos init\n\n<span class=\"text-neutral-2\"># 设置 API key</span>\n<span class=\"text-neutral-1\">export</span> ANTHROPIC_API_KEY=your-key\n\n<span class=\"text-neutral-2\"># 在终端开始对话</span>\noctos chat\n\n<span class=\"text-neutral-2\"># 或启动完整网关</span>\noctos gateway\n\n<span class=\"text-neutral-2\"># 或启动 REST API 服务</span>\noctos serve"
+  },
+  "faq": {
+    "label": "常见问题",
+    "heading": "FAQ",
+    "items": [
+      {
+        "question": "Octos 和 LangChain、CrewAI 有什么区别？",
+        "answer": "Octos 是操作系统，不是框架。单个二进制文件 — 不需要 Python、Docker、胶水代码。内置多租户、12 个消息渠道和自动供应商故障转移。通过 REST API 或 JSON 配置文件管理智能体。"
+      },
+      {
+        "question": "支持哪些大模型？",
+        "answer": "15 个供应商开箱即用：Anthropic、OpenAI、Gemini、DeepSeek、OpenRouter 等。可以在一条流水线中串联多个供应商 — 便宜模型做规划，强大模型做总结 — 一个挂了自动切换到下一个。"
+      },
+      {
+        "question": "小服务器能跑吗？",
+        "answer": "可以。二进制只有 31MB，冷启动不到 100ms，零外部依赖。一台 Mac Mini 就能跑 200+ 个智能体。不需要 Python 运行时、Docker、Kubernetes。"
+      },
+      {
+        "question": "Octos 是开源的吗？",
+        "answer": "是的。Octos 完全开源，采用 MIT 协议，代码托管在 GitHub。"
+      },
+      {
+        "question": "怎么连接消息渠道？",
+        "answer": "在配置文件中添加渠道配置即可。Telegram、Discord、Slack、WhatsApp、微信、邮件等 12 个渠道全部内置 — 无需插件。你的智能体同时在所有渠道上线。"
+      },
+      {
+        "question": "多个用户可以共用一个 Octos 实例吗？",
+        "answer": "当然可以。每个用户拥有独立的智能体，隔离的记忆、会话和数据。家庭模式还支持子账号 — 家长管理账单，每个人都有自己的 AI。"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "5 分钟部署<br class=\"hidden md:block\" />你的第一个智能体",
+    "description": "下载。设置 API key。在任何渠道与你的 AI 对话。就这样。",
+    "buttons": [
+      { "label": "阅读文档", "href": "https://octos-org.github.io/octos/" },
+      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+    ]
+  }
+}

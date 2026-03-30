@@ -3,18 +3,27 @@ import Section from 'components/layout/Section.astro';
 import Container from 'components/layout/Container.astro';
 import LogoGrid from './LogoGrid.astro';
 import providers from 'data/providers.json';
+
+interface Props {
+  t: {
+    label: string;
+    heading: string;
+    description: string;
+  };
+}
+
+const { t } = Astro.props;
 ---
 
 <Section padY="lg">
   <Container>
     <div class="mb-12 lg:mb-16" data-animate>
-      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">LLM Layer</p>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
       <h2 class="mt-3 text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px] lg:text-[48px]">
-        14 LLM providers
+        {t.heading}
       </h2>
       <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-neutral-2">
-        Chain multiple providers in a single pipeline with per-node model selection,
-        automatic failover, hedge racing, and circuit breakers.
+        {t.description}
       </p>
     </div>
 

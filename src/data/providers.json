@@ -7,10 +7,11 @@
   { "name": "MiniMax" },
   { "name": "Zhipu AI" },
   { "name": "Qwen" },
-  { "name": "Mistral" },
+  { "name": "Moonshot" },
   { "name": "Groq" },
-  { "name": "Together" },
-  { "name": "Fireworks" },
+  { "name": "Z.AI" },
+  { "name": "R9s" },
   { "name": "NVIDIA" },
-  { "name": "Ollama" }
+  { "name": "Ollama" },
+  { "name": "vLLM" }
 ]
