@@ -10,12 +10,13 @@ interface Props {
 }
 
 const { id, bgSrc, class: className } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id={id} class:list={['relative overflow-hidden', className]}>
   <!-- Fixed SVG background image -->
   <div class="absolute inset-0 z-0">
-    <img src={bgSrc} alt="" class="h-full w-full object-cover" loading="lazy" />
+    <img src={`${base}${bgSrc}`} alt="" class="h-full w-full object-cover" loading="lazy" />
   </div>
 
   <!-- Content -->

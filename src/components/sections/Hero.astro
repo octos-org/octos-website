@@ -13,13 +13,14 @@ interface Props {
 }
 
 const { t } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section class="hero-scene relative flex min-h-screen items-end overflow-hidden pb-12 pt-20 lg:pb-16">
   <!-- Background illustration -->
   <div class="absolute inset-0 z-0">
     <img
-      src="/images/ocean-hero.png"
+      src={`${base}/images/ocean-hero.png`}
       alt=""
       class="h-full w-full object-cover"
       loading="eager"
