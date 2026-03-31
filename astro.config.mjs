@@ -4,8 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 
 export default defineConfig({
-  site: 'https://octos-org.github.io',
-  base: '/octos-website',
+  site: 'https://www.octosai.org',
   integrations: [sitemap(), react()],
   i18n: {
     defaultLocale: 'en',
