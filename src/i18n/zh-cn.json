@@ -44,7 +44,7 @@
     "badge": "开源",
     "acronym": "Open Cognitive Tasks Orchestration System",
     "heading": "一颗大脑，触达八方",
-    "description": "像章鱼一样 — 9 个大脑，每条腕足独立思考，却步调一致。你的 AI 不应该只活在一个聊天窗口里。让它出现在 Telegram、Discord、Slack、微信 —— 你的用户在哪里，它就在哪里。一个二进制文件，零依赖。",
+    "description": "像章鱼一样 — 八条腕足同时思考，并行异步运行，自我修复，自我进化。多智能体协作、多步骤工作流、多模型故障转移 — 手机、PC、服务器、树莓派、RISC-V，哪里都能跑，零依赖。",
     "statsBar": [
       "200+ 智能体",
       "12 个渠道",
@@ -58,11 +58,11 @@
     ]
   },
   "stats": [
-    { "value": "全平台", "label": "ARM · x86 · RISC-V" },
-    { "value": "API 驱动", "label": "前后端完全分离" },
-    { "value": "全主流", "label": "AI 供应商" },
-    { "value": "全渠道", "label": "消息平台" },
-    { "value": "零依赖", "label": "开箱即用" }
+    { "value": "无所不在", "label": "ARM · x86 · RISC-V" },
+    { "value": "即插即用", "label": "API 驱动，前后端分离" },
+    { "value": "开源优先", "label": "不选最贵只选最好" },
+    { "value": "随你而动", "label": "App · Web · Msg" },
+    { "value": "原生分发", "label": "零依赖的高性能" }
   ],
   "features": {
     "label": "核心能力",

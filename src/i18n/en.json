@@ -44,7 +44,7 @@
     "badge": "Open Source",
     "acronym": "Open Cognitive Tasks Orchestration System",
     "heading": "One brain, many arms",
-    "description": "Like an octopus — 9 brains, every arm thinks on its own, yet they move as one. Your AI shouldn't live in one chat window. Give it Telegram, Discord, Slack, WeChat — every channel your people use. One binary, zero dependencies.",
+    "description": "Like an octopus — eight arms thinking in parallel, running async, self-healing, self-evolving. Multi-agent collaboration, multi-step workflows, multi-model failover — runs everywhere: phones, PCs, servers, Raspberry Pi, RISC-V. Zero dependencies.",
     "statsBar": [
       "200+ agents",
       "12 channels",
@@ -58,11 +58,11 @@
     ]
   },
   "stats": [
-    { "value": "Cross-platform", "label": "ARM · x86 · RISC-V" },
-    { "value": "Full", "label": "REST API" },
-    { "value": "All major", "label": "LLM providers" },
-    { "value": "Every", "label": "channel covered" },
-    { "value": "Zero", "label": "dependencies" }
+    { "value": "Runs Anywhere",   "label": "ARM · x86 · RISC-V" },
+    { "value": "Plug & Play",     "label": "API-First" },
+    { "value": "Open-Source","label": "Stay Open, Stay Free" },
+    { "value": "Follow You",  "label": "App · Web · Msg" },
+    { "value": "Native App",     "label": "Zero-Dep Performance" }
   ],
   "features": {
     "label": "Capabilities",
