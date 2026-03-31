@@ -32,26 +32,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <!-- Text directly on background -->
   <div class="relative z-10 w-full px-4 lg:px-9">
     <div class="mx-auto max-w-7xl text-center">
+      <p class="font-mono text-[12px] uppercase tracking-[0.2em] text-white/50 md:text-[14px]">{t.acronym}</p>
       <h1 class="mt-4 text-[40px] leading-[1.05] tracking-[-0.04em] text-white md:text-[64px] 2xl:text-[80px]" set:html={t.heading} />
 
       <p class="mx-auto mt-6 max-w-2xl text-[18px] leading-relaxed text-white/80 md:text-[20px] lg:text-[22px]">
         {t.description}
       </p>
 
-      <!-- Stats bar -->
-      <div class="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-[0.08em] text-white/50 md:gap-x-4">
-        {t.statsBar.map((stat, i) => (
-          <>
-            {i > 0 && <span class="text-white/20">|</span>}
-            <span>{stat}</span>
-          </>
-        ))}
-      </div>
-
       <!-- CTAs -->
       <div class="mt-6 flex flex-wrap justify-center gap-3">
         <Button href={t.buttons[0].href}>{t.buttons[0].label}</Button>
-        <Button href={t.buttons[1].href} variant="outline" external>
+        <Button href={t.buttons[1].href} variant="outline" external class="!text-white !border-white/50 hover:!border-accent hover:!text-accent">
           {t.buttons[1].label}
         </Button>
       </div>

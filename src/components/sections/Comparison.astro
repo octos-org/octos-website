@@ -28,7 +28,7 @@ const { t } = Astro.props;
   <div class="glass-panel overflow-x-auto">
     <table class="w-full border-collapse text-[13px]">
       <thead>
-        <tr class="border-b border-white/10">
+        <tr class="border-b border-surface-3">
           <th class="px-3 py-3 text-left font-mono text-[13px] font-bold uppercase tracking-[0.08em] text-info">{t.tableHeaders.dim}</th>
           <th class="px-3 py-3 text-left font-mono text-[13px] font-bold uppercase tracking-[0.08em] text-purple">{t.tableHeaders.octos}</th>
           <th class="px-3 py-3 text-left font-mono text-[13px] font-bold uppercase tracking-[0.08em] text-text-bright">{t.tableHeaders.openclaw}</th>
@@ -36,7 +36,7 @@ const { t } = Astro.props;
       </thead>
       <tbody>
         {t.rows.map((row) => (
-          <tr class="border-b border-white/5 transition-colors duration-200 hover:bg-white/5">
+          <tr class="border-b border-surface-3/50 transition-colors duration-200 hover:bg-surface-1/50">
             <td class="px-3 py-2.5 font-mono text-[12px] text-info">{row.dim}</td>
             <td class="px-3 py-2.5 text-purple">{row.octos}</td>
             <td class="px-3 py-2.5 text-text-bright">{row.openclaw}</td>

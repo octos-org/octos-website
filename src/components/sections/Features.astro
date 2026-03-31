@@ -7,7 +7,7 @@ interface Props {
   t: {
     label: string;
     heading: string;
-    items: { title: string; description: string; stat: string | null; statLabel: string | null }[];
+    items: { title: string; description: string; stat: string | null; statLabel: string | null; icon?: string | null }[];
   };
 }
 
@@ -30,6 +30,7 @@ const { t } = Astro.props;
           description={feature.description}
           stat={feature.stat}
           statLabel={feature.statLabel}
+          icon={feature.icon}
         />
       ))}
     </div>

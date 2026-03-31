@@ -14,7 +14,7 @@
     ],
     "externalLinks": [
       { "text": "Docs", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
     "langAlt": { "text": "中文", "href": "/zh-cn/" }
   },
@@ -34,7 +34,7 @@
     "resourcesHeading": "Resources",
     "external": [
       { "text": "Documentation", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
     "license": "Open source under MIT license.",
     "langEn": { "text": "EN", "href": "/" },
@@ -42,6 +42,7 @@
   },
   "hero": {
     "badge": "Open Source",
+    "acronym": "Open Cognitive Tasks Orchestration System",
     "heading": "One brain, many arms",
     "description": "Like an octopus — 9 brains, every arm thinks on its own, yet they move as one. Your AI shouldn't live in one chat window. Give it Telegram, Discord, Slack, WeChat — every channel your people use. One binary, zero dependencies.",
     "statsBar": [
@@ -53,15 +54,15 @@
     ],
     "buttons": [
       { "label": "Get Started", "href": "#quickstart" },
-      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
     ]
   },
   "stats": [
-    { "value": "31MB", "label": "binary size" },
-    { "value": "92", "label": "REST endpoints" },
-    { "value": "15", "label": "LLM providers" },
-    { "value": "12", "label": "channels" },
-    { "value": "0", "label": "dependencies" }
+    { "value": "Cross-platform", "label": "ARM · x86 · RISC-V" },
+    { "value": "Full", "label": "REST API" },
+    { "value": "All major", "label": "LLM providers" },
+    { "value": "Every", "label": "channel covered" },
+    { "value": "Zero", "label": "dependencies" }
   ],
   "features": {
     "label": "Capabilities",
@@ -71,68 +72,77 @@
         "title": "Your agents, your way",
         "description": "92 API endpoints to build any interface on top — web dashboards, mobile apps, CLI tools, or embed AI into your existing product.",
         "stat": "92",
-        "statLabel": "API endpoints"
+        "statLabel": "API endpoints",
+        "icon": "api"
       },
       {
         "title": "Room for everyone",
         "description": "One 31MB binary serves 200+ users on a single machine. Each person gets their own agent with private memory, sessions, and data.",
         "stat": "200+",
-        "statLabel": "profiles per machine"
+        "statLabel": "profiles per machine",
+        "icon": "users"
       },
       {
         "title": "Best model for each task",
         "description": "Cheap models for planning, powerful ones for synthesis. Chain multiple LLMs in a single workflow with automatic failover when one goes down.",
         "stat": "15",
-        "statLabel": "LLM providers"
+        "statLabel": "LLM providers",
+        "icon": "models"
       },
       {
         "title": "Always online",
         "description": "Three layers of failover keep your agents running even when a provider goes down. Hedge racing, circuit breakers, automatic switching.",
         "stat": "3",
-        "statLabel": "failover layers"
+        "statLabel": "failover layers",
+        "icon": "uptime"
       },
       {
         "title": "Smart tool management",
         "description": "30+ tools available, but only 15 loaded at once. Octos activates what your agent needs and quietly puts away the rest — fast responses, no bloat.",
         "stat": "30+",
-        "statLabel": "tools available"
+        "statLabel": "tools available",
+        "icon": "tools"
       },
       {
         "title": "Conversations that flow",
         "description": "Five queue modes control how your agent handles busy moments — queue messages, collect them, steer mid-conversation, or let users interrupt.",
         "stat": "5",
-        "statLabel": "queue modes"
+        "statLabel": "queue modes",
+        "icon": "queue"
       },
       {
         "title": "It remembers",
         "description": "Your agent knows what you talked about yesterday, your preferences, your projects. Three memory layers keep the right context in reach.",
         "stat": "3",
-        "statLabel": "memory layers"
+        "statLabel": "memory layers",
+        "icon": "memory"
       },
       {
         "title": "Documents, slides, spreadsheets",
         "description": "Generate PPTX, DOCX, and XLSX natively — no LibreOffice, no external tools, no network calls. Pure Rust, zero dependencies.",
         "stat": null,
-        "statLabel": null
+        "statLabel": null,
+        "icon": "docs"
       },
       {
         "title": "Built safe",
         "description": "Agents run in isolated sandboxes. No unsafe code anywhere in the project. 67 prompt injection tests and counting.",
         "stat": "67",
-        "statLabel": "injection tests"
+        "statLabel": "injection tests",
+        "icon": "security"
       }
     ]
   },
   "architecture": {
     "label": "Architecture",
-    "heading": "Simple inside,<br />powerful outside",
+    "heading": "Simple inside, powerful outside",
     "description": "Eight focused modules, one 31MB binary. No runtime, no Docker, no pip install. Download and run.",
     "modules": [
       { "color": "bg-title", "name": "octos-bus", "description": "connects 12 messaging platforms" },
       { "color": "bg-heading", "name": "octos-agent", "description": "thinks, uses tools, stays safe" },
       { "color": "bg-heading", "name": "octos-pipeline", "description": "runs multi-step workflows" },
-      { "color": "bg-accent", "name": "octos-llm", "description": "talks to 15 AI providers" },
-      { "color": "bg-accent", "name": "octos-memory", "description": "never forgets what matters" }
+      { "color": "bg-info", "name": "octos-llm", "description": "talks to 15 AI providers" },
+      { "color": "bg-highlight", "name": "octos-memory", "description": "never forgets what matters" }
     ]
   },
   "deepResearch": {
@@ -144,10 +154,7 @@
       { "label": "5 search providers", "description": "Tavily, DuckDuckGo, Brave, You.com, Perplexity — if one is slow, the others finish first." },
       { "label": "Self-healing routes", "description": "When a provider slows down, Octos notices and routes around it automatically." }
     ],
-    "stats": [
-      { "value": "3+", "label": "LLMs in parallel" },
-      { "value": "8", "label": "Concurrent workers" }
-    ]
+    "stats": []
   },
   "toolSystem": {
     "label": "Tools",
@@ -358,7 +365,7 @@
     "description": "Download. Set your API key. Talk to your AI on any channel. That's it.",
     "buttons": [
       { "label": "Read the Docs", "href": "https://octos-org.github.io/octos/" },
-      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
     ]
   }
 }

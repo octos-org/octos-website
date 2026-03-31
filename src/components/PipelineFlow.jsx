@@ -43,9 +43,8 @@ const nodes = [
     id: 'plan',
     type: 'step',
     position: { x: 440, y: 0 },
-    data: { label: 'PLAN', description: 'Decompose into sub-queries', bg: '#F9D53F', border: '#C4A020' },
+    data: { label: 'PLAN', description: 'Decompose into sub-queries', bg: '#6B21A8', border: '#9333EA' },
     sourcePosition: Position.Bottom,
-    style: { color: '#1a1a2e' },
   },
   {
     id: 'search1',

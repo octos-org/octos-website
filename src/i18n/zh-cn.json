@@ -14,7 +14,7 @@
     ],
     "externalLinks": [
       { "text": "文档", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
     "langAlt": { "text": "EN", "href": "/" }
   },
@@ -34,7 +34,7 @@
     "resourcesHeading": "资源",
     "external": [
       { "text": "文档", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
     "license": "MIT 开源协议。",
     "langEn": { "text": "EN", "href": "/" },
@@ -42,7 +42,8 @@
   },
   "hero": {
     "badge": "开源",
-    "heading": "一个大脑，多条手臂",
+    "acronym": "Open Cognitive Tasks Orchestration System",
+    "heading": "一颗大脑，触达八方",
     "description": "像章鱼一样 — 9 个大脑，每条腕足独立思考，却步调一致。你的 AI 不应该只活在一个聊天窗口里。让它出现在 Telegram、Discord、Slack、微信 —— 你的用户在哪里，它就在哪里。一个二进制文件，零依赖。",
     "statsBar": [
       "200+ 智能体",
@@ -53,15 +54,15 @@
     ],
     "buttons": [
       { "label": "开始使用", "href": "#quickstart" },
-      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
     ]
   },
   "stats": [
-    { "value": "31MB", "label": "二进制大小" },
-    { "value": "92", "label": "API 端点" },
-    { "value": "15", "label": "AI 供应商" },
-    { "value": "12", "label": "消息渠道" },
-    { "value": "0", "label": "依赖" }
+    { "value": "全平台", "label": "ARM · x86 · RISC-V" },
+    { "value": "API 驱动", "label": "前后端完全分离" },
+    { "value": "全主流", "label": "AI 供应商" },
+    { "value": "全渠道", "label": "消息平台" },
+    { "value": "零依赖", "label": "开箱即用" }
   ],
   "features": {
     "label": "核心能力",
@@ -71,55 +72,64 @@
         "title": "你的智能体，你说了算",
         "description": "92 个 API 端点，覆盖聊天、会话、管理、技能、指标和 Webhook。用它搭建任何前端界面。",
         "stat": "92",
-        "statLabel": "API 端点"
+        "statLabel": "API 端点",
+        "icon": "api"
       },
       {
         "title": "装得下所有人",
         "description": "一个 31MB 的二进制文件就能在一台机器上服务 200+ 用户。每个人拥有自己的智能体、独立的记忆、会话和数据。",
         "stat": "200+",
-        "statLabel": "用户/机器"
+        "statLabel": "用户/机器",
+        "icon": "users"
       },
       {
         "title": "每个任务用最合适的模型",
         "description": "便宜的模型做规划，强大的模型做总结。在一条流水线中串联多个大模型，一个挂了自动切换到下一个。",
         "stat": "15",
-        "statLabel": "AI 供应商"
+        "statLabel": "AI 供应商",
+        "icon": "models"
       },
       {
         "title": "永远在线",
         "description": "三层故障转移保证智能体持续运行，哪怕某个供应商宕机。对冲赛跑、熔断器、自动切换。",
         "stat": "3",
-        "statLabel": "故障转移层"
+        "statLabel": "故障转移层",
+        "icon": "uptime"
       },
       {
         "title": "智能工具管理",
         "description": "30+ 工具可用，但一次只加载 15 个。Octos 激活需要的工具，闲置的自动收起 — 像一个整理有序的工具箱。",
         "stat": "30+",
-        "statLabel": "可用工具"
+        "statLabel": "可用工具",
+        "icon": "tools"
       },
       {
         "title": "对话自然流转",
         "description": "五种队列模式控制智能体处理繁忙时刻 — 排队、收集、转向、打断、让用户插话。",
         "stat": "5",
-        "statLabel": "队列模式"
+        "statLabel": "队列模式",
+        "icon": "queue"
       },
       {
         "title": "它记得住",
         "description": "你的智能体记得昨天聊过的内容、你的偏好、项目、决策。三层记忆让合适的上下文随时可达。",
         "stat": "3",
-        "statLabel": "记忆层"
+        "statLabel": "记忆层",
+        "icon": "memory"
       },
       {
         "title": "文档、幻灯片、表格",
         "description": "原生生成 PPTX、DOCX 和 XLSX — 不需要 LibreOffice、外部工具或网络请求。纯 Rust，零依赖。",
         "stat": null,
-        "statLabel": null
+        "statLabel": null,
+        "icon": "docs"
       },
       {
         "title": "天生安全",
         "description": "智能体运行在隔离的沙箱中。整个代码库无 unsafe 代码。67 个注入测试持续增加中。",
         "stat": "67",
-        "statLabel": "注入测试"
+        "statLabel": "注入测试",
+        "icon": "security"
       }
     ]
   },
@@ -131,8 +141,8 @@
       { "color": "bg-title", "name": "octos-bus", "description": "连接 12 个消息平台" },
       { "color": "bg-heading", "name": "octos-agent", "description": "思考、使用工具、保持安全" },
       { "color": "bg-heading", "name": "octos-pipeline", "description": "运行多步骤工作流" },
-      { "color": "bg-accent", "name": "octos-llm", "description": "与 15 个 AI 供应商对话" },
-      { "color": "bg-accent", "name": "octos-memory", "description": "永远不忘重要的事" }
+      { "color": "bg-info", "name": "octos-llm", "description": "与 15 个 AI 供应商对话" },
+      { "color": "bg-highlight", "name": "octos-memory", "description": "永远不忘重要的事" }
     ]
   },
   "deepResearch": {
@@ -140,14 +150,11 @@
     "heading": "想得更深，搜得更广",
     "description": "一个智能体设计研究方案，其他智能体并行搜索。便宜的模型做规划，强大的模型做总结。每一步都是不同的模型。",
     "features": [
-      { "label": "8 个工人同时跑", "description": "搜索工人并行展开，然后汇聚成一份答案。" },
-      { "label": "5 个搜索供应商", "description": "Tavily、DuckDuckGo、Brave、You.com、Perplexity — 一个慢了，其他先完成。" },
-      { "label": "自愈路由", "description": "当某个供应商变慢，Octos 会自动发现并绕过它。" }
+      { "label": "多个助理一起跑", "description": "搜索助理并行展开，然后汇聚成一份答案。" },
+      { "label": "多个搜索引擎随时换", "description": "Tavily、DuckDuckGo、Brave、You.com、Perplexity — 一个慢了，其他先完成。" },
+      { "label": "自动切换失效引擎", "description": "当某个供应商变慢，Octos 会自动发现并绕过它。" }
     ],
-    "stats": [
-      { "value": "3+", "label": "并行 LLM" },
-      { "value": "8", "label": "并发工人" }
-    ]
+    "stats": []
   },
   "toolSystem": {
     "label": "工具",
@@ -319,7 +326,7 @@
   },
   "quickStart": {
     "label": "快速开始",
-    "heading": "几分钟部署",
+    "heading": "唤醒你的第一只章鱼！",
     "description": "不需要 Python、Docker 或任何运行时依赖。安装二进制文件，设置 API key，开始对话。就这样。",
     "code": "<span class=\"text-neutral-2\"># 安装</span>\ncargo install --path crates/octos-cli\n\n<span class=\"text-neutral-2\"># 初始化配置</span>\noctos init\n\n<span class=\"text-neutral-2\"># 设置 API key</span>\n<span class=\"text-neutral-1\">export</span> ANTHROPIC_API_KEY=your-key\n\n<span class=\"text-neutral-2\"># 在终端开始对话</span>\noctos chat\n\n<span class=\"text-neutral-2\"># 或启动完整网关</span>\noctos gateway\n\n<span class=\"text-neutral-2\"># 或启动 REST API 服务</span>\noctos serve"
   },
@@ -358,7 +365,7 @@
     "description": "下载。设置 API key。在任何渠道与你的 AI 对话。就这样。",
     "buttons": [
       { "label": "阅读文档", "href": "https://octos-org.github.io/octos/" },
-      { "label": "GitHub", "href": "https://github.com/nicholasgasior/octos" }
+      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
     ]
   }
 }
