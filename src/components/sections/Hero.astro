@@ -1,6 +1,7 @@
 ---
 import Button from 'components/ui/Button.astro';
 import Badge from 'components/ui/Badge.astro';
+import SeaCreatures from 'components/ui/SeaCreatures.astro';
 
 interface Props {
   t: {
@@ -28,6 +29,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <!-- Gradient overlay for text readability -->
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
   </div>
+  <SeaCreatures variant="hero" />
 
   <!-- Text directly on background -->
   <div class="relative z-10 w-full px-4 lg:px-9">
