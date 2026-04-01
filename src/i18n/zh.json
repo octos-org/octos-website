@@ -38,7 +38,7 @@
     ],
     "license": "MIT 开源协议。",
     "langEn": { "text": "EN", "href": "/" },
-    "langZh": { "text": "中文", "href": "/zh-cn/" }
+    "langZh": { "text": "中文", "href": "/zh/" }
   },
   "hero": {
     "badge": "开源",

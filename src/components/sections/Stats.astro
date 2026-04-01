@@ -12,13 +12,8 @@ const { t: stats } = Astro.props;
 
 <Section background="secondary" padY="md">
   <Container>
-    <div class="grid grid-cols-2 items-start gap-8 md:grid-cols-3 md:gap-6" data-animate-stagger>
-      {stats.slice(0, 3).map((stat) => (
-        <StatItem value={stat.value} label={stat.label} />
-      ))}
-    </div>
-    <div class="mt-8 flex justify-center gap-6 md:gap-16" data-animate-stagger>
-      {stats.slice(3).map((stat) => (
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-5 md:gap-6" data-animate-stagger>
+      {stats.map((stat) => (
         <StatItem value={stat.value} label={stat.label} />
       ))}
     </div>

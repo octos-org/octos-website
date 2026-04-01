@@ -16,7 +16,7 @@
       { "text": "Docs", "href": "https://octos-org.github.io/octos/" },
       { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
-    "langAlt": { "text": "中文", "href": "/zh-cn/" }
+    "langAlt": { "text": "中文", "href": "/zh/" }
   },
   "footer": {
     "brand": "Octos",
@@ -38,7 +38,7 @@
     ],
     "license": "Open source under MIT license.",
     "langEn": { "text": "EN", "href": "/" },
-    "langZh": { "text": "中文", "href": "/zh-cn/" }
+    "langZh": { "text": "中文", "href": "/zh/" }
   },
   "hero": {
     "badge": "Open Source",
@@ -60,9 +60,9 @@
   "stats": [
     { "value": "Runs Anywhere",   "label": "ARM · x86 · RISC-V" },
     { "value": "Plug & Play",     "label": "API-First" },
-    { "value": "Open-Source","label": "Stay Open, Stay Free" },
-    { "value": "Follow You",  "label": "App · Web · Msg" },
-    { "value": "Native App",     "label": "Zero-Dep Performance" }
+    { "value": "Open-Source","label": "Stay Open,<br/>Stay Free" },
+    { "value": "Follow<br/>You",  "label": "App · Web · Msg" },
+    { "value": "Native<br/>App",     "label": "Zero-Dep Performance" }
   ],
   "features": {
     "label": "Capabilities",

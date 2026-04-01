@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [sitemap(), react()],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-cn'],
+    locales: ['en', 'zh'],
     routing: {
       prefixDefaultLocale: false,
     },
