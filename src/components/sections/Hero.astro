@@ -17,11 +17,11 @@ const { t } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<section class="hero-scene relative flex min-h-screen items-end overflow-hidden pb-12 pt-20 lg:pb-16">
+<section class="hero-scene relative flex min-h-screen flex-col overflow-hidden pb-12 pt-24 md:pt-28 lg:pb-16 lg:pt-32">
   <!-- Background illustration -->
   <div class="absolute inset-0 z-0">
     <img
-      src={`${base}/images/ocean-hero.png`}
+      src={`${base}/images/ocean-hero.webp`}
       alt=""
       class="h-full w-full object-cover"
       loading="eager"
@@ -32,10 +32,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <SeaCreatures variant="hero" />
 
   <!-- Text directly on background -->
-  <div class="relative z-10 w-full px-4 lg:px-9">
-    <div class="mx-auto max-w-7xl text-center">
-      <p class="font-mono text-[16px] uppercase tracking-[0.2em] text-white/80 md:text-[20px]">{t.acronym}</p>
-      <h1 class="mt-4 text-[40px] leading-[1.05] tracking-[-0.04em] text-white md:text-[64px] 2xl:text-[80px]" set:html={t.heading} />
+  <div class="relative z-10 flex w-full flex-1 flex-col px-4 lg:px-9">
+    <div class="mx-auto w-full max-w-7xl text-center">
+      <p class="text-[56px] font-semibold uppercase leading-[1] tracking-[-0.04em] text-white md:text-[96px] 2xl:text-[120px]">OCTOS</p>
+      <p class="mt-4 font-mono text-[16px] uppercase tracking-[0.2em] text-accent md:text-[20px]">{t.acronym}</p>
+    </div>
+
+    <div class="mx-auto mt-auto w-full max-w-7xl text-center">
+      <h1 class="text-[40px] leading-[1.05] tracking-[-0.04em] text-white md:text-[64px] 2xl:text-[80px]" set:html={t.heading} />
 
       <p class="mx-auto mt-6 max-w-2xl text-[18px] leading-relaxed text-white/80 md:text-[20px] lg:text-[22px]">
         {t.description}
