@@ -1,12 +1,44 @@
 [
-  { "name": "Telegram" },
-  { "name": "Discord" },
-  { "name": "Slack" },
-  { "name": "WhatsApp" },
-  { "name": "WeChat" },
-  { "name": "WeCom" },
-  { "name": "Feishu" },
-  { "name": "Matrix" },
-  { "name": "QQ" },
-  { "name": "Twilio" }
+  {
+    "name": "Telegram"
+  },
+  {
+    "name": "Discord"
+  },
+  {
+    "name": "Slack"
+  },
+  {
+    "name": "WhatsApp"
+  },
+  {
+    "name": "WeChat"
+  },
+  {
+    "name": "WeCom"
+  },
+  {
+    "name": "Feishu"
+  },
+  {
+    "name": "Matrix"
+  },
+  {
+    "name": "QQ"
+  },
+  {
+    "name": "Twilio"
+  },
+  {
+    "name": "DingTalk"
+  },
+  {
+    "name": "LINE"
+  },
+  {
+    "name": "Email"
+  },
+  {
+    "name": "Web/API"
+  }
 ]

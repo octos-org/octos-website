@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Octos — The Backend OS for AI Agents",
-    "description": "One brain, many arms. Your AI on every channel — Telegram, Discord, Slack, WeChat, and more. One 31MB binary, 15 LLM providers, zero dependencies."
+    "description": "One brain, many arms. Your AI on every channel — Telegram, Discord, Slack, WeChat, and more. One 31MB binary, 16 LLM providers, zero dependencies."
   },
   "header": {
     "logo": "Octos",
@@ -47,8 +47,8 @@
     "description": "Like an octopus — eight arms thinking in parallel, running async, self-healing, self-evolving. Multi-agent collaboration, multi-step workflows, multi-model failover — runs everywhere: phones, PCs, servers, Raspberry Pi, RISC-V. Zero dependencies.",
     "statsBar": [
       "200+ agents",
-      "12 channels",
-      "15 providers",
+      "14 channels",
+      "16 providers",
       "31MB binary",
       "open source"
     ],
@@ -70,8 +70,8 @@
     "items": [
       {
         "title": "Your agents, your way",
-        "description": "92 API endpoints to build any interface on top — web dashboards, mobile apps, CLI tools, or embed AI into your existing product.",
-        "stat": "92",
+        "description": "91 API endpoints to build any interface on top — web dashboards, mobile apps, CLI tools, or embed AI into your existing product.",
+        "stat": "91",
         "statLabel": "API endpoints",
         "icon": "api"
       },
@@ -85,7 +85,7 @@
       {
         "title": "Best model for each task",
         "description": "Cheap models for planning, powerful ones for synthesis. Chain multiple LLMs in a single workflow with automatic failover when one goes down.",
-        "stat": "15",
+        "stat": "16",
         "statLabel": "LLM providers",
         "icon": "models"
       },
@@ -97,8 +97,8 @@
         "icon": "uptime"
       },
       {
-        "title": "Smart tool management",
-        "description": "30+ tools available, but only 15 loaded at once. Octos activates what your agent needs and quietly puts away the rest — fast responses, no bloat.",
+        "title": "Full tool access",
+        "description": "Every enabled tool is sent to your agent on each turn — shell, files, search, web, browser, memory, and more. No hidden state, nothing to 'activate'.",
         "stat": "30+",
         "statLabel": "tools available",
         "icon": "tools"
@@ -138,10 +138,10 @@
     "heading": "Simple inside, powerful outside",
     "description": "Eight focused modules, one 31MB binary. No runtime, no Docker, no pip install. Download and run.",
     "modules": [
-      { "color": "bg-title", "name": "octos-bus", "description": "connects 12 messaging platforms" },
+      { "color": "bg-title", "name": "octos-bus", "description": "connects 14 messaging platforms" },
       { "color": "bg-heading", "name": "octos-agent", "description": "thinks, uses tools, stays safe" },
       { "color": "bg-heading", "name": "octos-pipeline", "description": "runs multi-step workflows" },
-      { "color": "bg-info", "name": "octos-llm", "description": "talks to 15 AI providers" },
+      { "color": "bg-info", "name": "octos-llm", "description": "talks to 16 AI providers" },
       { "color": "bg-highlight", "name": "octos-memory", "description": "never forgets what matters" }
     ]
   },
@@ -158,16 +158,16 @@
   },
   "toolSystem": {
     "label": "Tools",
-    "heading": "A well-organized toolbox",
-    "description": "30+ tools available, but your agent only loads what it needs right now. Idle tools quietly step aside — keeping responses fast and context windows lean.",
+    "heading": "One toolbox, always open",
+    "description": "40+ tools, all sent to your agent every turn — no recency-based loading, nothing to activate. Predictable and easy to reason about.",
     "tiers": [
-      { "stat": "15", "label": "Active tools", "description": "Always ready, instant response" },
-      { "stat": "26+", "label": "On standby", "description": "Activated when needed, put away when done" },
+      { "stat": "40+", "label": "Tools per turn", "description": "The full enabled set, sent every turn" },
+      { "stat": "0", "label": "Activation steps", "description": "No recency loading, nothing to activate" },
       { "stat": "∞", "label": "Catalog", "description": "No limit on what your agent can learn to do" }
     ],
     "toolGroups": [
       { "label": "11 core tools", "tools": ["shell", "read_file", "write_file", "edit_file", "diff_edit", "glob", "grep", "list_dir", "web_search", "web_fetch", "browser"] },
-      { "label": "12 agent tools", "tools": ["deep_search", "deep_crawl", "synthesize", "recall_memory", "save_memory", "spawn", "send_file", "message", "configure_tool", "activate_tools", "model_check", "cron"] },
+      { "label": "11 agent tools", "tools": ["deep_search", "deep_crawl", "synthesize", "recall_memory", "save_memory", "spawn", "send_file", "message", "configure_tool", "model_check", "cron"] },
       { "label": "7 app skills", "tools": ["news_briefing", "send_email", "deep_search", "deep_crawl", "account_manager", "weather", "time"] }
     ]
   },
@@ -272,10 +272,10 @@
       { "dim": "Startup", "octos": "<100ms", "langchain": "1-3s", "openclaw": "500ms-2s" },
       { "dim": "Memory per agent", "octos": "20MB", "langchain": "200MB+", "openclaw": "200-300MB" },
       { "dim": "Agents per machine", "octos": "200+", "langchain": "~10", "openclaw": "~20" },
-      { "dim": "LLM providers", "octos": "15 built-in", "langchain": "50+ (plugins)", "openclaw": "10+" },
-      { "dim": "Channels", "octos": "12", "langchain": "0", "openclaw": "22+" },
+      { "dim": "LLM providers", "octos": "16 built-in", "langchain": "50+ (plugins)", "openclaw": "10+" },
+      { "dim": "Channels", "octos": "14", "langchain": "0", "openclaw": "22+" },
       { "dim": "Failover", "octos": "3-layer auto", "langchain": "Manual", "openclaw": "Basic retry" },
-      { "dim": "Tool loading", "octos": "Smart (LRU)", "langchain": "All upfront", "openclaw": "All upfront" },
+      { "dim": "Tool loading", "octos": "Full set / turn", "langchain": "All upfront", "openclaw": "All upfront" },
       { "dim": "Document generation", "octos": "PPTX/DOCX/XLSX", "langchain": "None", "openclaw": "None" },
       { "dim": "Voice", "octos": "ASR + TTS", "langchain": "None", "openclaw": "Wake word + TTS" },
       { "dim": "Memory", "octos": "3-layer hybrid", "langchain": "Vector only", "openclaw": "SQLite + vector" },
@@ -290,13 +290,13 @@
         "label": "01",
         "title": "AI in your product",
         "description": "Give every customer their own AI assistant — isolated, personalized, always available. One binary handles them all through a clean REST API.",
-        "highlights": ["92 API endpoints", "Per-user isolation", "Admin dashboard"]
+        "highlights": ["91 API endpoints", "Per-user isolation", "Admin dashboard"]
       },
       {
         "label": "02",
         "title": "Customer support everywhere",
         "description": "One agent on Telegram, Discord, Slack, WhatsApp, Email — everywhere your users are. They switch channels without losing context.",
-        "highlights": ["12 channels", "Session switching", "5 queue modes"]
+        "highlights": ["14 channels", "Session switching", "5 queue modes"]
       },
       {
         "label": "03",
@@ -336,11 +336,11 @@
     "items": [
       {
         "question": "How is Octos different from LangChain or CrewAI?",
-        "answer": "Octos is an operating system, not a framework. It runs as a single binary — no Python, no Docker, no glue code. Built-in multi-tenancy, 12 messaging channels, and automatic provider failover. You configure agents through a REST API or a JSON file."
+        "answer": "Octos is an operating system, not a framework. It runs as a single binary — no Python, no Docker, no glue code. Built-in multi-tenancy, 14 messaging channels, and automatic provider failover. You configure agents through a REST API or a JSON file."
       },
       {
         "question": "What LLMs does Octos support?",
-        "answer": "15 providers out of the box: Anthropic, OpenAI, Gemini, DeepSeek, OpenRouter, and more. You can chain multiple providers in a single pipeline — cheap models for planning, powerful ones for synthesis — with automatic failover if one goes down."
+        "answer": "16 providers out of the box: Anthropic, OpenAI, Gemini, Vertex AI, DeepSeek, OpenRouter, and more. You can chain multiple providers in a single pipeline — cheap models for planning, powerful ones for synthesis — with automatic failover if one goes down."
       },
       {
         "question": "Can I run Octos on a small server?",
