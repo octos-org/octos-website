@@ -1,17 +1,50 @@
 [
-  { "name": "Anthropic" },
-  { "name": "OpenAI" },
-  { "name": "Gemini" },
-  { "name": "DeepSeek" },
-  { "name": "OpenRouter" },
-  { "name": "MiniMax" },
-  { "name": "Zhipu AI" },
-  { "name": "Qwen" },
-  { "name": "Moonshot" },
-  { "name": "Groq" },
-  { "name": "Z.AI" },
-  { "name": "R9s" },
-  { "name": "NVIDIA" },
-  { "name": "Ollama" },
-  { "name": "vLLM" }
+  {
+    "name": "Anthropic"
+  },
+  {
+    "name": "OpenAI"
+  },
+  {
+    "name": "Gemini"
+  },
+  {
+    "name": "Vertex AI"
+  },
+  {
+    "name": "DeepSeek"
+  },
+  {
+    "name": "OpenRouter"
+  },
+  {
+    "name": "MiniMax"
+  },
+  {
+    "name": "Zhipu AI"
+  },
+  {
+    "name": "Qwen"
+  },
+  {
+    "name": "Moonshot"
+  },
+  {
+    "name": "Groq"
+  },
+  {
+    "name": "Z.AI"
+  },
+  {
+    "name": "R9s"
+  },
+  {
+    "name": "NVIDIA"
+  },
+  {
+    "name": "Ollama"
+  },
+  {
+    "name": "vLLM"
+  }
 ]

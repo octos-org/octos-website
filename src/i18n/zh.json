@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Octos — AI 智能体操作系统",
-    "description": "一个大脑，多条手臂。你的 AI 在每个渠道 — Telegram、Discord、Slack、微信等。一个 31MB 二进制文件,15 个 AI 供应商,零依赖。"
+    "description": "一个大脑，多条手臂。你的 AI 在每个渠道 — Telegram、Discord、Slack、微信等。一个 31MB 二进制文件,16 个 AI 供应商,零依赖。"
   },
   "header": {
     "logo": "Octos",
@@ -47,8 +47,8 @@
     "description": "像章鱼一样 — 八条腕足同时思考，并行异步运行，自我修复，自我进化。多智能体协作、多步骤工作流、多模型故障转移 — 手机、PC、服务器、树莓派、RISC-V，哪里都能跑，零依赖。",
     "statsBar": [
       "200+ 智能体",
-      "12 个渠道",
-      "15 个供应商",
+      "14 个渠道",
+      "16 个供应商",
       "31MB 二进制",
       "开源"
     ],
@@ -70,8 +70,8 @@
     "items": [
       {
         "title": "你的智能体，你说了算",
-        "description": "92 个 API 端点，覆盖聊天、会话、管理、技能、指标和 Webhook。用它搭建任何前端界面。",
-        "stat": "92",
+        "description": "91 个 API 端点，覆盖聊天、会话、管理、技能、指标和 Webhook。用它搭建任何前端界面。",
+        "stat": "91",
         "statLabel": "API 端点",
         "icon": "api"
       },
@@ -85,7 +85,7 @@
       {
         "title": "每个任务用最合适的模型",
         "description": "便宜的模型做规划，强大的模型做总结。在一条流水线中串联多个大模型，一个挂了自动切换到下一个。",
-        "stat": "15",
+        "stat": "16",
         "statLabel": "AI 供应商",
         "icon": "models"
       },
@@ -97,8 +97,8 @@
         "icon": "uptime"
       },
       {
-        "title": "智能工具管理",
-        "description": "30+ 工具可用，但一次只加载 15 个。Octos 激活需要的工具，闲置的自动收起 — 像一个整理有序的工具箱。",
+        "title": "完整工具访问",
+        "description": "每一轮都把所有已启用的工具发送给你的智能体 — shell、文件、搜索、web、浏览器、记忆等。没有隐藏状态，无需「激活」。",
         "stat": "30+",
         "statLabel": "可用工具",
         "icon": "tools"
@@ -138,10 +138,10 @@
     "heading": "内简外强",
     "description": "八个专注模块，一个 31MB 二进制文件。无需运行时、无需 Docker、无需 pip install。下载即用。",
     "modules": [
-      { "color": "bg-title", "name": "octos-bus", "description": "连接 12 个消息平台" },
+      { "color": "bg-title", "name": "octos-bus", "description": "连接 14 个消息平台" },
       { "color": "bg-heading", "name": "octos-agent", "description": "思考、使用工具、保持安全" },
       { "color": "bg-heading", "name": "octos-pipeline", "description": "运行多步骤工作流" },
-      { "color": "bg-info", "name": "octos-llm", "description": "与 15 个 AI 供应商对话" },
+      { "color": "bg-info", "name": "octos-llm", "description": "与 16 个 AI 供应商对话" },
       { "color": "bg-highlight", "name": "octos-memory", "description": "永远不忘重要的事" }
     ]
   },
@@ -158,16 +158,16 @@
   },
   "toolSystem": {
     "label": "工具",
-    "heading": "整理有序的工具箱",
-    "description": "30+ 工具可用，但你的智能体只加载当前需要的。闲置的工具自动收起 — 保持响应快速、上下文窗口精简。",
+    "heading": "始终敞开的工具箱",
+    "description": "40+ 个工具，每一轮全部发送给你的智能体 — 没有基于时近性的加载，无需激活。可预测、易于推理。",
     "tiers": [
-      { "stat": "15", "label": "活跃工具", "description": "随时待命，即时响应" },
-      { "stat": "26+", "label": "待命工具", "description": "需要时激活，用完即收起" },
+      { "stat": "40+", "label": "每轮工具", "description": "完整的已启用工具集，每轮发送" },
+      { "stat": "0", "label": "激活步骤", "description": "无时近性加载，无需激活" },
       { "stat": "∞", "label": "工具目录", "description": "你的智能体能学会的事没有上限" }
     ],
     "toolGroups": [
       { "label": "11 个核心工具", "tools": ["shell", "read_file", "write_file", "edit_file", "diff_edit", "glob", "grep", "list_dir", "web_search", "web_fetch", "browser"] },
-      { "label": "12 个智能体工具", "tools": ["deep_search", "deep_crawl", "synthesize", "recall_memory", "save_memory", "spawn", "send_file", "message", "configure_tool", "activate_tools", "model_check", "cron"] },
+      { "label": "11 个智能体工具", "tools": ["deep_search", "deep_crawl", "synthesize", "recall_memory", "save_memory", "spawn", "send_file", "message", "configure_tool", "model_check", "cron"] },
       { "label": "7 个应用技能", "tools": ["news_briefing", "send_email", "deep_search", "deep_crawl", "account_manager", "weather", "time"] }
     ]
   },
@@ -272,10 +272,10 @@
       { "dim": "启动时间", "octos": "<100ms", "langchain": "1-3s", "openclaw": "500ms-2s" },
       { "dim": "内存/智能体", "octos": "20MB", "langchain": "200MB+", "openclaw": "200-300MB" },
       { "dim": "每台机器智能体", "octos": "200+", "langchain": "~10", "openclaw": "~20" },
-      { "dim": "LLM 供应商", "octos": "15 个内置", "langchain": "50+ (插件)", "openclaw": "10+" },
-      { "dim": "消息渠道", "octos": "12", "langchain": "0", "openclaw": "22+" },
+      { "dim": "LLM 供应商", "octos": "16 个内置", "langchain": "50+ (插件)", "openclaw": "10+" },
+      { "dim": "消息渠道", "octos": "14", "langchain": "0", "openclaw": "22+" },
       { "dim": "故障转移", "octos": "三层自动", "langchain": "手动", "openclaw": "基本重试" },
-      { "dim": "工具加载", "octos": "智能 (LRU)", "langchain": "全部预加载", "openclaw": "全部预加载" },
+      { "dim": "工具加载", "octos": "每轮全部", "langchain": "全部预加载", "openclaw": "全部预加载" },
       { "dim": "文档生成", "octos": "PPTX/DOCX/XLSX", "langchain": "无", "openclaw": "无" },
       { "dim": "语音", "octos": "ASR + TTS", "langchain": "无", "openclaw": "唤醒词 + TTS" },
       { "dim": "记忆", "octos": "三层混合", "langchain": "仅向量", "openclaw": "SQLite + 向量" },
@@ -290,13 +290,13 @@
         "label": "01",
         "title": "产品中嵌入 AI",
         "description": "给每个客户专属的 AI 助手 — 隔离、个性化、始终在线。一个二进制文件通过简洁的 REST API 处理所有请求。",
-        "highlights": ["92 个 API 端点", "按用户隔离", "管理后台"]
+        "highlights": ["91 个 API 端点", "按用户隔离", "管理后台"]
       },
       {
         "label": "02",
         "title": "全渠道客户支持",
         "description": "一个智能体同时出现在 Telegram、Discord、Slack、WhatsApp、邮件 — 你的用户在哪里都行。切换渠道不丢失上下文。",
-        "highlights": ["12 个渠道", "会话切换", "5 种队列模式"]
+        "highlights": ["14 个渠道", "会话切换", "5 种队列模式"]
       },
       {
         "label": "03",
@@ -336,11 +336,11 @@
     "items": [
       {
         "question": "Octos 和 LangChain、CrewAI 有什么区别？",
-        "answer": "Octos 是操作系统，不是框架。单个二进制文件 — 不需要 Python、Docker、胶水代码。内置多租户、12 个消息渠道和自动供应商故障转移。通过 REST API 或 JSON 配置文件管理智能体。"
+        "answer": "Octos 是操作系统，不是框架。单个二进制文件 — 不需要 Python、Docker、胶水代码。内置多租户、14 个消息渠道和自动供应商故障转移。通过 REST API 或 JSON 配置文件管理智能体。"
       },
       {
         "question": "支持哪些大模型？",
-        "answer": "15 个供应商开箱即用：Anthropic、OpenAI、Gemini、DeepSeek、OpenRouter 等。可以在一条流水线中串联多个供应商 — 便宜模型做规划，强大模型做总结 — 一个挂了自动切换到下一个。"
+        "answer": "16 个供应商开箱即用：Anthropic、OpenAI、Gemini、Vertex AI、DeepSeek、OpenRouter 等。可以在一条流水线中串联多个供应商 — 便宜模型做规划，强大模型做总结 — 一个挂了自动切换到下一个。"
       },
       {
         "question": "小服务器能跑吗？",
@@ -352,7 +352,7 @@
       },
       {
         "question": "怎么连接消息渠道？",
-        "answer": "在配置文件中添加渠道配置即可。Telegram、Discord、Slack、WhatsApp、微信、邮件等 12 个渠道全部内置 — 无需插件。你的智能体同时在所有渠道上线。"
+        "answer": "在配置文件中添加渠道配置即可。Telegram、Discord、Slack、WhatsApp、微信、邮件等 14 个渠道全部内置 — 无需插件。你的智能体同时在所有渠道上线。"
       },
       {
         "question": "多个用户可以共用一个 Octos 实例吗？",
