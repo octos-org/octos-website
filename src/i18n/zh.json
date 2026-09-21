@@ -103,7 +103,6 @@
   },
   "hero": {
     "badge": "Apache-2.0",
-    "acronym": "Rust · Apache-2.0",
     "heading": "可嵌入的<br/>智能体内核",
     "description": "用 Rust 写成的智能体 harness 内核：多轮执行、上下文、记忆、工具、模型路由、沙箱与多智能体协作，统一通过一套协议对外提供。可以作为 crate、C 库、移动端绑定嵌入，也可以作为服务运行。",
     "statsBar": [
@@ -611,20 +610,28 @@
     "description": "因为边界是协议，客户端不过是一个会说这套协议的程序。下面这些已经在跑，你的客户端也可以加入。",
     "clients": [
       {
-        "name": "Octoscode",
-        "description": "终端客户端。自行拉起本地运行时，通过 stdio 讲 OUP。"
+        "name": "Octoscode · 终端",
+        "description": "终端客户端。自行拉起本地运行时，通过 stdio 讲 OUP。",
+        "href": "https://github.com/octos-org/octoscode",
+        "linkLabel": "octos-org/octoscode"
       },
       {
         "name": "Octoscode Web",
-        "description": "浏览器客户端，走 WebSocket，由二进制同时提供管理后台。"
+        "description": "浏览器客户端，走 WebSocket，由二进制同时提供管理后台。",
+        "href": "https://github.com/octos-org/octoscode-web",
+        "linkLabel": "octos-org/octoscode-web"
       },
       {
         "name": "OctoSense",
-        "description": "面向桌面与手机的 Agent Shell，把内核嵌进应用内部。"
+        "description": "面向桌面与手机的 Agent Shell，把内核嵌进应用内部。",
+        "href": "https://octosense.org/cn/",
+        "linkLabel": "octosense.org"
       },
       {
         "name": "MCP",
-        "description": "Octos 既是 MCP 客户端也是 MCP 服务端：别的智能体能调它，它也能调别人。"
+        "description": "Octos 既是 MCP 客户端也是 MCP 服务端：别的智能体能调它，它也能调别人。",
+        "href": "https://octos-org.github.io/octos/",
+        "linkLabel": "octos mcp-serve"
       }
     ],
     "channelsLabel": "消息渠道",
