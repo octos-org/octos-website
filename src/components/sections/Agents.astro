@@ -1,0 +1,43 @@
+---
+import SvgSection from 'components/ui/SvgSection.astro';
+import PipelineFlow from 'components/PipelineFlow.jsx';
+
+interface Props {
+  t: {
+    label: string;
+    heading: string;
+    description: string;
+    modes: { name: string; summary: string; points: string[] }[];
+  };
+}
+
+const { t } = Astro.props;
+---
+
+<SvgSection id="agents" bgSrc="/images/bg-deep-panel.webp" creatures="deep">
+  <div class="glass-panel">
+    <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
+    <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]" set:html={t.heading} />
+    <p class="mt-4 text-[16px] leading-relaxed text-neutral-2">{t.description}</p>
+  </div>
+
+  <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+    {t.modes.map((mode) => (
+      <div class="glass-panel">
+        <p class="font-mono text-[13px] uppercase tracking-[0.06em] text-accent">{mode.name}</p>
+        <p class="mt-3 text-[15px] leading-relaxed text-highlight">{mode.summary}</p>
+        <ul class="mt-4 flex flex-col gap-2">
+          {mode.points.map((point) => (
+            <li class="flex gap-2 text-[14px] leading-relaxed text-neutral-2">
+              <span class="text-accent">·</span>{point}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  <div class="glass-panel mt-4 h-[320px] p-0 md:h-[380px]">
+    <PipelineFlow client:only="react" />
+  </div>
+</SvgSection>

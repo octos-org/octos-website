@@ -12,7 +12,7 @@ const { t: stats } = Astro.props;
 
 <Section background="secondary" padY="md">
   <Container>
-    <div class="grid grid-cols-2 gap-8 md:grid-cols-5 md:gap-6" data-animate-stagger>
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-5 md:grid-rows-[auto_auto]" data-animate-stagger>
       {stats.map((stat) => (
         <StatItem value={stat.value} label={stat.label} />
       ))}

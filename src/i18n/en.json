@@ -1,371 +1,733 @@
 {
   "site": {
-    "title": "Octos — The Backend OS for AI Agents",
-    "description": "One brain, many arms. Your AI on every channel — Telegram, Discord, Slack, WeChat, and more. One 31MB binary, 16 LLM providers, zero dependencies."
+    "title": "Octos — The Embeddable Agent Kernel",
+    "description": "Octos is a Rust agent harness kernel you embed. It owns turns, context, memory, tools, model routing and multi-agent execution behind one protocol; your app owns the interface. Apache-2.0."
   },
   "header": {
     "logo": "Octos",
     "navLinks": [
-      { "text": "Features", "href": "#features" },
-      { "text": "Architecture", "href": "#architecture" },
-      { "text": "Performance", "href": "#performance" },
-      { "text": "Comparison", "href": "#comparison" },
-      { "text": "Quick Start", "href": "#quickstart" }
+      {
+        "text": "Architecture",
+        "href": "#architecture"
+      },
+      {
+        "text": "Protocol",
+        "href": "#protocol"
+      },
+      {
+        "text": "Embedding",
+        "href": "#embedding"
+      },
+      {
+        "text": "Agents",
+        "href": "#agents"
+      },
+      {
+        "text": "Quick Start",
+        "href": "#quickstart"
+      }
     ],
     "externalLinks": [
-      { "text": "Docs", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "text": "Docs",
+        "href": "https://octos-org.github.io/octos/"
+      },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ],
-    "langAlt": { "text": "中文", "href": "/zh/" }
+    "langAlt": {
+      "text": "中文",
+      "href": "/zh/"
+    }
   },
   "footer": {
     "brand": "Octos",
-    "brandDescription": "Open Cognitive Tasks Orchestration System — a Rust-native, API-first Agentic OS for AI agents.",
+    "brandDescription": "An embeddable AI agent harness kernel, written in Rust. The app owns the product; Octos owns agent execution and runtime state.",
     "navHeading": "Navigation",
     "links": [
-      { "text": "Features", "href": "#features" },
-      { "text": "Architecture", "href": "#architecture" },
-      { "text": "Performance", "href": "#performance" },
-      { "text": "Comparison", "href": "#comparison" },
-      { "text": "Use Cases", "href": "#usecases" },
-      { "text": "Quick Start", "href": "#quickstart" },
-      { "text": "FAQ", "href": "#faq" }
+      {
+        "text": "Architecture",
+        "href": "#architecture"
+      },
+      {
+        "text": "Protocol",
+        "href": "#protocol"
+      },
+      {
+        "text": "Embedding",
+        "href": "#embedding"
+      },
+      {
+        "text": "Memory",
+        "href": "#memory"
+      },
+      {
+        "text": "Agents",
+        "href": "#agents"
+      },
+      {
+        "text": "Security",
+        "href": "#security"
+      },
+      {
+        "text": "Quick Start",
+        "href": "#quickstart"
+      },
+      {
+        "text": "FAQ",
+        "href": "#faq"
+      }
     ],
     "resourcesHeading": "Resources",
     "external": [
-      { "text": "Documentation", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "text": "Docs",
+        "href": "https://octos-org.github.io/octos/"
+      },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ],
-    "license": "Open source under MIT license.",
-    "langEn": { "text": "EN", "href": "/" },
-    "langZh": { "text": "中文", "href": "/zh/" }
+    "license": "Open source under the Apache License 2.0.",
+    "langEn": {
+      "text": "EN",
+      "href": "/"
+    },
+    "langZh": {
+      "text": "中文",
+      "href": "/zh/"
+    }
   },
   "hero": {
-    "badge": "Open Source",
-    "acronym": "Open Cognitive Tasks Orchestration System",
-    "heading": "One brain, many arms",
-    "description": "Like an octopus — eight arms thinking in parallel, running async, self-healing, self-evolving. Multi-agent collaboration, multi-step workflows, multi-model failover — runs everywhere: phones, PCs, servers, Raspberry Pi, RISC-V. Zero dependencies.",
+    "badge": "Apache-2.0",
+    "acronym": "Rust · Apache-2.0",
+    "heading": "The embeddable<br/>agent kernel",
+    "description": "A Rust agent harness kernel: turns, context, memory, tools, model routing, sandboxing and multi-agent execution, behind one protocol. Embed it as a crate, a C library, a mobile binding, or run it as a server.",
     "statsBar": [
-      "200+ agents",
-      "14 channels",
-      "16 providers",
-      "31MB binary",
-      "open source"
+      "Rust kernel",
+      "OUP protocol",
+      "3-layer memory",
+      "19 providers",
+      "Apache-2.0"
     ],
     "buttons": [
-      { "label": "Get Started", "href": "#quickstart" },
-      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "label": "Quick Start",
+        "href": "#quickstart"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ]
   },
   "stats": [
-    { "value": "Runs Anywhere",   "label": "ARM · x86 · RISC-V" },
-    { "value": "Plug & Play",     "label": "API-First" },
-    { "value": "Open-Source","label": "Stay Open,<br/>Stay Free" },
-    { "value": "Follow<br/>You",  "label": "App · Web · Msg" },
-    { "value": "Native<br/>App",     "label": "Zero-Dep Performance" }
+    {
+      "value": "Embed",
+      "label": "Crate · C ABI · UniFFI"
+    },
+    {
+      "value": "Protocol",
+      "label": "WebSocket · stdio"
+    },
+    {
+      "value": "Local",
+      "label": "Your machine, your data"
+    },
+    {
+      "value": "Agents",
+      "label": "Sub-agents · peers · fleet"
+    },
+    {
+      "value": "Anywhere",
+      "label": "Linux · macOS · Windows"
+    }
   ],
   "features": {
-    "label": "Capabilities",
-    "heading": "Why Octos",
+    "label": "The kernel",
+    "heading": "What the kernel owns",
     "items": [
       {
-        "title": "Your agents, your way",
-        "description": "91 API endpoints to build any interface on top — web dashboards, mobile apps, CLI tools, or embed AI into your existing product.",
-        "stat": "91",
-        "statLabel": "API endpoints",
+        "title": "Turns and sessions",
+        "description": "Open, hydrate, fork, roll back and compact sessions. Start, steer and interrupt a turn. The runtime keeps the transcript, the execution state and the durable ordering — not your client.",
+        "stat": "20",
+        "statLabel": "session methods",
         "icon": "api"
       },
       {
-        "title": "Room for everyone",
-        "description": "One 31MB binary serves 200+ users on a single machine. Each person gets their own agent with private memory, sessions, and data.",
-        "stat": "200+",
-        "statLabel": "profiles per machine",
-        "icon": "users"
-      },
-      {
-        "title": "Best model for each task",
-        "description": "Cheap models for planning, powerful ones for synthesis. Chain multiple LLMs in a single workflow with automatic failover when one goes down.",
-        "stat": "16",
-        "statLabel": "LLM providers",
+        "title": "Context that survives long work",
+        "description": "Three compaction tiers, from pruning stale tool results to a full summarizing pass, with a token budget and preflight checks before each call.",
+        "stat": "3",
+        "statLabel": "compaction tiers",
         "icon": "models"
       },
       {
-        "title": "Always online",
-        "description": "Three layers of failover keep your agents running even when a provider goes down. Hedge racing, circuit breakers, automatic switching.",
+        "title": "Memory in three layers",
+        "description": "Automatic episodes of past work, long-term notes and daily notes as markdown, and an entity bank the agent writes on purpose. Hybrid BM25 and vector recall.",
         "stat": "3",
-        "statLabel": "failover layers",
-        "icon": "uptime"
+        "statLabel": "memory layers",
+        "icon": "users"
       },
       {
-        "title": "Full tool access",
-        "description": "Every enabled tool is sent to your agent on each turn — shell, files, search, web, browser, memory, and more. No hidden state, nothing to 'activate'.",
-        "stat": "30+",
-        "statLabel": "tools available",
+        "title": "One toolbox",
+        "description": "35 built-in tools — shell, file edits, patches, search, web, git, checks, delegation — plus memory, peer, research and MCP tools registered per session.",
+        "stat": "35",
+        "statLabel": "built-in tools",
         "icon": "tools"
       },
       {
-        "title": "Conversations that flow",
-        "description": "Five queue modes control how your agent handles busy moments — queue messages, collect them, steer mid-conversation, or let users interrupt.",
-        "stat": "5",
-        "statLabel": "queue modes",
-        "icon": "queue"
+        "title": "Any model, with a fallback",
+        "description": "19 providers behind one router: capability lanes, hedge racing, exponential retry and a per-provider circuit breaker that degrades and recovers on its own.",
+        "stat": "19",
+        "statLabel": "LLM providers",
+        "icon": "uptime"
       },
       {
-        "title": "It remembers",
-        "description": "Your agent knows what you talked about yesterday, your preferences, your projects. Three memory layers keep the right context in reach.",
-        "stat": "3",
-        "statLabel": "memory layers",
-        "icon": "memory"
+        "title": "More than one agent",
+        "description": "Blocking sub-agents inside a turn, peer agents with their own sessions and worktrees, swarm fan-out with a validator gate, and a durable fleet kernel for long plans.",
+        "stat": "4",
+        "statLabel": "execution modes",
+        "icon": "api"
       },
       {
-        "title": "Documents, slides, spreadsheets",
-        "description": "Generate PPTX, DOCX, and XLSX natively — no LibreOffice, no external tools, no network calls. Pure Rust, zero dependencies.",
-        "stat": null,
-        "statLabel": null,
-        "icon": "docs"
+        "title": "Safe by default",
+        "description": "Every session runs under a sandbox backend and a permission profile. Workspace-write is the default; full host access has to be asked for and granted.",
+        "stat": "6",
+        "statLabel": "sandbox backends",
+        "icon": "users"
       },
       {
-        "title": "Built safe",
-        "description": "Agents run in isolated sandboxes. No unsafe code anywhere in the project. 67 prompt injection tests and counting.",
-        "stat": "67",
-        "statLabel": "injection tests",
-        "icon": "security"
+        "title": "Hooks at every step",
+        "description": "Shell hooks at 11 lifecycle points. A before-hook that exits non-zero denies the action, and a failing hook is disabled by a circuit breaker instead of wedging the loop.",
+        "stat": "11",
+        "statLabel": "hook events",
+        "icon": "tools"
+      },
+      {
+        "title": "Work that keeps going",
+        "description": "Goals, loops and monitors let a session continue on a schedule, on an event, or when a watcher sees a change — under a token budget that stops it.",
+        "stat": "0",
+        "statLabel": "tokens per watch tick",
+        "icon": "models"
       }
     ]
   },
   "architecture": {
     "label": "Architecture",
-    "heading": "Simple inside, powerful outside",
-    "description": "Eight focused modules, one 31MB binary. No runtime, no Docker, no pip install. Download and run.",
+    "heading": "A kernel with a protocol boundary",
+    "description": "38 crates in one Rust workspace. Above the line, your app renders and acts. Below it, the kernel executes turns and owns runtime state. The boundary is a protocol, not a function call — so the client can sit in the same process, on a socket, or on another machine.",
     "modules": [
-      { "color": "bg-title", "name": "octos-bus", "description": "connects 14 messaging platforms" },
-      { "color": "bg-heading", "name": "octos-agent", "description": "thinks, uses tools, stays safe" },
-      { "color": "bg-heading", "name": "octos-pipeline", "description": "runs multi-step workflows" },
-      { "color": "bg-info", "name": "octos-llm", "description": "talks to 16 AI providers" },
-      { "color": "bg-highlight", "name": "octos-memory", "description": "never forgets what matters" }
-    ]
-  },
-  "deepResearch": {
-    "label": "Deep Research",
-    "heading": "Think deeper, search wider",
-    "description": "One agent designs the research plan, others fan out to search in parallel. Cheap models plan, powerful ones synthesize. Every step is a different model.",
-    "features": [
-      { "label": "8 workers at once", "description": "Search workers fan out in parallel, then converge on a single answer." },
-      { "label": "5 search providers", "description": "Tavily, DuckDuckGo, Brave, You.com, Perplexity — if one is slow, the others finish first." },
-      { "label": "Self-healing routes", "description": "When a provider slows down, Octos notices and routes around it automatically." }
-    ],
-    "stats": []
-  },
-  "toolSystem": {
-    "label": "Tools",
-    "heading": "One toolbox, always open",
-    "description": "40+ tools, all sent to your agent every turn — no recency-based loading, nothing to activate. Predictable and easy to reason about.",
-    "tiers": [
-      { "stat": "40+", "label": "Tools per turn", "description": "The full enabled set, sent every turn" },
-      { "stat": "0", "label": "Activation steps", "description": "No recency loading, nothing to activate" },
-      { "stat": "∞", "label": "Catalog", "description": "No limit on what your agent can learn to do" }
-    ],
-    "toolGroups": [
-      { "label": "11 core tools", "tools": ["shell", "read_file", "write_file", "edit_file", "diff_edit", "glob", "grep", "list_dir", "web_search", "web_fetch", "browser"] },
-      { "label": "11 agent tools", "tools": ["deep_search", "deep_crawl", "synthesize", "recall_memory", "save_memory", "spawn", "send_file", "message", "configure_tool", "model_check", "cron"] },
-      { "label": "7 app skills", "tools": ["news_briefing", "send_email", "deep_search", "deep_crawl", "account_manager", "weather", "time"] }
-    ]
-  },
-  "memory": {
-    "label": "Memory",
-    "heading": "It remembers",
-    "description": "Your agent knows what you talked about yesterday. It remembers your preferences, your projects, your decisions — and forgets nothing you want kept. Three layers, one seamless experience.",
-    "layers": [
       {
-        "colorLabel": "Long-term",
-        "color": "accent",
-        "title": "What it always knows about you",
-        "description": "Preferences, projects, recurring topics — auto-extracted and ready for instant recall."
+        "color": "bg-title",
+        "name": "octos-core",
+        "description": "protocol types, OUP codecs"
       },
       {
-        "colorLabel": "Episodic",
-        "color": "heading",
-        "title": "What it learned from each task",
-        "description": "Files modified, decisions made, outcomes achieved — searchable by keyword or meaning."
+        "color": "bg-heading",
+        "name": "octos-agent",
+        "description": "turns, tools, hooks, sandbox"
       },
       {
-        "colorLabel": "Session",
-        "color": "title",
-        "title": "The current conversation",
-        "description": "Always in context, auto-compacted when it gets long. Switch threads with /new, /s, /back."
+        "color": "bg-heading",
+        "name": "octos-bus",
+        "description": "sessions and profiles"
+      },
+      {
+        "color": "bg-info",
+        "name": "octos-llm",
+        "description": "19 providers, routing, failover"
+      },
+      {
+        "color": "bg-highlight",
+        "name": "octos-memory",
+        "description": "episodes, notes, entity bank"
       }
     ]
   },
-  "contentGen": {
-    "label": "Content",
-    "heading": "Documents, slides, spreadsheets",
-    "description": "Ask your agent to make a slide deck, write a report, or build a spreadsheet. It generates real Office files — no LibreOffice, no network calls, zero dependencies.",
-    "formats": [
-      { "name": "PPTX", "description": "Slide decks with layouts, images, and charts" },
-      { "name": "DOCX", "description": "Documents with headings, tables, and images" },
-      { "name": "XLSX", "description": "Spreadsheets with formulas, styling, and charts" }
+  "protocol": {
+    "label": "Protocol",
+    "heading": "OUP — one boundary,<br/>three transports",
+    "description": "The Octos UI Protocol is JSON-RPC 2.0. A client opens a session, starts turns, answers approvals and replays what it missed. Features are negotiated per connection, and the server never advertises a capability the client did not ask for.",
+    "transports": [
+      {
+        "name": "WebSocket",
+        "description": "GET /api/ui-protocol/ws — the sole chat transport, origin-checked against your allowed origins."
+      },
+      {
+        "name": "stdio",
+        "description": "octos serve --stdio speaks newline-delimited JSON: one object per line, stdout for protocol, stderr for logs."
+      },
+      {
+        "name": "In-process",
+        "description": "Link the crate and dispatch directly, with no socket in between — the path mobile and desktop shells take."
+      }
     ],
-    "art": {
-      "label": "AI Art Pipeline",
-      "heading": "Many visual styles",
-      "description": "Cards, comics, infographics, posters, diagrams, timelines, and more. Each style is a composable template with AI-driven content placement.",
-      "styles": ["mofa-cards", "mofa-comic", "mofa-infographic", "mofa-slides", "mofa-poster", "mofa-diagram", "mofa-timeline", "mofa-mindmap", "mofa-chart", "mofa-report", "mofa-resume", "mofa-letter", "mofa-invoice", "mofa-certificate", "mofa-badge", "mofa-banner", "mofa-cover"]
-    }
+    "code": "<span class=\"text-neutral-2\">// start a turn</span>\n{\"jsonrpc\":\"2.0\",\"id\":\"req-turn-start\",\"method\":\"turn/start\",\n \"params\":{\"session_id\":\"local:demo\",\"turn_id\":\"&lt;uuid&gt;\",\n           \"input\":[{\"kind\":\"text\",\"text\":\"hello\"}]}}\n\n<span class=\"text-neutral-2\">// approve a tool call the agent asked about</span>\n{\"jsonrpc\":\"2.0\",\"id\":\"req-approval\",\"method\":\"approval/respond\",\n \"params\":{\"session_id\":\"local:demo\",\"approval_id\":\"&lt;uuid&gt;\",\n           \"decision\":\"approve\"}}\n\n<span class=\"text-neutral-2\">// resume after a disconnect</span>\n{\"stream\":\"events\",\"seq\":42}",
+    "codeTitle": "oup",
+    "methodsLabel": "105 methods · 50 notifications",
+    "methodGroups": [
+      {
+        "label": "Sessions",
+        "methods": [
+          "session/open",
+          "session/hydrate",
+          "session/fork",
+          "session/rollback",
+          "session/compact",
+          "session/snapshot"
+        ]
+      },
+      {
+        "label": "Turns",
+        "methods": [
+          "turn/start",
+          "turn/steer",
+          "turn/interrupt",
+          "turn/state/get"
+        ]
+      },
+      {
+        "label": "Approvals",
+        "methods": [
+          "approval/respond",
+          "approval/scopes/list",
+          "user_question/respond",
+          "permission/profile/get"
+        ]
+      },
+      {
+        "label": "Agents and peers",
+        "methods": [
+          "agent/*",
+          "task/*",
+          "peer/prepare",
+          "peer/gather"
+        ]
+      },
+      {
+        "label": "Autonomy",
+        "methods": [
+          "session/goal/set",
+          "loop/create",
+          "loop/fire_now",
+          "monitor/create"
+        ]
+      },
+      {
+        "label": "Runtime",
+        "methods": [
+          "client_hello",
+          "config/capabilities/list",
+          "profile/*",
+          "mcp/status/list",
+          "tool/status/list"
+        ]
+      }
+    ],
+    "note": "Streaming arrives as notifications — message/delta, tool/started, tool/completed, context/compaction_started. Every durable event is written to the session ledger before it goes on the wire, so a client that reconnects with its last cursor gets an exact replay, and one that has fallen too far behind is told to re-hydrate instead of silently losing state."
+  },
+  "embedding": {
+    "label": "Embedding",
+    "heading": "Link it, bind it,<br/>or run it",
+    "description": "Octos is a library first. Take the crates directly in a Rust app, cross the C ABI from anything else, generate mobile bindings, or run the binary and talk to it over the protocol.",
+    "targets": [
+      {
+        "name": "Rust",
+        "artifact": "cargo add octos-agent",
+        "description": "Use the kernel crates directly and keep everything in one process."
+      },
+      {
+        "name": "C ABI",
+        "artifact": "liboctos_ffi.so / .a",
+        "description": "A committed octos.h with a small surface: create a runtime, run a task, read the last error."
+      },
+      {
+        "name": "Mobile",
+        "artifact": "liboctos_uniffi.so",
+        "description": "UniFFI generates Kotlin and Swift bindings — this is how the kernel ships inside an Android app."
+      },
+      {
+        "name": "Python",
+        "artifact": "pyo3 wheel",
+        "description": "A native extension module for scripting, evaluation and backend glue."
+      },
+      {
+        "name": "Browser",
+        "artifact": "octos-wasm",
+        "description": "Protocol and utility types for web clients; the kernel itself keeps running natively."
+      }
+    ],
+    "code": "<span class=\"text-neutral-2\">// C ABI</span>\n<span class=\"text-neutral-1\">#include</span> \"octos.h\"\n\nOctosRuntime *rt = octos_runtime_new(config_json);\nchar *out = octos_run_task(rt, \"summarize ./README.md\");\nif (!out) fprintf(stderr, \"%s\\n\", octos_last_error());\noctos_string_free(out);",
+    "codeTitle": "octos.h",
+    "platformsLabel": "Built in CI",
+    "platforms": [
+      "Linux x86-64",
+      "Linux ARM64",
+      "macOS ARM64",
+      "Windows x86-64",
+      "Android via UniFFI"
+    ]
+  },
+  "context": {
+    "label": "Context",
+    "heading": "Long work,<br/>without losing the thread",
+    "description": "A turn can run for hours and stay inside the window. The kernel accounts for the budget, prunes what no longer matters, and tells the client every time it does — so the UI can show what happened instead of quietly dropping history.",
+    "features": [
+      {
+        "label": "Tier 1",
+        "description": "Prune stale and oversized tool results between iterations, keeping the prompt cache intact."
+      },
+      {
+        "label": "Tier 2",
+        "description": "Hand the provider its own server-side clearing where the API supports it."
+      },
+      {
+        "label": "Tier 3",
+        "description": "A full compacting pass — extractive by default, or an LLM summary — preserving named artifacts and invariants."
+      }
+    ],
+    "lifecycle": [
+      {
+        "name": "hydrate",
+        "description": "Page a session back into a client with its cursor and typed snapshot."
+      },
+      {
+        "name": "fork",
+        "description": "Branch a session, keeping the last user turns and dropping the parent's tool noise."
+      },
+      {
+        "name": "rollback",
+        "description": "Drop the last N user turns as an append-only, idempotent marker."
+      },
+      {
+        "name": "compact",
+        "description": "Run compaction on demand, or let the preflight check trigger it."
+      }
+    ],
+    "note": "Pruned tool results become typed placeholders that keep their call ids, so the transcript stays valid. With context.lifecycle.v1 enabled, the client receives compaction_started, compaction_completed and normalization_reported, each carrying the ids, triggers and token counts before and after."
+  },
+  "memory": {
+    "label": "Memory",
+    "heading": "It remembers, in three layers",
+    "description": "Memory is not one blob. Episodes are recorded for you, notes are yours to read and edit as plain markdown, and the entity bank is written by the agent on purpose — each retrieved differently.",
+    "layers": [
+      {
+        "colorLabel": "Layer 1",
+        "color": "bg-info",
+        "title": "Episodic — automatic",
+        "description": "Every completed task is stored with its outcome, the files it touched and the decisions it made, in an embedded key-value store. The six most relevant past runs for this directory come back on recall."
+      },
+      {
+        "colorLabel": "Layer 2",
+        "color": "bg-highlight",
+        "title": "Long-term notes — markdown",
+        "description": "MEMORY.md plus daily notes, with stable entry ids, a backup for rollback and an injection budget so the prompt never fills with history. Capture, extraction and consolidation run in the background."
+      },
+      {
+        "colorLabel": "Layer 3",
+        "color": "bg-title",
+        "title": "Entity bank — on purpose",
+        "description": "save_memory and recall_memory write pages for the people, projects and systems that matter. One-line abstracts sit in the prompt; the full page is fetched only when needed."
+      }
+    ]
+  },
+  "toolSystem": {
+    "label": "Tools",
+    "heading": "One toolbox, one policy",
+    "description": "Tools are Rust implementations with JSON schemas, admitted by a permission policy and executed inside the sandbox. Each declares whether it is safe to run in parallel, so a batch of reads fans out while writes stay in call order.",
+    "tiers": [
+      {
+        "stat": "35",
+        "label": "built-in tools",
+        "description": "Registered with the permission-aware builtin registry."
+      },
+      {
+        "stat": "2",
+        "label": "concurrency classes",
+        "description": "Safe tools run in parallel; exclusive ones run serially, and mixed batches are reassembled in order."
+      },
+      {
+        "stat": "57",
+        "label": "tool source files",
+        "description": "Plus MCP tools and plugin tools discovered at runtime."
+      }
+    ],
+    "toolGroups": [
+      {
+        "label": "Work on the code",
+        "tools": [
+          "read_file",
+          "write_file",
+          "edit_file",
+          "apply_patch",
+          "diff_edit",
+          "glob",
+          "grep",
+          "list_dir",
+          "git",
+          "check"
+        ]
+      },
+      {
+        "label": "Reach the world",
+        "tools": [
+          "shell",
+          "exec_command",
+          "web_search",
+          "web_fetch",
+          "browser",
+          "http",
+          "deep_search",
+          "deep_crawl"
+        ]
+      },
+      {
+        "label": "Run more agents",
+        "tools": [
+          "delegate",
+          "spawn_agent",
+          "wait_agent",
+          "peer_handoff",
+          "peer_send_input",
+          "peer_gather",
+          "escalate",
+          "update_plan"
+        ]
+      }
+    ]
+  },
+  "providers": {
+    "label": "Models",
+    "heading": "Nineteen providers, one router",
+    "description": "Route by provider/model, or by capability lane and let the router pick. Retries back off, failover walks an ordered chain with a per-provider circuit breaker, and hedging can race two providers and take the winner. Local and self-hosted servers are first-class: no key, no cloud."
+  },
+  "agents": {
+    "label": "Multi-agent",
+    "heading": "Sub-agents, peers,<br/>and a durable fleet",
+    "description": "Not every parallel job is the same shape. A sub-agent is part of your turn. A peer is a colleague with its own session. A fleet worker is a closed executor working through a durable plan.",
+    "modes": [
+      {
+        "name": "Sub-agents",
+        "summary": "A restricted child inside the parent's turn. The parent blocks and gets one result back.",
+        "points": [
+          "Inherits the workspace, tool policy and sandbox",
+          "Cannot re-delegate, spawn or message the user",
+          "Depth capped at two, with a typed budget error",
+          "spawn_agent is the background sibling of delegate"
+        ]
+      },
+      {
+        "name": "Peer agents",
+        "summary": "A sovereign session with its own history, model lane and worktree, addressed by name.",
+        "points": [
+          "Staged by the kernel, opened by the client",
+          "Successive numbered instruction rounds",
+          "Fenced into its own git clone to avoid collisions",
+          "Coordinated through a file blackboard, gathered on demand"
+        ]
+      },
+      {
+        "name": "Swarm and fleet",
+        "summary": "Supervised fan-out for one-shot work, and a durable kernel for plans that outlive a process.",
+        "points": [
+          "Parallel, sequential, pipeline and fan-out topologies",
+          "Aggregate results pass a validator gate before they count",
+          "Workers get least-privilege grants: no network unless granted",
+          "A blocked worker escalates instead of waiting for a human"
+        ]
+      }
+    ]
+  },
+  "loops": {
+    "label": "Autonomy",
+    "heading": "Goals, loops and monitors",
+    "description": "A session does not have to wait for the next message. Set a goal, attach a loop, or point a monitor at something that changes — the kernel decides when the model needs to run again, and when it should stop.",
+    "stages": [
+      {
+        "name": "Goal",
+        "description": "An objective with a token budget, tracked in a durable ledger with its status and spend."
+      },
+      {
+        "name": "Loop",
+        "description": "A stored prompt and mode that enqueues a continuation turn when it is due."
+      },
+      {
+        "name": "Monitor",
+        "description": "A probe whose filtered output wakes the agent. Watching costs no tokens; only the wake-up does."
+      },
+      {
+        "name": "Stop",
+        "description": "Budget exhaustion wraps up, a flood auto-pauses, and three empty continuations park the goal."
+      }
+    ],
+    "triggersLabel": "What wakes a turn",
+    "triggers": [
+      "fixed interval",
+      "self-paced",
+      "cron",
+      "file or process change",
+      "child completed",
+      "external signal"
+    ],
+    "note": "Loop and monitor specs are persisted, so they re-arm after a restart; running child processes are not resurrected. Continuations are prioritized and de-duplicated, so a busy session does not stack up redundant turns."
   },
   "security": {
     "label": "Security",
-    "heading": "Built to be trusted",
-    "description": "Your data stays on your machine. Every agent runs in a sandbox. No unsafe code in the entire project. Security isn't an afterthought — it's the foundation.",
+    "heading": "Sandboxed, scoped, and asked first",
+    "description": "The sandbox is the boundary, not the tool list. Every session runs under a backend appropriate to the platform, with a permission profile that says what the agent may touch.",
     "layers": [
-      { "title": "Agents can't break out", "description": "Each agent runs in its own isolated sandbox that blocks dangerous operations — on Linux, macOS, and Docker." },
-      { "title": "No unsafe code", "description": "The entire codebase enforces deny(unsafe_code). Pure Rust with rustls for TLS — no OpenSSL, no C dependencies." },
-      { "title": "Prompt injection defense", "description": "67 injection tests covering input sanitization and output filtering. Constant-time comparison prevents timing attacks." },
-      { "title": "Your data stays yours", "description": "Each agent operates in a scoped workspace. File access is restricted to its own directory. No cross-tenant data leakage." },
-      { "title": "Safe credentials", "description": "macOS Keychain integration for API key storage. No plaintext secrets in config files." },
-      { "title": "Process isolation", "description": "Each user gets a separate OS process with its own memory space, sessions, and data — true multi-tenancy." }
+      {
+        "title": "Six sandbox backends",
+        "description": "bwrap, Landlock, macOS sandbox-exec, Docker, Windows AppContainer, or none — chosen automatically per platform, and it warns when a fence is not enforced."
+      },
+      {
+        "title": "Permission profiles",
+        "description": "Read-only, workspace-write or full host access. Workspace-write is the default; full access is refused unless the runtime mode allows it."
+      },
+      {
+        "title": "Approvals that cannot be replayed",
+        "description": "A pending approval is bound to a SHA-256 digest of the exact arguments, to the room it came from and to the approvers snapshot; consumed approvals are rejected."
+      },
+      {
+        "title": "Hooks with a circuit breaker",
+        "description": "Shell hooks at 11 lifecycle points. Exit non-zero before a tool call and it is denied; a hook that keeps failing is disabled rather than allowed to wedge the loop."
+      },
+      {
+        "title": "Network off where it matters",
+        "description": "Cloud and tenant deployments default to network-denied. --no-network turns it off anywhere, and an explicit permission choice always wins."
+      },
+      {
+        "title": "Loop and injection guards",
+        "description": "Three identical tool calls in a row abort the turn, an SSRF guard filters fetches, hook and probe environments are sanitized, and credentials are redacted from logs."
+      }
     ]
   },
-  "performance": {
-    "label": "Performance",
-    "heading": "Run on Your Spared Computer",
-    "description": "200+ AI agents serving thousands of users — on hardware you already own. No Kubernetes, no auto-scaling, no 3am pages. 20MB per agent, cold start under 100ms.",
-    "tableHeaders": {
-      "metric": "Metric",
-      "octos": "Octos",
-      "others": "Others",
-      "note": "Note"
-    },
-    "benchmarks": [
-      { "metric": "Startup time", "octos": "<100ms", "others": "500ms–2s", "note": "Cold start to ready" },
-      { "metric": "Memory per agent", "octos": "20MB", "others": "200–300MB", "note": "Baseline resident" },
-      { "metric": "Memory per session", "octos": "Few KB", "others": "10–50MB", "note": "Green threads" },
-      { "metric": "Binary size", "octos": "31MB", "others": "200MB+", "note": "Static vs node_modules" },
-      { "metric": "Agents per machine", "octos": "200+", "others": "~20", "note": "On a 16GB Mac Mini" },
-      { "metric": "GC pauses", "octos": "None", "others": "Unpredictable", "note": "Deterministic latency" },
-      { "metric": "Parallelism", "octos": "True", "others": "Event loop", "note": "Multi-core utilization" },
-      { "metric": "Search workers", "octos": "8 concurrent", "others": "Sequential", "note": "Deep research tasks" }
-    ]
-  },
-  "channels": {
-    "label": "Gateway",
-    "heading": "Meet your users where they are",
-    "description": "Your AI lives on Telegram, Discord, Slack, WhatsApp, WeChat, and 7 more platforms. One agent, every channel — with full conversation history wherever your users talk."
-  },
-  "providers": {
-    "label": "LLM Layer",
-    "heading": "Use Your Favorite Tokens",
-    "description": "Pick the right model for each task. Chain providers in a single pipeline — if one goes down, the next one takes over automatically."
-  },
-  "comparison": {
-    "label": "Comparison",
-    "heading": "Different animals, different oceans",
-    "description": "Not better or worse — just different. Octos is infrastructure, not a library. If you need a chatbot SDK, LangChain is great. If you need an AI operating system, keep reading.",
-    "tableHeaders": {
-      "dim": "Dimension",
-      "octos": "Octos",
-      "langchain": "LangChain",
-      "openclaw": "OpenClaw"
-    },
-    "rows": [
-      { "dim": "What it is", "octos": "AI operating system", "langchain": "Python framework", "openclaw": "Chatbot app" },
-      { "dim": "Install size", "octos": "31MB", "langchain": "pip + deps", "openclaw": "200MB+" },
-      { "dim": "Startup", "octos": "<100ms", "langchain": "1-3s", "openclaw": "500ms-2s" },
-      { "dim": "Memory per agent", "octos": "20MB", "langchain": "200MB+", "openclaw": "200-300MB" },
-      { "dim": "Agents per machine", "octos": "200+", "langchain": "~10", "openclaw": "~20" },
-      { "dim": "LLM providers", "octos": "16 built-in", "langchain": "50+ (plugins)", "openclaw": "10+" },
-      { "dim": "Channels", "octos": "14", "langchain": "0", "openclaw": "22+" },
-      { "dim": "Failover", "octos": "3-layer auto", "langchain": "Manual", "openclaw": "Basic retry" },
-      { "dim": "Tool loading", "octos": "Full set / turn", "langchain": "All upfront", "openclaw": "All upfront" },
-      { "dim": "Document generation", "octos": "PPTX/DOCX/XLSX", "langchain": "None", "openclaw": "None" },
-      { "dim": "Voice", "octos": "ASR + TTS", "langchain": "None", "openclaw": "Wake word + TTS" },
-      { "dim": "Memory", "octos": "3-layer hybrid", "langchain": "Vector only", "openclaw": "SQLite + vector" },
-      { "dim": "Security", "octos": "deny(unsafe_code)", "langchain": "Python sandbox", "openclaw": "Docker sandbox" }
-    ]
+  "surfaces": {
+    "label": "Surfaces",
+    "heading": "The clients are separate",
+    "description": "Because the boundary is a protocol, a client is just a program that speaks it. These ship today, and yours can join them.",
+    "clients": [
+      {
+        "name": "Octoscode",
+        "description": "The terminal client. Provisions its own local runtime and speaks OUP over stdio."
+      },
+      {
+        "name": "Octoscode Web",
+        "description": "The browser client over WebSocket, served by the binary alongside an admin dashboard."
+      },
+      {
+        "name": "OctoSense",
+        "description": "The agent shell for desktop and phone, with the kernel embedded in the app."
+      },
+      {
+        "name": "MCP",
+        "description": "Octos is both an MCP client and an MCP server, so other agents can call in and it can call out."
+      }
+    ],
+    "channelsLabel": "Messaging channels",
+    "channelsNote": "The gateway is one surface among several: the same sessions can be reached from chat platforms, with history intact."
   },
   "useCases": {
-    "label": "Use Cases",
-    "heading": "Built for real workloads",
+    "label": "Built on Octos",
+    "heading": "Who runs the kernel",
     "items": [
       {
         "label": "01",
-        "title": "AI in your product",
-        "description": "Give every customer their own AI assistant — isolated, personalized, always available. One binary handles them all through a clean REST API.",
-        "highlights": ["91 API endpoints", "Per-user isolation", "Admin dashboard"]
+        "title": "OctoSense — an agent shell",
+        "description": "The kernel embedded in a Makepad shell for desktop and Android, where apps and cards are the interface and the agent reorganizes them around intent.",
+        "highlights": [
+          "In-process protocol",
+          "Mobile bindings",
+          "App cards"
+        ]
       },
       {
         "label": "02",
-        "title": "Customer support everywhere",
-        "description": "One agent on Telegram, Discord, Slack, WhatsApp, Email — everywhere your users are. They switch channels without losing context.",
-        "highlights": ["14 channels", "Session switching", "5 queue modes"]
+        "title": "Octoscode — coding in the terminal",
+        "description": "A terminal client for real work: turns you can steer and interrupt, sandboxed edits, checks, and sub-agents for the parts that fan out.",
+        "highlights": [
+          "stdio transport",
+          "Steer and interrupt",
+          "Sandboxed edits"
+        ]
       },
       {
         "label": "03",
-        "title": "Deep research pipelines",
-        "description": "Let cheap models plan the search, powerful ones synthesize the answer. 8 workers search in parallel across 5 providers.",
-        "highlights": ["Multi-LLM workflows", "8 search workers", "5-provider failover"]
+        "title": "Your product",
+        "description": "Give each customer an isolated agent with its own profile, memory and permissions, behind whatever interface you already ship.",
+        "highlights": [
+          "Per-profile isolation",
+          "Least-privilege grants",
+          "One binary"
+        ]
       },
       {
         "label": "04",
-        "title": "Content at scale",
-        "description": "Generate slides, documents, and spreadsheets natively. AI art pipeline with 17 styles for cards, comics, infographics, and posters.",
-        "highlights": ["PPTX / DOCX / XLSX", "17 art styles", "Zero deps"]
-      },
-      {
-        "label": "05",
-        "title": "AI for the whole team",
-        "description": "200+ specialized agents on a single machine. Sub-accounts for family plans, isolated workspaces for each team member.",
-        "highlights": ["200+ agents", "Sub-accounts", "20MB each"]
-      },
-      {
-        "label": "06",
-        "title": "Runs anywhere",
-        "description": "31MB binary, cold start under 100ms, zero garbage collection pauses. Deploy on a Mac Mini, a cloud VM, or a Raspberry Pi.",
-        "highlights": ["31MB binary", "<100ms startup", "No GC pauses"]
+        "title": "Devices and robots",
+        "description": "The kernel is small enough to live on the device, with safety tiers for actuation and a bridge to robotics stacks.",
+        "highlights": [
+          "ARM64 and x86-64",
+          "Local models",
+          "Safety tiers"
+        ]
       }
     ]
   },
   "quickStart": {
     "label": "Get Started",
-    "heading": "Deploy in minutes",
-    "description": "No Python, no Docker, no runtime dependencies. Install the binary, set your API key, and start talking to your AI. That's the whole process.",
-    "code": "<span class=\"text-neutral-2\"># Install</span>\ncargo install --path crates/octos-cli\n\n<span class=\"text-neutral-2\"># Initialize configuration</span>\noctos init\n\n<span class=\"text-neutral-2\"># Set your API key</span>\n<span class=\"text-neutral-1\">export</span> ANTHROPIC_API_KEY=your-key\n\n<span class=\"text-neutral-2\"># Start chatting in the terminal</span>\noctos chat\n\n<span class=\"text-neutral-2\"># Or launch the full gateway</span>\noctos gateway\n\n<span class=\"text-neutral-2\"># Or start the REST API server</span>\noctos serve"
+    "heading": "Run the kernel",
+    "description": "Build the binary, point a client at it, or link the crates. No Python runtime and no Docker required.",
+    "code": "<span class=\"text-neutral-2\"># Build and install the CLI</span>\ncargo install --path crates/octos-cli\n\n<span class=\"text-neutral-2\"># First run: profile, provider, model</span>\noctos init\n<span class=\"text-neutral-1\">export</span> ANTHROPIC_API_KEY=your-key\n\n<span class=\"text-neutral-2\"># Talk to it in the terminal</span>\noctos chat\n\n<span class=\"text-neutral-2\"># Serve the protocol on 127.0.0.1:50080</span>\noctos serve\n\n<span class=\"text-neutral-2\"># Or speak JSON-RPC over stdin/stdout</span>\noctos serve --stdio\n\n<span class=\"text-neutral-2\"># Expose the kernel to other agents over MCP</span>\noctos mcp-serve\n\n<span class=\"text-neutral-2\"># Check the environment</span>\noctos doctor"
   },
   "faq": {
     "label": "Questions",
     "heading": "FAQ",
     "items": [
       {
-        "question": "How is Octos different from LangChain or CrewAI?",
-        "answer": "Octos is an operating system, not a framework. It runs as a single binary — no Python, no Docker, no glue code. Built-in multi-tenancy, 14 messaging channels, and automatic provider failover. You configure agents through a REST API or a JSON file."
+        "question": "Is Octos a framework, a library, or an app?",
+        "answer": "A kernel you embed — closer to a library than a framework. It provides the execution loop, context, memory, tools and multi-agent runtime, and exposes them through a protocol. It does not provide a UI, and it does not ask you to structure your app around it."
       },
       {
-        "question": "What LLMs does Octos support?",
-        "answer": "16 providers out of the box: Anthropic, OpenAI, Gemini, Vertex AI, DeepSeek, OpenRouter, and more. You can chain multiple providers in a single pipeline — cheap models for planning, powerful ones for synthesis — with automatic failover if one goes down."
+        "question": "What is OUP?",
+        "answer": "The Octos UI Protocol: JSON-RPC 2.0 over WebSocket, stdio or an in-process dispatcher, with 105 methods and 50 notification types. Clients negotiate features at connect time, and durable events carry cursors so a client can reconnect and replay exactly what it missed."
       },
       {
-        "question": "Can I run Octos on a small server?",
-        "answer": "Yes. The binary is 31MB, cold starts in under 100ms, and needs zero external dependencies. A single Mac Mini can run 200+ agents. No Python runtime, no Docker, no Kubernetes."
+        "question": "How do I embed it in my app?",
+        "answer": "Four ways: use the Rust crates directly, cross the C ABI with the committed header, generate Kotlin or Swift bindings through UniFFI for mobile, or use the Python wheel. If you would rather keep it out of process, run octos serve and speak the protocol."
       },
       {
-        "question": "Is Octos open source?",
-        "answer": "Yes. Octos is fully open source under the MIT license and available on GitHub."
+        "question": "Which models can it use?",
+        "answer": "Nineteen providers are built in, including Anthropic, OpenAI, Gemini, Vertex, DeepSeek, Moonshot, Zhipu, MiniMax, Qwen, Groq and OpenRouter, plus keyless local options through Ollama, vLLM and any OpenAI-compatible server. Routing, retry, failover and hedging are part of the kernel."
       },
       {
-        "question": "How do I connect a messaging channel?",
-        "answer": "Just add the channel config to your profile. Telegram, Discord, Slack, WhatsApp, WeChat, Email, and 6 more are built in — no plugins needed. Your agent shows up on all of them simultaneously."
+        "question": "What stops an agent from doing damage?",
+        "answer": "Sessions run inside a platform sandbox under a permission profile that defaults to workspace-write. Risky tool calls become approval requests bound to the exact arguments, hooks can deny actions outright, cloud deployments start with networking denied, and a doom-loop guard aborts a turn that repeats itself."
       },
       {
-        "question": "Can multiple users share one Octos instance?",
-        "answer": "Absolutely. Each user gets their own isolated agent with separate memory, sessions, and data. A family plan mode even supports sub-accounts — parent manages the billing, each person gets their own AI."
+        "question": "Can work continue when nobody is watching?",
+        "answer": "Yes. A goal carries a token budget, loops schedule continuation turns, and monitors watch a file or process and wake the agent only when something changes — which costs no tokens while nothing happens. Budgets, flood control and a circuit breaker decide when it stops."
+      },
+      {
+        "question": "Is it open source?",
+        "answer": "Yes, under the Apache License 2.0, on GitHub at octos-org/octos."
       }
     ]
   },
   "cta": {
-    "heading": "Deploy your first agent<br class=\"hidden md:block\" /> in 5 minutes",
-    "description": "Download. Set your API key. Talk to your AI on any channel. That's it.",
+    "heading": "Put the kernel<br class=\"hidden md:block\" /> inside your app",
+    "description": "Read the docs, clone the repo, or start with the terminal client.",
     "buttons": [
-      { "label": "Read the Docs", "href": "https://octos-org.github.io/octos/" },
-      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "label": "Read the Docs",
+        "href": "https://octos-org.github.io/octos/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ]
   }
 }
