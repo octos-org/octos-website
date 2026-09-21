@@ -103,8 +103,8 @@
   },
   "hero": {
     "badge": "Apache-2.0",
-    "acronym": "The embeddable agent kernel",
-    "heading": "Your app owns the UI.<br/>Octos owns the agent.",
+    "acronym": "Rust · Apache-2.0",
+    "heading": "The embeddable<br/>agent kernel",
     "description": "A Rust agent harness kernel: turns, context, memory, tools, model routing, sandboxing and multi-agent execution, behind one protocol. Embed it as a crate, a C library, a mobile binding, or run it as a server.",
     "statsBar": [
       "Rust kernel",

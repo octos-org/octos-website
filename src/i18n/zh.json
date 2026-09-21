@@ -103,8 +103,8 @@
   },
   "hero": {
     "badge": "Apache-2.0",
-    "acronym": "可嵌入的智能体内核",
-    "heading": "界面归你的应用，<br/>智能体归 Octos。",
+    "acronym": "Rust · Apache-2.0",
+    "heading": "可嵌入的<br/>智能体内核",
     "description": "用 Rust 写成的智能体 harness 内核：多轮执行、上下文、记忆、工具、模型路由、沙箱与多智能体协作，统一通过一套协议对外提供。可以作为 crate、C 库、移动端绑定嵌入，也可以作为服务运行。",
     "statsBar": [
       "Rust 内核",
