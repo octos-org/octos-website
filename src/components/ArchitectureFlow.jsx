@@ -11,7 +11,7 @@ const makeNodeStyle = (bg, border) => ({
   minWidth: '140px',
   textAlign: 'center',
   color: '#fff',
-  fontFamily: "'Geist Mono', monospace",
+  fontFamily: "'IBM Plex Mono', 'Noto Sans SC', monospace",
   fontSize: '12px',
   letterSpacing: '0.02em',
   boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
@@ -34,7 +34,7 @@ const OctosNode = ({ data }) => (
     <Handle type="source" position={Position.Right} style={handleStyle} />
     <div style={{ fontWeight: 600, fontSize: '13px' }}>{data.label}</div>
     {data.description && (
-      <div style={{ opacity: 0.8, marginTop: '4px', fontSize: '11px', fontFamily: "'Geist', sans-serif" }}>
+      <div style={{ opacity: 0.8, marginTop: '4px', fontSize: '11px', fontFamily: "'Space Grotesk', 'Noto Sans SC', sans-serif" }}>
         {data.description}
       </div>
     )}
@@ -53,7 +53,7 @@ const EntryNode = ({ data }) => (
     <Handle type="source" position={Position.Bottom} style={handleStyle} />
     <div>{data.label}</div>
     {data.description && (
-      <div style={{ opacity: 0.7, marginTop: '4px', fontSize: '11px', fontFamily: "'Geist', sans-serif" }}>
+      <div style={{ opacity: 0.7, marginTop: '4px', fontSize: '11px', fontFamily: "'Space Grotesk', 'Noto Sans SC', sans-serif" }}>
         {data.description}
       </div>
     )}
@@ -71,7 +71,7 @@ const BoundaryNode = ({ data }) => (
     <Handle type="source" position={Position.Bottom} style={handleStyle} />
     <div style={{ fontWeight: 600, fontSize: '13px' }}>{data.label}</div>
     {data.description && (
-      <div style={{ opacity: 0.85, marginTop: '4px', fontSize: '11px', fontFamily: "'Geist', sans-serif" }}>
+      <div style={{ opacity: 0.85, marginTop: '4px', fontSize: '11px', fontFamily: "'Space Grotesk', 'Noto Sans SC', sans-serif" }}>
         {data.description}
       </div>
     )}

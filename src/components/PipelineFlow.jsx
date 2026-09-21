@@ -10,7 +10,7 @@ const makeStyle = (bg, border) => ({
   minWidth: '210px',
   textAlign: 'center',
   color: '#fff',
-  fontFamily: "'Geist Mono', monospace",
+  fontFamily: "'IBM Plex Mono', 'Noto Sans SC', monospace",
   fontSize: '14px',
   boxShadow: '0 6px 24px rgba(0,0,0,0.4)',
   position: 'relative',
@@ -30,7 +30,7 @@ const StepNode = ({ data }) => (
     <Handle type="source" position={Position.Bottom} style={handleStyle} />
     <Handle type="source" position={Position.Right} style={handleStyle} />
     <div style={{ fontWeight: 700, fontSize: '16px', letterSpacing: '0.02em' }}>{data.label}</div>
-    <div style={{ opacity: 0.8, marginTop: '6px', fontSize: '13px', fontFamily: "'Geist', sans-serif" }}>
+    <div style={{ opacity: 0.8, marginTop: '6px', fontSize: '13px', fontFamily: "'Space Grotesk', 'Noto Sans SC', sans-serif" }}>
       {data.description}
     </div>
   </div>
