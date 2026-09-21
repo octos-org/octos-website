@@ -15,36 +15,39 @@
     "name": "DeepSeek"
   },
   {
-    "name": "OpenRouter"
+    "name": "Moonshot"
+  },
+  {
+    "name": "Zhipu"
+  },
+  {
+    "name": "Z.ai"
   },
   {
     "name": "MiniMax"
   },
   {
-    "name": "Zhipu AI"
+    "name": "DashScope"
   },
   {
-    "name": "Qwen"
-  },
-  {
-    "name": "Moonshot"
+    "name": "NVIDIA"
   },
   {
     "name": "Groq"
   },
   {
-    "name": "Z.AI"
+    "name": "OpenRouter"
   },
   {
-    "name": "R9s"
-  },
-  {
-    "name": "NVIDIA"
+    "name": "R9S"
   },
   {
     "name": "Ollama"
   },
   {
     "name": "vLLM"
+  },
+  {
+    "name": "Local"
   }
 ]

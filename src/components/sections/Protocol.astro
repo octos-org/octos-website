@@ -1,0 +1,60 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+import CodeBlock from 'components/ui/CodeBlock.astro';
+
+interface Props {
+  t: {
+    label: string;
+    heading: string;
+    description: string;
+    transports: { name: string; description: string }[];
+    code: string;
+    codeTitle: string;
+    methodsLabel: string;
+    methodGroups: { label: string; methods: string[] }[];
+    note: string;
+  };
+}
+
+const { t } = Astro.props;
+---
+
+<Section id="protocol" padY="lg">
+  <Container>
+    <div class="mb-12 lg:mb-16" data-animate>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
+      <h2 class="mt-3 text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px] lg:text-[48px]" set:html={t.heading} />
+      <p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-neutral-2">{t.description}</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2" data-animate>
+      <div class="flex flex-col gap-4">
+        {t.transports.map((transport) => (
+          <div class="border border-surface-3 p-5">
+            <p class="font-mono text-[13px] uppercase tracking-[0.06em] text-accent">{transport.name}</p>
+            <p class="mt-2 text-[15px] leading-relaxed text-neutral-2">{transport.description}</p>
+          </div>
+        ))}
+      </div>
+      <CodeBlock code={t.code} title={t.codeTitle} />
+    </div>
+
+    <div class="mt-12" data-animate-stagger>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.methodsLabel}</p>
+      <div class="mt-5 grid grid-cols-1 gap-px overflow-hidden border border-surface-3 md:grid-cols-2 lg:grid-cols-3">
+        {t.methodGroups.map((group) => (
+          <div class="bg-surface-1 p-5 outline outline-1 outline-surface-3">
+            <p class="text-[15px] text-text-bright">{group.label}</p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              {group.methods.map((method) => (
+                <li class="border border-surface-3 px-2 py-1 font-mono text-[11px] text-neutral-2">{method}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p class="mt-5 max-w-2xl text-[14px] leading-relaxed text-neutral-2">{t.note}</p>
+    </div>
+  </Container>
+</Section>

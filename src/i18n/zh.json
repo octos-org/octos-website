@@ -1,15 +1,15 @@
 {
   "site": {
-    "title": "Octos — AI 智能体操作系统",
-    "description": "一个大脑，多条手臂。你的 AI 在每个渠道 — Telegram、Discord、Slack、微信等。一个 31MB 二进制文件,16 个 AI 供应商,零依赖。"
+    "title": "Octos — 可嵌入的智能体内核",
+    "description": "Octos 是用 Rust 写成的智能体 harness 内核，可嵌入你的应用。它负责多轮执行、上下文、记忆、工具、模型路由与多智能体运行，界面交给你的应用。Apache-2.0 开源。"
   },
   "header": {
     "logo": "Octos",
     "navLinks": [
-      { "text": "核心能力", "href": "#features" },
       { "text": "架构", "href": "#architecture" },
-      { "text": "性能", "href": "#performance" },
-      { "text": "对比", "href": "#comparison" },
+      { "text": "协议", "href": "#protocol" },
+      { "text": "嵌入", "href": "#embedding" },
+      { "text": "多智能体", "href": "#agents" },
       { "text": "快速开始", "href": "#quickstart" }
     ],
     "externalLinks": [
@@ -20,14 +20,15 @@
   },
   "footer": {
     "brand": "Octos",
-    "brandDescription": "开放式认知任务操作系统 — 一个 Rust 原生、API 优先的 AI 智能体操作系统。",
+    "brandDescription": "可嵌入的 Rust 智能体 harness 内核。应用负责产品与界面，Octos 负责智能体执行与运行时状态。",
     "navHeading": "导航",
     "links": [
-      { "text": "核心能力", "href": "#features" },
       { "text": "架构", "href": "#architecture" },
-      { "text": "性能", "href": "#performance" },
-      { "text": "对比", "href": "#comparison" },
-      { "text": "用例", "href": "#usecases" },
+      { "text": "协议", "href": "#protocol" },
+      { "text": "嵌入", "href": "#embedding" },
+      { "text": "记忆", "href": "#memory" },
+      { "text": "多智能体", "href": "#agents" },
+      { "text": "安全", "href": "#security" },
       { "text": "快速开始", "href": "#quickstart" },
       { "text": "常见问题", "href": "#faq" }
     ],
@@ -36,333 +37,359 @@
       { "text": "文档", "href": "https://octos-org.github.io/octos/" },
       { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
     ],
-    "license": "MIT 开源协议。",
+    "license": "以 Apache License 2.0 开源。",
     "langEn": { "text": "EN", "href": "/" },
     "langZh": { "text": "中文", "href": "/zh/" }
   },
   "hero": {
-    "badge": "开源",
-    "acronym": "Open Cognitive Tasks Orchestration System",
-    "heading": "一颗大脑，触达八方",
-    "description": "像章鱼一样 — 八条腕足同时思考，并行异步运行，自我修复，自我进化。多智能体协作、多步骤工作流、多模型故障转移 — 手机、PC、服务器、树莓派、RISC-V，哪里都能跑，零依赖。",
-    "statsBar": [
-      "200+ 智能体",
-      "14 个渠道",
-      "16 个供应商",
-      "31MB 二进制",
-      "开源"
-    ],
+    "badge": "Apache-2.0",
+    "acronym": "可嵌入的智能体内核",
+    "heading": "界面归你的应用，<br/>智能体归 Octos。",
+    "description": "用 Rust 写成的智能体 harness 内核：多轮执行、上下文、记忆、工具、模型路由、沙箱与多智能体协作，统一通过一套协议对外提供。可以作为 crate、C 库、移动端绑定嵌入，也可以作为服务运行。",
+    "statsBar": ["Rust 内核", "OUP 协议", "三层记忆", "19 个模型厂商", "Apache-2.0"],
     "buttons": [
-      { "label": "开始使用", "href": "#quickstart" },
+      { "label": "快速开始", "href": "#quickstart" },
       { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
     ]
   },
   "stats": [
-    { "value": "无所不在", "label": "ARM · x86 · RISC-V" },
-    { "value": "即插即用", "label": "API 驱动，前后端分离" },
-    { "value": "开源优先", "label": "不选最贵只选最好" },
-    { "value": "随你而动", "label": "App · Web · Msg" },
-    { "value": "原生分发", "label": "零依赖的高性能" }
+    { "value": "可<br/>嵌入", "label": "Crate · C ABI · UniFFI · Python" },
+    { "value": "一套<br/>协议", "label": "WebSocket 或 stdio 上的 JSON-RPC" },
+    { "value": "本地<br/>优先", "label": "数据留在你的机器上" },
+    { "value": "多<br/>智能体", "label": "子智能体 · 对等体 · 集群" },
+    { "value": "到处<br/>能跑", "label": "Linux · macOS · Windows" }
   ],
   "features": {
-    "label": "核心能力",
-    "heading": "为什么选择 Octos",
+    "label": "内核能力",
+    "heading": "内核负责什么",
     "items": [
       {
-        "title": "你的智能体，你说了算",
-        "description": "91 个 API 端点，覆盖聊天、会话、管理、技能、指标和 Webhook。用它搭建任何前端界面。",
-        "stat": "91",
-        "statLabel": "API 端点",
+        "title": "会话与轮次",
+        "description": "打开、恢复、分叉、回滚与压缩会话；开始、引导与中断一轮对话。文字记录、执行状态与持久顺序由运行时负责，而不是客户端。",
+        "stat": "20",
+        "statLabel": "个会话方法",
         "icon": "api"
       },
       {
-        "title": "装得下所有人",
-        "description": "一个 31MB 的二进制文件就能在一台机器上服务 200+ 用户。每个人拥有自己的智能体、独立的记忆、会话和数据。",
-        "stat": "200+",
-        "statLabel": "用户/机器",
-        "icon": "users"
-      },
-      {
-        "title": "每个任务用最合适的模型",
-        "description": "便宜的模型做规划，强大的模型做总结。在一条流水线中串联多个大模型，一个挂了自动切换到下一个。",
-        "stat": "16",
-        "statLabel": "AI 供应商",
+        "title": "撑得住长任务的上下文",
+        "description": "三层压缩，从裁剪过期的工具结果到完整摘要；配合 token 预算与每次调用前的预检。",
+        "stat": "3",
+        "statLabel": "层压缩",
         "icon": "models"
       },
       {
-        "title": "永远在线",
-        "description": "三层故障转移保证智能体持续运行，哪怕某个供应商宕机。对冲赛跑、熔断器、自动切换。",
+        "title": "三层记忆",
+        "description": "自动记录的历史任务、可读可改的长期与每日笔记、由智能体主动写入的实体库。检索融合 BM25 与向量。",
         "stat": "3",
-        "statLabel": "故障转移层",
-        "icon": "uptime"
+        "statLabel": "层记忆",
+        "icon": "users"
       },
       {
-        "title": "完整工具访问",
-        "description": "每一轮都把所有已启用的工具发送给你的智能体 — shell、文件、搜索、web、浏览器、记忆等。没有隐藏状态，无需「激活」。",
-        "stat": "30+",
-        "statLabel": "可用工具",
+        "title": "统一的工具箱",
+        "description": "35 个内置工具：shell、文件编辑、补丁、搜索、网页、git、静态检查与委派；会话级再注册记忆、对等体、研究与 MCP 工具。",
+        "stat": "35",
+        "statLabel": "个内置工具",
         "icon": "tools"
       },
       {
-        "title": "对话自然流转",
-        "description": "五种队列模式控制智能体处理繁忙时刻 — 排队、收集、转向、打断、让用户插话。",
-        "stat": "5",
-        "statLabel": "队列模式",
-        "icon": "queue"
+        "title": "换得了模型，也兜得住",
+        "description": "19 个厂商共用一个路由：能力分道、对冲竞速、指数退避重试，以及按厂商的熔断器——自动降级，也自动恢复。",
+        "stat": "19",
+        "statLabel": "个模型厂商",
+        "icon": "uptime"
       },
       {
-        "title": "它记得住",
-        "description": "你的智能体记得昨天聊过的内容、你的偏好、项目、决策。三层记忆让合适的上下文随时可达。",
-        "stat": "3",
-        "statLabel": "记忆层",
-        "icon": "memory"
+        "title": "不止一个智能体",
+        "description": "轮次内阻塞式的子智能体、拥有独立会话与工作副本的对等体、带校验闸门的群体分发，以及支撑长期计划的持久集群内核。",
+        "stat": "4",
+        "statLabel": "种执行形态",
+        "icon": "api"
       },
       {
-        "title": "文档、幻灯片、表格",
-        "description": "原生生成 PPTX、DOCX 和 XLSX — 不需要 LibreOffice、外部工具或网络请求。纯 Rust，零依赖。",
-        "stat": null,
-        "statLabel": null,
-        "icon": "docs"
+        "title": "默认就安全",
+        "description": "每个会话都在沙箱后端与权限档案之下运行。默认只能写工作区；要动整台主机，必须显式申请并获批。",
+        "stat": "6",
+        "statLabel": "种沙箱后端",
+        "icon": "users"
       },
       {
-        "title": "天生安全",
-        "description": "智能体运行在隔离的沙箱中。整个代码库无 unsafe 代码。67 个注入测试持续增加中。",
-        "stat": "67",
-        "statLabel": "注入测试",
-        "icon": "security"
+        "title": "每一步都能挂钩子",
+        "description": "11 个生命周期节点上的 shell 钩子。前置钩子返回非零即拒绝该操作；持续失败的钩子会被熔断禁用，而不是卡住整个循环。",
+        "stat": "11",
+        "statLabel": "个钩子事件",
+        "icon": "tools"
+      },
+      {
+        "title": "没人盯着也能继续",
+        "description": "目标、循环与监视器让会话按时间、按事件或在观察到变化时继续运行，并由 token 预算决定何时停下。",
+        "stat": "0",
+        "statLabel": "token 的观察成本",
+        "icon": "models"
       }
     ]
   },
   "architecture": {
     "label": "架构",
-    "heading": "内简外强",
-    "description": "八个专注模块，一个 31MB 二进制文件。无需运行时、无需 Docker、无需 pip install。下载即用。",
+    "heading": "一个内核，一条协议边界",
+    "description": "一个 Rust workspace，38 个 crate。边界之上，你的应用负责渲染与操作；边界之下，内核执行轮次并持有运行时状态。边界是协议而非函数调用，所以客户端可以在同一进程、同一台机器，也可以在另一台机器上。",
     "modules": [
-      { "color": "bg-title", "name": "octos-bus", "description": "连接 14 个消息平台" },
-      { "color": "bg-heading", "name": "octos-agent", "description": "思考、使用工具、保持安全" },
-      { "color": "bg-heading", "name": "octos-pipeline", "description": "运行多步骤工作流" },
-      { "color": "bg-info", "name": "octos-llm", "description": "与 16 个 AI 供应商对话" },
-      { "color": "bg-highlight", "name": "octos-memory", "description": "永远不忘重要的事" }
+      { "color": "bg-title", "name": "octos-core", "description": "协议类型与 OUP 编解码" },
+      { "color": "bg-heading", "name": "octos-agent", "description": "轮次、工具、钩子、沙箱" },
+      { "color": "bg-heading", "name": "octos-bus", "description": "会话与档案" },
+      { "color": "bg-info", "name": "octos-llm", "description": "19 个厂商、路由与容错" },
+      { "color": "bg-highlight", "name": "octos-memory", "description": "历史、笔记与实体库" }
     ]
   },
-  "deepResearch": {
-    "label": "深度研究",
-    "heading": "想得更深，搜得更广",
-    "description": "一个智能体设计研究方案，其他智能体并行搜索。便宜的模型做规划，强大的模型做总结。每一步都是不同的模型。",
+  "protocol": {
+    "label": "协议",
+    "heading": "OUP — 一条边界，<br/>三种传输",
+    "description": "Octos UI Protocol 基于 JSON-RPC 2.0。客户端打开会话、发起轮次、响应审批，并补回断线期间错过的内容。能力在每条连接上协商，服务端不会声明客户端没有请求过的能力。",
+    "transports": [
+      { "name": "WebSocket", "description": "GET /api/ui-protocol/ws —— 唯一的对话传输通道，按允许的来源做 Origin 校验。" },
+      { "name": "stdio", "description": "octos serve --stdio 使用按行分隔的 JSON：一行一个对象，stdout 只走协议，日志走 stderr。" },
+      { "name": "进程内", "description": "直接链接 crate 并在进程内分发，中间没有套接字——移动端与桌面外壳走的就是这条路径。" }
+    ],
+    "code": "<span class=\"text-neutral-2\">// 发起一轮对话</span>\n{\"jsonrpc\":\"2.0\",\"id\":\"req-turn-start\",\"method\":\"turn/start\",\n \"params\":{\"session_id\":\"local:demo\",\"turn_id\":\"&lt;uuid&gt;\",\n           \"input\":[{\"kind\":\"text\",\"text\":\"hello\"}]}}\n\n<span class=\"text-neutral-2\">// 批准智能体请求的工具调用</span>\n{\"jsonrpc\":\"2.0\",\"id\":\"req-approval\",\"method\":\"approval/respond\",\n \"params\":{\"session_id\":\"local:demo\",\"approval_id\":\"&lt;uuid&gt;\",\n           \"decision\":\"approve\"}}\n\n<span class=\"text-neutral-2\">// 断线重连时带上游标</span>\n{\"stream\":\"events\",\"seq\":42}",
+    "codeTitle": "oup",
+    "methodsLabel": "105 个方法 · 50 种通知",
+    "methodGroups": [
+      { "label": "会话", "methods": ["session/open", "session/hydrate", "session/fork", "session/rollback", "session/compact", "session/snapshot"] },
+      { "label": "轮次", "methods": ["turn/start", "turn/steer", "turn/interrupt", "turn/state/get"] },
+      { "label": "审批", "methods": ["approval/respond", "approval/scopes/list", "user_question/respond", "permission/profile/get"] },
+      { "label": "智能体与对等体", "methods": ["agent/*", "task/*", "peer/prepare", "peer/gather"] },
+      { "label": "自主运行", "methods": ["session/goal/set", "loop/create", "loop/fire_now", "monitor/create"] },
+      { "label": "运行时", "methods": ["client_hello", "config/capabilities/list", "profile/*", "mcp/status/list", "tool/status/list"] }
+    ],
+    "note": "流式内容以通知送达：message/delta、tool/started、tool/completed、context/compaction_started。每条持久事件先写入会话账本再上线，因此带着上次游标重连的客户端可以得到精确回放；落后太多的客户端会被告知重新拉取快照，而不是悄悄丢状态。"
+  },
+  "embedding": {
+    "label": "嵌入",
+    "heading": "链接它、绑定它，<br/>或者直接运行它",
+    "description": "Octos 首先是一个库。Rust 应用可以直接用 crate，其他语言通过 C ABI 接入，移动端用生成的绑定，也可以把二进制跑起来、用协议通信。",
+    "targets": [
+      { "name": "Rust", "artifact": "cargo add octos-agent", "description": "直接使用内核 crate，全部留在同一个进程里。" },
+      { "name": "C ABI", "artifact": "liboctos_ffi.so / .a", "description": "随仓库提供 octos.h，接口很小：创建运行时、执行任务、读取最近错误。" },
+      { "name": "移动端", "artifact": "liboctos_uniffi.so", "description": "UniFFI 生成 Kotlin 与 Swift 绑定——内核就是这样进入 Android 应用的。" },
+      { "name": "Python", "artifact": "pyo3 wheel", "description": "原生扩展模块，适合脚本、评测与后端粘合。" },
+      { "name": "浏览器", "artifact": "octos-wasm", "description": "面向 Web 客户端的协议与工具类型；内核本身仍以原生方式运行。" }
+    ],
+    "code": "<span class=\"text-neutral-2\">// C ABI</span>\n<span class=\"text-neutral-1\">#include</span> \"octos.h\"\n\nOctosRuntime *rt = octos_runtime_new(config_json);\nchar *out = octos_run_task(rt, \"summarize ./README.md\");\nif (!out) fprintf(stderr, \"%s\\n\", octos_last_error());\noctos_string_free(out);",
+    "codeTitle": "octos.h",
+    "platformsLabel": "CI 构建覆盖",
+    "platforms": ["Linux x86-64", "Linux ARM64", "macOS ARM64", "Windows x86-64", "Android（UniFFI）"]
+  },
+  "context": {
+    "label": "上下文",
+    "heading": "长任务，<br/>也不丢线索",
+    "description": "一轮任务可以跑上几个小时而不超出窗口。内核核算预算、裁剪不再重要的内容，并且每次这样做都会通知客户端——界面可以如实呈现，而不是悄悄丢历史。",
     "features": [
-      { "label": "多个助理一起跑", "description": "搜索助理并行展开，然后汇聚成一份答案。" },
-      { "label": "多个搜索引擎随时换", "description": "Tavily、DuckDuckGo、Brave、You.com、Perplexity — 一个慢了，其他先完成。" },
-      { "label": "自动切换失效引擎", "description": "当某个供应商变慢，Octos 会自动发现并绕过它。" }
+      { "label": "第一层", "description": "在迭代之间裁剪过期与超大的工具结果，同时尽量不破坏提示缓存。" },
+      { "label": "第二层", "description": "在支持的接口上，交由厂商自己做服务端清理。" },
+      { "label": "第三层", "description": "完整压缩：默认抽取式，也可用模型摘要，并保留指定的产物与约束。" }
     ],
-    "stats": []
-  },
-  "toolSystem": {
-    "label": "工具",
-    "heading": "始终敞开的工具箱",
-    "description": "40+ 个工具，每一轮全部发送给你的智能体 — 没有基于时近性的加载，无需激活。可预测、易于推理。",
-    "tiers": [
-      { "stat": "40+", "label": "每轮工具", "description": "完整的已启用工具集，每轮发送" },
-      { "stat": "0", "label": "激活步骤", "description": "无时近性加载，无需激活" },
-      { "stat": "∞", "label": "工具目录", "description": "你的智能体能学会的事没有上限" }
+    "lifecycle": [
+      { "name": "hydrate", "description": "带游标与类型化快照，把会话分页恢复到客户端。" },
+      { "name": "fork", "description": "分叉会话，保留最近若干轮用户消息，丢掉父会话的工具噪声。" },
+      { "name": "rollback", "description": "以只追加、幂等的标记回退最近 N 轮用户消息。" },
+      { "name": "compact", "description": "按需压缩，或交给预检自动触发。" }
     ],
-    "toolGroups": [
-      { "label": "11 个核心工具", "tools": ["shell", "read_file", "write_file", "edit_file", "diff_edit", "glob", "grep", "list_dir", "web_search", "web_fetch", "browser"] },
-      { "label": "11 个智能体工具", "tools": ["deep_search", "deep_crawl", "synthesize", "recall_memory", "save_memory", "spawn", "send_file", "message", "configure_tool", "model_check", "cron"] },
-      { "label": "7 个应用技能", "tools": ["news_briefing", "send_email", "deep_search", "deep_crawl", "account_manager", "weather", "time"] }
-    ]
+    "note": "被裁剪的工具结果会变成保留调用 id 的类型化占位符，文字记录因此始终有效。启用 context.lifecycle.v1 后，客户端会收到 compaction_started、compaction_completed 与 normalization_reported，其中带有各类 id、触发原因以及压缩前后的 token 数。"
   },
   "memory": {
     "label": "记忆",
-    "heading": "它记得住",
-    "description": "你的智能体记得昨天聊过的内容。它记得你的偏好、你的项目、你的决策 — 你想留住的东西它都不会忘。三层记忆，一种无缝体验。",
+    "heading": "它记得住，分三层",
+    "description": "记忆不是一团糊状的东西。历史由系统自动记录，笔记是你可以直接读写的 markdown，实体库由智能体有意识地写入——三者的检索方式各不相同。",
     "layers": [
       {
-        "colorLabel": "长期",
-        "color": "accent",
-        "title": "关于你的那些事它一直记得",
-        "description": "偏好、项目、常聊话题 — 自动提取，随时召回。"
+        "colorLabel": "第一层",
+        "color": "bg-info",
+        "title": "历史 — 自动记录",
+        "description": "每个完成的任务都会记录结果、改动的文件与关键决策，存放在嵌入式键值库中。检索时按当前目录召回最相关的六次历史。"
       },
       {
-        "colorLabel": "情景",
-        "color": "heading",
-        "title": "每个任务中学到的东西",
-        "description": "修改的文件、做出的决策、取得的成果 — 可按关键词或语义搜索。"
+        "colorLabel": "第二层",
+        "color": "bg-highlight",
+        "title": "长期笔记 — markdown",
+        "description": "MEMORY.md 加每日笔记，条目有稳定 id、可回滚的备份，以及注入预算，避免提示词被历史塞满。捕获、抽取与合并在后台进行。"
       },
       {
-        "colorLabel": "会话",
-        "color": "title",
-        "title": "当前的对话",
-        "description": "始终在上下文中，过长时自动压缩。用 /new、/s、/back 切换线程。"
+        "colorLabel": "第三层",
+        "color": "bg-title",
+        "title": "实体库 — 主动写入",
+        "description": "save_memory 与 recall_memory 为重要的人、项目与系统建立条目。提示词里只放一行摘要，需要时再取完整内容。"
       }
     ]
   },
-  "contentGen": {
-    "label": "内容",
-    "heading": "文档、幻灯片、表格",
-    "description": "让你的智能体制作幻灯片、撰写报告或建立电子表格。它生成真正的 Office 文件 — 无需 LibreOffice、无需网络请求、零依赖。",
-    "formats": [
-      { "name": "PPTX", "description": "带布局、图片和图表的幻灯片" },
-      { "name": "DOCX", "description": "带标题、表格和图片的文档" },
-      { "name": "XLSX", "description": "带公式、样式和图表的表格" }
+  "toolSystem": {
+    "label": "工具",
+    "heading": "一个工具箱，一套策略",
+    "description": "工具是带 JSON schema 的 Rust 实现，经权限策略准入，并在沙箱内执行。每个工具声明能否并行，因此一批读取可以并发展开，写入则保持调用顺序。",
+    "tiers": [
+      { "stat": "35", "label": "个内置工具", "description": "由带权限判定的内置注册表登记。" },
+      { "stat": "2", "label": "种并发类别", "description": "安全工具并行执行，独占工具串行执行，混合批次按原顺序重新拼回。" },
+      { "stat": "57", "label": "个工具源文件", "description": "此外还有运行时发现的 MCP 工具与插件工具。" }
     ],
-    "art": {
-      "label": "AI 艺术流水线",
-      "heading": "丰富的视觉风格",
-      "description": "卡片、漫画、信息图、海报、图表、时间线等。每种风格都是可组合的模板，由 AI 驱动内容排版。",
-      "styles": ["mofa-cards", "mofa-comic", "mofa-infographic", "mofa-slides", "mofa-poster", "mofa-diagram", "mofa-timeline", "mofa-mindmap", "mofa-chart", "mofa-report", "mofa-resume", "mofa-letter", "mofa-invoice", "mofa-certificate", "mofa-badge", "mofa-banner", "mofa-cover"]
-    }
+    "toolGroups": [
+      { "label": "处理代码", "tools": ["read_file", "write_file", "edit_file", "apply_patch", "diff_edit", "glob", "grep", "list_dir", "git", "check"] },
+      { "label": "连接世界", "tools": ["shell", "exec_command", "web_search", "web_fetch", "browser", "http", "deep_search", "deep_crawl"] },
+      { "label": "调度更多智能体", "tools": ["delegate", "spawn_agent", "wait_agent", "peer_handoff", "peer_send_input", "peer_gather", "escalate", "update_plan"] }
+    ]
+  },
+  "providers": {
+    "label": "模型",
+    "heading": "19 个厂商，一个路由",
+    "description": "既可以用 provider/model 直接指定，也可以按能力分道交给路由决定。重试带退避，容错沿有序链路切换并为每个厂商配了熔断器，对冲模式可以同时竞速两个厂商取先到者。本地与自建服务是一等公民：不需要密钥，也不必上云。"
+  },
+  "agents": {
+    "label": "多智能体",
+    "heading": "子智能体、对等体，<br/>以及持久的集群",
+    "description": "并行任务并不都是同一种形状。子智能体属于你这一轮；对等体是有自己会话的同事；集群工作者则是在持久计划里干活的封闭执行体。",
+    "modes": [
+      {
+        "name": "子智能体",
+        "summary": "父轮次内受限的子体。父方阻塞等待，拿回一个结果。",
+        "points": [
+          "继承工作区、工具策略与沙箱",
+          "不能再委派、不能后台派生、不能直接找用户",
+          "深度上限为二，超出返回类型化的预算错误",
+          "spawn_agent 是 delegate 的后台版本"
+        ]
+      },
+      {
+        "name": "对等体",
+        "summary": "拥有独立历史、模型分道与工作副本的完整会话，按名字寻址。",
+        "points": [
+          "由内核暂存，交给客户端打开",
+          "可以连续下发编号的指令轮次",
+          "围栏在自己的 git 克隆里，避免互相踩踏",
+          "通过文件黑板协作，需要时统一汇总"
+        ]
+      },
+      {
+        "name": "群体与集群",
+        "summary": "一次性任务用有监督的分发，跨进程的长期计划用持久内核。",
+        "points": [
+          "支持并行、串行、流水线与扇出拓扑",
+          "汇总结果须通过校验闸门才算数",
+          "工作者按最小权限授予：未授权即无网络",
+          "受阻的工作者会上报升级，而不是干等人"
+        ]
+      }
+    ]
+  },
+  "loops": {
+    "label": "自主运行",
+    "heading": "目标、循环与监视器",
+    "description": "会话不必干等下一条消息。设定目标、挂上循环，或让监视器盯住会变化的东西——内核来判断什么时候需要模型再跑一轮，以及什么时候该停。",
+    "stages": [
+      { "name": "目标", "description": "带 token 预算的目标，状态与花费记录在持久账本里。" },
+      { "name": "循环", "description": "存下的提示词与模式，到点就排入一轮继续执行的对话。" },
+      { "name": "监视器", "description": "探针的过滤输出负责唤醒智能体。观察本身不花 token，只有唤醒才花。" },
+      { "name": "停止", "description": "预算耗尽会收尾，事件过多会自动暂停，连续三次空转则把目标挂起。" }
+    ],
+    "triggersLabel": "什么会唤起一轮",
+    "triggers": ["固定间隔", "自定节奏", "定时任务", "文件或进程变化", "子任务完成", "外部信号"],
+    "note": "循环与监视器的定义会持久化，重启后重新挂载；正在运行的子进程不会被复活。继续执行的请求带优先级并会去重，忙碌的会话不会堆起一串多余的轮次。"
   },
   "security": {
     "label": "安全",
-    "heading": "值得信赖",
-    "description": "你的数据留在你的机器上。每个智能体运行在沙箱中。整个项目无 unsafe 代码。安全不是补丁 — 它是基石。",
+    "heading": "有沙箱、有边界、先问过你",
+    "description": "边界是沙箱，而不是工具清单。每个会话都在与平台匹配的后端里运行，并由权限档案决定它能碰什么。",
     "layers": [
-      { "title": "智能体无法逃逸", "description": "每个智能体运行在独立的隔离沙箱中，阻止危险操作 — 支持 Linux、macOS 和 Docker。" },
-      { "title": "无 unsafe 代码", "description": "整个代码库强制 deny(unsafe_code)。纯 Rust 加 rustls 处理 TLS — 无 OpenSSL、无 C 依赖。" },
-      { "title": "提示注入防御", "description": "67 个注入测试覆盖输入清洗和输出过滤。恒定时间比较防止时序攻击。" },
-      { "title": "你的数据始终是你的", "description": "每个智能体在限定的工作区中运行。文件访问仅限于自己的目录。无跨租户数据泄露。" },
-      { "title": "安全的凭证", "description": "macOS Keychain 集成存储 API 密钥。配置文件中无明文密钥。" },
-      { "title": "进程隔离", "description": "每个用户获得独立的操作系统进程，拥有自己的内存空间、会话和数据 — 真正的多租户。" }
+      { "title": "六种沙箱后端", "description": "bwrap、Landlock、macOS sandbox-exec、Docker、Windows AppContainer，或不使用沙箱；按平台自动选择，围栏未生效时会给出警告。" },
+      { "title": "权限档案", "description": "只读、可写工作区、完整主机访问三档。默认可写工作区；除非运行模式允许，否则完整访问会被拒绝。" },
+      { "title": "不可重放的审批", "description": "待批请求绑定参数的 SHA-256 摘要、发起的房间以及审批人快照；已消费的审批会被拒绝。" },
+      { "title": "带熔断的钩子", "description": "11 个生命周期节点上的 shell 钩子。工具调用前返回非零即拒绝；持续失败的钩子会被禁用，而不是把循环卡死。" },
+      { "title": "该断网时就断网", "description": "云端与租户部署默认禁止联网；--no-network 可以在任何环境关闭网络；显式的权限选择始终优先。" },
+      { "title": "死循环与注入防护", "description": "连续三次相同的工具调用会中止本轮；SSRF 防护过滤抓取；钩子与探针的环境变量经过清理，日志中的凭据会被脱敏。" }
     ]
   },
-  "performance": {
-    "label": "性能",
-    "heading": "用闲置电脑就能跑",
-    "description": "200+ 个 AI 智能体服务上千用户 — 用你已有的硬件就行。不需要 Kubernetes、不需要弹性伸缩、不用半夜被叫醒。每个智能体 20MB，冷启动不到 100ms。",
-    "tableHeaders": {
-      "metric": "指标",
-      "octos": "Octos",
-      "others": "其他",
-      "note": "备注"
-    },
-    "benchmarks": [
-      { "metric": "启动时间", "octos": "<100ms", "others": "500ms–2s", "note": "冷启动" },
-      { "metric": "内存/智能体", "octos": "20MB", "others": "200–300MB", "note": "基准驻留" },
-      { "metric": "内存/会话", "octos": "几 KB", "others": "10–50MB", "note": "绿色线程" },
-      { "metric": "二进制大小", "octos": "31MB", "others": "200MB+", "note": "静态编译 vs node_modules" },
-      { "metric": "每台机器智能体", "octos": "200+", "others": "~20", "note": "16GB Mac Mini" },
-      { "metric": "GC 暂停", "octos": "无", "others": "不可预测", "note": "确定性延迟" },
-      { "metric": "并行度", "octos": "真并行", "others": "事件循环", "note": "多核利用" },
-      { "metric": "搜索线程", "octos": "8 并发", "others": "顺序执行", "note": "深度研究任务" }
-    ]
-  },
-  "channels": {
-    "label": "网关",
-    "heading": "在你的用户所在的地方与他们相遇",
-    "description": "你的 AI 存在于 Telegram、Discord、Slack、WhatsApp、微信等 12 个平台。一个智能体，全渠道覆盖 — 完整的对话历史，无论你的用户在哪里说话。"
-  },
-  "providers": {
-    "label": "LLM 层",
-    "heading": "用你喜欢的 Token",
-    "description": "为每个任务选择最合适的模型。在一条流水线中串联多个供应商 — 一个挂了，下一个自动接管。"
-  },
-  "comparison": {
-    "label": "对比",
-    "heading": "不同的物种，不同的海域",
-    "description": "不是谁好谁差 — 只是定位不同。Octos 是基础设施，不是库。如果你需要一个聊天机器人 SDK，LangChain 很棒。如果你需要一个 AI 操作系统，继续往下看。",
-    "tableHeaders": {
-      "dim": "维度",
-      "octos": "Octos",
-      "langchain": "LangChain",
-      "openclaw": "OpenClaw"
-    },
-    "rows": [
-      { "dim": "定位", "octos": "AI 操作系统", "langchain": "Python 框架", "openclaw": "聊天机器人应用" },
-      { "dim": "安装大小", "octos": "31MB", "langchain": "pip + 依赖", "openclaw": "200MB+" },
-      { "dim": "启动时间", "octos": "<100ms", "langchain": "1-3s", "openclaw": "500ms-2s" },
-      { "dim": "内存/智能体", "octos": "20MB", "langchain": "200MB+", "openclaw": "200-300MB" },
-      { "dim": "每台机器智能体", "octos": "200+", "langchain": "~10", "openclaw": "~20" },
-      { "dim": "LLM 供应商", "octos": "16 个内置", "langchain": "50+ (插件)", "openclaw": "10+" },
-      { "dim": "消息渠道", "octos": "14", "langchain": "0", "openclaw": "22+" },
-      { "dim": "故障转移", "octos": "三层自动", "langchain": "手动", "openclaw": "基本重试" },
-      { "dim": "工具加载", "octos": "每轮全部", "langchain": "全部预加载", "openclaw": "全部预加载" },
-      { "dim": "文档生成", "octos": "PPTX/DOCX/XLSX", "langchain": "无", "openclaw": "无" },
-      { "dim": "语音", "octos": "ASR + TTS", "langchain": "无", "openclaw": "唤醒词 + TTS" },
-      { "dim": "记忆", "octos": "三层混合", "langchain": "仅向量", "openclaw": "SQLite + 向量" },
-      { "dim": "安全", "octos": "deny(unsafe_code)", "langchain": "Python 沙箱", "openclaw": "Docker 沙箱" }
-    ]
+  "surfaces": {
+    "label": "接入面",
+    "heading": "客户端是独立的",
+    "description": "因为边界是协议，客户端不过是一个会说这套协议的程序。下面这些已经在跑，你的客户端也可以加入。",
+    "clients": [
+      { "name": "Octoscode", "description": "终端客户端。自行拉起本地运行时，通过 stdio 讲 OUP。" },
+      { "name": "Octoscode Web", "description": "浏览器客户端，走 WebSocket，由二进制同时提供管理后台。" },
+      { "name": "OctoSense", "description": "面向桌面与手机的 Agent Shell，把内核嵌进应用内部。" },
+      { "name": "MCP", "description": "Octos 既是 MCP 客户端也是 MCP 服务端：别的智能体能调它，它也能调别人。" }
+    ],
+    "channelsLabel": "消息渠道",
+    "channelsNote": "网关只是接入面之一：同一批会话也可以从聊天平台触达，历史保持连贯。"
   },
   "useCases": {
-    "label": "用例",
-    "heading": "为真实工作负载而生",
+    "label": "基于 Octos",
+    "heading": "谁在跑这个内核",
     "items": [
       {
         "label": "01",
-        "title": "产品中嵌入 AI",
-        "description": "给每个客户专属的 AI 助手 — 隔离、个性化、始终在线。一个二进制文件通过简洁的 REST API 处理所有请求。",
-        "highlights": ["91 个 API 端点", "按用户隔离", "管理后台"]
+        "title": "OctoSense —— Agent Shell",
+        "description": "把内核嵌入基于 Makepad 的桌面与 Android 外壳：应用与卡片就是界面，智能体围绕意图重新组织它们。",
+        "highlights": ["进程内协议", "移动端绑定", "应用卡片"]
       },
       {
         "label": "02",
-        "title": "全渠道客户支持",
-        "description": "一个智能体同时出现在 Telegram、Discord、Slack、WhatsApp、邮件 — 你的用户在哪里都行。切换渠道不丢失上下文。",
-        "highlights": ["14 个渠道", "会话切换", "5 种队列模式"]
+        "title": "Octoscode —— 在终端里写代码",
+        "description": "面向真实工作的终端客户端：可引导、可中断的轮次，沙箱内的编辑与检查，需要扇出的部分交给子智能体。",
+        "highlights": ["stdio 传输", "引导与中断", "沙箱内编辑"]
       },
       {
         "label": "03",
-        "title": "深度研究流水线",
-        "description": "让便宜的模型做搜索规划，强大的模型做答案综合。8 个工人并行搜索 5 个供应商。",
-        "highlights": ["多 LLM 工作流", "8 个搜索工人", "5 供应商故障转移"]
+        "title": "你的产品",
+        "description": "为每位用户提供隔离的智能体，各自拥有档案、记忆与权限，界面仍然是你已经在用的那一套。",
+        "highlights": ["按档案隔离", "最小权限授予", "单一二进制"]
       },
       {
         "label": "04",
-        "title": "规模化的内容生产",
-        "description": "原生生成幻灯片、文档和表格。AI 艺术流水线提供 17 种风格 — 卡片、漫画、信息图、海报。",
-        "highlights": ["PPTX / DOCX / XLSX", "17 种艺术风格", "零依赖"]
-      },
-      {
-        "label": "05",
-        "title": "全团队的 AI",
-        "description": "一台机器上运行 200+ 个专业智能体。家庭套餐支持子账号，每个团队成员拥有独立的工作区。",
-        "highlights": ["200+ 智能体", "子账号", "每个 20MB"]
-      },
-      {
-        "label": "06",
-        "title": "随处部署",
-        "description": "31MB 二进制文件，冷启动不到 100ms，零垃圾回收暂停。部署在 Mac Mini、云服务器或树莓派上。",
-        "highlights": ["31MB 二进制", "<100ms 启动", "无 GC 暂停"]
+        "title": "设备与机器人",
+        "description": "内核足够小，可以放在设备上运行；带有面向执行动作的安全分级，以及通向机器人技术栈的桥接。",
+        "highlights": ["ARM64 与 x86-64", "本地模型", "安全分级"]
       }
     ]
   },
   "quickStart": {
-    "label": "快速开始",
-    "heading": "唤醒你的第一只章鱼！",
-    "description": "不需要 Python、Docker 或任何运行时依赖。安装二进制文件，设置 API key，开始对话。就这样。",
-    "code": "<span class=\"text-neutral-2\"># 安装</span>\ncargo install --path crates/octos-cli\n\n<span class=\"text-neutral-2\"># 初始化配置</span>\noctos init\n\n<span class=\"text-neutral-2\"># 设置 API key</span>\n<span class=\"text-neutral-1\">export</span> ANTHROPIC_API_KEY=your-key\n\n<span class=\"text-neutral-2\"># 在终端开始对话</span>\noctos chat\n\n<span class=\"text-neutral-2\"># 或启动完整网关</span>\noctos gateway\n\n<span class=\"text-neutral-2\"># 或启动 REST API 服务</span>\noctos serve"
+    "label": "开始使用",
+    "heading": "把内核跑起来",
+    "description": "构建二进制、让客户端连上它，或者直接链接 crate。不需要 Python 运行时，也不需要 Docker。",
+    "code": "<span class=\"text-neutral-2\"># 构建并安装 CLI</span>\ncargo install --path crates/octos-cli\n\n<span class=\"text-neutral-2\"># 首次运行：档案、厂商、模型</span>\noctos init\n<span class=\"text-neutral-1\">export</span> ANTHROPIC_API_KEY=your-key\n\n<span class=\"text-neutral-2\"># 在终端里直接对话</span>\noctos chat\n\n<span class=\"text-neutral-2\"># 在 127.0.0.1:50080 上提供协议服务</span>\noctos serve\n\n<span class=\"text-neutral-2\"># 或者通过标准输入输出讲 JSON-RPC</span>\noctos serve --stdio\n\n<span class=\"text-neutral-2\"># 以 MCP 方式把内核暴露给其他智能体</span>\noctos mcp-serve\n\n<span class=\"text-neutral-2\"># 检查运行环境</span>\noctos doctor"
   },
   "faq": {
     "label": "常见问题",
-    "heading": "FAQ",
+    "heading": "常见问题",
     "items": [
       {
-        "question": "Octos 和 LangChain、CrewAI 有什么区别？",
-        "answer": "Octos 是操作系统，不是框架。单个二进制文件 — 不需要 Python、Docker、胶水代码。内置多租户、14 个消息渠道和自动供应商故障转移。通过 REST API 或 JSON 配置文件管理智能体。"
+        "question": "Octos 是框架、库，还是应用？",
+        "answer": "是一个可嵌入的内核，比起框架更接近库。它提供执行循环、上下文、记忆、工具与多智能体运行时，并通过协议对外暴露；它不提供界面，也不要求你围绕它重构应用。"
       },
       {
-        "question": "支持哪些大模型？",
-        "answer": "16 个供应商开箱即用：Anthropic、OpenAI、Gemini、Vertex AI、DeepSeek、OpenRouter 等。可以在一条流水线中串联多个供应商 — 便宜模型做规划，强大模型做总结 — 一个挂了自动切换到下一个。"
+        "question": "OUP 是什么？",
+        "answer": "Octos UI Protocol：基于 JSON-RPC 2.0，可走 WebSocket、stdio 或进程内分发，共 105 个方法与 50 种通知。客户端在连接时协商能力；持久事件带游标，断线后可以精确回放错过的内容。"
       },
       {
-        "question": "小服务器能跑吗？",
-        "answer": "可以。二进制只有 31MB，冷启动不到 100ms，零外部依赖。一台 Mac Mini 就能跑 200+ 个智能体。不需要 Python 运行时、Docker、Kubernetes。"
+        "question": "怎么嵌进我的应用？",
+        "answer": "四种方式：直接使用 Rust crate；通过随仓库提供的头文件跨 C ABI 接入；移动端用 UniFFI 生成 Kotlin 或 Swift 绑定；或者使用 Python wheel。若希望进程隔离，也可以运行 octos serve，用协议通信。"
       },
       {
-        "question": "Octos 是开源的吗？",
-        "answer": "是的。Octos 完全开源，采用 MIT 协议，代码托管在 GitHub。"
+        "question": "支持哪些模型？",
+        "answer": "内置 19 个厂商，包括 Anthropic、OpenAI、Gemini、Vertex、DeepSeek、Moonshot、智谱、MiniMax、通义、Groq 与 OpenRouter，并支持 Ollama、vLLM 等任何 OpenAI 兼容服务这类无需密钥的本地选项。路由、重试、容错与对冲都在内核里。"
       },
       {
-        "question": "怎么连接消息渠道？",
-        "answer": "在配置文件中添加渠道配置即可。Telegram、Discord、Slack、WhatsApp、微信、邮件等 14 个渠道全部内置 — 无需插件。你的智能体同时在所有渠道上线。"
+        "question": "怎么防止智能体闯祸？",
+        "answer": "会话运行在平台沙箱内，权限档案默认只允许写工作区。有风险的工具调用会变成审批请求，并与具体参数绑定；钩子可以直接拒绝操作；云端部署默认禁网；死循环防护会中止不断重复自己的轮次。"
       },
       {
-        "question": "多个用户可以共用一个 Octos 实例吗？",
-        "answer": "当然可以。每个用户拥有独立的智能体，隔离的记忆、会话和数据。家庭模式还支持子账号 — 家长管理账单，每个人都有自己的 AI。"
+        "question": "没人看着的时候能继续干活吗？",
+        "answer": "可以。目标带 token 预算，循环安排继续执行的轮次，监视器盯住文件或进程、只在发生变化时唤醒智能体——没有变化时不消耗 token。预算、事件洪水控制与熔断器共同决定什么时候停下。"
+      },
+      {
+        "question": "是开源的吗？",
+        "answer": "是，采用 Apache License 2.0，代码在 GitHub 的 octos-org/octos。"
       }
     ]
   },
   "cta": {
-    "heading": "5 分钟部署<br class=\"hidden md:block\" />你的第一个智能体",
-    "description": "下载。设置 API key。在任何渠道与你的 AI 对话。就这样。",
+    "heading": "把内核，<br class=\"hidden md:block\" />放进你的应用",
+    "description": "读文档、克隆仓库，或者先从终端客户端开始。",
     "buttons": [
       { "label": "阅读文档", "href": "https://octos-org.github.io/octos/" },
       { "label": "GitHub", "href": "https://github.com/octos-org/octos" }

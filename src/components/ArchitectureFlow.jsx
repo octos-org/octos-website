@@ -60,100 +60,128 @@ const EntryNode = ({ data }) => (
   </div>
 );
 
+// Protocol boundary node: the line between the app and the kernel.
+const BoundaryNode = ({ data }) => (
+  <div style={{
+    ...nodeStyles.boundary,
+    minWidth: '520px',
+    borderStyle: 'dashed',
+  }}>
+    <Handle type="target" position={Position.Top} style={handleStyle} />
+    <Handle type="source" position={Position.Bottom} style={handleStyle} />
+    <div style={{ fontWeight: 600, fontSize: '13px' }}>{data.label}</div>
+    {data.description && (
+      <div style={{ opacity: 0.85, marginTop: '4px', fontSize: '11px', fontFamily: "'Geist', sans-serif" }}>
+        {data.description}
+      </div>
+    )}
+  </div>
+);
+
 const nodeStyles = {
   entry:    makeNodeStyle('#F9D53F', '#C4A020'),
-  bus:      makeNodeStyle('#00B4EF', '#0090C0'),
-  agent:    makeNodeStyle('#0090C0', '#006890'),
+  boundary: makeNodeStyle('#00B4EF', '#0090C0'),
+  runtime:  makeNodeStyle('#0090C0', '#006890'),
   infra:    makeNodeStyle('#FF5F1F', '#D15010'),
-  plugin:   makeNodeStyle('#8A8380', '#5C5855'),
+  binding:  makeNodeStyle('#8A8380', '#5C5855'),
 };
 
 const nodeTypes = {
   octos: OctosNode,
   entry: EntryNode,
+  boundary: BoundaryNode,
 };
+
+const edge = (id, source, target, stroke) => ({
+  id,
+  source,
+  target,
+  type: 'smoothstep',
+  animated: true,
+  style: { stroke, strokeWidth: 2 },
+});
+
+const BLUE = '#4A7AB5';
+const ORANGE = '#FF5F1F';
+const GREY = '#8A8380';
 
 const initialNodes = [
   {
-    id: 'cli',
+    id: 'app',
     type: 'entry',
-    position: { x: 370, y: 0 },
-    data: { label: 'OCTOS CLI / API', description: '92 REST endpoints', tier: 'entry' },
+    position: { x: 300, y: 0 },
+    data: { label: 'YOUR APP', description: 'OctoSense · Octoscode · your product', tier: 'entry' },
   },
   {
-    id: 'bus',
-    type: 'octos',
-    position: { x: 80, y: 140 },
-    data: { label: 'octos-bus', description: '12 channels \u00B7 5 queue modes', tier: 'bus' },
+    id: 'oup',
+    type: 'boundary',
+    position: { x: 120, y: 110 },
+    data: { label: 'OUP — Octos UI Protocol', description: 'JSON-RPC 2.0 over WebSocket · stdio · in-process', tier: 'boundary' },
   },
   {
     id: 'agent',
     type: 'octos',
-    position: { x: 330, y: 140 },
-    data: { label: 'octos-agent', description: 'Think \u00B7 Use tools \u00B7 Stay safe', tier: 'bus' },
+    position: { x: 120, y: 240 },
+    data: { label: 'octos-agent', description: 'Turns · tools · hooks · sandbox', tier: 'runtime' },
   },
   {
-    id: 'pipeline',
+    id: 'bus',
     type: 'octos',
-    position: { x: 580, y: 140 },
-    data: { label: 'octos-pipeline', description: 'Multi-step workflows', tier: 'bus' },
+    position: { x: 360, y: 240 },
+    data: { label: 'octos-bus', description: 'Sessions · profiles', tier: 'runtime' },
+  },
+  {
+    id: 'fleet',
+    type: 'octos',
+    position: { x: 600, y: 240 },
+    data: { label: 'octos-swarm / fleet', description: 'Peers · workers · goals', tier: 'runtime' },
   },
   {
     id: 'llm',
     type: 'octos',
-    position: { x: 80, y: 300 },
-    data: { label: 'octos-llm', description: '15 providers \u00B7 3-layer failover', tier: 'infra' },
+    position: { x: 120, y: 390 },
+    data: { label: 'octos-llm', description: 'Providers · routing · failover', tier: 'infra' },
   },
   {
     id: 'memory',
     type: 'octos',
-    position: { x: 330, y: 300 },
-    data: { label: 'octos-memory', description: 'Never forgets \u00B7 3 layers', tier: 'infra' },
+    position: { x: 360, y: 390 },
+    data: { label: 'octos-memory', description: 'Hybrid recall · 3 tiers', tier: 'infra' },
   },
   {
     id: 'core',
     type: 'octos',
-    position: { x: 580, y: 300 },
-    data: { label: 'octos-core', description: 'Shared types', tier: 'infra' },
+    position: { x: 600, y: 390 },
+    data: { label: 'octos-core', description: 'Types · OUP codecs', tier: 'infra' },
   },
   {
-    id: 'plugin',
+    id: 'bindings',
     type: 'octos',
-    position: { x: 800, y: 220 },
-    data: { label: 'octos-plugin', description: 'Extensibility', tier: 'plugin' },
+    position: { x: 830, y: 110 },
+    data: { label: 'bindings', description: 'ffi · uniffi · pyo3 · wasm', tier: 'binding' },
   },
 ];
 
 const initialEdges = [
-  // CLI -> Layer 1
-  { id: 'e-cli-bus', source: 'cli', target: 'bus', type: 'smoothstep', animated: true, style: { stroke: '#4A7AB5', strokeWidth: 2 } },
-  { id: 'e-cli-agent', source: 'cli', target: 'agent', type: 'smoothstep', animated: true, style: { stroke: '#4A7AB5', strokeWidth: 2 } },
-  { id: 'e-cli-pipeline', source: 'cli', target: 'pipeline', type: 'smoothstep', animated: true, style: { stroke: '#4A7AB5', strokeWidth: 2 } },
-
-  // Layer 1 cross-connections
-  { id: 'e-bus-agent', source: 'bus', target: 'agent', type: 'smoothstep', animated: true, style: { stroke: '#4A7AB5', strokeWidth: 2 } },
-  { id: 'e-agent-pipeline', source: 'agent', target: 'pipeline', type: 'smoothstep', animated: true, style: { stroke: '#4A7AB5', strokeWidth: 2 } },
-
-  // Layer 1 -> Layer 2
-  { id: 'e-bus-llm', source: 'bus', target: 'llm', type: 'smoothstep', animated: true, style: { stroke: '#FF5F1F', strokeWidth: 2 } },
-  { id: 'e-bus-memory', source: 'bus', target: 'memory', type: 'smoothstep', animated: true, style: { stroke: '#FF5F1F', strokeWidth: 2 } },
-  { id: 'e-agent-llm', source: 'agent', target: 'llm', type: 'smoothstep', animated: true, style: { stroke: '#FF5F1F', strokeWidth: 2 } },
-  { id: 'e-agent-memory', source: 'agent', target: 'memory', type: 'smoothstep', animated: true, style: { stroke: '#FF5F1F', strokeWidth: 2 } },
-  { id: 'e-pipeline-llm', source: 'pipeline', target: 'llm', type: 'smoothstep', animated: true, style: { stroke: '#FF5F1F', strokeWidth: 2 } },
-  { id: 'e-pipeline-memory', source: 'pipeline', target: 'memory', type: 'smoothstep', animated: true, style: { stroke: '#FF5F1F', strokeWidth: 2 } },
-  { id: 'e-pipeline-core', source: 'pipeline', target: 'core', type: 'smoothstep', animated: true, style: { stroke: '#FF5F1F', strokeWidth: 2 } },
-
-  // Layer 2 cross-connections
-  { id: 'e-llm-memory', source: 'llm', target: 'memory', type: 'smoothstep', animated: true, style: { stroke: '#FF5F1F', strokeWidth: 2 } },
-  { id: 'e-memory-core', source: 'memory', target: 'core', type: 'smoothstep', animated: true, style: { stroke: '#FF5F1F', strokeWidth: 2 } },
-
-  // Plugin
-  { id: 'e-agent-plugin', source: 'agent', target: 'plugin', type: 'smoothstep', animated: true, style: { stroke: '#8A8380', strokeWidth: 1.5 } },
+  edge('e-app-oup', 'app', 'oup', BLUE),
+  edge('e-app-bindings', 'app', 'bindings', GREY),
+  edge('e-oup-agent', 'oup', 'agent', BLUE),
+  edge('e-oup-bus', 'oup', 'bus', BLUE),
+  edge('e-oup-fleet', 'oup', 'fleet', BLUE),
+  edge('e-bindings-agent', 'bindings', 'agent', GREY),
+  edge('e-agent-bus', 'agent', 'bus', BLUE),
+  edge('e-bus-fleet', 'bus', 'fleet', BLUE),
+  edge('e-agent-llm', 'agent', 'llm', ORANGE),
+  edge('e-agent-memory', 'agent', 'memory', ORANGE),
+  edge('e-bus-memory', 'bus', 'memory', ORANGE),
+  edge('e-fleet-core', 'fleet', 'core', ORANGE),
+  edge('e-llm-memory', 'llm', 'memory', ORANGE),
+  edge('e-memory-core', 'memory', 'core', ORANGE),
 ];
 
 function Flow() {
   return (
-    <div style={{ height: '460px', width: '100%' }}>
+    <div style={{ height: '520px', width: '100%' }}>
       <ReactFlow
         nodes={initialNodes}
         edges={initialEdges}

@@ -1,0 +1,50 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+
+interface Props {
+  t: {
+    label: string;
+    heading: string;
+    description: string;
+    stages: { name: string; description: string }[];
+    triggersLabel: string;
+    triggers: string[];
+    note: string;
+  };
+}
+
+const { t } = Astro.props;
+---
+
+<Section id="loops" padY="lg">
+  <Container>
+    <div class="mb-12 lg:mb-16" data-animate>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.label}</p>
+      <h2 class="mt-3 text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px] lg:text-[48px]" set:html={t.heading} />
+      <p class="mt-4 max-w-2xl text-[16px] leading-relaxed text-neutral-2">{t.description}</p>
+    </div>
+
+    <ol class="grid grid-cols-1 gap-px overflow-hidden border border-surface-3 md:grid-cols-2 lg:grid-cols-4" data-animate-stagger>
+      {t.stages.map((stage, index) => (
+        <li class="bg-surface-1 p-5 outline outline-1 outline-surface-3">
+          <p class="font-mono text-[11px] text-accent">{String(index + 1).padStart(2, '0')}</p>
+          <p class="mt-3 text-[16px] text-text-bright">{stage.name}</p>
+          <p class="mt-2 text-[14px] leading-relaxed text-neutral-2">{stage.description}</p>
+        </li>
+      ))}
+    </ol>
+
+    <div class="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between" data-animate>
+      <div>
+        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.triggersLabel}</p>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {t.triggers.map((trigger) => (
+            <li class="border border-surface-3 px-3 py-1.5 font-mono text-[12px] text-neutral-2">{trigger}</li>
+          ))}
+        </ul>
+      </div>
+      <p class="max-w-md text-[14px] leading-relaxed text-neutral-2">{t.note}</p>
+    </div>
+  </Container>
+</Section>
