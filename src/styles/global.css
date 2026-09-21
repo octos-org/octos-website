@@ -302,3 +302,22 @@ html[data-theme="light"] {
     }
   }
 }
+
+/* === Ocean gradient text === */
+@layer components {
+  .text-ocean {
+    background-image: linear-gradient(115deg, #CFFFE9 0%, #6FE9C8 18%, #35D8EE 40%, #12AEEA 62%, #1C7BDC 82%, #2A4FB8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-ocean-soft {
+    background-image: linear-gradient(115deg, #E6FFF4 0%, #8FF0D2 20%, #4EDDF0 45%, #1FB3EC 70%, #2C74D6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}

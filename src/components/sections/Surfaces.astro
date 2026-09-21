@@ -9,7 +9,7 @@ interface Props {
     label: string;
     heading: string;
     description: string;
-    clients: { name: string; description: string }[];
+    clients: { name: string; description: string; href: string; linkLabel: string }[];
     channelsLabel: string;
     channelsNote: string;
   };
@@ -28,10 +28,16 @@ const { t } = Astro.props;
 
     <div class="grid grid-cols-1 gap-px overflow-hidden border border-surface-3 md:grid-cols-2 lg:grid-cols-4" data-animate-stagger>
       {t.clients.map((client) => (
-        <div class="bg-surface-1 p-5 outline outline-1 outline-surface-3">
+        <a
+          class="flex flex-col bg-surface-1 p-5 outline outline-1 outline-surface-3 transition-colors duration-200 hover:bg-surface-2"
+          href={client.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <p class="text-[16px] text-text-bright">{client.name}</p>
-          <p class="mt-3 text-[14px] leading-relaxed text-neutral-2">{client.description}</p>
-        </div>
+          <p class="mt-3 flex-1 text-[14px] leading-relaxed text-neutral-2">{client.description}</p>
+          <p class="mt-4 font-mono text-[12px] uppercase tracking-[0.06em] text-accent">{client.linkLabel} →</p>
+        </a>
       ))}
     </div>
 
