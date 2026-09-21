@@ -6,58 +6,145 @@
   "header": {
     "logo": "Octos",
     "navLinks": [
-      { "text": "Architecture", "href": "#architecture" },
-      { "text": "Protocol", "href": "#protocol" },
-      { "text": "Embedding", "href": "#embedding" },
-      { "text": "Agents", "href": "#agents" },
-      { "text": "Quick Start", "href": "#quickstart" }
+      {
+        "text": "Architecture",
+        "href": "#architecture"
+      },
+      {
+        "text": "Protocol",
+        "href": "#protocol"
+      },
+      {
+        "text": "Embedding",
+        "href": "#embedding"
+      },
+      {
+        "text": "Agents",
+        "href": "#agents"
+      },
+      {
+        "text": "Quick Start",
+        "href": "#quickstart"
+      }
     ],
     "externalLinks": [
-      { "text": "Docs", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "text": "Docs",
+        "href": "https://octos-org.github.io/octos/"
+      },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ],
-    "langAlt": { "text": "中文", "href": "/zh/" }
+    "langAlt": {
+      "text": "中文",
+      "href": "/zh/"
+    }
   },
   "footer": {
     "brand": "Octos",
     "brandDescription": "An embeddable AI agent harness kernel, written in Rust. The app owns the product; Octos owns agent execution and runtime state.",
     "navHeading": "Navigation",
     "links": [
-      { "text": "Architecture", "href": "#architecture" },
-      { "text": "Protocol", "href": "#protocol" },
-      { "text": "Embedding", "href": "#embedding" },
-      { "text": "Memory", "href": "#memory" },
-      { "text": "Agents", "href": "#agents" },
-      { "text": "Security", "href": "#security" },
-      { "text": "Quick Start", "href": "#quickstart" },
-      { "text": "FAQ", "href": "#faq" }
+      {
+        "text": "Architecture",
+        "href": "#architecture"
+      },
+      {
+        "text": "Protocol",
+        "href": "#protocol"
+      },
+      {
+        "text": "Embedding",
+        "href": "#embedding"
+      },
+      {
+        "text": "Memory",
+        "href": "#memory"
+      },
+      {
+        "text": "Agents",
+        "href": "#agents"
+      },
+      {
+        "text": "Security",
+        "href": "#security"
+      },
+      {
+        "text": "Quick Start",
+        "href": "#quickstart"
+      },
+      {
+        "text": "FAQ",
+        "href": "#faq"
+      }
     ],
     "resourcesHeading": "Resources",
     "external": [
-      { "text": "Docs", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "text": "Docs",
+        "href": "https://octos-org.github.io/octos/"
+      },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ],
     "license": "Open source under the Apache License 2.0.",
-    "langEn": { "text": "EN", "href": "/" },
-    "langZh": { "text": "中文", "href": "/zh/" }
+    "langEn": {
+      "text": "EN",
+      "href": "/"
+    },
+    "langZh": {
+      "text": "中文",
+      "href": "/zh/"
+    }
   },
   "hero": {
     "badge": "Apache-2.0",
     "acronym": "The embeddable agent kernel",
     "heading": "Your app owns the UI.<br/>Octos owns the agent.",
     "description": "A Rust agent harness kernel: turns, context, memory, tools, model routing, sandboxing and multi-agent execution, behind one protocol. Embed it as a crate, a C library, a mobile binding, or run it as a server.",
-    "statsBar": ["Rust kernel", "OUP protocol", "3-layer memory", "19 providers", "Apache-2.0"],
+    "statsBar": [
+      "Rust kernel",
+      "OUP protocol",
+      "3-layer memory",
+      "19 providers",
+      "Apache-2.0"
+    ],
     "buttons": [
-      { "label": "Quick Start", "href": "#quickstart" },
-      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "label": "Quick Start",
+        "href": "#quickstart"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ]
   },
   "stats": [
-    { "value": "Embed<br/>It", "label": "Crate · C ABI · UniFFI · Python" },
-    { "value": "One<br/>Protocol", "label": "JSON-RPC over WS or stdio" },
-    { "value": "Local<br/>First", "label": "Your machine, your data" },
-    { "value": "Multi<br/>Agent", "label": "Sub-agents · peers · fleet" },
-    { "value": "Runs<br/>Anywhere", "label": "Linux · macOS · Windows" }
+    {
+      "value": "Embed",
+      "label": "Crate · C ABI · UniFFI"
+    },
+    {
+      "value": "Protocol",
+      "label": "WebSocket · stdio"
+    },
+    {
+      "value": "Local",
+      "label": "Your machine, your data"
+    },
+    {
+      "value": "Agents",
+      "label": "Sub-agents · peers · fleet"
+    },
+    {
+      "value": "Anywhere",
+      "label": "Linux · macOS · Windows"
+    }
   ],
   "features": {
     "label": "The kernel",
@@ -133,11 +220,31 @@
     "heading": "A kernel with a protocol boundary",
     "description": "38 crates in one Rust workspace. Above the line, your app renders and acts. Below it, the kernel executes turns and owns runtime state. The boundary is a protocol, not a function call — so the client can sit in the same process, on a socket, or on another machine.",
     "modules": [
-      { "color": "bg-title", "name": "octos-core", "description": "protocol types, OUP codecs" },
-      { "color": "bg-heading", "name": "octos-agent", "description": "turns, tools, hooks, sandbox" },
-      { "color": "bg-heading", "name": "octos-bus", "description": "sessions and profiles" },
-      { "color": "bg-info", "name": "octos-llm", "description": "19 providers, routing, failover" },
-      { "color": "bg-highlight", "name": "octos-memory", "description": "episodes, notes, entity bank" }
+      {
+        "color": "bg-title",
+        "name": "octos-core",
+        "description": "protocol types, OUP codecs"
+      },
+      {
+        "color": "bg-heading",
+        "name": "octos-agent",
+        "description": "turns, tools, hooks, sandbox"
+      },
+      {
+        "color": "bg-heading",
+        "name": "octos-bus",
+        "description": "sessions and profiles"
+      },
+      {
+        "color": "bg-info",
+        "name": "octos-llm",
+        "description": "19 providers, routing, failover"
+      },
+      {
+        "color": "bg-highlight",
+        "name": "octos-memory",
+        "description": "episodes, notes, entity bank"
+      }
     ]
   },
   "protocol": {
@@ -145,20 +252,80 @@
     "heading": "OUP — one boundary,<br/>three transports",
     "description": "The Octos UI Protocol is JSON-RPC 2.0. A client opens a session, starts turns, answers approvals and replays what it missed. Features are negotiated per connection, and the server never advertises a capability the client did not ask for.",
     "transports": [
-      { "name": "WebSocket", "description": "GET /api/ui-protocol/ws — the sole chat transport, origin-checked against your allowed origins." },
-      { "name": "stdio", "description": "octos serve --stdio speaks newline-delimited JSON: one object per line, stdout for protocol, stderr for logs." },
-      { "name": "In-process", "description": "Link the crate and dispatch directly, with no socket in between — the path mobile and desktop shells take." }
+      {
+        "name": "WebSocket",
+        "description": "GET /api/ui-protocol/ws — the sole chat transport, origin-checked against your allowed origins."
+      },
+      {
+        "name": "stdio",
+        "description": "octos serve --stdio speaks newline-delimited JSON: one object per line, stdout for protocol, stderr for logs."
+      },
+      {
+        "name": "In-process",
+        "description": "Link the crate and dispatch directly, with no socket in between — the path mobile and desktop shells take."
+      }
     ],
     "code": "<span class=\"text-neutral-2\">// start a turn</span>\n{\"jsonrpc\":\"2.0\",\"id\":\"req-turn-start\",\"method\":\"turn/start\",\n \"params\":{\"session_id\":\"local:demo\",\"turn_id\":\"&lt;uuid&gt;\",\n           \"input\":[{\"kind\":\"text\",\"text\":\"hello\"}]}}\n\n<span class=\"text-neutral-2\">// approve a tool call the agent asked about</span>\n{\"jsonrpc\":\"2.0\",\"id\":\"req-approval\",\"method\":\"approval/respond\",\n \"params\":{\"session_id\":\"local:demo\",\"approval_id\":\"&lt;uuid&gt;\",\n           \"decision\":\"approve\"}}\n\n<span class=\"text-neutral-2\">// resume after a disconnect</span>\n{\"stream\":\"events\",\"seq\":42}",
     "codeTitle": "oup",
     "methodsLabel": "105 methods · 50 notifications",
     "methodGroups": [
-      { "label": "Sessions", "methods": ["session/open", "session/hydrate", "session/fork", "session/rollback", "session/compact", "session/snapshot"] },
-      { "label": "Turns", "methods": ["turn/start", "turn/steer", "turn/interrupt", "turn/state/get"] },
-      { "label": "Approvals", "methods": ["approval/respond", "approval/scopes/list", "user_question/respond", "permission/profile/get"] },
-      { "label": "Agents and peers", "methods": ["agent/*", "task/*", "peer/prepare", "peer/gather"] },
-      { "label": "Autonomy", "methods": ["session/goal/set", "loop/create", "loop/fire_now", "monitor/create"] },
-      { "label": "Runtime", "methods": ["client_hello", "config/capabilities/list", "profile/*", "mcp/status/list", "tool/status/list"] }
+      {
+        "label": "Sessions",
+        "methods": [
+          "session/open",
+          "session/hydrate",
+          "session/fork",
+          "session/rollback",
+          "session/compact",
+          "session/snapshot"
+        ]
+      },
+      {
+        "label": "Turns",
+        "methods": [
+          "turn/start",
+          "turn/steer",
+          "turn/interrupt",
+          "turn/state/get"
+        ]
+      },
+      {
+        "label": "Approvals",
+        "methods": [
+          "approval/respond",
+          "approval/scopes/list",
+          "user_question/respond",
+          "permission/profile/get"
+        ]
+      },
+      {
+        "label": "Agents and peers",
+        "methods": [
+          "agent/*",
+          "task/*",
+          "peer/prepare",
+          "peer/gather"
+        ]
+      },
+      {
+        "label": "Autonomy",
+        "methods": [
+          "session/goal/set",
+          "loop/create",
+          "loop/fire_now",
+          "monitor/create"
+        ]
+      },
+      {
+        "label": "Runtime",
+        "methods": [
+          "client_hello",
+          "config/capabilities/list",
+          "profile/*",
+          "mcp/status/list",
+          "tool/status/list"
+        ]
+      }
     ],
     "note": "Streaming arrives as notifications — message/delta, tool/started, tool/completed, context/compaction_started. Every durable event is written to the session ledger before it goes on the wire, so a client that reconnects with its last cursor gets an exact replay, and one that has fallen too far behind is told to re-hydrate instead of silently losing state."
   },
@@ -167,31 +334,78 @@
     "heading": "Link it, bind it,<br/>or run it",
     "description": "Octos is a library first. Take the crates directly in a Rust app, cross the C ABI from anything else, generate mobile bindings, or run the binary and talk to it over the protocol.",
     "targets": [
-      { "name": "Rust", "artifact": "cargo add octos-agent", "description": "Use the kernel crates directly and keep everything in one process." },
-      { "name": "C ABI", "artifact": "liboctos_ffi.so / .a", "description": "A committed octos.h with a small surface: create a runtime, run a task, read the last error." },
-      { "name": "Mobile", "artifact": "liboctos_uniffi.so", "description": "UniFFI generates Kotlin and Swift bindings — this is how the kernel ships inside an Android app." },
-      { "name": "Python", "artifact": "pyo3 wheel", "description": "A native extension module for scripting, evaluation and backend glue." },
-      { "name": "Browser", "artifact": "octos-wasm", "description": "Protocol and utility types for web clients; the kernel itself keeps running natively." }
+      {
+        "name": "Rust",
+        "artifact": "cargo add octos-agent",
+        "description": "Use the kernel crates directly and keep everything in one process."
+      },
+      {
+        "name": "C ABI",
+        "artifact": "liboctos_ffi.so / .a",
+        "description": "A committed octos.h with a small surface: create a runtime, run a task, read the last error."
+      },
+      {
+        "name": "Mobile",
+        "artifact": "liboctos_uniffi.so",
+        "description": "UniFFI generates Kotlin and Swift bindings — this is how the kernel ships inside an Android app."
+      },
+      {
+        "name": "Python",
+        "artifact": "pyo3 wheel",
+        "description": "A native extension module for scripting, evaluation and backend glue."
+      },
+      {
+        "name": "Browser",
+        "artifact": "octos-wasm",
+        "description": "Protocol and utility types for web clients; the kernel itself keeps running natively."
+      }
     ],
     "code": "<span class=\"text-neutral-2\">// C ABI</span>\n<span class=\"text-neutral-1\">#include</span> \"octos.h\"\n\nOctosRuntime *rt = octos_runtime_new(config_json);\nchar *out = octos_run_task(rt, \"summarize ./README.md\");\nif (!out) fprintf(stderr, \"%s\\n\", octos_last_error());\noctos_string_free(out);",
     "codeTitle": "octos.h",
     "platformsLabel": "Built in CI",
-    "platforms": ["Linux x86-64", "Linux ARM64", "macOS ARM64", "Windows x86-64", "Android via UniFFI"]
+    "platforms": [
+      "Linux x86-64",
+      "Linux ARM64",
+      "macOS ARM64",
+      "Windows x86-64",
+      "Android via UniFFI"
+    ]
   },
   "context": {
     "label": "Context",
     "heading": "Long work,<br/>without losing the thread",
     "description": "A turn can run for hours and stay inside the window. The kernel accounts for the budget, prunes what no longer matters, and tells the client every time it does — so the UI can show what happened instead of quietly dropping history.",
     "features": [
-      { "label": "Tier 1", "description": "Prune stale and oversized tool results between iterations, keeping the prompt cache intact." },
-      { "label": "Tier 2", "description": "Hand the provider its own server-side clearing where the API supports it." },
-      { "label": "Tier 3", "description": "A full compacting pass — extractive by default, or an LLM summary — preserving named artifacts and invariants." }
+      {
+        "label": "Tier 1",
+        "description": "Prune stale and oversized tool results between iterations, keeping the prompt cache intact."
+      },
+      {
+        "label": "Tier 2",
+        "description": "Hand the provider its own server-side clearing where the API supports it."
+      },
+      {
+        "label": "Tier 3",
+        "description": "A full compacting pass — extractive by default, or an LLM summary — preserving named artifacts and invariants."
+      }
     ],
     "lifecycle": [
-      { "name": "hydrate", "description": "Page a session back into a client with its cursor and typed snapshot." },
-      { "name": "fork", "description": "Branch a session, keeping the last user turns and dropping the parent's tool noise." },
-      { "name": "rollback", "description": "Drop the last N user turns as an append-only, idempotent marker." },
-      { "name": "compact", "description": "Run compaction on demand, or let the preflight check trigger it." }
+      {
+        "name": "hydrate",
+        "description": "Page a session back into a client with its cursor and typed snapshot."
+      },
+      {
+        "name": "fork",
+        "description": "Branch a session, keeping the last user turns and dropping the parent's tool noise."
+      },
+      {
+        "name": "rollback",
+        "description": "Drop the last N user turns as an append-only, idempotent marker."
+      },
+      {
+        "name": "compact",
+        "description": "Run compaction on demand, or let the preflight check trigger it."
+      }
     ],
     "note": "Pruned tool results become typed placeholders that keep their call ids, so the transcript stays valid. With context.lifecycle.v1 enabled, the client receives compaction_started, compaction_completed and normalization_reported, each carrying the ids, triggers and token counts before and after."
   },
@@ -225,14 +439,64 @@
     "heading": "One toolbox, one policy",
     "description": "Tools are Rust implementations with JSON schemas, admitted by a permission policy and executed inside the sandbox. Each declares whether it is safe to run in parallel, so a batch of reads fans out while writes stay in call order.",
     "tiers": [
-      { "stat": "35", "label": "built-in tools", "description": "Registered with the permission-aware builtin registry." },
-      { "stat": "2", "label": "concurrency classes", "description": "Safe tools run in parallel; exclusive ones run serially, and mixed batches are reassembled in order." },
-      { "stat": "57", "label": "tool source files", "description": "Plus MCP tools and plugin tools discovered at runtime." }
+      {
+        "stat": "35",
+        "label": "built-in tools",
+        "description": "Registered with the permission-aware builtin registry."
+      },
+      {
+        "stat": "2",
+        "label": "concurrency classes",
+        "description": "Safe tools run in parallel; exclusive ones run serially, and mixed batches are reassembled in order."
+      },
+      {
+        "stat": "57",
+        "label": "tool source files",
+        "description": "Plus MCP tools and plugin tools discovered at runtime."
+      }
     ],
     "toolGroups": [
-      { "label": "Work on the code", "tools": ["read_file", "write_file", "edit_file", "apply_patch", "diff_edit", "glob", "grep", "list_dir", "git", "check"] },
-      { "label": "Reach the world", "tools": ["shell", "exec_command", "web_search", "web_fetch", "browser", "http", "deep_search", "deep_crawl"] },
-      { "label": "Run more agents", "tools": ["delegate", "spawn_agent", "wait_agent", "peer_handoff", "peer_send_input", "peer_gather", "escalate", "update_plan"] }
+      {
+        "label": "Work on the code",
+        "tools": [
+          "read_file",
+          "write_file",
+          "edit_file",
+          "apply_patch",
+          "diff_edit",
+          "glob",
+          "grep",
+          "list_dir",
+          "git",
+          "check"
+        ]
+      },
+      {
+        "label": "Reach the world",
+        "tools": [
+          "shell",
+          "exec_command",
+          "web_search",
+          "web_fetch",
+          "browser",
+          "http",
+          "deep_search",
+          "deep_crawl"
+        ]
+      },
+      {
+        "label": "Run more agents",
+        "tools": [
+          "delegate",
+          "spawn_agent",
+          "wait_agent",
+          "peer_handoff",
+          "peer_send_input",
+          "peer_gather",
+          "escalate",
+          "update_plan"
+        ]
+      }
     ]
   },
   "providers": {
@@ -282,13 +546,32 @@
     "heading": "Goals, loops and monitors",
     "description": "A session does not have to wait for the next message. Set a goal, attach a loop, or point a monitor at something that changes — the kernel decides when the model needs to run again, and when it should stop.",
     "stages": [
-      { "name": "Goal", "description": "An objective with a token budget, tracked in a durable ledger with its status and spend." },
-      { "name": "Loop", "description": "A stored prompt and mode that enqueues a continuation turn when it is due." },
-      { "name": "Monitor", "description": "A probe whose filtered output wakes the agent. Watching costs no tokens; only the wake-up does." },
-      { "name": "Stop", "description": "Budget exhaustion wraps up, a flood auto-pauses, and three empty continuations park the goal." }
+      {
+        "name": "Goal",
+        "description": "An objective with a token budget, tracked in a durable ledger with its status and spend."
+      },
+      {
+        "name": "Loop",
+        "description": "A stored prompt and mode that enqueues a continuation turn when it is due."
+      },
+      {
+        "name": "Monitor",
+        "description": "A probe whose filtered output wakes the agent. Watching costs no tokens; only the wake-up does."
+      },
+      {
+        "name": "Stop",
+        "description": "Budget exhaustion wraps up, a flood auto-pauses, and three empty continuations park the goal."
+      }
     ],
     "triggersLabel": "What wakes a turn",
-    "triggers": ["fixed interval", "self-paced", "cron", "file or process change", "child completed", "external signal"],
+    "triggers": [
+      "fixed interval",
+      "self-paced",
+      "cron",
+      "file or process change",
+      "child completed",
+      "external signal"
+    ],
     "note": "Loop and monitor specs are persisted, so they re-arm after a restart; running child processes are not resurrected. Continuations are prioritized and de-duplicated, so a busy session does not stack up redundant turns."
   },
   "security": {
@@ -296,12 +579,30 @@
     "heading": "Sandboxed, scoped, and asked first",
     "description": "The sandbox is the boundary, not the tool list. Every session runs under a backend appropriate to the platform, with a permission profile that says what the agent may touch.",
     "layers": [
-      { "title": "Six sandbox backends", "description": "bwrap, Landlock, macOS sandbox-exec, Docker, Windows AppContainer, or none — chosen automatically per platform, and it warns when a fence is not enforced." },
-      { "title": "Permission profiles", "description": "Read-only, workspace-write or full host access. Workspace-write is the default; full access is refused unless the runtime mode allows it." },
-      { "title": "Approvals that cannot be replayed", "description": "A pending approval is bound to a SHA-256 digest of the exact arguments, to the room it came from and to the approvers snapshot; consumed approvals are rejected." },
-      { "title": "Hooks with a circuit breaker", "description": "Shell hooks at 11 lifecycle points. Exit non-zero before a tool call and it is denied; a hook that keeps failing is disabled rather than allowed to wedge the loop." },
-      { "title": "Network off where it matters", "description": "Cloud and tenant deployments default to network-denied. --no-network turns it off anywhere, and an explicit permission choice always wins." },
-      { "title": "Loop and injection guards", "description": "Three identical tool calls in a row abort the turn, an SSRF guard filters fetches, hook and probe environments are sanitized, and credentials are redacted from logs." }
+      {
+        "title": "Six sandbox backends",
+        "description": "bwrap, Landlock, macOS sandbox-exec, Docker, Windows AppContainer, or none — chosen automatically per platform, and it warns when a fence is not enforced."
+      },
+      {
+        "title": "Permission profiles",
+        "description": "Read-only, workspace-write or full host access. Workspace-write is the default; full access is refused unless the runtime mode allows it."
+      },
+      {
+        "title": "Approvals that cannot be replayed",
+        "description": "A pending approval is bound to a SHA-256 digest of the exact arguments, to the room it came from and to the approvers snapshot; consumed approvals are rejected."
+      },
+      {
+        "title": "Hooks with a circuit breaker",
+        "description": "Shell hooks at 11 lifecycle points. Exit non-zero before a tool call and it is denied; a hook that keeps failing is disabled rather than allowed to wedge the loop."
+      },
+      {
+        "title": "Network off where it matters",
+        "description": "Cloud and tenant deployments default to network-denied. --no-network turns it off anywhere, and an explicit permission choice always wins."
+      },
+      {
+        "title": "Loop and injection guards",
+        "description": "Three identical tool calls in a row abort the turn, an SSRF guard filters fetches, hook and probe environments are sanitized, and credentials are redacted from logs."
+      }
     ]
   },
   "surfaces": {
@@ -309,10 +610,22 @@
     "heading": "The clients are separate",
     "description": "Because the boundary is a protocol, a client is just a program that speaks it. These ship today, and yours can join them.",
     "clients": [
-      { "name": "Octoscode", "description": "The terminal client. Provisions its own local runtime and speaks OUP over stdio." },
-      { "name": "Octoscode Web", "description": "The browser client over WebSocket, served by the binary alongside an admin dashboard." },
-      { "name": "OctoSense", "description": "The agent shell for desktop and phone, with the kernel embedded in the app." },
-      { "name": "MCP", "description": "Octos is both an MCP client and an MCP server, so other agents can call in and it can call out." }
+      {
+        "name": "Octoscode",
+        "description": "The terminal client. Provisions its own local runtime and speaks OUP over stdio."
+      },
+      {
+        "name": "Octoscode Web",
+        "description": "The browser client over WebSocket, served by the binary alongside an admin dashboard."
+      },
+      {
+        "name": "OctoSense",
+        "description": "The agent shell for desktop and phone, with the kernel embedded in the app."
+      },
+      {
+        "name": "MCP",
+        "description": "Octos is both an MCP client and an MCP server, so other agents can call in and it can call out."
+      }
     ],
     "channelsLabel": "Messaging channels",
     "channelsNote": "The gateway is one surface among several: the same sessions can be reached from chat platforms, with history intact."
@@ -325,25 +638,41 @@
         "label": "01",
         "title": "OctoSense — an agent shell",
         "description": "The kernel embedded in a Makepad shell for desktop and Android, where apps and cards are the interface and the agent reorganizes them around intent.",
-        "highlights": ["In-process protocol", "Mobile bindings", "App cards"]
+        "highlights": [
+          "In-process protocol",
+          "Mobile bindings",
+          "App cards"
+        ]
       },
       {
         "label": "02",
         "title": "Octoscode — coding in the terminal",
         "description": "A terminal client for real work: turns you can steer and interrupt, sandboxed edits, checks, and sub-agents for the parts that fan out.",
-        "highlights": ["stdio transport", "Steer and interrupt", "Sandboxed edits"]
+        "highlights": [
+          "stdio transport",
+          "Steer and interrupt",
+          "Sandboxed edits"
+        ]
       },
       {
         "label": "03",
         "title": "Your product",
         "description": "Give each customer an isolated agent with its own profile, memory and permissions, behind whatever interface you already ship.",
-        "highlights": ["Per-profile isolation", "Least-privilege grants", "One binary"]
+        "highlights": [
+          "Per-profile isolation",
+          "Least-privilege grants",
+          "One binary"
+        ]
       },
       {
         "label": "04",
         "title": "Devices and robots",
         "description": "The kernel is small enough to live on the device, with safety tiers for actuation and a bridge to robotics stacks.",
-        "highlights": ["ARM64 and x86-64", "Local models", "Safety tiers"]
+        "highlights": [
+          "ARM64 and x86-64",
+          "Local models",
+          "Safety tiers"
+        ]
       }
     ]
   },
@@ -391,8 +720,14 @@
     "heading": "Put the kernel<br class=\"hidden md:block\" /> inside your app",
     "description": "Read the docs, clone the repo, or start with the terminal client.",
     "buttons": [
-      { "label": "Read the Docs", "href": "https://octos-org.github.io/octos/" },
-      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "label": "Read the Docs",
+        "href": "https://octos-org.github.io/octos/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ]
   }
 }

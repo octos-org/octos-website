@@ -6,58 +6,145 @@
   "header": {
     "logo": "Octos",
     "navLinks": [
-      { "text": "架构", "href": "#architecture" },
-      { "text": "协议", "href": "#protocol" },
-      { "text": "嵌入", "href": "#embedding" },
-      { "text": "多智能体", "href": "#agents" },
-      { "text": "快速开始", "href": "#quickstart" }
+      {
+        "text": "架构",
+        "href": "#architecture"
+      },
+      {
+        "text": "协议",
+        "href": "#protocol"
+      },
+      {
+        "text": "嵌入",
+        "href": "#embedding"
+      },
+      {
+        "text": "多智能体",
+        "href": "#agents"
+      },
+      {
+        "text": "快速开始",
+        "href": "#quickstart"
+      }
     ],
     "externalLinks": [
-      { "text": "文档", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "text": "文档",
+        "href": "https://octos-org.github.io/octos/"
+      },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ],
-    "langAlt": { "text": "EN", "href": "/" }
+    "langAlt": {
+      "text": "EN",
+      "href": "/"
+    }
   },
   "footer": {
     "brand": "Octos",
     "brandDescription": "可嵌入的 Rust 智能体 harness 内核。应用负责产品与界面，Octos 负责智能体执行与运行时状态。",
     "navHeading": "导航",
     "links": [
-      { "text": "架构", "href": "#architecture" },
-      { "text": "协议", "href": "#protocol" },
-      { "text": "嵌入", "href": "#embedding" },
-      { "text": "记忆", "href": "#memory" },
-      { "text": "多智能体", "href": "#agents" },
-      { "text": "安全", "href": "#security" },
-      { "text": "快速开始", "href": "#quickstart" },
-      { "text": "常见问题", "href": "#faq" }
+      {
+        "text": "架构",
+        "href": "#architecture"
+      },
+      {
+        "text": "协议",
+        "href": "#protocol"
+      },
+      {
+        "text": "嵌入",
+        "href": "#embedding"
+      },
+      {
+        "text": "记忆",
+        "href": "#memory"
+      },
+      {
+        "text": "多智能体",
+        "href": "#agents"
+      },
+      {
+        "text": "安全",
+        "href": "#security"
+      },
+      {
+        "text": "快速开始",
+        "href": "#quickstart"
+      },
+      {
+        "text": "常见问题",
+        "href": "#faq"
+      }
     ],
     "resourcesHeading": "资源",
     "external": [
-      { "text": "文档", "href": "https://octos-org.github.io/octos/" },
-      { "text": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "text": "文档",
+        "href": "https://octos-org.github.io/octos/"
+      },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ],
     "license": "以 Apache License 2.0 开源。",
-    "langEn": { "text": "EN", "href": "/" },
-    "langZh": { "text": "中文", "href": "/zh/" }
+    "langEn": {
+      "text": "EN",
+      "href": "/"
+    },
+    "langZh": {
+      "text": "中文",
+      "href": "/zh/"
+    }
   },
   "hero": {
     "badge": "Apache-2.0",
     "acronym": "可嵌入的智能体内核",
     "heading": "界面归你的应用，<br/>智能体归 Octos。",
     "description": "用 Rust 写成的智能体 harness 内核：多轮执行、上下文、记忆、工具、模型路由、沙箱与多智能体协作，统一通过一套协议对外提供。可以作为 crate、C 库、移动端绑定嵌入，也可以作为服务运行。",
-    "statsBar": ["Rust 内核", "OUP 协议", "三层记忆", "19 个模型厂商", "Apache-2.0"],
+    "statsBar": [
+      "Rust 内核",
+      "OUP 协议",
+      "三层记忆",
+      "19 个模型厂商",
+      "Apache-2.0"
+    ],
     "buttons": [
-      { "label": "快速开始", "href": "#quickstart" },
-      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "label": "快速开始",
+        "href": "#quickstart"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ]
   },
   "stats": [
-    { "value": "可<br/>嵌入", "label": "Crate · C ABI · UniFFI · Python" },
-    { "value": "一套<br/>协议", "label": "WebSocket 或 stdio 上的 JSON-RPC" },
-    { "value": "本地<br/>优先", "label": "数据留在你的机器上" },
-    { "value": "多<br/>智能体", "label": "子智能体 · 对等体 · 集群" },
-    { "value": "到处<br/>能跑", "label": "Linux · macOS · Windows" }
+    {
+      "value": "嵌入",
+      "label": "Crate · C ABI · UniFFI"
+    },
+    {
+      "value": "协议",
+      "label": "WebSocket · stdio"
+    },
+    {
+      "value": "本地",
+      "label": "数据留在你的机器上"
+    },
+    {
+      "value": "多智能体",
+      "label": "子智能体 · 对等体 · 集群"
+    },
+    {
+      "value": "跨平台",
+      "label": "Linux · macOS · Windows"
+    }
   ],
   "features": {
     "label": "内核能力",
@@ -133,11 +220,31 @@
     "heading": "一个内核，一条协议边界",
     "description": "一个 Rust workspace，38 个 crate。边界之上，你的应用负责渲染与操作；边界之下，内核执行轮次并持有运行时状态。边界是协议而非函数调用，所以客户端可以在同一进程、同一台机器，也可以在另一台机器上。",
     "modules": [
-      { "color": "bg-title", "name": "octos-core", "description": "协议类型与 OUP 编解码" },
-      { "color": "bg-heading", "name": "octos-agent", "description": "轮次、工具、钩子、沙箱" },
-      { "color": "bg-heading", "name": "octos-bus", "description": "会话与档案" },
-      { "color": "bg-info", "name": "octos-llm", "description": "19 个厂商、路由与容错" },
-      { "color": "bg-highlight", "name": "octos-memory", "description": "历史、笔记与实体库" }
+      {
+        "color": "bg-title",
+        "name": "octos-core",
+        "description": "协议类型与 OUP 编解码"
+      },
+      {
+        "color": "bg-heading",
+        "name": "octos-agent",
+        "description": "轮次、工具、钩子、沙箱"
+      },
+      {
+        "color": "bg-heading",
+        "name": "octos-bus",
+        "description": "会话与档案"
+      },
+      {
+        "color": "bg-info",
+        "name": "octos-llm",
+        "description": "19 个厂商、路由与容错"
+      },
+      {
+        "color": "bg-highlight",
+        "name": "octos-memory",
+        "description": "历史、笔记与实体库"
+      }
     ]
   },
   "protocol": {
@@ -145,20 +252,80 @@
     "heading": "OUP — 一条边界，<br/>三种传输",
     "description": "Octos UI Protocol 基于 JSON-RPC 2.0。客户端打开会话、发起轮次、响应审批，并补回断线期间错过的内容。能力在每条连接上协商，服务端不会声明客户端没有请求过的能力。",
     "transports": [
-      { "name": "WebSocket", "description": "GET /api/ui-protocol/ws —— 唯一的对话传输通道，按允许的来源做 Origin 校验。" },
-      { "name": "stdio", "description": "octos serve --stdio 使用按行分隔的 JSON：一行一个对象，stdout 只走协议，日志走 stderr。" },
-      { "name": "进程内", "description": "直接链接 crate 并在进程内分发，中间没有套接字——移动端与桌面外壳走的就是这条路径。" }
+      {
+        "name": "WebSocket",
+        "description": "GET /api/ui-protocol/ws —— 唯一的对话传输通道，按允许的来源做 Origin 校验。"
+      },
+      {
+        "name": "stdio",
+        "description": "octos serve --stdio 使用按行分隔的 JSON：一行一个对象，stdout 只走协议，日志走 stderr。"
+      },
+      {
+        "name": "进程内",
+        "description": "直接链接 crate 并在进程内分发，中间没有套接字——移动端与桌面外壳走的就是这条路径。"
+      }
     ],
     "code": "<span class=\"text-neutral-2\">// 发起一轮对话</span>\n{\"jsonrpc\":\"2.0\",\"id\":\"req-turn-start\",\"method\":\"turn/start\",\n \"params\":{\"session_id\":\"local:demo\",\"turn_id\":\"&lt;uuid&gt;\",\n           \"input\":[{\"kind\":\"text\",\"text\":\"hello\"}]}}\n\n<span class=\"text-neutral-2\">// 批准智能体请求的工具调用</span>\n{\"jsonrpc\":\"2.0\",\"id\":\"req-approval\",\"method\":\"approval/respond\",\n \"params\":{\"session_id\":\"local:demo\",\"approval_id\":\"&lt;uuid&gt;\",\n           \"decision\":\"approve\"}}\n\n<span class=\"text-neutral-2\">// 断线重连时带上游标</span>\n{\"stream\":\"events\",\"seq\":42}",
     "codeTitle": "oup",
     "methodsLabel": "105 个方法 · 50 种通知",
     "methodGroups": [
-      { "label": "会话", "methods": ["session/open", "session/hydrate", "session/fork", "session/rollback", "session/compact", "session/snapshot"] },
-      { "label": "轮次", "methods": ["turn/start", "turn/steer", "turn/interrupt", "turn/state/get"] },
-      { "label": "审批", "methods": ["approval/respond", "approval/scopes/list", "user_question/respond", "permission/profile/get"] },
-      { "label": "智能体与对等体", "methods": ["agent/*", "task/*", "peer/prepare", "peer/gather"] },
-      { "label": "自主运行", "methods": ["session/goal/set", "loop/create", "loop/fire_now", "monitor/create"] },
-      { "label": "运行时", "methods": ["client_hello", "config/capabilities/list", "profile/*", "mcp/status/list", "tool/status/list"] }
+      {
+        "label": "会话",
+        "methods": [
+          "session/open",
+          "session/hydrate",
+          "session/fork",
+          "session/rollback",
+          "session/compact",
+          "session/snapshot"
+        ]
+      },
+      {
+        "label": "轮次",
+        "methods": [
+          "turn/start",
+          "turn/steer",
+          "turn/interrupt",
+          "turn/state/get"
+        ]
+      },
+      {
+        "label": "审批",
+        "methods": [
+          "approval/respond",
+          "approval/scopes/list",
+          "user_question/respond",
+          "permission/profile/get"
+        ]
+      },
+      {
+        "label": "智能体与对等体",
+        "methods": [
+          "agent/*",
+          "task/*",
+          "peer/prepare",
+          "peer/gather"
+        ]
+      },
+      {
+        "label": "自主运行",
+        "methods": [
+          "session/goal/set",
+          "loop/create",
+          "loop/fire_now",
+          "monitor/create"
+        ]
+      },
+      {
+        "label": "运行时",
+        "methods": [
+          "client_hello",
+          "config/capabilities/list",
+          "profile/*",
+          "mcp/status/list",
+          "tool/status/list"
+        ]
+      }
     ],
     "note": "流式内容以通知送达：message/delta、tool/started、tool/completed、context/compaction_started。每条持久事件先写入会话账本再上线，因此带着上次游标重连的客户端可以得到精确回放；落后太多的客户端会被告知重新拉取快照，而不是悄悄丢状态。"
   },
@@ -167,31 +334,78 @@
     "heading": "链接它、绑定它，<br/>或者直接运行它",
     "description": "Octos 首先是一个库。Rust 应用可以直接用 crate，其他语言通过 C ABI 接入，移动端用生成的绑定，也可以把二进制跑起来、用协议通信。",
     "targets": [
-      { "name": "Rust", "artifact": "cargo add octos-agent", "description": "直接使用内核 crate，全部留在同一个进程里。" },
-      { "name": "C ABI", "artifact": "liboctos_ffi.so / .a", "description": "随仓库提供 octos.h，接口很小：创建运行时、执行任务、读取最近错误。" },
-      { "name": "移动端", "artifact": "liboctos_uniffi.so", "description": "UniFFI 生成 Kotlin 与 Swift 绑定——内核就是这样进入 Android 应用的。" },
-      { "name": "Python", "artifact": "pyo3 wheel", "description": "原生扩展模块，适合脚本、评测与后端粘合。" },
-      { "name": "浏览器", "artifact": "octos-wasm", "description": "面向 Web 客户端的协议与工具类型；内核本身仍以原生方式运行。" }
+      {
+        "name": "Rust",
+        "artifact": "cargo add octos-agent",
+        "description": "直接使用内核 crate，全部留在同一个进程里。"
+      },
+      {
+        "name": "C ABI",
+        "artifact": "liboctos_ffi.so / .a",
+        "description": "随仓库提供 octos.h，接口很小：创建运行时、执行任务、读取最近错误。"
+      },
+      {
+        "name": "移动端",
+        "artifact": "liboctos_uniffi.so",
+        "description": "UniFFI 生成 Kotlin 与 Swift 绑定——内核就是这样进入 Android 应用的。"
+      },
+      {
+        "name": "Python",
+        "artifact": "pyo3 wheel",
+        "description": "原生扩展模块，适合脚本、评测与后端粘合。"
+      },
+      {
+        "name": "浏览器",
+        "artifact": "octos-wasm",
+        "description": "面向 Web 客户端的协议与工具类型；内核本身仍以原生方式运行。"
+      }
     ],
     "code": "<span class=\"text-neutral-2\">// C ABI</span>\n<span class=\"text-neutral-1\">#include</span> \"octos.h\"\n\nOctosRuntime *rt = octos_runtime_new(config_json);\nchar *out = octos_run_task(rt, \"summarize ./README.md\");\nif (!out) fprintf(stderr, \"%s\\n\", octos_last_error());\noctos_string_free(out);",
     "codeTitle": "octos.h",
     "platformsLabel": "CI 构建覆盖",
-    "platforms": ["Linux x86-64", "Linux ARM64", "macOS ARM64", "Windows x86-64", "Android（UniFFI）"]
+    "platforms": [
+      "Linux x86-64",
+      "Linux ARM64",
+      "macOS ARM64",
+      "Windows x86-64",
+      "Android（UniFFI）"
+    ]
   },
   "context": {
     "label": "上下文",
     "heading": "长任务，<br/>也不丢线索",
     "description": "一轮任务可以跑上几个小时而不超出窗口。内核核算预算、裁剪不再重要的内容，并且每次这样做都会通知客户端——界面可以如实呈现，而不是悄悄丢历史。",
     "features": [
-      { "label": "第一层", "description": "在迭代之间裁剪过期与超大的工具结果，同时尽量不破坏提示缓存。" },
-      { "label": "第二层", "description": "在支持的接口上，交由厂商自己做服务端清理。" },
-      { "label": "第三层", "description": "完整压缩：默认抽取式，也可用模型摘要，并保留指定的产物与约束。" }
+      {
+        "label": "第一层",
+        "description": "在迭代之间裁剪过期与超大的工具结果，同时尽量不破坏提示缓存。"
+      },
+      {
+        "label": "第二层",
+        "description": "在支持的接口上，交由厂商自己做服务端清理。"
+      },
+      {
+        "label": "第三层",
+        "description": "完整压缩：默认抽取式，也可用模型摘要，并保留指定的产物与约束。"
+      }
     ],
     "lifecycle": [
-      { "name": "hydrate", "description": "带游标与类型化快照，把会话分页恢复到客户端。" },
-      { "name": "fork", "description": "分叉会话，保留最近若干轮用户消息，丢掉父会话的工具噪声。" },
-      { "name": "rollback", "description": "以只追加、幂等的标记回退最近 N 轮用户消息。" },
-      { "name": "compact", "description": "按需压缩，或交给预检自动触发。" }
+      {
+        "name": "hydrate",
+        "description": "带游标与类型化快照，把会话分页恢复到客户端。"
+      },
+      {
+        "name": "fork",
+        "description": "分叉会话，保留最近若干轮用户消息，丢掉父会话的工具噪声。"
+      },
+      {
+        "name": "rollback",
+        "description": "以只追加、幂等的标记回退最近 N 轮用户消息。"
+      },
+      {
+        "name": "compact",
+        "description": "按需压缩，或交给预检自动触发。"
+      }
     ],
     "note": "被裁剪的工具结果会变成保留调用 id 的类型化占位符，文字记录因此始终有效。启用 context.lifecycle.v1 后，客户端会收到 compaction_started、compaction_completed 与 normalization_reported，其中带有各类 id、触发原因以及压缩前后的 token 数。"
   },
@@ -225,14 +439,64 @@
     "heading": "一个工具箱，一套策略",
     "description": "工具是带 JSON schema 的 Rust 实现，经权限策略准入，并在沙箱内执行。每个工具声明能否并行，因此一批读取可以并发展开，写入则保持调用顺序。",
     "tiers": [
-      { "stat": "35", "label": "个内置工具", "description": "由带权限判定的内置注册表登记。" },
-      { "stat": "2", "label": "种并发类别", "description": "安全工具并行执行，独占工具串行执行，混合批次按原顺序重新拼回。" },
-      { "stat": "57", "label": "个工具源文件", "description": "此外还有运行时发现的 MCP 工具与插件工具。" }
+      {
+        "stat": "35",
+        "label": "个内置工具",
+        "description": "由带权限判定的内置注册表登记。"
+      },
+      {
+        "stat": "2",
+        "label": "种并发类别",
+        "description": "安全工具并行执行，独占工具串行执行，混合批次按原顺序重新拼回。"
+      },
+      {
+        "stat": "57",
+        "label": "个工具源文件",
+        "description": "此外还有运行时发现的 MCP 工具与插件工具。"
+      }
     ],
     "toolGroups": [
-      { "label": "处理代码", "tools": ["read_file", "write_file", "edit_file", "apply_patch", "diff_edit", "glob", "grep", "list_dir", "git", "check"] },
-      { "label": "连接世界", "tools": ["shell", "exec_command", "web_search", "web_fetch", "browser", "http", "deep_search", "deep_crawl"] },
-      { "label": "调度更多智能体", "tools": ["delegate", "spawn_agent", "wait_agent", "peer_handoff", "peer_send_input", "peer_gather", "escalate", "update_plan"] }
+      {
+        "label": "处理代码",
+        "tools": [
+          "read_file",
+          "write_file",
+          "edit_file",
+          "apply_patch",
+          "diff_edit",
+          "glob",
+          "grep",
+          "list_dir",
+          "git",
+          "check"
+        ]
+      },
+      {
+        "label": "连接世界",
+        "tools": [
+          "shell",
+          "exec_command",
+          "web_search",
+          "web_fetch",
+          "browser",
+          "http",
+          "deep_search",
+          "deep_crawl"
+        ]
+      },
+      {
+        "label": "调度更多智能体",
+        "tools": [
+          "delegate",
+          "spawn_agent",
+          "wait_agent",
+          "peer_handoff",
+          "peer_send_input",
+          "peer_gather",
+          "escalate",
+          "update_plan"
+        ]
+      }
     ]
   },
   "providers": {
@@ -282,13 +546,32 @@
     "heading": "目标、循环与监视器",
     "description": "会话不必干等下一条消息。设定目标、挂上循环，或让监视器盯住会变化的东西——内核来判断什么时候需要模型再跑一轮，以及什么时候该停。",
     "stages": [
-      { "name": "目标", "description": "带 token 预算的目标，状态与花费记录在持久账本里。" },
-      { "name": "循环", "description": "存下的提示词与模式，到点就排入一轮继续执行的对话。" },
-      { "name": "监视器", "description": "探针的过滤输出负责唤醒智能体。观察本身不花 token，只有唤醒才花。" },
-      { "name": "停止", "description": "预算耗尽会收尾，事件过多会自动暂停，连续三次空转则把目标挂起。" }
+      {
+        "name": "目标",
+        "description": "带 token 预算的目标，状态与花费记录在持久账本里。"
+      },
+      {
+        "name": "循环",
+        "description": "存下的提示词与模式，到点就排入一轮继续执行的对话。"
+      },
+      {
+        "name": "监视器",
+        "description": "探针的过滤输出负责唤醒智能体。观察本身不花 token，只有唤醒才花。"
+      },
+      {
+        "name": "停止",
+        "description": "预算耗尽会收尾，事件过多会自动暂停，连续三次空转则把目标挂起。"
+      }
     ],
     "triggersLabel": "什么会唤起一轮",
-    "triggers": ["固定间隔", "自定节奏", "定时任务", "文件或进程变化", "子任务完成", "外部信号"],
+    "triggers": [
+      "固定间隔",
+      "自定节奏",
+      "定时任务",
+      "文件或进程变化",
+      "子任务完成",
+      "外部信号"
+    ],
     "note": "循环与监视器的定义会持久化，重启后重新挂载；正在运行的子进程不会被复活。继续执行的请求带优先级并会去重，忙碌的会话不会堆起一串多余的轮次。"
   },
   "security": {
@@ -296,12 +579,30 @@
     "heading": "有沙箱、有边界、先问过你",
     "description": "边界是沙箱，而不是工具清单。每个会话都在与平台匹配的后端里运行，并由权限档案决定它能碰什么。",
     "layers": [
-      { "title": "六种沙箱后端", "description": "bwrap、Landlock、macOS sandbox-exec、Docker、Windows AppContainer，或不使用沙箱；按平台自动选择，围栏未生效时会给出警告。" },
-      { "title": "权限档案", "description": "只读、可写工作区、完整主机访问三档。默认可写工作区；除非运行模式允许，否则完整访问会被拒绝。" },
-      { "title": "不可重放的审批", "description": "待批请求绑定参数的 SHA-256 摘要、发起的房间以及审批人快照；已消费的审批会被拒绝。" },
-      { "title": "带熔断的钩子", "description": "11 个生命周期节点上的 shell 钩子。工具调用前返回非零即拒绝；持续失败的钩子会被禁用，而不是把循环卡死。" },
-      { "title": "该断网时就断网", "description": "云端与租户部署默认禁止联网；--no-network 可以在任何环境关闭网络；显式的权限选择始终优先。" },
-      { "title": "死循环与注入防护", "description": "连续三次相同的工具调用会中止本轮；SSRF 防护过滤抓取；钩子与探针的环境变量经过清理，日志中的凭据会被脱敏。" }
+      {
+        "title": "六种沙箱后端",
+        "description": "bwrap、Landlock、macOS sandbox-exec、Docker、Windows AppContainer，或不使用沙箱；按平台自动选择，围栏未生效时会给出警告。"
+      },
+      {
+        "title": "权限档案",
+        "description": "只读、可写工作区、完整主机访问三档。默认可写工作区；除非运行模式允许，否则完整访问会被拒绝。"
+      },
+      {
+        "title": "不可重放的审批",
+        "description": "待批请求绑定参数的 SHA-256 摘要、发起的房间以及审批人快照；已消费的审批会被拒绝。"
+      },
+      {
+        "title": "带熔断的钩子",
+        "description": "11 个生命周期节点上的 shell 钩子。工具调用前返回非零即拒绝；持续失败的钩子会被禁用，而不是把循环卡死。"
+      },
+      {
+        "title": "该断网时就断网",
+        "description": "云端与租户部署默认禁止联网；--no-network 可以在任何环境关闭网络；显式的权限选择始终优先。"
+      },
+      {
+        "title": "死循环与注入防护",
+        "description": "连续三次相同的工具调用会中止本轮；SSRF 防护过滤抓取；钩子与探针的环境变量经过清理，日志中的凭据会被脱敏。"
+      }
     ]
   },
   "surfaces": {
@@ -309,10 +610,22 @@
     "heading": "客户端是独立的",
     "description": "因为边界是协议，客户端不过是一个会说这套协议的程序。下面这些已经在跑，你的客户端也可以加入。",
     "clients": [
-      { "name": "Octoscode", "description": "终端客户端。自行拉起本地运行时，通过 stdio 讲 OUP。" },
-      { "name": "Octoscode Web", "description": "浏览器客户端，走 WebSocket，由二进制同时提供管理后台。" },
-      { "name": "OctoSense", "description": "面向桌面与手机的 Agent Shell，把内核嵌进应用内部。" },
-      { "name": "MCP", "description": "Octos 既是 MCP 客户端也是 MCP 服务端：别的智能体能调它，它也能调别人。" }
+      {
+        "name": "Octoscode",
+        "description": "终端客户端。自行拉起本地运行时，通过 stdio 讲 OUP。"
+      },
+      {
+        "name": "Octoscode Web",
+        "description": "浏览器客户端，走 WebSocket，由二进制同时提供管理后台。"
+      },
+      {
+        "name": "OctoSense",
+        "description": "面向桌面与手机的 Agent Shell，把内核嵌进应用内部。"
+      },
+      {
+        "name": "MCP",
+        "description": "Octos 既是 MCP 客户端也是 MCP 服务端：别的智能体能调它，它也能调别人。"
+      }
     ],
     "channelsLabel": "消息渠道",
     "channelsNote": "网关只是接入面之一：同一批会话也可以从聊天平台触达，历史保持连贯。"
@@ -325,25 +638,41 @@
         "label": "01",
         "title": "OctoSense —— Agent Shell",
         "description": "把内核嵌入基于 Makepad 的桌面与 Android 外壳：应用与卡片就是界面，智能体围绕意图重新组织它们。",
-        "highlights": ["进程内协议", "移动端绑定", "应用卡片"]
+        "highlights": [
+          "进程内协议",
+          "移动端绑定",
+          "应用卡片"
+        ]
       },
       {
         "label": "02",
         "title": "Octoscode —— 在终端里写代码",
         "description": "面向真实工作的终端客户端：可引导、可中断的轮次，沙箱内的编辑与检查，需要扇出的部分交给子智能体。",
-        "highlights": ["stdio 传输", "引导与中断", "沙箱内编辑"]
+        "highlights": [
+          "stdio 传输",
+          "引导与中断",
+          "沙箱内编辑"
+        ]
       },
       {
         "label": "03",
         "title": "你的产品",
         "description": "为每位用户提供隔离的智能体，各自拥有档案、记忆与权限，界面仍然是你已经在用的那一套。",
-        "highlights": ["按档案隔离", "最小权限授予", "单一二进制"]
+        "highlights": [
+          "按档案隔离",
+          "最小权限授予",
+          "单一二进制"
+        ]
       },
       {
         "label": "04",
         "title": "设备与机器人",
         "description": "内核足够小，可以放在设备上运行；带有面向执行动作的安全分级，以及通向机器人技术栈的桥接。",
-        "highlights": ["ARM64 与 x86-64", "本地模型", "安全分级"]
+        "highlights": [
+          "ARM64 与 x86-64",
+          "本地模型",
+          "安全分级"
+        ]
       }
     ]
   },
@@ -391,8 +720,14 @@
     "heading": "把内核，<br class=\"hidden md:block\" />放进你的应用",
     "description": "读文档、克隆仓库，或者先从终端客户端开始。",
     "buttons": [
-      { "label": "阅读文档", "href": "https://octos-org.github.io/octos/" },
-      { "label": "GitHub", "href": "https://github.com/octos-org/octos" }
+      {
+        "label": "阅读文档",
+        "href": "https://octos-org.github.io/octos/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/octos-org/octos"
+      }
     ]
   }
 }
