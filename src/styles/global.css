@@ -303,21 +303,61 @@ html[data-theme="light"] {
   }
 }
 
-/* === Ocean gradient text === */
+/* === Ocean gradient text — drifts like water === */
 @layer components {
-  .text-ocean {
-    background-image: linear-gradient(115deg, #CFFFE9 0%, #6FE9C8 18%, #35D8EE 40%, #12AEEA 62%, #1C7BDC 82%, #2A4FB8 100%);
+  .text-ocean,
+  .text-ocean-soft {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    background-size: 280% 100%;
+    background-position: 0% 50%;
+    animation: ocean-drift 14s ease-in-out infinite;
+  }
+
+  .text-ocean {
+    background-image: linear-gradient(
+      115deg,
+      #CFFFE9 0%,
+      #6FE9C8 12%,
+      #35D8EE 24%,
+      #12AEEA 36%,
+      #2A4FB8 48%,
+      #12AEEA 60%,
+      #35D8EE 72%,
+      #6FE9C8 86%,
+      #CFFFE9 100%
+    );
   }
 
   .text-ocean-soft {
-    background-image: linear-gradient(115deg, #E6FFF4 0%, #8FF0D2 20%, #4EDDF0 45%, #1FB3EC 70%, #2C74D6 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+      115deg,
+      #E6FFF4 0%,
+      #8FF0D2 14%,
+      #4EDDF0 28%,
+      #1FB3EC 42%,
+      #2C74D6 56%,
+      #1FB3EC 70%,
+      #4EDDF0 84%,
+      #8FF0D2 100%
+    );
+    animation-duration: 18s;
+    animation-direction: reverse;
+  }
+
+  @keyframes ocean-drift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .text-ocean,
+    .text-ocean-soft {
+      animation: none;
+      background-size: 100% 100%;
+    }
   }
 }
