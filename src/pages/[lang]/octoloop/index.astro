@@ -1,0 +1,40 @@
+---
+import Layout from 'layouts/Layout.astro';
+import OctoLoopGuide from 'components/OctoLoopGuide.astro';
+import guide from 'i18n/octoloop-zh.json';
+import { getTranslations, type Lang } from 'i18n/index';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'zh' } }];
+}
+
+const lang = Astro.params.lang as Lang;
+const home = getTranslations(lang);
+const navLinks = home.header.navLinks.map((link) => ({
+  ...link,
+  href: link.href.startsWith('#') ? '/zh/' + link.href : link.href,
+}));
+const footerLinks = home.footer.links.map((link) => ({
+  ...link,
+  href: link.href.startsWith('#') ? '/zh/' + link.href : link.href,
+}));
+---
+
+<Layout
+  title={guide.meta.title}
+  description={guide.meta.description}
+  lang="zh-CN"
+  navLinks={navLinks}
+  externalLinks={home.header.externalLinks}
+  langAlt={{ text: 'EN', href: '/octoloop/' }}
+  footerLinks={footerLinks}
+  footerExternal={home.footer.external}
+  footerBrand={home.footer.brandDescription}
+  footerNavHeading={home.footer.navHeading}
+  footerResourcesHeading={home.footer.resourcesHeading}
+  footerLicense={home.footer.license}
+  footerLangHrefEn="/octoloop/"
+  footerLangHrefZh="/zh/octoloop/"
+>
+  <OctoLoopGuide t={guide} homeHref="/zh/" />
+</Layout>

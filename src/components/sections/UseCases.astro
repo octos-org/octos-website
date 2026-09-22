@@ -6,11 +6,14 @@ interface Props {
   t: {
     label: string;
     heading: string;
+    description: string;
     items: {
       label: string;
       title: string;
       description: string;
       highlights: string[];
+      href: string;
+      linkLabel: string;
     }[];
   };
 }
@@ -25,11 +28,19 @@ const { t } = Astro.props;
       <h2 class="mt-3 text-[28px] tracking-[-0.03em] md:text-[36px] lg:text-[48px]">
         {t.heading}
       </h2>
+      <p class="mt-4 max-w-3xl text-[16px] leading-relaxed text-neutral-2">
+        {t.description}
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 gap-px overflow-hidden border border-surface-3 md:grid-cols-2 lg:grid-cols-3" data-animate-stagger>
+    <div class="grid grid-cols-1 gap-px overflow-hidden border border-surface-3 md:grid-cols-3" data-animate-stagger>
       {t.items.map((c) => (
-        <div class="group bg-surface-1 p-6 transition-colors duration-300 hover:bg-surface-2 lg:p-8">
+        <a
+          href={c.href}
+          target={c.href.startsWith('http') ? '_blank' : undefined}
+          rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          class="group flex flex-col bg-surface-1 p-6 transition-colors duration-300 hover:bg-surface-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-accent lg:p-8"
+        >
           <span class="font-mono text-[11px] text-neutral-1">{c.label}</span>
           <h3 class="mt-3 text-[18px] tracking-[-0.01em] lg:text-[20px]">{c.title}</h3>
           <p class="mt-3 text-[14px] leading-relaxed text-neutral-2">{c.description}</p>
@@ -40,7 +51,10 @@ const { t } = Astro.props;
               </span>
             ))}
           </div>
-        </div>
+          <span class="mt-auto pt-8 font-mono text-[12px] text-accent underline-offset-4 group-hover:underline group-focus-visible:underline">
+            {c.linkLabel} ↗
+          </span>
+        </a>
       ))}
     </div>
   </Container>

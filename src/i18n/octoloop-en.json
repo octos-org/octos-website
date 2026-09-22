@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "OctoLoop | Multi-agent workflow built on Octos",
+    "description": "OctoLoop pairs an inner execution agent with an outer review agent. See how the OLP protocol, peer workers, and evidence-driven improvement loop fit together."
+  },
+  "home": {
+    "label": "Reference application · multi-agent",
+    "heading": "OctoLoop: execution inside, review outside",
+    "description": "OctoLoop uses Octoscode and Octos for the inner execution loop, and an independent CLI agent for planning and review. The Outer-Loop Protocol (OLP) defines how they exchange work and evidence.",
+    "inner": {
+      "name": "Inner agent",
+      "description": "An Octos master agent works on the goal, delegates bounded tasks to peers, tests changes, commits, and records what happened.",
+      "details": ["Octoscode TUI + Octos runtime", "Goal and peer sessions", "Commit and ACK; no push"]
+    },
+    "outer": {
+      "name": "Outer agent",
+      "description": "A separate CLI agent reads the review board and event trail, checks the diff in an isolated worktree, and decides what needs another pass.",
+      "details": ["Plan and review", "Independent verification", "Accept, guide, or escalate"]
+    },
+    "handoff": "A review board, delivery records, goal ledger, and Git commits carry the handoff between the two loops.",
+    "evolutionLabel": "Evidence-driven improvement",
+    "evolution": "Review ACKs, runtime events, and MCP audit records can be collected into symptom cards. A retrospective groups recurring failures; the outer agent turns approved findings into protocol, tooling, or contract-test changes.",
+    "evolutionStatus": "Collection and retrospective run manually by default.",
+    "cta": "Explore the OctoLoop workflow"
+  },
+  "page": {
+    "back": "Back to Octos",
+    "label": "Multi-agent reference application",
+    "heading": "OctoLoop",
+    "lead": "A two-loop coding workflow built from Octos execution, Octoscode TUI, an independent outer agent, and a written review protocol. It separates implementation from acceptance without tying either role to one model vendor.",
+    "flowHeading": "One goal, two loops",
+    "flowDescription": "The operator sets the goal. The inner loop executes and reports; the outer loop verifies and feeds concrete corrections back. Under OLP, accepted commits are pushed by the outer loop.",
+    "flow": [
+      {
+        "name": "01 · Assign",
+        "description": "The operator sets the goal and permissions. The outer agent records scoped guidance on the review board."
+      },
+      {
+        "name": "02 · Execute",
+        "description": "The inner master advances the goal, can hand off tasks to peers, runs checks, commits, and writes an ACK with its verification status."
+      },
+      {
+        "name": "03 · Review",
+        "description": "The outer agent reads the ledger, delivery record, and diff, then independently reruns relevant checks in an isolated worktree."
+      },
+      {
+        "name": "04 · Decide",
+        "description": "The outer agent accepts or returns a numbered correction. Permission changes and other operator decisions go back to the human."
+      }
+    ],
+    "rolesHeading": "What each agent owns",
+    "innerOutput": "Output: commit, result record, and ACK(done | wontdo | blocked).",
+    "outerOutput": "Output: accepted review or a numbered correction. Under OLP, the inner loop does not push; the outer loop handles push after acceptance.",
+    "boundaryHeading": "The coordination contract",
+    "boundaries": [
+      "The review board carries numbered, dated guidance. The inner agent acknowledges each active item; acknowledged history is not replayed.",
+      "Peer agents can work in separate sessions and Git worktrees. A result record, goal ledger, and Git diff make the handoff inspectable.",
+      "A delivery states what was verified. The outer agent checks the claim independently and can request another pass.",
+      "An inner agent may report a blocker or ask the outer agent through the optional OLP MCP channel. Approval and scope changes remain operator decisions."
+    ],
+    "evolutionHeading": "How the workflow improves",
+    "evolutionLead": "OctoLoop's evolution loop turns observed friction into reviewed changes to the workflow. The current collection and retrospective commands are manual by default.",
+    "evolution": [
+      {
+        "name": "Collect evidence",
+        "description": "The harvest script reads active-board ACKs, runtime events, and the MCP audit board. It deduplicates signals into symptom cards in .octos/EVOLUTION.md."
+      },
+      {
+        "name": "Group recurring failures",
+        "description": "The retrospective groups cards by normalized symptoms and produces candidate briefs and FLAW record drafts."
+      },
+      {
+        "name": "Review the change",
+        "description": "The outer reviewer validates the cause, files an accepted FLAW record, and turns it into a protocol, tool, or contract-test change that can be verified."
+      }
+    ],
+    "evolutionTools": "Tools: olp-evo-harvest.sh and olp-evo-retro.sh. After a FLAW record is accepted, olp-evo-spec-skeleton.sh can generate a contract-test skeleton.",
+    "evolutionNote": "The scripts produce evidence and drafts. A reviewer still decides what becomes a tracked change; collection alone does not modify the running agents.",
+    "startHeading": "Try it in a repository",
+    "startSteps": [
+      "Install Octoscode TUI and complete its first-run profile and provider setup.",
+      "Use the OctoLoop quickstart and olp-init.sh from the Octoscode repository to set up the project review board and inner-loop instructions.",
+      "Run the inner loop in the project, then connect a separate outer CLI agent using the OLP role and review rules. Add model lanes or peer workers as the work requires.",
+      "When review evidence accumulates, run the harvest and retrospective scripts, inspect the candidate records, and make approved changes through the normal review cycle."
+    ],
+    "linksHeading": "Source documentation",
+    "links": [
+      {
+        "label": "OctoLoop guide",
+        "href": "https://github.com/octos-org/octoscode/blob/main/docs/OCTOLOOP_GUIDE.md"
+      },
+      {
+        "label": "OLP quickstart",
+        "href": "https://github.com/octos-org/octoscode/blob/main/docs/OLP_QUICKSTART.md"
+      },
+      {
+        "label": "Evolution features",
+        "href": "https://github.com/octos-org/octoscode/blob/main/docs/OCTOLOOP_FEATURES.md"
+      },
+      {
+        "label": "TUI installation",
+        "href": "/clients/#tui"
+      }
+    ]
+  }
+}

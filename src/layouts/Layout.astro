@@ -15,6 +15,11 @@ interface Props {
   footerLinks?: { text: string; href: string }[];
   footerExternal?: { text: string; href: string }[];
   footerBrand?: string;
+  footerNavHeading?: string;
+  footerResourcesHeading?: string;
+  footerLicense?: string;
+  footerLangHrefEn?: string;
+  footerLangHrefZh?: string;
 }
 
 const {
@@ -28,6 +33,11 @@ const {
   footerLinks,
   footerExternal,
   footerBrand,
+  footerNavHeading,
+  footerResourcesHeading,
+  footerLicense,
+  footerLangHrefEn,
+  footerLangHrefZh,
 } = Astro.props;
 ---
 <!doctype html>
@@ -45,11 +55,11 @@ const {
     <Seo title={title} description={description} ogImage={ogImage} />
   </head>
   <body class="flex min-h-screen flex-col">
-    <Header navLinks={navLinks} externalLinks={externalLinks} langAlt={langAlt} />
+    <Header navLinks={navLinks} externalLinks={externalLinks} langAlt={langAlt} homeHref={lang.startsWith('zh') ? '/zh/' : '/'} menuLabel={lang.startsWith('zh') ? '打开导航菜单' : 'Toggle menu'} />
     <main class="flex-1">
       <slot />
     </main>
-    <Footer links={footerLinks} external={footerExternal} brand={footerBrand} langAlt={langAlt} />
+    <Footer links={footerLinks} external={footerExternal} brand={footerBrand} langAlt={langAlt} navHeading={footerNavHeading} resourcesHeading={footerResourcesHeading} license={footerLicense} langHrefEn={footerLangHrefEn} langHrefZh={footerLangHrefZh} />
 
     <!-- No scroll-reveal JS needed — content visible by default -->
   </body>
