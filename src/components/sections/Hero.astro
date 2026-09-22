@@ -2,6 +2,7 @@
 import Button from 'components/ui/Button.astro';
 import Badge from 'components/ui/Badge.astro';
 import SeaCreatures from 'components/ui/SeaCreatures.astro';
+import HeroBubbles from 'components/ui/HeroBubbles.astro';
 
 interface Props {
   t: {
@@ -26,6 +27,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       class="h-full w-full object-cover"
       loading="eager"
     />
+    <HeroBubbles />
     <!-- Gradient overlay for text readability -->
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
   </div>
