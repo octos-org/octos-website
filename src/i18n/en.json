@@ -92,6 +92,7 @@
       }
     ],
     "license": "Open source under the Apache License 2.0.",
+    "ownership": "Official deployments: www.octosai.org and learn.pitun.cc — operated by the octos-org maintainers.",
     "langEn": {
       "text": "EN",
       "href": "/"

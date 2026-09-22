@@ -3,6 +3,8 @@ interface Props {
   links?: { text: string; href: string }[];
   external?: { text: string; href: string }[];
   brand?: string;
+  ownership?: string;
+  license?: string;
   langAlt?: { text: string; href: string };
 }
 
@@ -21,6 +23,8 @@ const {
     { text: 'GitHub', href: 'https://github.com/octos-org/octos' },
   ],
   brand = 'Open Cognitive Tasks Orchestration System — a Rust-native, API-first Agentic OS for AI agents.',
+  ownership = 'Official deployments: www.octosai.org and learn.pitun.cc — operated by the octos-org maintainers.',
+  license = 'Open source under the Apache License 2.0.',
   langAlt = { text: '中文', href: '/zh/' },
 } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -70,11 +74,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </div>
 
   <!-- Bottom -->
-  <div class="mt-12 border-t border-surface-3 pt-8 flex items-center justify-between">
-    <p class="font-mono text-[12px] tracking-[0.08em] text-neutral-1">
-      Open source under the Apache License 2.0.
-    </p>
-    <div class="flex gap-4">
+  <div class="mt-12 border-t border-surface-3 pt-8 flex flex-wrap items-center justify-between gap-4">
+    <div>
+      <p class="font-mono text-[12px] tracking-[0.08em] text-neutral-1">
+        {license}
+      </p>
+      <p class="mt-2 font-mono text-[12px] tracking-[0.08em] text-neutral-1">
+        {ownership}
+      </p>
+    </div>
+    <div class="flex shrink-0 gap-4">
       <a href={`${base}/`} class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2 hover:text-accent transition-colors duration-200">EN</a>
       <a href={`${base}/zh/`} class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2 hover:text-accent transition-colors duration-200">中文</a>
     </div>
