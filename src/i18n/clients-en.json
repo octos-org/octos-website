@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "title": "Octoscode clients | Octos",
+    "description": "Install and update the Octoscode terminal and Web clients. Learn how each connects to the Octos runtime."
+  },
+  "hero": {
+    "label": "Client guide",
+    "title": "Octoscode in the terminal and browser",
+    "description": "Both clients use the Octos UI Protocol (OUP). The TUI can provision a local Octos runtime and start it over stdio. The Web client connects to an independently running Octos server over WebSocket.",
+    "back": "Back to Octos"
+  },
+  "comparison": {
+    "heading": "Choose a client",
+    "columns": ["", "Octoscode TUI", "Octoscode Web"],
+    "rows": [
+      {
+        "label": "Interface",
+        "tui": "Terminal: coding session, diffs, approvals, and commands",
+        "web": "Browser: workspaces, sessions, chat, trajectory, diffs, and approvals"
+      },
+      {
+        "label": "Runtime",
+        "tui": "Provisions and starts a local Octos process by default",
+        "web": "Connects to a running octos serve; the browser cannot start it"
+      },
+      {
+        "label": "Transport",
+        "tui": "stdio by default; WebSocket for a shared server",
+        "web": "WebSocket to the Octos server"
+      },
+      {
+        "label": "Upgrade",
+        "tui": "Use octoscode update or the installation package manager",
+        "web": "Update the static client and Octos server separately"
+      }
+    ]
+  },
+  "labels": {
+    "capabilities": "What it provides",
+    "install": "Install",
+    "upgrade": "Upgrade",
+    "alternatives": "Other installation methods",
+    "local": "Run from source",
+    "production": "Host a release",
+    "verification": "After upgrading",
+    "references": "Project documentation"
+  },
+  "tui": {
+    "name": "Octoscode TUI",
+    "summary": "A terminal interface for coding sessions. Octos runs the agent and tools; Octoscode displays streamed output, diffs, approvals, tasks, and session controls.",
+    "capabilities": [
+      "Review changes and tool calls before approving them.",
+      "Switch session permissions and model routes from the terminal.",
+      "Use the default local stdio process, or attach to a shared server with --endpoint."
+    ],
+    "installIntro": "The npm package installs the TUI binary. On first launch, Octoscode uses a compatible Octos binary on PATH or downloads one into ~/.octos/bin. It starts Octos over stdio and guides you through local profile and provider setup.",
+    "primaryLabel": "npm · macOS, Linux, Windows",
+    "primaryCode": "npm install -g @octos-org/octoscode\noctoscode",
+    "alternatives": [
+      {
+        "label": "Homebrew · macOS/Linux",
+        "code": "brew tap octos-org/octoscode https://github.com/octos-org/octoscode\nbrew install octos-org/octoscode/octoscode"
+      },
+      {
+        "label": "Shell installer · macOS/Linux",
+        "code": "curl --proto '=https' --tlsv1.2 -LsSf \\\n  https://github.com/octos-org/octoscode/releases/latest/download/octoscode-installer.sh | sh"
+      },
+      {
+        "label": "PowerShell installer · Windows",
+        "code": "powershell -ExecutionPolicy Bypass -c \"irm https://github.com/octos-org/octoscode/releases/latest/download/octoscode-installer.ps1 | iex\""
+      },
+      {
+        "label": "Cargo Git install · Rust 1.85+",
+        "code": "cargo install --git https://github.com/octos-org/octoscode octoscode"
+      }
+    ],
+    "firstRun": "Run octoscode, create the local profile, select a provider and model, and enter its API key. A solo stdio session accepts one client. To use the TUI and browser against the same session, start octos serve on a port and connect the TUI with --endpoint.",
+    "sharedLabel": "Attach the TUI to the Web client's Octos server",
+    "sharedCode": "octoscode --endpoint ws://127.0.0.1:50080/api/ui-protocol/ws \\\n  --auth-token my-local-token --profile-id main",
+    "sharedNote": "Use the same token as the server. Replace main if the Profile ID created in the browser differs. After connecting, run /resume in the TUI to select the browser session; connecting to the server alone does not open a session.",
+    "upgradeIntro": "octoscode update checks for a new release. Shell and PowerShell installer builds can update in place. npm, Homebrew, and Cargo installations use their package manager instead.",
+    "upgradeOptions": [
+      {
+        "label": "Shell or PowerShell installer",
+        "code": "octoscode update"
+      },
+      {
+        "label": "npm",
+        "code": "npm install -g @octos-org/octoscode@latest"
+      },
+      {
+        "label": "Homebrew",
+        "code": "brew update\nbrew upgrade octos-org/octoscode/octoscode"
+      },
+      {
+        "label": "Cargo Git install",
+        "code": "cargo install --git https://github.com/octos-org/octoscode --force octoscode"
+      }
+    ],
+    "upgradeNote": "Run octoscode doctor after upgrading. A separately managed Octos server has its own upgrade cycle; updating the TUI does not replace that server.",
+    "links": [
+      {
+        "label": "Repository and full setup guide",
+        "href": "https://github.com/octos-org/octoscode"
+      },
+      {
+        "label": "Releases",
+        "href": "https://github.com/octos-org/octoscode/releases"
+      }
+    ]
+  },
+  "web": {
+    "name": "Octoscode Web",
+    "summary": "A static React client for coding sessions in the browser. It shows workspaces, conversations, tool activity, approvals, tasks, and diffs. The agent loop and session store remain in Octos.",
+    "capabilities": [
+      "Keep multiple sessions open through one WebSocket connection.",
+      "Hydrate session state and replay events after a reconnect.",
+      "Attach to the same Octos server session as the TUI."
+    ],
+    "requirements": "For a local source checkout, use Node.js 22 or newer, pnpm 11.5.2, and a compatible Octos binary. If Octos is not already installed, running the TUI once provisions ~/.octos/bin/octos.",
+    "serverLabel": "Terminal 1 · start Octos",
+    "serverCode": "export OCTOS_AUTH_TOKEN=my-local-token\n~/.octos/bin/octos serve --host 127.0.0.1 --port 50080 \\\n  --auth-token \"$OCTOS_AUTH_TOKEN\" --solo",
+    "serverNote": "--solo enables first-run profile setup in the browser. If octos is already on your PATH, use that binary instead of ~/.octos/bin/octos.",
+    "clientLabel": "Terminal 2 · start the Web client",
+    "clientCode": "git clone https://github.com/octos-org/octoscode-web.git\ncd octoscode-web\ncorepack enable\npnpm install --frozen-lockfile\nOCTOSCODE_DEV_PROXY_TARGET=http://127.0.0.1:50080 \\\nOCTOSCODE_DEV_PROXY_ORIGIN=http://127.0.0.1:50080 \\\npnpm dev",
+    "connectNote": "Open the URL printed by pnpm dev. Enter the server token, then choose a workspace path on the Octos server. Keep both proxy variables for local development so the browser connects through the Web app's origin.",
+    "productionIntro": "The Web release is a static archive; it does not include or start Octos. For a hosted installation:",
+    "productionSteps": [
+      "Pick a release tag, download its .tar.gz archive and .sha256 file, and verify the checksum before extracting it into a versioned directory.",
+      "Serve that directory over HTTPS with SPA fallback to index.html. Use the supplied nginx reference for a same-origin /api/ WebSocket proxy; adapt its host and origin settings.",
+      "Run a compatible octos serve separately. Configure its allowed Web origin, then connect from the browser with the server's authentication token."
+    ],
+    "productionCode": "VERSION=vX.Y.Z # replace with a tag from Releases\nASSET=octoscode-web-$VERSION.tar.gz\nBASE=https://github.com/octos-org/octoscode-web/releases/download/$VERSION\ncurl -fL -O \"$BASE/$ASSET\"\ncurl -fL -O \"$BASE/$ASSET.sha256\"\nshasum -a 256 -c \"$ASSET.sha256\"\nmkdir -p \"releases/$VERSION\"\ntar -xzf \"$ASSET\" -C \"releases/$VERSION\"",
+    "productionNote": "The release archive includes deploy/nginx.conf. Keep WebSocket forwarding and redact URL query strings from proxy logs, because the browser protocol currently sends its token in the WebSocket URL. On Linux, sha256sum -c can replace shasum -a 256 -c.",
+    "upgradeLocalIntro": "For a source checkout used locally, update the repository, restore dependencies from the lockfile, run the checks, and restart the development server:",
+    "upgradeLocalCode": "git pull --ff-only\npnpm install --frozen-lockfile\npnpm check\npnpm dev",
+    "upgradeProductionIntro": "For a hosted release, stage the new archive before switching the served files:",
+    "upgradeProductionSteps": [
+      "Download the new archive and checksum; verify them and extract to a new versioned directory.",
+      "Check octoscode-web-build.json for the client release and verified Octos revision, then confirm the new client can negotiate capabilities with your server.",
+      "Switch the static site to the new directory. Keep the previous archive available for rollback, and update the Octos server separately when required."
+    ],
+    "upgradeNote": "Finish active turns before reloading the browser or switching a hosted release: closing the current connection can interrupt work owned by that connection.",
+    "links": [
+      {
+        "label": "Getting started",
+        "href": "https://github.com/octos-org/octoscode-web/blob/main/docs/getting-started.md"
+      },
+      {
+        "label": "Deployment contract",
+        "href": "https://github.com/octos-org/octoscode-web/blob/main/docs/deployment.md"
+      },
+      {
+        "label": "Releases",
+        "href": "https://github.com/octos-org/octoscode-web/releases"
+      }
+    ]
+  }
+}

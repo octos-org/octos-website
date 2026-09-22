@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "title": "Octoscode 客户端｜Octos",
+    "description": "Octoscode 终端与 Web 客户端的功能、安装和升级说明，以及它们与 Octos 运行时的连接方式。"
+  },
+  "hero": {
+    "label": "客户端指南",
+    "title": "在终端和浏览器中使用 Octoscode",
+    "description": "两个客户端都使用 Octos UI Protocol（OUP）。TUI 可自动准备本地 Octos 运行时并通过 stdio 启动；Web 客户端则通过 WebSocket 连接独立运行的 Octos 服务。",
+    "back": "返回 Octos 首页"
+  },
+  "comparison": {
+    "heading": "选择客户端",
+    "columns": ["", "Octoscode TUI", "Octoscode Web"],
+    "rows": [
+      {
+        "label": "界面",
+        "tui": "终端：编码会话、diff、审批和命令",
+        "web": "浏览器：工作区、会话、对话、执行轨迹、diff 和审批"
+      },
+      {
+        "label": "运行时",
+        "tui": "默认准备并启动本地 Octos 进程",
+        "web": "连接已运行的 octos serve；浏览器无法启动它"
+      },
+      {
+        "label": "传输",
+        "tui": "默认使用 stdio；连接共享服务时使用 WebSocket",
+        "web": "通过 WebSocket 连接 Octos 服务"
+      },
+      {
+        "label": "升级",
+        "tui": "使用 octoscode update 或安装时的包管理器",
+        "web": "分别更新静态客户端和 Octos 服务"
+      }
+    ]
+  },
+  "labels": {
+    "capabilities": "主要功能",
+    "install": "安装",
+    "upgrade": "升级",
+    "alternatives": "其他安装方式",
+    "local": "从源码运行",
+    "production": "部署正式版本",
+    "verification": "升级后检查",
+    "references": "项目文档"
+  },
+  "tui": {
+    "name": "Octoscode TUI",
+    "summary": "用于编码任务的终端客户端。Octos 执行 Agent 和工具；Octoscode 展示流式输出、diff、审批、任务和会话控制。",
+    "capabilities": [
+      "执行前查看代码改动和工具调用，并处理审批。",
+      "在终端切换会话权限、模型与路由。",
+      "默认连接本地 stdio 进程，也可用 --endpoint 连接共享服务。"
+    ],
+    "installIntro": "npm 包安装 TUI 二进制。首次启动时，Octoscode 会使用 PATH 中兼容的 Octos；若没有，则下载到 ~/.octos/bin。随后通过 stdio 启动 Octos，并引导配置本地 Profile 和模型服务商。",
+    "primaryLabel": "npm · macOS、Linux、Windows",
+    "primaryCode": "npm install -g @octos-org/octoscode\noctoscode",
+    "alternatives": [
+      {
+        "label": "Homebrew · macOS/Linux",
+        "code": "brew tap octos-org/octoscode https://github.com/octos-org/octoscode\nbrew install octos-org/octoscode/octoscode"
+      },
+      {
+        "label": "Shell 安装脚本 · macOS/Linux",
+        "code": "curl --proto '=https' --tlsv1.2 -LsSf \\\n  https://github.com/octos-org/octoscode/releases/latest/download/octoscode-installer.sh | sh"
+      },
+      {
+        "label": "PowerShell 安装脚本 · Windows",
+        "code": "powershell -ExecutionPolicy Bypass -c \"irm https://github.com/octos-org/octoscode/releases/latest/download/octoscode-installer.ps1 | iex\""
+      },
+      {
+        "label": "Cargo Git 安装 · Rust 1.85+",
+        "code": "cargo install --git https://github.com/octos-org/octoscode octoscode"
+      }
+    ],
+    "firstRun": "运行 octoscode，创建本地 Profile，选择服务商和模型并填写 API 密钥。默认的 stdio 服务只接受一个客户端。若要让终端和浏览器进入同一会话，应单独启动监听端口的 octos serve，并通过 --endpoint 连接 TUI。",
+    "sharedLabel": "将 TUI 连接到 Web 客户端使用的 Octos 服务",
+    "sharedCode": "octoscode --endpoint ws://127.0.0.1:50080/api/ui-protocol/ws \\\n  --auth-token my-local-token --profile-id main",
+    "sharedNote": "令牌应与服务端一致。若浏览器中创建的 Profile ID 不是 main，请替换为实际 ID。连接后在 TUI 执行 /resume，选择浏览器中的会话；仅连接服务不会自动打开会话。",
+    "upgradeIntro": "octoscode update 会检查新版本。Shell 和 PowerShell 安装脚本安装的版本可原地升级；npm、Homebrew 和 Cargo 安装的版本由对应的包管理器升级。",
+    "upgradeOptions": [
+      {
+        "label": "Shell 或 PowerShell 安装脚本",
+        "code": "octoscode update"
+      },
+      {
+        "label": "npm",
+        "code": "npm install -g @octos-org/octoscode@latest"
+      },
+      {
+        "label": "Homebrew",
+        "code": "brew update\nbrew upgrade octos-org/octoscode/octoscode"
+      },
+      {
+        "label": "Cargo Git 安装",
+        "code": "cargo install --git https://github.com/octos-org/octoscode --force octoscode"
+      }
+    ],
+    "upgradeNote": "升级后运行 octoscode doctor。若 TUI 连接的是单独部署的 Octos 服务，该服务需要另行升级；更新 TUI 不会替换远端服务。",
+    "links": [
+      {
+        "label": "仓库与完整入门说明",
+        "href": "https://github.com/octos-org/octoscode"
+      },
+      {
+        "label": "发布版本",
+        "href": "https://github.com/octos-org/octoscode/releases"
+      }
+    ]
+  },
+  "web": {
+    "name": "Octoscode Web",
+    "summary": "面向浏览器的静态 React 客户端，提供工作区、会话、对话、工具事件、审批、任务和 diff 界面。Agent 执行循环与会话存储仍由 Octos 服务负责。",
+    "capabilities": [
+      "通过一条 WebSocket 连接保留多个会话。",
+      "重连后加载会话状态并回放事件。",
+      "与 TUI 进入同一 Octos 服务上的会话。"
+    ],
+    "requirements": "本地源码运行需要 Node.js 22 或更新版本、pnpm 11.5.2，以及兼容的 Octos 二进制。若尚未安装 Octos，可先运行一次 TUI，让它准备 ~/.octos/bin/octos。",
+    "serverLabel": "终端 1 · 启动 Octos",
+    "serverCode": "export OCTOS_AUTH_TOKEN=my-local-token\n~/.octos/bin/octos serve --host 127.0.0.1 --port 50080 \\\n  --auth-token \"$OCTOS_AUTH_TOKEN\" --solo",
+    "serverNote": "--solo 允许在浏览器中完成首次 Profile 配置。若 octos 已安装到 PATH，可用该命令替代 ~/.octos/bin/octos。",
+    "clientLabel": "终端 2 · 启动 Web 客户端",
+    "clientCode": "git clone https://github.com/octos-org/octoscode-web.git\ncd octoscode-web\ncorepack enable\npnpm install --frozen-lockfile\nOCTOSCODE_DEV_PROXY_TARGET=http://127.0.0.1:50080 \\\nOCTOSCODE_DEV_PROXY_ORIGIN=http://127.0.0.1:50080 \\\npnpm dev",
+    "connectNote": "打开 pnpm dev 输出的地址，填写服务令牌，再选择 Octos 服务所在机器上的工作区路径。本地开发时保留两个代理环境变量，使浏览器经 Web 应用同源地址连接服务。",
+    "productionIntro": "Web 发布包只包含静态文件，不包含也不会启动 Octos。正式部署按以下步骤进行：",
+    "productionSteps": [
+      "在 Releases 页面选定版本标签，下载 .tar.gz 包和对应的 .sha256 文件；校验摘要后解压到独立的版本目录。",
+      "通过 HTTPS 托管该目录，配置未知页面回退到 index.html。使用发布包中的同源 nginx 参考配置转发 /api/ WebSocket，并调整主机与 Origin 设置。",
+      "另行运行兼容版本的 octos serve，配置允许的 Web 来源；在浏览器中用服务认证令牌连接。"
+    ],
+    "productionCode": "VERSION=vX.Y.Z # 替换为 Releases 页面上的版本标签\nASSET=octoscode-web-$VERSION.tar.gz\nBASE=https://github.com/octos-org/octoscode-web/releases/download/$VERSION\ncurl -fL -O \"$BASE/$ASSET\"\ncurl -fL -O \"$BASE/$ASSET.sha256\"\nshasum -a 256 -c \"$ASSET.sha256\"\nmkdir -p \"releases/$VERSION\"\ntar -xzf \"$ASSET\" -C \"releases/$VERSION\"",
+    "productionNote": "发布包包含 deploy/nginx.conf。代理必须保留 WebSocket 转发，且日志应去除 URL 查询参数：当前浏览器协议会把令牌放在 WebSocket URL 中。Linux 可用 sha256sum -c 替代 shasum -a 256 -c。",
+    "upgradeLocalIntro": "本地源码工作区升级时，更新仓库、按锁文件恢复依赖、运行检查，再重新启动开发服务器：",
+    "upgradeLocalCode": "git pull --ff-only\npnpm install --frozen-lockfile\npnpm check\npnpm dev",
+    "upgradeProductionIntro": "已部署的正式版本应先准备新包，再切换静态站点：",
+    "upgradeProductionSteps": [
+      "下载新版本包和摘要文件，校验后解压到新的版本目录。",
+      "检查 octoscode-web-build.json 中的客户端版本和已验证的 Octos 修订，并确认新客户端能与目标服务完成能力协商。",
+      "把静态站点切换到新目录，保留旧包用于回滚；需要时单独升级 Octos 服务。"
+    ],
+    "upgradeNote": "刷新浏览器或切换已部署版本前，先结束正在执行的轮次；关闭当前连接可能中断由该连接持有的任务。",
+    "links": [
+      {
+        "label": "入门说明",
+        "href": "https://github.com/octos-org/octoscode-web/blob/main/docs/getting-started.md"
+      },
+      {
+        "label": "部署约定",
+        "href": "https://github.com/octos-org/octoscode-web/blob/main/docs/deployment.md"
+      },
+      {
+        "label": "发布版本",
+        "href": "https://github.com/octos-org/octoscode-web/releases"
+      }
+    ]
+  }
+}

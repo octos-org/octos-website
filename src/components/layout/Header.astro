@@ -5,6 +5,8 @@ interface Props {
   navLinks?: { text: string; href: string }[];
   externalLinks?: { text: string; href: string }[];
   langAlt?: { text: string; href: string };
+  homeHref?: string;
+  menuLabel?: string;
 }
 
 const {
@@ -20,14 +22,15 @@ const {
     { text: 'GitHub', href: 'https://github.com/octos-org/octos' },
   ],
   langAlt = { text: '中文', href: '/zh/' },
+  homeHref = '/',
+  menuLabel = 'Toggle menu',
 } = Astro.props;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <header class="fixed top-0 z-50 w-full max-w-[1920px] border-b border-surface-3 bg-bg/90 backdrop-blur-sm">
   <div class="flex items-center justify-between px-4 py-4 lg:px-9">
     <!-- Logo -->
-    <a href={`${base}/`} class="flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.08em] text-text-bright">
+    <a href={homeHref} class="flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.08em] text-text-bright">
       Octos
     </a>
 
@@ -65,7 +68,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <button
       id="menu-toggle"
       class="flex size-8 items-center justify-center lg:hidden"
-      aria-label="Toggle menu"
+      aria-label={menuLabel}
     >
       <span class="menu-icon flex flex-col gap-1.5">
         <span class="block h-px w-5 bg-text transition-all duration-300" />

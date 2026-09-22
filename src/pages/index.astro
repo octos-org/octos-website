@@ -11,6 +11,7 @@ import Memory from 'components/sections/Memory.astro';
 import ToolSystem from 'components/sections/ToolSystem.astro';
 import Providers from 'components/sections/Providers.astro';
 import Agents from 'components/sections/Agents.astro';
+import OctoLoopIntro from 'components/sections/OctoLoopIntro.astro';
 import Loops from 'components/sections/Loops.astro';
 import Security from 'components/sections/Security.astro';
 import Surfaces from 'components/sections/Surfaces.astro';
@@ -35,6 +36,9 @@ const langAlt = getLangAlt(lang);
   footerLinks={t.footer.links}
   footerExternal={t.footer.external}
   footerBrand={t.footer.brandDescription}
+  footerNavHeading={t.footer.navHeading}
+  footerResourcesHeading={t.footer.resourcesHeading}
+  footerLicense={t.footer.license}
 >
   <Hero t={t.hero} />
   <Stats t={t.stats} />
@@ -47,6 +51,7 @@ const langAlt = getLangAlt(lang);
   <ToolSystem t={t.toolSystem} />
   <Providers t={t.providers} />
   <Agents t={t.agents} />
+  <OctoLoopIntro lang="en" />
   <Loops t={t.loops} />
   <Security t={t.security} />
   <Surfaces t={t.surfaces} />

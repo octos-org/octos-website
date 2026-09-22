@@ -1,0 +1,160 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+import guideEn from 'i18n/clients-en.json';
+
+interface Props {
+  t: typeof guideEn;
+  homeHref: string;
+}
+
+const { t, homeHref } = Astro.props;
+---
+
+<Section padY="lg">
+  <Container>
+    <a href={homeHref} class="font-mono text-[12px] text-accent underline-offset-4 hover:underline">← {t.hero.back}</a>
+    <p class="mt-12 font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.hero.label}</p>
+    <h1 class="mt-4 max-w-5xl text-[42px] leading-tight tracking-[-0.04em] text-text-bright md:text-[64px]">{t.hero.title}</h1>
+    <p class="mt-6 max-w-3xl text-[18px] leading-relaxed text-neutral-2">{t.hero.description}</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#tui" class="border border-surface-3 bg-surface-1 px-5 py-3 font-mono text-[12px] text-text hover:border-accent">Octoscode TUI ↓</a>
+      <a href="#web" class="border border-surface-3 bg-surface-1 px-5 py-3 font-mono text-[12px] text-text hover:border-accent">Octoscode Web ↓</a>
+    </div>
+  </Container>
+</Section>
+
+<Section background="secondary" padY="md">
+  <Container>
+    <h2 class="text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px]">{t.comparison.heading}</h2>
+    <div class="mt-8 grid gap-px overflow-hidden border border-surface-3 md:grid-cols-2">
+      {(['tui', 'web'] as const).map((client, index) => (
+        <div class="bg-surface-1 p-6 lg:p-8">
+          <h3 class="text-[20px] text-text-bright">{t.comparison.columns[index + 1]}</h3>
+          <dl class="mt-5 space-y-5">
+            {t.comparison.rows.map((row) => (
+              <div>
+                <dt class="font-mono text-[11px] uppercase tracking-[0.08em] text-accent">{row.label}</dt>
+                <dd class="mt-1 text-[14px] leading-relaxed text-neutral-2">{row[client]}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      ))}
+    </div>
+  </Container>
+</Section>
+
+<Section id="tui" padY="lg">
+  <Container>
+    <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">01 / TUI</p>
+    <h2 class="mt-3 text-[32px] tracking-[-0.03em] text-text-bright md:text-[48px]">{t.tui.name}</h2>
+    <p class="mt-4 max-w-3xl text-[16px] leading-relaxed text-neutral-2">{t.tui.summary}</p>
+    <div class="mt-8 border-l-2 border-accent pl-5">
+      <h3 class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.labels.capabilities}</h3>
+      <ul class="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-neutral-2">
+        {t.tui.capabilities.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+
+    <div class="mt-16 grid gap-12 lg:grid-cols-2">
+      <div>
+        <h3 class="text-[28px] text-text-bright">{t.labels.install}</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-neutral-2">{t.tui.installIntro}</p>
+        <p class="mt-7 font-mono text-[12px] text-accent">{t.tui.primaryLabel}</p>
+        <pre class="mt-2 overflow-x-auto border border-surface-3 bg-surface-1 p-4"><code class="font-mono text-[13px] leading-relaxed text-text">{t.tui.primaryCode}</code></pre>
+        <p class="mt-7 font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{t.labels.alternatives}</p>
+        <div class="mt-3 space-y-3">
+          {t.tui.alternatives.map((option) => (
+            <details class="border border-surface-3 bg-surface-1 p-4">
+              <summary class="cursor-pointer font-mono text-[13px] text-text-bright">{option.label}</summary>
+              <pre class="mt-4 overflow-x-auto"><code class="font-mono text-[12px] leading-relaxed text-text">{option.code}</code></pre>
+            </details>
+          ))}
+        </div>
+        <p class="mt-5 text-[14px] leading-relaxed text-neutral-2">{t.tui.firstRun}</p>
+        <p class="mt-7 font-mono text-[12px] text-accent">{t.tui.sharedLabel}</p>
+        <pre class="mt-2 overflow-x-auto border border-surface-3 bg-surface-1 p-4"><code class="font-mono text-[12px] leading-relaxed text-text">{t.tui.sharedCode}</code></pre>
+        <p class="mt-3 text-[14px] leading-relaxed text-neutral-2">{t.tui.sharedNote}</p>
+      </div>
+      <div>
+        <h3 class="text-[28px] text-text-bright">{t.labels.upgrade}</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-neutral-2">{t.tui.upgradeIntro}</p>
+        <div class="mt-7 space-y-4">
+          {t.tui.upgradeOptions.map((option) => (
+            <div>
+              <p class="font-mono text-[12px] text-accent">{option.label}</p>
+              <pre class="mt-2 overflow-x-auto border border-surface-3 bg-surface-1 p-4"><code class="font-mono text-[12px] leading-relaxed text-text">{option.code}</code></pre>
+            </div>
+          ))}
+        </div>
+        <p class="mt-6 text-[14px] leading-relaxed text-neutral-2">{t.tui.upgradeNote}</p>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3">
+      {t.tui.links.map((link) => <a href={link.href} target="_blank" rel="noopener noreferrer" class="font-mono text-[12px] text-accent underline-offset-4 hover:underline">{link.label} ↗</a>)}
+    </div>
+  </Container>
+</Section>
+
+<Section id="web" background="secondary" padY="lg">
+  <Container>
+    <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">02 / Web</p>
+    <h2 class="mt-3 text-[32px] tracking-[-0.03em] text-text-bright md:text-[48px]">{t.web.name}</h2>
+    <p class="mt-4 max-w-3xl text-[16px] leading-relaxed text-neutral-2">{t.web.summary}</p>
+    <div class="mt-8 border-l-2 border-accent pl-5">
+      <h3 class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.labels.capabilities}</h3>
+      <ul class="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-neutral-2">
+        {t.web.capabilities.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+
+    <div class="mt-16">
+      <h3 class="text-[28px] text-text-bright">{t.labels.install}</h3>
+      <h4 class="mt-6 font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.labels.local}</h4>
+      <p class="mt-3 max-w-3xl text-[15px] leading-relaxed text-neutral-2">{t.web.requirements}</p>
+      <div class="mt-6 grid gap-6 lg:grid-cols-2">
+        <div>
+          <p class="font-mono text-[12px] text-accent">{t.web.serverLabel}</p>
+          <pre class="mt-2 overflow-x-auto border border-surface-3 bg-surface-1 p-4"><code class="font-mono text-[12px] leading-relaxed text-text">{t.web.serverCode}</code></pre>
+          <p class="mt-3 text-[14px] leading-relaxed text-neutral-2">{t.web.serverNote}</p>
+        </div>
+        <div>
+          <p class="font-mono text-[12px] text-accent">{t.web.clientLabel}</p>
+          <pre class="mt-2 overflow-x-auto border border-surface-3 bg-surface-1 p-4"><code class="font-mono text-[12px] leading-relaxed text-text">{t.web.clientCode}</code></pre>
+        </div>
+      </div>
+      <p class="mt-5 max-w-4xl text-[14px] leading-relaxed text-neutral-2">{t.web.connectNote}</p>
+
+      <h4 class="mt-12 font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.labels.production}</h4>
+      <p class="mt-3 max-w-4xl text-[15px] leading-relaxed text-neutral-2">{t.web.productionIntro}</p>
+      <ol class="mt-5 max-w-4xl list-decimal space-y-3 pl-5 text-[14px] leading-relaxed text-neutral-2">
+        {t.web.productionSteps.map((step) => <li>{step}</li>)}
+      </ol>
+      <pre class="mt-6 max-w-4xl overflow-x-auto border border-surface-3 bg-surface-1 p-4"><code class="font-mono text-[12px] leading-relaxed text-text">{t.web.productionCode}</code></pre>
+      <p class="mt-4 max-w-4xl text-[14px] leading-relaxed text-neutral-2">{t.web.productionNote}</p>
+    </div>
+
+    <div class="mt-16 border-t border-surface-3 pt-12">
+      <h3 class="text-[28px] text-text-bright">{t.labels.upgrade}</h3>
+      <div class="mt-6 grid gap-10 lg:grid-cols-2">
+        <div>
+          <h4 class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.labels.local}</h4>
+          <p class="mt-3 text-[15px] leading-relaxed text-neutral-2">{t.web.upgradeLocalIntro}</p>
+          <pre class="mt-4 overflow-x-auto border border-surface-3 bg-surface-1 p-4"><code class="font-mono text-[12px] leading-relaxed text-text">{t.web.upgradeLocalCode}</code></pre>
+        </div>
+        <div>
+          <h4 class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.labels.production}</h4>
+          <p class="mt-3 text-[15px] leading-relaxed text-neutral-2">{t.web.upgradeProductionIntro}</p>
+          <ol class="mt-4 list-decimal space-y-3 pl-5 text-[14px] leading-relaxed text-neutral-2">
+            {t.web.upgradeProductionSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </div>
+      </div>
+      <p class="mt-8 max-w-4xl border-l-2 border-accent pl-5 text-[14px] leading-relaxed text-neutral-2">{t.web.upgradeNote}</p>
+    </div>
+    <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3">
+      {t.web.links.map((link) => <a href={link.href} target="_blank" rel="noopener noreferrer" class="font-mono text-[12px] text-accent underline-offset-4 hover:underline">{link.label} ↗</a>)}
+    </div>
+  </Container>
+</Section>

@@ -1,0 +1,35 @@
+---
+import Layout from 'layouts/Layout.astro';
+import OctoLoopGuide from 'components/OctoLoopGuide.astro';
+import guide from 'i18n/octoloop-en.json';
+import { getTranslations } from 'i18n/index';
+
+const home = getTranslations('en');
+const navLinks = home.header.navLinks.map((link) => ({
+  ...link,
+  href: link.href.startsWith('#') ? '/' + link.href : link.href,
+}));
+const footerLinks = home.footer.links.map((link) => ({
+  ...link,
+  href: link.href.startsWith('#') ? '/' + link.href : link.href,
+}));
+---
+
+<Layout
+  title={guide.meta.title}
+  description={guide.meta.description}
+  lang="en"
+  navLinks={navLinks}
+  externalLinks={home.header.externalLinks}
+  langAlt={{ text: '中文', href: '/zh/octoloop/' }}
+  footerLinks={footerLinks}
+  footerExternal={home.footer.external}
+  footerBrand={home.footer.brandDescription}
+  footerNavHeading={home.footer.navHeading}
+  footerResourcesHeading={home.footer.resourcesHeading}
+  footerLicense={home.footer.license}
+  footerLangHrefEn="/octoloop/"
+  footerLangHrefZh="/zh/octoloop/"
+>
+  <OctoLoopGuide t={guide} homeHref="/" />
+</Layout>
