@@ -1,0 +1,36 @@
+---
+import Layout from 'layouts/Layout.astro';
+import ClientGuide from 'components/ClientGuide.astro';
+import guide from 'i18n/clients-en.json';
+import { getTranslations } from 'i18n/index';
+
+const home = getTranslations('en');
+const navLinks = home.header.navLinks.map((link) => ({
+  ...link,
+  href: link.href.startsWith('#') ? `/${link.href}` : link.href,
+}));
+const footerLinks = home.footer.links.map((link) => ({
+  ...link,
+  href: link.href.startsWith('#') ? `/${link.href}` : link.href,
+}));
+---
+
+<Layout
+  title={guide.meta.title}
+  description={guide.meta.description}
+  lang="en"
+  navLinks={navLinks}
+  externalLinks={home.header.externalLinks}
+  langAlt={{ text: '中文', href: '/zh/clients/' }}
+  footerLinks={footerLinks}
+  footerExternal={home.footer.external}
+  footerBrand={home.footer.brandDescription}
+  footerOwnership={home.footer.ownership}
+  footerNavHeading={home.footer.navHeading}
+  footerResourcesHeading={home.footer.resourcesHeading}
+  footerLicense={home.footer.license}
+  footerLangHrefEn="/clients/"
+  footerLangHrefZh="/zh/clients/"
+>
+  <ClientGuide t={guide} homeHref="/" />
+</Layout>

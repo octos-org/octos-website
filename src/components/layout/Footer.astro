@@ -4,8 +4,12 @@ interface Props {
   external?: { text: string; href: string }[];
   brand?: string;
   ownership?: string;
-  license?: string;
   langAlt?: { text: string; href: string };
+  navHeading?: string;
+  resourcesHeading?: string;
+  license?: string;
+  langHrefEn?: string;
+  langHrefZh?: string;
 }
 
 const {
@@ -24,10 +28,13 @@ const {
   ],
   brand = 'Open Cognitive Tasks Orchestration System — a Rust-native, API-first Agentic OS for AI agents.',
   ownership = 'Official deployments: www.octosai.org and learn.pitun.cc — operated by the octos-org maintainers.',
-  license = 'Open source under the Apache License 2.0.',
   langAlt = { text: '中文', href: '/zh/' },
+  navHeading = 'Navigation',
+  resourcesHeading = 'Resources',
+  license = 'Open source under the Apache License 2.0.',
+  langHrefEn = '/',
+  langHrefZh = '/zh/',
 } = Astro.props;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <footer class="border-t border-surface-3 px-4 py-12 lg:px-9 lg:py-16">
@@ -42,7 +49,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     <!-- Nav -->
     <div class="lg:col-span-3">
-      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Navigation</p>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{navHeading}</p>
       <nav class="mt-4 flex flex-col gap-3">
         {links.map((link) => (
           <a
@@ -57,7 +64,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     <!-- External -->
     <div class="lg:col-span-4">
-      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">Resources</p>
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2">{resourcesHeading}</p>
       <nav class="mt-4 flex flex-col gap-3">
         {external.map((link) => (
           <a
@@ -84,8 +91,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </p>
     </div>
     <div class="flex shrink-0 gap-4">
-      <a href={`${base}/`} class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2 hover:text-accent transition-colors duration-200">EN</a>
-      <a href={`${base}/zh/`} class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2 hover:text-accent transition-colors duration-200">中文</a>
+      <a href={langHrefEn} class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2 hover:text-accent transition-colors duration-200">EN</a>
+      <a href={langHrefZh} class="font-mono text-[12px] uppercase tracking-[0.08em] text-neutral-2 hover:text-accent transition-colors duration-200">中文</a>
     </div>
   </div>
 </footer>

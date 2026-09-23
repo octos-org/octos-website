@@ -1,6 +1,6 @@
 ---
 import SvgSection from 'components/ui/SvgSection.astro';
-import PipelineFlow from 'components/PipelineFlow.jsx';
+import AgentsFlow from 'components/AgentsFlow.astro';
 
 interface Props {
   t: {
@@ -8,6 +8,14 @@ interface Props {
     heading: string;
     description: string;
     modes: { name: string; summary: string; points: string[] }[];
+    flow: {
+      caption: string;
+      master: { name: string; description: string };
+      branchesLabel: string;
+      branches: { name: string; description: string }[];
+      gather: { name: string; description: string };
+      result: { name: string; description: string };
+    };
   };
 }
 
@@ -37,7 +45,7 @@ const { t } = Astro.props;
     ))}
   </div>
 
-  <div class="glass-panel mt-4 h-[320px] p-0 md:h-[380px]">
-    <PipelineFlow client:only="react" />
+  <div class="glass-panel mt-4">
+    <AgentsFlow t={t.flow} />
   </div>
 </SvgSection>

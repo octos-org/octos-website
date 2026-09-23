@@ -1,0 +1,184 @@
+---
+// Staggered paths keep the water gently moving from the first frame.
+// Each entry is [left %, size px, rise seconds, delay seconds, sway px, peak opacity].
+const bubbles = [
+  [6, 24, 34, -8, 12, 0.85],
+  [15, 11, 38, -27, 8, 0.45],
+  [23, 30, 30, -17, 16, 0.85],
+  [32, 15, 36, -4, 10, 0.5],
+  [41, 8, 40, -31, 7, 0.35],
+  [49, 18, 33, -14, 12, 0.4],
+  [58, 10, 39, -6, 9, 0.4],
+  [67, 26, 32, -24, 14, 0.85],
+  [76, 13, 37, -12, 10, 0.5],
+  [84, 32, 29, -3, 16, 0.9],
+  [91, 16, 35, -22, 11, 0.5],
+  [96, 9, 40, -16, 8, 0.4],
+  [10, 8, 39, -18, 7, 0.35],
+  [28, 10, 37, -29, 9, 0.4],
+  [63, 7, 41, -34, 6, 0.35],
+  [80, 9, 38, -21, 8, 0.4],
+  [19, 17, 34, -1, 12, 0.5],
+  [88, 12, 36, -10, 10, 0.45],
+];
+---
+
+<div class="hero-bubbles" aria-hidden="true" data-running="false">
+  {bubbles.map(([left, size, duration, delay, sway, opacity], index) => (
+    <span
+      class="bubble-path"
+      style={`--bubble-left: ${left}%; --bubble-size: ${size}px; --bubble-duration: ${duration}s; --bubble-delay: ${delay}s; --bubble-sway: ${sway}px; --bubble-opacity: ${opacity}; --sway-duration: ${5 + (index % 4)}s;`}
+    >
+      <span class:list={['bubble', { 'bubble--painted': index % 3 === 0 }]}>
+        {index % 3 === 0 && (
+          <!-- Uneven oval rim and upper-right reflection echo the bubble beside the turtle. -->
+          <svg viewBox="0 0 48 52" fill="none" aria-hidden="true" focusable="false">
+            <path
+              d="M24.4 3.4C34.4 2.2 43.1 11.5 44.2 24.3C45.3 37.6 37.2 47.1 25.6 48.7C13.4 50.1 4.3 41.8 3.5 29.5C2.8 18 11.2 5.1 24.4 3.4Z"
+              fill="#B8ECE8" fill-opacity=".07" stroke="#B8ECE8" stroke-opacity=".5" stroke-width="1.5"
+            />
+            <path
+              d="M22.7 4.6C12.2 7.1 4.3 19.2 4.9 29.7C5.3 37.7 9.8 43.4 16.4 46.3"
+              stroke="#E6FFF4" stroke-opacity=".65" stroke-width="2.3" stroke-linecap="round"
+            />
+            <path
+              d="M7 33.7C8.4 40.9 14.4 46.6 22.5 47.1M29.4 47.2C34.5 45.9 38.6 42.7 41 38.3"
+              stroke="#B8ECE8" stroke-opacity=".3" stroke-width="2.8" stroke-linecap="round"
+            />
+            <path
+              d="M29.4 7.4C33.9 7.1 38.2 11.5 38.4 15.2C38.6 18.1 36.7 19.8 34.1 18.3C31.6 16.9 28.4 13.9 27.7 11.2C27.2 9.3 27.7 7.8 29.4 7.4Z"
+              fill="#E6FFF4" fill-opacity=".78"
+            />
+          </svg>
+        )}
+      </span>
+    </span>
+  ))}
+</div>
+
+<style>
+  .hero-bubbles {
+    --bubble-play-state: paused;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-bubbles[data-running='true'] {
+    --bubble-play-state: running;
+  }
+
+  .bubble-path {
+    position: absolute;
+    top: 0;
+    left: var(--bubble-left);
+    width: var(--bubble-size);
+    height: 100%;
+    opacity: 0;
+    animation: bubble-rise var(--bubble-duration) linear var(--bubble-delay) infinite;
+    animation-play-state: var(--bubble-play-state);
+  }
+
+  .bubble {
+    display: block;
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+    position: relative;
+    border: 1px solid rgb(184 236 232 / 48%);
+    border-top-color: rgb(219 249 239 / 70%);
+    border-right-color: rgb(184 236 232 / 22%);
+    border-radius: 50%;
+    background: radial-gradient(circle at 68% 75%, rgb(136 211 216 / 18%), transparent 65%);
+    box-shadow: inset 1px 1px 2px rgb(226 255 244 / 22%), inset -1px -2px 3px rgb(134 213 222 / 14%);
+    animation: bubble-sway var(--sway-duration) ease-in-out var(--bubble-delay) infinite alternate;
+    animation-play-state: var(--bubble-play-state);
+  }
+
+  .bubble::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 22%;
+    height: 28%;
+    border-radius: 50%;
+    background: rgb(230 255 244 / 70%);
+    transform: rotate(35deg);
+  }
+
+  .bubble--painted {
+    width: calc(var(--bubble-size) * 0.9);
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .bubble--painted::before {
+    display: none;
+  }
+
+  .bubble--painted svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes bubble-rise {
+    0% {
+      transform: translate3d(0, 100%, 0);
+      opacity: 0;
+    }
+    12%, 82% {
+      opacity: var(--bubble-opacity);
+    }
+    100% {
+      transform: translate3d(0, calc(0px - var(--bubble-size)), 0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes bubble-sway {
+    from { transform: translateX(calc(0px - var(--bubble-sway))); }
+    to { transform: translateX(var(--bubble-sway)); }
+  }
+
+  @media (max-width: 767px) {
+    .bubble-path:nth-child(n + 13) {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bubbles {
+      display: none;
+    }
+
+    .bubble-path,
+    .bubble {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.hero-bubbles').forEach((bubbles) => {
+    const hero = bubbles.closest('.hero-scene');
+    if (!hero) return;
+
+    let heroVisible = false;
+    const updatePlayback = () => {
+      bubbles.dataset.running = String(heroVisible && !document.hidden);
+    };
+
+    // Pause both rise and sway offscreen, preserving their position for a return visit.
+    const observer = new IntersectionObserver(([entry]) => {
+      heroVisible = entry.isIntersecting;
+      updatePlayback();
+    });
+
+    observer.observe(hero);
+    document.addEventListener('visibilitychange', updatePlayback);
+  });
+</script>

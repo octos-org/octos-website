@@ -1,0 +1,43 @@
+---
+interface Props {
+  t: {
+    caption: string;
+    master: { name: string; description: string };
+    branchesLabel: string;
+    branches: { name: string; description: string }[];
+    gather: { name: string; description: string };
+    result: { name: string; description: string };
+  };
+}
+
+const { t } = Astro.props;
+---
+
+<figure aria-label={t.caption}>
+  <div class="mx-auto max-w-sm rounded-lg border border-purple-400/60 bg-purple-950/90 px-5 py-4 text-center shadow-lg">
+    <p class="font-mono text-[14px] font-semibold tracking-[0.04em] text-white">{t.master.name}</p>
+    <p class="mt-1 text-[13px] leading-relaxed text-purple-100">{t.master.description}</p>
+  </div>
+
+  <div aria-hidden="true" class="flex h-10 items-center justify-center text-[24px] text-accent">↓</div>
+  <p class="mb-3 text-center font-mono text-[11px] uppercase tracking-[0.08em] text-neutral-2">{t.branchesLabel}</p>
+  <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+    {t.branches.map((branch) => (
+      <div class="min-w-0 rounded-lg border border-cyan-400/40 bg-cyan-950/80 px-4 py-4 text-center">
+        <p class="font-mono text-[13px] font-semibold tracking-[0.04em] text-white">{branch.name}</p>
+        <p class="mt-2 text-[13px] leading-relaxed text-cyan-100">{branch.description}</p>
+      </div>
+    ))}
+  </div>
+
+  <div aria-hidden="true" class="flex h-10 items-center justify-center text-[24px] text-accent">↓</div>
+  <div class="mx-auto max-w-sm rounded-lg border border-cyan-400/40 bg-cyan-950/80 px-5 py-4 text-center">
+    <p class="font-mono text-[14px] font-semibold tracking-[0.04em] text-white">{t.gather.name}</p>
+    <p class="mt-1 text-[13px] leading-relaxed text-cyan-100">{t.gather.description}</p>
+  </div>
+  <div aria-hidden="true" class="flex h-10 items-center justify-center text-[24px] text-accent">↓</div>
+  <div class="mx-auto max-w-sm rounded-lg border border-orange-400/50 bg-orange-950/80 px-5 py-4 text-center">
+    <p class="font-mono text-[14px] font-semibold tracking-[0.04em] text-white">{t.result.name}</p>
+    <p class="mt-1 text-[13px] leading-relaxed text-orange-100">{t.result.description}</p>
+  </div>
+</figure>

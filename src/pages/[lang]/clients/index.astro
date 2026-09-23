@@ -1,0 +1,41 @@
+---
+import Layout from 'layouts/Layout.astro';
+import ClientGuide from 'components/ClientGuide.astro';
+import guide from 'i18n/clients-zh.json';
+import { getTranslations, type Lang } from 'i18n/index';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'zh' } }];
+}
+
+const lang = Astro.params.lang as Lang;
+const home = getTranslations(lang);
+const navLinks = home.header.navLinks.map((link) => ({
+  ...link,
+  href: link.href.startsWith('#') ? `/zh/${link.href}` : link.href,
+}));
+const footerLinks = home.footer.links.map((link) => ({
+  ...link,
+  href: link.href.startsWith('#') ? `/zh/${link.href}` : link.href,
+}));
+---
+
+<Layout
+  title={guide.meta.title}
+  description={guide.meta.description}
+  lang="zh-CN"
+  navLinks={navLinks}
+  externalLinks={home.header.externalLinks}
+  langAlt={{ text: 'EN', href: '/clients/' }}
+  footerLinks={footerLinks}
+  footerExternal={home.footer.external}
+  footerBrand={home.footer.brandDescription}
+  footerOwnership={home.footer.ownership}
+  footerNavHeading={home.footer.navHeading}
+  footerResourcesHeading={home.footer.resourcesHeading}
+  footerLicense={home.footer.license}
+  footerLangHrefEn="/clients/"
+  footerLangHrefZh="/zh/clients/"
+>
+  <ClientGuide t={guide} homeHref="/zh/" />
+</Layout>

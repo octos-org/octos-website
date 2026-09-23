@@ -1,0 +1,48 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+import en from 'i18n/octoloop-en.json';
+import zh from 'i18n/octoloop-zh.json';
+
+interface Props {
+  lang: 'en' | 'zh';
+}
+
+const { lang } = Astro.props;
+const t = (lang === 'zh' ? zh : en).home;
+const href = lang === 'zh' ? '/zh/octoloop/' : '/octoloop/';
+---
+
+<Section id="octoloop" background="secondary" padY="lg">
+  <Container>
+    <div class="max-w-4xl">
+      <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.label}</p>
+      <h2 class="mt-3 text-[30px] tracking-[-0.03em] text-text-bright md:text-[42px] lg:text-[48px]">{t.heading}</h2>
+      <p class="mt-5 text-[16px] leading-relaxed text-neutral-2">{t.description}</p>
+    </div>
+
+    <div class="mt-10 grid gap-px overflow-hidden border border-surface-3 md:grid-cols-2">
+      {[t.inner, t.outer].map((role) => (
+        <div class="bg-surface-1 p-6 lg:p-8">
+          <h3 class="text-[21px] text-text-bright">{role.name}</h3>
+          <p class="mt-3 min-h-20 text-[15px] leading-relaxed text-neutral-2">{role.description}</p>
+          <ul class="mt-6 flex flex-wrap gap-2">
+            {role.details.map((detail) => (
+              <li class="border border-surface-3 px-3 py-1.5 font-mono text-[11px] text-accent">{detail}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <p class="mt-4 border-l-2 border-accent pl-5 text-[14px] leading-relaxed text-neutral-2">{t.handoff}</p>
+
+    <div class="mt-10 grid gap-6 border-t border-surface-3 pt-8 md:grid-cols-[1fr_auto] md:items-end">
+      <div>
+        <p class="font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.evolutionLabel}</p>
+        <p class="mt-3 max-w-4xl text-[15px] leading-relaxed text-neutral-2">{t.evolution}</p>
+        <p class="mt-2 font-mono text-[12px] text-neutral-1">{t.evolutionStatus}</p>
+      </div>
+      <a href={href} class="inline-flex w-fit border border-accent px-5 py-3 font-mono text-[12px] text-accent transition-colors hover:bg-accent hover:text-bg">{t.cta} ↗</a>
+    </div>
+  </Container>
+</Section>

@@ -1,0 +1,95 @@
+---
+import Section from 'components/layout/Section.astro';
+import Container from 'components/layout/Container.astro';
+import en from 'i18n/octoloop-en.json';
+
+interface Props {
+  t: typeof en;
+  homeHref: string;
+}
+
+const { t, homeHref } = Astro.props;
+---
+
+<Section padY="lg">
+  <Container>
+    <a href={homeHref} class="font-mono text-[12px] text-accent underline-offset-4 hover:underline">← {t.page.back}</a>
+    <p class="mt-12 font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.page.label}</p>
+    <h1 class="mt-4 text-[48px] tracking-[-0.05em] text-text-bright md:text-[72px]">{t.page.heading}</h1>
+    <p class="mt-5 max-w-4xl text-[18px] leading-relaxed text-neutral-2">{t.page.lead}</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#workflow" class="border border-surface-3 bg-surface-1 px-4 py-2.5 font-mono text-[12px] text-text hover:border-accent">{t.page.flowHeading} ↓</a>
+      <a href="#evolution" class="border border-surface-3 bg-surface-1 px-4 py-2.5 font-mono text-[12px] text-text hover:border-accent">{t.page.evolutionHeading} ↓</a>
+      <a href="#start" class="border border-surface-3 bg-surface-1 px-4 py-2.5 font-mono text-[12px] text-text hover:border-accent">{t.page.startHeading} ↓</a>
+    </div>
+  </Container>
+</Section>
+
+<Section id="workflow" background="secondary" padY="lg">
+  <Container>
+    <h2 class="text-[30px] tracking-[-0.03em] text-text-bright md:text-[42px]">{t.page.flowHeading}</h2>
+    <p class="mt-4 max-w-3xl text-[16px] leading-relaxed text-neutral-2">{t.page.flowDescription}</p>
+    <ol class="mt-8 grid gap-px overflow-hidden border border-surface-3 md:grid-cols-2 xl:grid-cols-4">
+      {t.page.flow.map((step) => (
+        <li class="bg-surface-1 p-6">
+          <h3 class="font-mono text-[13px] text-accent">{step.name}</h3>
+          <p class="mt-4 text-[14px] leading-relaxed text-neutral-2">{step.description}</p>
+        </li>
+      ))}
+    </ol>
+
+    <h2 class="mt-16 text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px]">{t.page.rolesHeading}</h2>
+    <div class="mt-7 grid gap-px overflow-hidden border border-surface-3 md:grid-cols-2">
+      {[{ ...t.home.inner, output: t.page.innerOutput }, { ...t.home.outer, output: t.page.outerOutput }].map((role) => (
+        <div class="bg-surface-1 p-6 lg:p-8">
+          <h3 class="text-[20px] text-text-bright">{role.name}</h3>
+          <p class="mt-3 text-[15px] leading-relaxed text-neutral-2">{role.description}</p>
+          <ul class="mt-5 list-disc space-y-2 pl-5 text-[14px] text-neutral-2">
+            {role.details.map((detail) => <li>{detail}</li>)}
+          </ul>
+          <p class="mt-6 border-l-2 border-accent pl-4 text-[13px] leading-relaxed text-neutral-2">{role.output}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="mt-16 text-[28px] tracking-[-0.03em] text-text-bright md:text-[36px]">{t.page.boundaryHeading}</h2>
+    <ul class="mt-6 grid gap-4 md:grid-cols-2">
+      {t.page.boundaries.map((item) => (
+        <li class="border border-surface-3 bg-surface-1 p-5 text-[14px] leading-relaxed text-neutral-2">{item}</li>
+      ))}
+    </ul>
+  </Container>
+</Section>
+
+<Section id="evolution" padY="lg">
+  <Container>
+    <h2 class="text-[30px] tracking-[-0.03em] text-text-bright md:text-[42px]">{t.page.evolutionHeading}</h2>
+    <p class="mt-4 max-w-4xl text-[16px] leading-relaxed text-neutral-2">{t.page.evolutionLead}</p>
+    <ol class="mt-8 grid gap-px overflow-hidden border border-surface-3 md:grid-cols-3">
+      {t.page.evolution.map((step, index) => (
+        <li class="bg-surface-1 p-6 lg:p-8">
+          <p class="font-mono text-[12px] text-accent">{String(index + 1).padStart(2, '0')}</p>
+          <h3 class="mt-3 text-[19px] text-text-bright">{step.name}</h3>
+          <p class="mt-3 text-[14px] leading-relaxed text-neutral-2">{step.description}</p>
+        </li>
+      ))}
+    </ol>
+    <p class="mt-6 max-w-4xl font-mono text-[12px] leading-relaxed text-accent">{t.page.evolutionTools}</p>
+    <p class="mt-6 max-w-4xl border-l-2 border-accent pl-5 text-[14px] leading-relaxed text-neutral-2">{t.page.evolutionNote}</p>
+  </Container>
+</Section>
+
+<Section id="start" background="secondary" padY="lg">
+  <Container>
+    <h2 class="text-[30px] tracking-[-0.03em] text-text-bright md:text-[42px]">{t.page.startHeading}</h2>
+    <ol class="mt-7 max-w-4xl list-decimal space-y-4 pl-5 text-[15px] leading-relaxed text-neutral-2">
+      {t.page.startSteps.map((step) => <li>{step}</li>)}
+    </ol>
+    <h3 class="mt-14 font-mono text-[12px] uppercase tracking-[0.08em] text-accent">{t.page.linksHeading}</h3>
+    <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3">
+      {t.page.links.map((link) => (
+        <a href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined} class="font-mono text-[12px] text-accent underline-offset-4 hover:underline">{link.label} ↗</a>
+      ))}
+    </div>
+  </Container>
+</Section>

@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "OctoLoop｜基于 Octos 的多智能体协作",
+    "description": "OctoLoop 将负责执行的 inner agent 与负责审查的 outer agent 连接起来，展示 OLP 协议、Peer 协作和基于证据的改进闭环。"
+  },
+  "home": {
+    "label": "多智能体应用范本",
+    "heading": "OctoLoop：内环执行，外环审查",
+    "description": "OctoLoop 用 Octoscode 和 Octos 构成执行内环，由独立的 CLI Agent 承担规划与审查。Outer-Loop Protocol（OLP）规定两者如何交接任务与证据。",
+    "inner": {
+      "name": "Inner agent｜执行内环",
+      "description": "Octos master agent 推进目标，可把限定任务交给 Peer；它运行检查、提交代码，并记录执行结果。",
+      "details": ["Octoscode TUI + Octos 运行时", "Goal 与 Peer 会话", "Commit 和 ACK，不 Push"]
+    },
+    "outer": {
+      "name": "Outer agent｜审查外环",
+      "description": "独立 CLI Agent 读取审查黑板和事件记录，在隔离工作树中复验 diff，并决定是否需要下一轮整改。",
+      "details": ["规划与审查", "独立复验", "采认、指导或升级裁决"]
+    },
+    "handoff": "审查黑板、交付记录、Goal 账本和 Git commit 构成内外环之间可追溯的交接面。",
+    "evolutionLabel": "基于证据的改进",
+    "evolution": "审查 ACK、运行事件和 MCP 审计记录可以汇成症状卡。复盘脚本归并重复问题，再由外环审定，形成协议、工具或契约测试的改动。",
+    "evolutionStatus": "采集与复盘默认手动运行。",
+    "cta": "了解 OctoLoop 工作流"
+  },
+  "page": {
+    "back": "返回 Octos 首页",
+    "label": "多智能体应用范本",
+    "heading": "OctoLoop",
+    "lead": "一套由 Octos 执行、Octoscode TUI、独立外环 Agent 和书面审查协议组成的双环编码工作流。执行与验收分开，两个角色都不绑定特定模型厂商。",
+    "flowHeading": "一个目标，两层推进",
+    "flowDescription": "操作者设定目标；内环执行并交付证据，外环独立复验并提出具体整改。按 OLP 纪律，采认后的 commit 由外环推送。",
+    "flow": [
+      {
+        "name": "01 · 下发",
+        "description": "操作者确定目标和权限；外环在审查黑板中记录有编号、有范围的指导。"
+      },
+      {
+        "name": "02 · 执行",
+        "description": "内环 master 推进 Goal，可把任务交给 Peer；运行检查、提交代码，并写明验证状态与 ACK。"
+      },
+      {
+        "name": "03 · 复验",
+        "description": "外环查看账本、交付记录和 diff，在隔离工作树中重新运行相关检查。"
+      },
+      {
+        "name": "04 · 裁决",
+        "description": "外环采认交付，或下发带编号的整改意见；权限和范围变更回到操作者。"
+      }
+    ],
+    "rolesHeading": "角色各自负责什么",
+    "innerOutput": "交付：commit、结果记录和 ACK(done | wontdo | blocked)。",
+    "outerOutput": "交付：采认结论或有编号的整改意见。按 OLP 纪律，内环不 Push；外环采认后负责 Push。",
+    "boundaryHeading": "协作契约",
+    "boundaries": [
+      "审查黑板承载带日期和编号的意见。内环逐条 ACK；已确认的历史意见不重复执行。",
+      "Peer 可在独立会话和 Git 工作树中执行。结果记录、Goal 账本和 Git diff 让交付可检查。",
+      "每次交付声明实际完成的验证；外环独立复验，并可要求重新整改。",
+      "内环可报告阻塞，也可通过可选的 OLP MCP 信道询问外环。权限审批和范围变更仍由操作者决定。"
+    ],
+    "evolutionHeading": "自我进化如何发生",
+    "evolutionLead": "OctoLoop 的进化环从实际摩擦中提取改进项，再通过审查把它们变成工作流改动。当前采集与复盘命令默认手动运行。",
+    "evolution": [
+      {
+        "name": "采集证据",
+        "description": "采集脚本读取审查黑板的 ACK、运行事件和 MCP 审计板；去重后在 .octos/EVOLUTION.md 中形成症状卡。"
+      },
+      {
+        "name": "归并重复问题",
+        "description": "复盘脚本按归一化症状分组，生成候选简报与 FLAW 记录草稿。"
+      },
+      {
+        "name": "审定改动",
+        "description": "外环核实根因，将采认的问题归档为 FLAW 记录，再转成可验证的协议、工具或契约测试改动。"
+      }
+    ],
+    "evolutionTools": "工具：olp-evo-harvest.sh 与 olp-evo-retro.sh；FLAW 记录采认后，可用 olp-evo-spec-skeleton.sh 生成契约测试骨架。",
+    "evolutionNote": "脚本产出的是证据和草稿。是否形成正式改动仍由审查者判断；采集本身不会改写运行中的 Agent。",
+    "startHeading": "在自己的仓库中试用",
+    "startSteps": [
+      "安装 Octoscode TUI，完成首次 Profile 与模型服务商配置。",
+      "按 Octoscode 仓库的 OctoLoop 快速开始说明运行 olp-init.sh，为项目建立审查黑板和内环指令。",
+      "在项目中启动内环，再让独立 CLI Agent 按 OLP 角色与审查规则接入外环；需要时配置模型车道和 Peer。",
+      "积累审查证据后运行采集与复盘脚本，检查候选记录，并通过正常审查流程落地改动。"
+    ],
+    "linksHeading": "原始文档",
+    "links": [
+      {
+        "label": "OctoLoop 使用指南",
+        "href": "https://github.com/octos-org/octoscode/blob/main/docs/OCTOLOOP_GUIDE.md"
+      },
+      {
+        "label": "OLP 快速开始",
+        "href": "https://github.com/octos-org/octoscode/blob/main/docs/OLP_QUICKSTART.md"
+      },
+      {
+        "label": "进化环功能清单",
+        "href": "https://github.com/octos-org/octoscode/blob/main/docs/OCTOLOOP_FEATURES.md"
+      },
+      {
+        "label": "TUI 安装说明",
+        "href": "/zh/clients/#tui"
+      }
+    ]
+  }
+}
