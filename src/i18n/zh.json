@@ -104,6 +104,7 @@
       }
     ],
     "license": "以 Apache License 2.0 开源。",
+    "ownership": "官方部署：www.octosai.org 与 learn.pitun.cc，由 octos-org 维护者运营。",
     "langEn": {
       "text": "EN",
       "href": "/"

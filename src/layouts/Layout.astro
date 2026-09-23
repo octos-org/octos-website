@@ -15,6 +15,7 @@ interface Props {
   footerLinks?: { text: string; href: string }[];
   footerExternal?: { text: string; href: string }[];
   footerBrand?: string;
+  footerOwnership?: string;
   footerNavHeading?: string;
   footerResourcesHeading?: string;
   footerLicense?: string;
@@ -33,6 +34,7 @@ const {
   footerLinks,
   footerExternal,
   footerBrand,
+  footerOwnership,
   footerNavHeading,
   footerResourcesHeading,
   footerLicense,
@@ -59,7 +61,7 @@ const {
     <main class="flex-1">
       <slot />
     </main>
-    <Footer links={footerLinks} external={footerExternal} brand={footerBrand} langAlt={langAlt} navHeading={footerNavHeading} resourcesHeading={footerResourcesHeading} license={footerLicense} langHrefEn={footerLangHrefEn} langHrefZh={footerLangHrefZh} />
+    <Footer links={footerLinks} external={footerExternal} brand={footerBrand} ownership={footerOwnership} langAlt={langAlt} navHeading={footerNavHeading} resourcesHeading={footerResourcesHeading} license={footerLicense} langHrefEn={footerLangHrefEn} langHrefZh={footerLangHrefZh} />
 
     <!-- No scroll-reveal JS needed — content visible by default -->
   </body>
