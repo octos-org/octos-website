@@ -1,4 +1,8 @@
 ---
+import faviconSvg from '../assets/brand/favicon.svg?url';
+import faviconPng from '../assets/brand/favicon-32.png';
+import appleTouchIcon from '../assets/brand/apple-touch-icon.png';
+
 interface Props {
   title: string;
   description: string;
@@ -10,7 +14,6 @@ const { title, description, ogImage, canonicalUrl } = Astro.props;
 const siteUrl = Astro.site?.toString() ?? 'https://octos.dev';
 const canonical = canonicalUrl ?? Astro.url.href;
 const og = ogImage ?? `${siteUrl}og.png`;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <meta charset="utf-8" />
@@ -32,8 +35,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={og} />
 
-<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
-<link rel="icon" type="image/png" sizes="32x32" href={`${base}/favicon-32.png`} />
-<link rel="apple-touch-icon" sizes="180x180" href={`${base}/apple-touch-icon.png`} />
+<link rel="icon" type="image/svg+xml" sizes="any" href={faviconSvg} />
+<link rel="icon" type="image/png" sizes="32x32" href={faviconPng.src} />
+<link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
